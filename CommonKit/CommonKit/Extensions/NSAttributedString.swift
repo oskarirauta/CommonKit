@@ -41,5 +41,20 @@ extension NSAttributedString {
         let w = self.boundingRect(with: CGSize(width: CGFloat(MAXFLOAT), height: fixedHeight), options: [.usesFontLeading , .usesLineFragmentOrigin], context: nil).size.width
         return ceil(w)
     }
-    
+
+}
+
+// From Kyohei Ito's AttributedLabel
+extension NSMutableAttributedString {
+    @discardableResult
+    func addAttribute(_ attrName: NSAttributedStringKey, attr: AnyObject, in range: NSRange? = nil) -> Self {
+        let range = range ?? NSRange(location: 0, length: self.length)
+        enumerateAttribute(attrName, in: range, options: .reverse) { object, range, pointer in
+            if object == nil {
+                self.addAttributes([attrName: attr], range: range)
+            }
+        }
+        
+        return self
+    }
 }
