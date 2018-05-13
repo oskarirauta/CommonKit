@@ -8,7 +8,7 @@
 
 import Foundation
 
-@IBDesignable open class UILabelPadded: UILabel {
+open class UILabelPadded: UILabel {
     
     open var padding: UIEdgeInsets? = nil {
         didSet { self.invalidateIntrinsicContentSize() }
