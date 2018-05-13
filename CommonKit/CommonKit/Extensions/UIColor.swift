@@ -78,7 +78,25 @@ public extension UIColor {
         get { return UIColor(red: 210.0/255.0, green: 213.0/255.0, blue: 219.0/255.0, alpha: 1.0) }
     }
     
-    public func withAddedBlue(addedBlue: CGFloat) -> UIColor {
+    public func withAddedRed(_ addedRed: CGFloat) -> UIColor {
+        var red: CGFloat = 0.0
+        var green: CGFloat = 0.0
+        var blue: CGFloat = 0.0
+        var alpha: CGFloat = 0.0
+        self.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
+        return UIColor(red: ( red + addedRed ) > 1.0 ? 1.0 : ( red + addedRed ), green: green, blue: blue, alpha: alpha)
+    }
+
+    public func withAddedGreen(_ addedGreen: CGFloat) -> UIColor {
+        var red: CGFloat = 0.0
+        var green: CGFloat = 0.0
+        var blue: CGFloat = 0.0
+        var alpha: CGFloat = 0.0
+        self.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
+        return UIColor(red: red, green: ( green + addedGreen ) > 1.0 ? 1.0 : ( green + addedGreen ), blue: blue, alpha: alpha)
+    }
+
+    public func withAddedBlue(_ addedBlue: CGFloat) -> UIColor {
         var red: CGFloat = 0.0
         var green: CGFloat = 0.0
         var blue: CGFloat = 0.0
