@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6E1C883020A6C0910042055F /* AttributedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1C882F20A6C0910042055F /* AttributedLabel.swift */; };
 		6E1C883220A6C40E0042055F /* UILabelPadded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1C883120A6C40E0042055F /* UILabelPadded.swift */; };
 		6E3C4FE220A0E119009C3ED7 /* CommonKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E3C4FE020A0E119009C3ED7 /* CommonKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6E3C4FEC20A0E181009C3ED7 /* CommonFuncs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3C4FEB20A0E180009C3ED7 /* CommonFuncs.swift */; };
@@ -37,7 +36,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6E1C882F20A6C0910042055F /* AttributedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributedLabel.swift; sourceTree = "<group>"; };
 		6E1C883120A6C40E0042055F /* UILabelPadded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelPadded.swift; sourceTree = "<group>"; };
 		6E3C4FDD20A0E119009C3ED7 /* CommonKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CommonKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E3C4FE020A0E119009C3ED7 /* CommonKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonKit.h; sourceTree = "<group>"; };
@@ -64,7 +62,6 @@
 		6E3C500120A0E1B0009C3ED7 /* UIControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIControl.swift; sourceTree = "<group>"; };
 		6E3C500220A0E1B0009C3ED7 /* DispatchTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DispatchTime.swift; sourceTree = "<group>"; };
 		6E3C500320A0E1B0009C3ED7 /* Bool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bool.swift; sourceTree = "<group>"; };
-		6E3C505620A0E901009C3ED7 /* UILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		6E3C505720A0E902009C3ED7 /* UIWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIWindow.swift; sourceTree = "<group>"; };
 		6E3C505820A0E902009C3ED7 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -83,7 +80,6 @@
 		6E1C882E20A6C03E0042055F /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				6E1C882F20A6C0910042055F /* AttributedLabel.swift */,
 				6E1C883120A6C40E0042055F /* UILabelPadded.swift */,
 			);
 			path = Classes;
@@ -158,7 +154,6 @@
 				6E3C4FF220A0E1AE009C3ED7 /* UIScrollView.swift */,
 				6E3C4FF720A0E1AF009C3ED7 /* UIView.swift */,
 				6E3C505820A0E902009C3ED7 /* UIColor.swift */,
-				6E3C505620A0E901009C3ED7 /* UILabel.swift */,
 				6E3C505720A0E902009C3ED7 /* UIWindow.swift */,
 			);
 			path = Extensions;
@@ -263,7 +258,6 @@
 				6E3C501620A0E1B0009C3ED7 /* Bool.swift in Sources */,
 				6E3C501220A0E1B0009C3ED7 /* Creatable.swift in Sources */,
 				6E3C505B20A0E902009C3ED7 /* UIColor.swift in Sources */,
-				6E1C883020A6C0910042055F /* AttributedLabel.swift in Sources */,
 				6E3C500F20A0E1B0009C3ED7 /* String.swift in Sources */,
 				6E3C501120A0E1B0009C3ED7 /* UIResponder.swift in Sources */,
 				6E3C501320A0E1B0009C3ED7 /* NSLayoutConstraint.swift in Sources */,
