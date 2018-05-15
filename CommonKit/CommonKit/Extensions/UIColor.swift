@@ -105,4 +105,32 @@ public extension UIColor {
         return UIColor(red: red, green: green, blue: ( blue + addedBlue ) > 1.0 ? 1.0 : ( blue + addedBlue ), alpha: alpha)
     }
     
+    public func lighter(_ by: CGFloat) -> UIColor {
+        var red: CGFloat = 0.0
+        var green: CGFloat = 0.0
+        var blue: CGFloat = 0.0
+        var alpha: CGFloat = 0.0
+        self.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
+        return UIColor(
+            red: ( red + by ) > 1.0 ? 1.0 : ( red + by ),
+            green: ( green + by ) > 1.0 ? 1.0 : ( green + by ),
+            blue: ( blue + by ) > 1.0 ? 1.0 : ( blue + by ),
+            alpha: alpha
+        )
+    }
+
+    public func darker(_ by: CGFloat) -> UIColor {
+        var red: CGFloat = 0.0
+        var green: CGFloat = 0.0
+        var blue: CGFloat = 0.0
+        var alpha: CGFloat = 0.0
+        self.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
+        return UIColor(
+            red: ( red - by ) < 0.0 ? 0.0 : ( red - by ),
+            green: ( green - by ) < 0.0 ? 0.0 : ( green - by ),
+            blue: ( blue - by ) < 0.0 ? 0.0 : ( blue - by ),
+            alpha: alpha
+        )
+    }
+
 }

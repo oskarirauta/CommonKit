@@ -212,6 +212,18 @@ extension Array: StringArrayProtocol where Element == String {
     
 }
 
+extension Array where Element == String {
+
+    public var lowercased: [String] {
+        get { return self.map { $0.lowercased() } }
+    }
+    
+    public var uppercased: [String] {
+        get { return self.map { $0.uppercased() } }
+    }
+    
+}
+
 extension Range where Bound == String.Index {
     public var nsRange:NSRange {
         get {
