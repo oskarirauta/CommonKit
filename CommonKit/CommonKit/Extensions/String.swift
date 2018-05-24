@@ -29,13 +29,12 @@ extension String {
     public var length: Int { get { return self.count }}
     
     public var string: String { get { return self }}
-    
-    public var lastPathComponent: String {
-        get { return (self as NSString).lastPathComponent }}
+
+    public var lastPathComponent: String { get { return (self as NSString).lastPathComponent }}
     
     public var pathExtension: String {
         get { return (self as NSString).pathExtension }}
-    
+
     public var stringByDeletingLastPathComponent: String {
         get { return (self as NSString).deletingLastPathComponent }}
     
@@ -112,6 +111,10 @@ extension String {
     public func substring(to: Int) -> String {
         let end = index(endIndex, offsetBy: -to)
         return String(self[startIndex ..< end])
+    }
+    
+    public func substring(from: Int, maxLength: Int) -> String {
+        return String(self.substring(from: from).prefix(maxLength))
     }
     
     public subscript (r: CountableClosedRange<Int>) -> String? {
@@ -192,6 +195,13 @@ extension String {
             Array(Array(self)[$0..<min($0 + every, Array(self).count)])
             }.joined(separator: separator))
     }
+    
+    public func minimumLength(of count: Int, filler: Character) -> String {
+        var str: String = self
+        while str.count < count { str.append(filler) }
+        return str
+    }
+
 }
 
 public protocol StringArrayProtocol {
@@ -232,4 +242,11 @@ extension Range where Bound == String.Index {
                             self.lowerBound.encodedOffset)
         }
     }
+}
+
+extension Substring {
+    
+    var string: String {
+        get { return String(self) }
+    }    
 }
