@@ -6,6 +6,7 @@
 //  Copyright © 2018 Oskari Rauta. All rights reserved.
 //
 
+import UIKit
 import Foundation
 
 public protocol UIRectCornerMaskProtocol {

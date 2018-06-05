@@ -7,9 +7,10 @@
 //
 
 import Foundation
+import UIKit
 
 extension NSAttributedString {
-    
+
     public func numberOfLines(with width: CGFloat) -> Int {
         
         let path = UIBezierPath(rect: CGRect(x: 0, y: 0, width: width, height: CGFloat(MAXFLOAT)))

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 public var isIpad: Bool {
     get { return UIDevice.current.model.range(of: "iPad") != nil ? true : false }

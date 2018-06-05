@@ -4,4 +4,7 @@
    <FileRef
       location = "group:CommonKit/CommonKit.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:Package.swift">
+   </FileRef>
 </Workspace>

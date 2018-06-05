@@ -6,6 +6,9 @@
 //  Copyright © 2018 Oskari Rauta. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
+#import "TargetConditionals.h"
+
 #import <UIKit/UIKit.h>
 
 //! Project version number for CommonKit.

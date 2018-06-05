@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 public protocol NSLayoutConstraintPriorityProtocol {
     func withPriority(_ priority: Int) -> NSLayoutConstraint

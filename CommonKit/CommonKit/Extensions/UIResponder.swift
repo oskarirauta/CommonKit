@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 fileprivate var firstResponderRef: UIResponder? = nil
 

@@ -6,6 +6,8 @@
 //  Copyright © 2018 Oskari Rauta. All rights reserved.
 //
 
+import Foundation
+
 public protocol EnumCollection: Hashable {
     static var allValues: [Self] { get }
 }
