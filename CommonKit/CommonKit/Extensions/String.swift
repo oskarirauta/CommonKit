@@ -14,14 +14,9 @@ public protocol IsEmptyProtocol {
 
 extension CharacterSet {
     public func contains(_ character: Character) -> Bool {
-        let string = String(character)
+        let string: String = String(character)
         return string.rangeOfCharacter(from: self, options: [], range: string.startIndex..<string.endIndex) != nil
     }
-}
-
-extension Optional: IsEmptyProtocol where Wrapped == String {
-    
-    public var isEmpty: Bool { get { return self?.isEmpty ?? true }}
 }
 
 extension String {

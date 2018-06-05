@@ -1,6 +1,7 @@
 Pod::Spec.new do |s|
   s.name             = 'CommonKit'
-  s.version          = '1.2.1'
+  s.version          = '1.2.2'
+  s.license          = { :type => 'Free', :text => 'Free' }
   s.summary          = 'A Swift framework with some common extensions and functions'
  
   s.description      = <<-DESC
@@ -14,7 +15,8 @@ since extensions for UILabel could not provide this functionality.
   s.homepage         = 'https://github.com/oskarirauta/CommonKit'
   s.author           = { 'Oskari Rauta' => 'oskari.rauta@gmail.com' }
   s.source           = { :git => 'https://github.com/oskarirauta/CommonKit.git', :tag => s.version.to_s }
- 
+
+  s.swift_version = '4.0' 
   s.ios.deployment_target = '11.0'
   s.source_files = 'CommonKit/CommonKit/Extensions/*.swift', "CommonKit/CommonKit/Types/*.swift", "CommonKit/CommonKit/Classes/*.swift", "CommonKit/CommonKit/Functions/*.swift"
  
