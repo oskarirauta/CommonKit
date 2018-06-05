@@ -16,6 +16,6 @@ since extensions for UILabel could not provide this functionality.
   s.source           = { :git => 'https://github.com/oskarirauta/CommonKit.git', :tag => s.version.to_s }
  
   s.ios.deployment_target = '11.0'
-  s.source_files = 'CommonKit/Extensions/*.swift', "CommonKit/Types/*.swift", "CommonKit/Classes/*.swift", "CommonKit/Functions/*.swift"
+  s.source_files = 'CommonKit/CommonKit/Extensions/*.swift', "CommonKit/CommonKit/Types/*.swift", "CommonKit/CommonKit/Classes/*.swift", "CommonKit/CommonKit/Functions/*.swift"
  
 end
