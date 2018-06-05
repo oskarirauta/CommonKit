@@ -8,7 +8,7 @@ This framework is supposed to give you a faster start with your project by combi
 ### CocoaPods
 CommonKit is now available through CocoaPods.
 Here's a sample Podfile:
-'''
+```
 source 'https://github.com/CocoaPods/Specs.git'
 
 # inhibit_all_warnings!
@@ -19,4 +19,4 @@ platform :ios, '11.0'
 target 'YOURPROJECT' do
         pod 'CommonKit', git: 'https://github.com/oskarirauta/CommonKit.git'
 end
-'''
+```
