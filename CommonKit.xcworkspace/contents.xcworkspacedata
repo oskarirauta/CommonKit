@@ -2,9 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:CommonKit/CommonKit.xcodeproj">
+      location = "group:AppLocaleExample/AppLocaleExample.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Package.swift">
+      location = "group:CommonKit/CommonKit.xcodeproj">
    </FileRef>
 </Workspace>
