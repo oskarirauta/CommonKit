@@ -19,6 +19,15 @@ Example is provided.
 ### MathKit
 MathKit framework was merged with CommonKit since release 1.2.6.
 
+### DateKit
+DateKit framework was merged with CommonKit since release 1.2.7.
+DateKit contains various Date extensions and general helpers for handling date and time in UTC format.
+
+### DispatchKit
+DispatchKit framework was merged with CommonKit since release 1.2.7.
+DispatchKit contains extensions to DispatchQueue and a simple backgrounding task management.
+Example code included.
+
 ### NumPad class
 NumPad class provides a NumPad style keyboard for iOS platforms with some styling properties.
 Class can have type set to one of following types:
