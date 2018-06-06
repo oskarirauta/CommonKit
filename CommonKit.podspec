@@ -34,6 +34,13 @@ since extensions for UILabel could not provide this functionality.
   s.swift_version = '4.0' 
   s.ios.deployment_target = '11.0'
   s.source_files = [
+			'CommonKit/FontKit/Types/*.swift',
+			'CommonKit/FontKit/Extensions/*.swift',
+			'CommonKit/FontKit/Classes/*.swift',
+			'CommonKit/FontKit/UI/*.swift',
+			'CommonKit/FontKit/FontAwesome/*.swift',
+			'CommonKit/FontKit/MaterialIcons/*.swift',
+			'CommonKit/FontKit/FoundationIcons/*.swift',
 			'CommonKit/AttributedStringWrapper/*.swift',
 			'CommonKit/Currency/Protocols/*.swift',
 			'CommonKit/Currency/Types/*.swift',
@@ -60,6 +67,8 @@ since extensions for UILabel could not provide this functionality.
 		]
 
   s.resources = [
+		'CommonKit/FontKit/Resources/*.otf',
+		'CommonKit/FontKit/Resources/*.ttf',
 		'CommonKit/NumPad/Resources/NumPad.xcassets',
 		'CommonKit/Currency/Resources/CurrencyKit.xcassets'
 		]
