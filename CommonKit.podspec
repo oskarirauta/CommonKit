@@ -17,6 +17,7 @@ since extensions for UILabel could not provide this functionality.
  - Merged: DateKit support. Extension to Date and general helpers to handle dates in UTC timezone.
  - Merged: DispatchKit. Extensions to DispatchQueue and a simple but powerful backgrounding Task Manager support.
  - Merged: CurrencyKit. Framework helps presenting money.
+ - Merged: AttributedStringWrapper by gaoyu. I didn't write this, but it's great work, and I didn't want to add it is a dependency.
                        DESC
  
   s.homepage         = 'https://github.com/oskarirauta/CommonKit'
@@ -33,6 +34,7 @@ since extensions for UILabel could not provide this functionality.
   s.swift_version = '4.0' 
   s.ios.deployment_target = '11.0'
   s.source_files = [
+			'CommonKit/AttributedStringWrapper/*.swift',
 			'CommonKit/Currency/Protocols/*.swift',
 			'CommonKit/Currency/Types/*.swift',
 			'CommonKit/Currency/Extensions/*.swift',
