@@ -19,14 +19,14 @@ Example is provided.
 ### MathKit
 MathKit framework was merged with CommonKit since release 1.2.6.
 
-# NumPad class
+### NumPad class
 NumPad class provides a NumPad style keyboard for iOS platforms with some styling properties.
 Class can have type set to one of following types:
   - number: Simple digit input
   - decimal: Decimal number input (adds decimal point button)
   - phone: Phone number input ( adds + button and changes appearance of buttons in portrait mode )
   
-# NumPad Styling
+### NumPad Styling
 NumPad can be styled with following attributes:
   - overlayColor ( view background )
   - backgroundColor ( button background )
@@ -39,10 +39,10 @@ NumPad can be styled with following attributes:
   - phoneCharFont ( when phone type is used, this font is used for letters )
   - backspaceColor ( color of backspace icon )
 
-# DoneBar class
+### DoneBar class
 Donebar is a fast UIToolbar initializer with Done button aligned to right.
 
-# Usage
+### Usage
 Used with UITextField or UITextView.
 
 ```
@@ -60,7 +60,7 @@ Steps:
 
 See provided example.
 
-# Screenshots
+### Screenshots
 
 ![Screenshot of decimal keyboard](https://raw.githubusercontent.com/oskarirauta/CommonKit/master/Screenshots/Decimal.png)   ![Screenshot of phone keyboard](https://raw.githubusercontent.com/oskarirauta/CommonKit/master/Screenshots/Phone.png)
 
