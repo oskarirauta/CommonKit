@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'CommonKit'
-  s.version          = '1.2.5'
+  s.version          = '1.2.6'
   s.license          = { :type => 'Free', :text => 'Free' }
   s.summary          = 'A Swift framework with some common extensions and functions'
  
@@ -13,6 +13,7 @@ since extensions for UILabel could not provide this functionality.
 
  - Merged: LocaleKit support. LocaleKit allows a fixed App wide locale to be defined.
  - Merged: NumPad. NumPad for both iPhone and iPad, also with phone style keypad.
+ - Merged: MathKit support. Math extensions are now merged to CommonKit.
                        DESC
  
   s.homepage         = 'https://github.com/oskarirauta/CommonKit'
@@ -28,6 +29,7 @@ since extensions for UILabel could not provide this functionality.
   s.swift_version = '4.0' 
   s.ios.deployment_target = '11.0'
   s.source_files = [
+			'CommonKit/Math/Extensions/*.swift',
 			'CommonKit/CommonKit/Extensions/*.swift',
 			'CommonKit/CommonKit/Types/*.swift',
 			'CommonKit/CommonKit/Classes/*.swift',
