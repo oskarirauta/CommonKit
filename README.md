@@ -7,7 +7,7 @@ This framework is supposed to give you a faster start with your project by combi
 
 This framework is base for some other frameworks I provide, whilst as alone, it doesn't offer that much.
 
-### LocaleKit
+### AppLocale
 My LocaleKit framework has been merged with CommonKit since release 1.2.3.
 LocaleKit allows App wide fixed locale to be defined and also provides some extended functionality to Locale as well while providing some simple data formatting options.
 
