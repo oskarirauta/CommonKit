@@ -11,6 +11,9 @@
       location = "group:DispatchExample/DispatchExample.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:CurrencyExample/CurrencyExample.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:CommonKit/CommonKit.xcodeproj">
    </FileRef>
 </Workspace>

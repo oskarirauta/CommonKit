@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'CommonKit'
-  s.version          = '1.2.8'
+  s.version          = '1.2.9'
   s.license          = { :type => 'Free', :text => 'Free' }
   s.summary          = 'A Swift framework with some common extensions and functions'
  
@@ -16,6 +16,7 @@ since extensions for UILabel could not provide this functionality.
  - Merged: MathKit support. Math extensions are now merged to CommonKit.
  - Merged: DateKit support. Extension to Date and general helpers to handle dates in UTC timezone.
  - Merged: DispatchKit. Extensions to DispatchQueue and a simple but powerful backgrounding Task Manager support.
+ - Merged: CurrencyKit. Framework helps presenting money.
                        DESC
  
   s.homepage         = 'https://github.com/oskarirauta/CommonKit'
@@ -31,6 +32,10 @@ since extensions for UILabel could not provide this functionality.
   s.swift_version = '4.0' 
   s.ios.deployment_target = '11.0'
   s.source_files = [
+			'CommonKit/Currency/Protocols/*.swift',
+			'CommonKit/Currency/Types/*.swift',
+			'CommonKit/Currency/Extensions/*.swift',
+			'CommonKit/Currency/Classes/*.swift',
 			'CommonKit/Dispatch/Protocols/*.swift',
 			'CommonKit/Dispatch/Extensions/*.swift',
 			'CommonKit/Dispatch/Classes/*.swift',
@@ -50,6 +55,10 @@ since extensions for UILabel could not provide this functionality.
 			'CommonKit/NumPad/Types/*.swift',
 			'CommonKit/NumPad/Classes/*.swift'
 		]
-  s.resources = [ 'CommonKit/NumPad/Resources/NumPad.xcassets' ]
+
+  s.resources = [
+		'CommonKit/NumPad/Resources/NumPad.xcassets',
+		'CommonKit/Currency/Resources/CurrencyKit.xcassets'
+		]
  
 end
