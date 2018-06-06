@@ -11,6 +11,14 @@ This framework is base for some other frameworks I provide, whilst as alone, it 
 My LocaleKit framework has been merged with CommonKit since release 1.2.3.
 LocaleKit allows App wide fixed locale to be defined and also provides some extended functionality to Locale as well while providing some simple data formatting options.
 
+### NumPad
+My NumPad framework has been merged with CommonKit since release 1.2.4.
+NumPad is a numeric keyboard (with some styling options, for example, phone style) which works on both, iPhone and iPad. Also provided is a DoneBar, ready accessory view with Done button for keyboards without Enter button.
+Example is provided.
+
+### Examples
+Examples come with Podfiles, so go to examples root directory and execute ```pod install``` to enable compilation.
+
 ### CocoaPods
 CommonKit is now available through CocoaPods.
 Here's a sample Podfile:
