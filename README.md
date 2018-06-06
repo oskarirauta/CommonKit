@@ -8,22 +8,25 @@ This framework is supposed to give you a faster start with your project by combi
 This framework is base for some other frameworks I provide, whilst as alone, it doesn't offer that much.
 
 ### AppLocale
-My LocaleKit framework has been merged with CommonKit since release 1.2.3.
+LocaleKit framework was merged with CommonKit since release 1.2.3.
 LocaleKit allows App wide fixed locale to be defined and also provides some extended functionality to Locale as well while providing some simple data formatting options.
 
 ### NumPad
-My NumPad framework has been merged with CommonKit since release 1.2.4.
+My NumPad framework was merged with CommonKit since release 1.2.4.
 NumPad is a numeric keyboard (with some styling options, for example, phone style) which works on both, iPhone and iPad. Also provided is a DoneBar, ready accessory view with Done button for keyboards without Enter button.
 Example is provided.
 
-# NumPad class
+### MathKit
+MathKit framework was merged with CommonKit since release 1.2.6.
+
+### NumPad class
 NumPad class provides a NumPad style keyboard for iOS platforms with some styling properties.
 Class can have type set to one of following types:
   - number: Simple digit input
   - decimal: Decimal number input (adds decimal point button)
   - phone: Phone number input ( adds + button and changes appearance of buttons in portrait mode )
   
-# NumPad Styling
+### NumPad Styling
 NumPad can be styled with following attributes:
   - overlayColor ( view background )
   - backgroundColor ( button background )
@@ -36,13 +39,10 @@ NumPad can be styled with following attributes:
   - phoneCharFont ( when phone type is used, this font is used for letters )
   - backspaceColor ( color of backspace icon )
 
-# DoneBar class
+### DoneBar class
 Donebar is a fast UIToolbar initializer with Done button aligned to right.
 
-# LocaleKit requirement
-I use LocaleKit framework widely. This requires minimum amount of LocaleKit, but uses it for decimal separator character.
-
-# Usage
+### Usage
 Used with UITextField or UITextView.
 
 ```
@@ -60,12 +60,11 @@ Steps:
 
 See provided example.
 
-# Screenshots
+### Screenshots
 
 ![Screenshot of decimal keyboard](https://raw.githubusercontent.com/oskarirauta/CommonKit/master/Screenshots/Decimal.png)   ![Screenshot of phone keyboard](https://raw.githubusercontent.com/oskarirauta/CommonKit/master/Screenshots/Phone.png)
 
 ![Landscape screenshot](https://raw.githubusercontent.com/oskarirauta/CommonKit/master/Screenshots/Landscape.png)
-
 
 ### Examples
 Examples come with Podfiles, so go to examples root directory and execute ```pod install``` to enable compilation.
