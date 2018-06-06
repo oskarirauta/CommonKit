@@ -11,7 +11,6 @@
 		6E00BDB920C854FA00C68DBD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E00BDB820C854FA00C68DBD /* ViewController.swift */; };
 		6E00BDBE20C854FB00C68DBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E00BDBD20C854FB00C68DBD /* Assets.xcassets */; };
 		6E00BDC120C854FB00C68DBD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E00BDBF20C854FB00C68DBD /* LaunchScreen.storyboard */; };
-		6E00BDCA20C8550900C68DBD /* CommonKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E00BDC920C8550900C68DBD /* CommonKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +28,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E00BDCA20C8550900C68DBD /* CommonKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
