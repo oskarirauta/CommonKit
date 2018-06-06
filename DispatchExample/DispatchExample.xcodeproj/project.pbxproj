@@ -11,6 +11,7 @@
 		6E00BDB920C854FA00C68DBD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E00BDB820C854FA00C68DBD /* ViewController.swift */; };
 		6E00BDBE20C854FB00C68DBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E00BDBD20C854FB00C68DBD /* Assets.xcassets */; };
 		6E00BDC120C854FB00C68DBD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E00BDBF20C854FB00C68DBD /* LaunchScreen.storyboard */; };
+		6E3FB91020C8A40A0030E838 /* CommonKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E3FB90F20C8A40A0030E838 /* CommonKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,7 +21,7 @@
 		6E00BDBD20C854FB00C68DBD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6E00BDC020C854FB00C68DBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6E00BDC220C854FB00C68DBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6E00BDC920C8550900C68DBD /* CommonKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CommonKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E3FB90F20C8A40A0030E838 /* CommonKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CommonKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -28,6 +29,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E3FB91020C8A40A0030E838 /* CommonKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -39,7 +41,7 @@
 			children = (
 				6E00BDB520C854FA00C68DBD /* DispatchExample */,
 				6E00BDB420C854FA00C68DBD /* Products */,
-				6E00BDC820C8550900C68DBD /* Frameworks */,
+				6E3FB90E20C8A40A0030E838 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,10 +65,10 @@
 			path = DispatchExample;
 			sourceTree = "<group>";
 		};
-		6E00BDC820C8550900C68DBD /* Frameworks */ = {
+		6E3FB90E20C8A40A0030E838 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6E00BDC920C8550900C68DBD /* CommonKit.framework */,
+				6E3FB90F20C8A40A0030E838 /* CommonKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

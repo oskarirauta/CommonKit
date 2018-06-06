@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E3FB90820C8A3B90030E838 /* CommonKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E3FB90720C8A3B90030E838 /* CommonKit.framework */; };
 		6EF2E15A20C7ACFE00AA108B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF2E15920C7ACFE00AA108B /* AppDelegate.swift */; };
 		6EF2E15C20C7ACFE00AA108B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF2E15B20C7ACFE00AA108B /* ViewController.swift */; };
 		6EF2E16120C7ACFF00AA108B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6EF2E16020C7ACFF00AA108B /* Assets.xcassets */; };
@@ -14,14 +15,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6E3FB90720C8A3B90030E838 /* CommonKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CommonKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EF2E15620C7ACFE00AA108B /* AppLocaleExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppLocaleExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EF2E15920C7ACFE00AA108B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6EF2E15B20C7ACFE00AA108B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		6EF2E16020C7ACFF00AA108B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6EF2E16320C7ACFF00AA108B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6EF2E16520C7ACFF00AA108B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6EF2E16C20C7AD0900AA108B /* CommonKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CommonKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6EF2E17120C7AD1900AA108B /* CommonKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CommonKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,18 +29,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E3FB90820C8A3B90030E838 /* CommonKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6E3FB90620C8A3B90030E838 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6E3FB90720C8A3B90030E838 /* CommonKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		6EF2E14D20C7ACFE00AA108B = {
 			isa = PBXGroup;
 			children = (
 				6EF2E15820C7ACFE00AA108B /* AppLocaleExample */,
 				6EF2E15720C7ACFE00AA108B /* Products */,
-				6EF2E16B20C7AD0900AA108B /* Frameworks */,
+				6E3FB90620C8A3B90030E838 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,15 +71,6 @@
 				6EF2E16520C7ACFF00AA108B /* Info.plist */,
 			);
 			path = AppLocaleExample;
-			sourceTree = "<group>";
-		};
-		6EF2E16B20C7AD0900AA108B /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				6EF2E17120C7AD1900AA108B /* CommonKit.framework */,
-				6EF2E16C20C7AD0900AA108B /* CommonKit.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

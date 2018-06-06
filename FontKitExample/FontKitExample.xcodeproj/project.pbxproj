@@ -11,7 +11,7 @@
 		6E00BE9C20C89DC400C68DBD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E00BE9B20C89DC400C68DBD /* ViewController.swift */; };
 		6E00BEA120C89DC500C68DBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E00BEA020C89DC500C68DBD /* Assets.xcassets */; };
 		6E00BEA420C89DC500C68DBD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E00BEA220C89DC500C68DBD /* LaunchScreen.storyboard */; };
-		6E00BEAD20C89DFD00C68DBD /* CommonKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E00BEAC20C89DFD00C68DBD /* CommonKit.framework */; };
+		6E3FB91620C8A4150030E838 /* CommonKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E3FB91520C8A4150030E838 /* CommonKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,7 +21,7 @@
 		6E00BEA020C89DC500C68DBD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6E00BEA320C89DC500C68DBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6E00BEA520C89DC500C68DBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6E00BEAC20C89DFD00C68DBD /* CommonKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CommonKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E3FB91520C8A4150030E838 /* CommonKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CommonKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,7 +29,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E00BEAD20C89DFD00C68DBD /* CommonKit.framework in Frameworks */,
+				6E3FB91620C8A4150030E838 /* CommonKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,7 +41,7 @@
 			children = (
 				6E00BE9820C89DC400C68DBD /* FontKitExample */,
 				6E00BE9720C89DC400C68DBD /* Products */,
-				6E00BEAB20C89DFD00C68DBD /* Frameworks */,
+				6E3FB91420C8A4150030E838 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -65,10 +65,10 @@
 			path = FontKitExample;
 			sourceTree = "<group>";
 		};
-		6E00BEAB20C89DFD00C68DBD /* Frameworks */ = {
+		6E3FB91420C8A4150030E838 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6E00BEAC20C89DFD00C68DBD /* CommonKit.framework */,
+				6E3FB91520C8A4150030E838 /* CommonKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

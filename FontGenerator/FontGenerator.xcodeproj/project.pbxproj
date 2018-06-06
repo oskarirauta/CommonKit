@@ -20,6 +20,7 @@
 		6E00BE7F20C8910300C68DBD /* MaterialIcons-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E00BE7420C8908300C68DBD /* MaterialIcons-Regular.ttf */; };
 		6E00BE8420C8955400C68DBD /* foundation-icons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E00BE8320C8954500C68DBD /* foundation-icons.ttf */; };
 		6E00BE8620C895B900C68DBD /* foundation-icons.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6E00BE8520C895B900C68DBD /* foundation-icons.txt */; };
+		6E3FB91820C8A41B0030E838 /* CommonKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E3FB91720C8A41B0030E838 /* CommonKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		6E00BE8120C8913C00C68DBD /* CommonKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CommonKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E00BE8320C8954500C68DBD /* foundation-icons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "foundation-icons.ttf"; sourceTree = "<group>"; };
 		6E00BE8520C895B900C68DBD /* foundation-icons.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "foundation-icons.txt"; sourceTree = "<group>"; };
+		6E3FB91720C8A41B0030E838 /* CommonKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CommonKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E3FB91820C8A41B0030E838 /* CommonKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,6 +112,7 @@
 		6E00BE8020C8913C00C68DBD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6E3FB91720C8A41B0030E838 /* CommonKit.framework */,
 				6E00BE8120C8913C00C68DBD /* CommonKit.framework */,
 			);
 			name = Frameworks;

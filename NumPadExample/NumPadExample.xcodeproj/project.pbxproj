@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E3FB90B20C8A3BF0030E838 /* CommonKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E3FB90A20C8A3BF0030E838 /* CommonKit.framework */; };
+		6E3FB90D20C8A4030030E838 /* PhoneNumberKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E3FB90C20C8A4030030E838 /* PhoneNumberKit.framework */; };
 		6E74546920C7F9CA00A35FC9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E74546820C7F9CA00A35FC9 /* AppDelegate.swift */; };
 		6E74546B20C7F9CA00A35FC9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E74546A20C7F9CA00A35FC9 /* ViewController.swift */; };
 		6E74547020C7F9CC00A35FC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E74546F20C7F9CC00A35FC9 /* Assets.xcassets */; };
@@ -14,14 +16,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6E3FB90A20C8A3BF0030E838 /* CommonKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CommonKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E3FB90C20C8A4030030E838 /* PhoneNumberKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PhoneNumberKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E74546520C7F9CA00A35FC9 /* NumPadExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NumPadExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E74546820C7F9CA00A35FC9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6E74546A20C7F9CA00A35FC9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		6E74546F20C7F9CC00A35FC9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6E74547220C7F9CC00A35FC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6E74547420C7F9CC00A35FC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6E74547B20C7FA6F00A35FC9 /* CommonKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CommonKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6E74547D20C7FA7600A35FC9 /* PhoneNumberKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PhoneNumberKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,18 +31,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E3FB90D20C8A4030030E838 /* PhoneNumberKit.framework in Frameworks */,
+				6E3FB90B20C8A3BF0030E838 /* CommonKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6E3FB90920C8A3BF0030E838 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6E3FB90C20C8A4030030E838 /* PhoneNumberKit.framework */,
+				6E3FB90A20C8A3BF0030E838 /* CommonKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		6E74545C20C7F9CA00A35FC9 = {
 			isa = PBXGroup;
 			children = (
 				6E74546720C7F9CA00A35FC9 /* NumPadExample */,
 				6E74546620C7F9CA00A35FC9 /* Products */,
-				6E74547A20C7FA6F00A35FC9 /* Frameworks */,
+				6E3FB90920C8A3BF0030E838 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,15 +75,6 @@
 				6E74547420C7F9CC00A35FC9 /* Info.plist */,
 			);
 			path = NumPadExample;
-			sourceTree = "<group>";
-		};
-		6E74547A20C7FA6F00A35FC9 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				6E74547D20C7FA7600A35FC9 /* PhoneNumberKit.framework */,
-				6E74547B20C7FA6F00A35FC9 /* CommonKit.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
