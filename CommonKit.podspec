@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'CommonKit'
-  s.version          = '1.2.4'
+  s.version          = '1.2.5'
   s.license          = { :type => 'Free', :text => 'Free' }
   s.summary          = 'A Swift framework with some common extensions and functions'
  
@@ -21,7 +21,18 @@ since extensions for UILabel could not provide this functionality.
 
   s.swift_version = '4.0' 
   s.ios.deployment_target = '11.0'
-  s.source_files = 'CommonKit/CommonKit/Protocols/*.swift', 'CommonKit/CommonKit/Extensions/*.swift', 'CommonKit/CommonKit/Types/*.swift', 'CommonKit/CommonKit/Classes/*.swift', 'CommonKit/CommonKit/Functions/*.swift'
-  s.resources = [ 'CommonKit/CommonKit/Resources/NumPad.xcassets' ]
+  s.source_files = [
+			'CommonKit/CommonKit/Extensions/*.swift',
+			'CommonKit/CommonKit/Types/*.swift',
+			'CommonKit/CommonKit/Classes/*.swift',
+			'CommonKit/CommonKit/Functions/*.swift',
+			'CommonKit/AppLocale/Protocols/*.swift',
+			'CommonKit/AppLocale/Types/*.swift',
+			'CommonKit/AppLocale/Extensions/*.swift',
+			'CommonKit/AppLocale/Functions/*.swift',
+			'CommonKit/NumPad/Types/*.swift',
+			'CommonKit/NumPad/Classes/*.swift'
+		]
+  s.resources = [ 'CommonKit/NumPad/Resources/NumPad.xcassets' ]
  
 end

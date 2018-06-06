@@ -112,13 +112,90 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6E1C882E20A6C03E0042055F /* Classes */ = {
+		6E00BD6C20C814EE00C68DBD /* NumPad */ = {
+			isa = PBXGroup;
+			children = (
+				6E00BD6D20C8150D00C68DBD /* Types */,
+				6E00BD6F20C8151C00C68DBD /* Classes */,
+				6E00BD7120C8156900C68DBD /* Resources */,
+			);
+			path = NumPad;
+			sourceTree = "<group>";
+		};
+		6E00BD6D20C8150D00C68DBD /* Types */ = {
+			isa = PBXGroup;
+			children = (
+				6E74544D20C7F6C000A35FC9 /* NumPadStyle.swift */,
+				6E74544F20C7F6C600A35FC9 /* NumPadType.swift */,
+			);
+			path = Types;
+			sourceTree = "<group>";
+		};
+		6E00BD6F20C8151C00C68DBD /* Classes */ = {
 			isa = PBXGroup;
 			children = (
 				6E74545720C7F72E00A35FC9 /* DoneBar.swift */,
 				6E74545120C7F71B00A35FC9 /* NumPad.swift */,
 				6E74545320C7F72100A35FC9 /* NumPadExtension.swift */,
 				6E74545520C7F72700A35FC9 /* NumPadButton.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		6E00BD7020C8152500C68DBD /* AppLocale */ = {
+			isa = PBXGroup;
+			children = (
+				6E00BD7320C8161200C68DBD /* Protocols */,
+				6E00BD7220C815FE00C68DBD /* Types */,
+				6E00BD7420C8161C00C68DBD /* Extensions */,
+				6E00BD7520C8162300C68DBD /* Functions */,
+			);
+			path = AppLocale;
+			sourceTree = "<group>";
+		};
+		6E00BD7120C8156900C68DBD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6E74545A20C7F76F00A35FC9 /* NumPad.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		6E00BD7220C815FE00C68DBD /* Types */ = {
+			isa = PBXGroup;
+			children = (
+				6ED7A94520C7AC5F00CAC025 /* LocaleEntry.swift */,
+			);
+			path = Types;
+			sourceTree = "<group>";
+		};
+		6E00BD7320C8161200C68DBD /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				6ED7A94820C7AC7600CAC025 /* AppLocale.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		6E00BD7420C8161C00C68DBD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6ED7A94A20C7AC8700CAC025 /* Locale.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		6E00BD7520C8162300C68DBD /* Functions */ = {
+			isa = PBXGroup;
+			children = (
+				6ED7A94C20C7ACAB00CAC025 /* val2str.swift */,
+			);
+			path = Functions;
+			sourceTree = "<group>";
+		};
+		6E1C882E20A6C03E0042055F /* Classes */ = {
+			isa = PBXGroup;
+			children = (
 				6E1C883120A6C40E0042055F /* UILabelPadded.swift */,
 			);
 			path = Classes;
@@ -135,6 +212,8 @@
 		6E3C4FD320A0E119009C3ED7 = {
 			isa = PBXGroup;
 			children = (
+				6E00BD7020C8152500C68DBD /* AppLocale */,
+				6E00BD6C20C814EE00C68DBD /* NumPad */,
 				6E3C4FDF20A0E119009C3ED7 /* CommonKit */,
 				6E3C4FDE20A0E119009C3ED7 /* Products */,
 				6E2689FC20C71DAF00ABB28B /* Frameworks */,
@@ -152,12 +231,10 @@
 		6E3C4FDF20A0E119009C3ED7 /* CommonKit */ = {
 			isa = PBXGroup;
 			children = (
-				6ED7A94720C7AC6C00CAC025 /* Protocols */,
 				6E3C4FEA20A0E169009C3ED7 /* Extensions */,
 				6E3C4FE920A0E161009C3ED7 /* Types */,
 				6E1C882E20A6C03E0042055F /* Classes */,
 				6E3C4FE820A0E158009C3ED7 /* Functions */,
-				6E74545920C7F73900A35FC9 /* Resources */,
 				6E3C4FE020A0E119009C3ED7 /* CommonKit.h */,
 				6E3C4FE120A0E119009C3ED7 /* Info.plist */,
 			);
@@ -168,7 +245,6 @@
 			isa = PBXGroup;
 			children = (
 				6E3C4FEB20A0E180009C3ED7 /* CommonFuncs.swift */,
-				6ED7A94C20C7ACAB00CAC025 /* val2str.swift */,
 			);
 			path = Functions;
 			sourceTree = "<group>";
@@ -178,9 +254,6 @@
 			children = (
 				6E3C4FEE20A0E1A0009C3ED7 /* ClosureSleeve.swift */,
 				6E3C4FED20A0E1A0009C3ED7 /* HTMLEntities.swift */,
-				6ED7A94520C7AC5F00CAC025 /* LocaleEntry.swift */,
-				6E74544D20C7F6C000A35FC9 /* NumPadStyle.swift */,
-				6E74544F20C7F6C600A35FC9 /* NumPadType.swift */,
 			);
 			path = Types;
 			sourceTree = "<group>";
@@ -198,7 +271,6 @@
 				6E3C4FF120A0E1AE009C3ED7 /* EnumCollection.swift */,
 				6E3C4FF920A0E1AF009C3ED7 /* Equatable.swift */,
 				6E3C4FF420A0E1AF009C3ED7 /* FileManager.swift */,
-				6ED7A94A20C7AC8700CAC025 /* Locale.swift */,
 				6E3C4FFA20A0E1AF009C3ED7 /* NSAttributedString.swift */,
 				6E3C500020A0E1B0009C3ED7 /* NSLayoutConstraint.swift */,
 				6E3C4FFB20A0E1AF009C3ED7 /* NSMutableArray.swift */,
@@ -217,22 +289,6 @@
 				6E921A1D20B758FB000B1EC9 /* UITableViewCell.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		6E74545920C7F73900A35FC9 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				6E74545A20C7F76F00A35FC9 /* NumPad.xcassets */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		6ED7A94720C7AC6C00CAC025 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				6ED7A94820C7AC7600CAC025 /* AppLocale.swift */,
-			);
-			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
