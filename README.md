@@ -153,6 +153,8 @@ It's built like this:
         cart.append(CartItem(name: "Item5", count: 0, price: 9.0, VAT: 24.0))
 ```
 
+![FontKit](https://raw.githubusercontent.com/oskarirauta/CommonKit/master/Screenshots/FontKit.png)
+
 ### Wow, first framework available which supports FontAwesome v5 in full!
 True... But it ain't that much better from v4, which also had tons of icons, so if you have a project already using v4, updating to this maybe won't make a significant change, icons still are what they are and sometimes more isn't better.
 
