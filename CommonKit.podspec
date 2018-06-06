@@ -19,6 +19,12 @@ since extensions for UILabel could not provide this functionality.
   s.author           = { 'Oskari Rauta' => 'oskari.rauta@gmail.com' }
   s.source           = { :git => 'https://github.com/oskarirauta/CommonKit.git', :tag => s.version.to_s }
 
+  s.screenshots      = [
+			'https://raw.githubusercontent.com/oskarirauta/CommonKit/master/Screenshots/Decimal.png',
+			'https://raw.githubusercontent.com/oskarirauta/CommonKit/master/Screenshots/Phone.png',
+			'https://raw.githubusercontent.com/oskarirauta/CommonKit/master/Screenshots/Landscape.png'
+		]
+
   s.swift_version = '4.0' 
   s.ios.deployment_target = '11.0'
   s.source_files = [
