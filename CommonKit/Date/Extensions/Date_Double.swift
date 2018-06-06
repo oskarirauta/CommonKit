@@ -1,8 +1,8 @@
 //
-//  Double.swift
-//  DateKit
+//  Date_Double.swift
+//  CommonKit
 //
-//  Created by Oskari Rauta on 09/05/2018.
+//  Created by Oskari Rauta on 06/06/2018.
 //  Copyright © 2018 Oskari Rauta. All rights reserved.
 //
 
@@ -25,4 +25,5 @@ extension Double {
     public var clock_minute: Int {
         get { return self.minute == 0 ? 0 : ( self.minute == 25 ? 15 : ( self.minute == 50 ? 30 : 45 )) }
     }
+
 }

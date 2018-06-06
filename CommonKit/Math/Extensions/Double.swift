@@ -9,7 +9,7 @@
 import Foundation
 
 public extension Double {
-    
+        
     var wholePart: Int {
         get { return Int(self) }
     }
