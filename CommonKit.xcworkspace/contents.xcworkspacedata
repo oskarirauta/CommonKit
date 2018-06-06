@@ -5,6 +5,9 @@
       location = "group:AppLocaleExample/AppLocaleExample.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:NumPadExample/NumPadExample.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:CommonKit/CommonKit.xcodeproj">
    </FileRef>
 </Workspace>
