@@ -6,6 +6,6 @@ use_frameworks!
 platform :ios, '11.0'
 
 target 'NumPadExample' do
-        pod 'CommonKit', git: 'https://github.com/oskarirauta/CommonKit.git'
+        pod 'CommonKit', path: '..'
 	pod 'PhoneNumberKit', git: 'https://github.com/oskarirauta/PhoneNumberKit.git'
 end
