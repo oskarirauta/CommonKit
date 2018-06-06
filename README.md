@@ -6,6 +6,7 @@ Various extensions and functions. Some are written by me, some are collected onl
 This framework is supposed to give you a faster start with your project by combining some useful and often used code. Includes few UI classes extending UILabel as well since extensions for UILabel could not provide this functionality.
 
 This framework is base for some other frameworks I provide, whilst as alone, it doesn't offer that much.
+Sorry, that it has grown to massive. Originally my frameworks were more fragmented around; but since most of names that I had chosen for my Frameworks, were already selected, I decided to merge most of my work to this single framework. Anyway, at the end, it's easier to import one module instead of ten...
 
 ### AppLocale
 LocaleKit framework was merged with CommonKit since release 1.2.3.
