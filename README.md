@@ -29,8 +29,19 @@ DispatchKit contains extensions to DispatchQueue and a simple backgrounding task
 Example code included.
 
 ### CurrencyKit
-CurrencyKit framework was merger with CommonKit since release 1.2.9.
+CurrencyKit framework was merged with CommonKit since release 1.2.9.
 CurrencyKit is a money presentation framework for Swift.
+
+### AttributedStringWrapper
+AttributedStringWrapper by loopeer is great. I did not want to include this as a dependency, so I merged it's code with this project. Originally available at here: https://github.com/loopeer/AttributedStringWrapper
+Merged since release 1.3.0.
+
+### FontKit
+FontKit framework was merged with CommonKit since release 1.3.0.
+FontKit provides support for icon fonts. Initial support contains:
+ - FontAwesome5 (3 font types)
+ - MaterialIcons
+ - FoundationIcons
 
 ### NumPad class
 NumPad class provides a NumPad style keyboard for iOS platforms with some styling properties.
@@ -141,6 +152,43 @@ It's built like this:
         cart.append(CartItem(name: "Item5", count: 0, price: 9.0, VAT: 24.0))
 ```
 
+### Wow, first framework available which supports FontAwesome v5 in full!
+True... But it ain't that much better from v4, which also had tons of icons, so if you have a project already using v4, updating to this maybe won't make a significant change, icons still are what they are and sometimes more isn't better.
+
+### What else is provided?
+  - Generator which can be used to generate support to even more fonts
+  - Example
+
+### One can assume that you support all kinds of UI elements with this?
+Sorry, but no - I only made a custom UILabel subclass. Maybe you'd like to fork this and make some add-ons? Good ones definetly are welcome :)
+
+### There propably is a string parser which parses for FontAwesome style css references to icons and returns a AttributedString?
+Yes and no - There's a parser that returns single icon as AttributedString, but you cannot use it like this:
+"Text with fas-address-book picture."
+This will work: "fas-address-book".
+Again, for solution, maybe you'd like to contribute in this as well by forking this?
+
+### How do I use UITitleLabel
+Just as UILabel but it has some more properties. Check the source, here's a quick study:
+UITitleLabel.title = text part of label ( on the right side of icon )
+UITitleLabel.icon = icon part of label ( always on the left side of text )
+UITitleLabel.textOverflows = a boolean determining how to display label's contents. If false, text should always indent so it starts from same position as first line, if text has wraps to multiple lines. If true, text overflows on the next line to start from elements leading coordinate instead.
+
+icon is type of compatibility class, which means there can be multiple ways to fill it in - provided ways are addressing directly to font -> icon, and string parsing to font -> icon. You can make more ways if this isn't sufficient.
+
+### How do I address fonts to icon?
+```
+icon = FontAwesome.brands.apple // Directly addressed
+icon = "fab-apple" // String converted
+```
+
+### Apple suggests that I change my project's Info.plist to list included fonts, should I now do that?
+It's up to you, but if you use this with provided implementations (instead of addressing fonts directly with UIFont initializer) or atleast, first time access them like this, I have provided a automatic resource loader for fonts.
+If you want to use them directly, initialize them first with underscore as variable name, after this, they are usable directly from UIFont initializer - or you can make appropriate changes to your Info.plist, once again, it's up to you.
+
+### Code generator did output code that doesn't compile!
+Yes - it's not perfect. It's just something to get you started - some icon names might need tweaking due to Swift syntax not allowing ones that came from generator. Enumerations provided by me already contain necessary changes.
+
 ### Examples
 Examples come with Podfiles, so go to examples root directory and execute ```pod install``` to enable compilation.
 Examples are provided for:
@@ -148,6 +196,10 @@ Examples are provided for:
  - NumPad ( Depends on my version of PhoneNumberKit, check included Podfile for NumPad )
  - Dispatch: Utilizes included backgrounding task management, check console output.
  - Currency
+
+### Licenses
+Included resources(fonts, etc) might be under influence of different licenses. Some code, especially AttributedStringWrapper, was not created by me. It was provided from 3rd party framework by loopeer: https://github.com/loopeer/AttributedStringWrapper
+Some parts of code can be considered more or less public domain, since ideas or even full implementations might have been derived from forums like StackOverFlow.
 
 ### CocoaPods
 CommonKit is now available through CocoaPods.
