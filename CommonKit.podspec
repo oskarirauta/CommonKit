@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'CommonKit'
-  s.version          = '1.2.9'
+  s.version          = '1.3.0'
   s.license          = { :type => 'Free', :text => 'Free' }
   s.summary          = 'A Swift framework with some common extensions and functions'
  
@@ -17,7 +17,8 @@ since extensions for UILabel could not provide this functionality.
  - Merged: DateKit support. Extension to Date and general helpers to handle dates in UTC timezone.
  - Merged: DispatchKit. Extensions to DispatchQueue and a simple but powerful backgrounding Task Manager support.
  - Merged: CurrencyKit. Framework helps presenting money.
- - Merged: AttributedStringWrapper by gaoyu. I didn't write this, but it's great work, and I didn't want to add it is a dependency.
+ - Merged: AttributedStringWrapper by gaoyu/loopeer. I didn't write this, but it's great work, and I didn't want to add it is a dependency.
+ - Merged: FontKit. Framework provides support for icon fonts. First one with FontAwesome 5 support :)
                        DESC
  
   s.homepage         = 'https://github.com/oskarirauta/CommonKit'
