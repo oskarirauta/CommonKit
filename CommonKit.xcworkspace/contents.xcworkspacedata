@@ -20,6 +20,9 @@
       location = "group:FontGenerator/FontGenerator.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:PopOverExample/PopOverExample.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:CommonKit/CommonKit.xcodeproj">
    </FileRef>
 </Workspace>

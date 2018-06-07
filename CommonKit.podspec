@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'CommonKit'
-  s.version          = '1.3.1'
+  s.version          = '1.3.2'
   s.license          = { :type => 'Free', :text => 'Free' }
   s.summary          = 'A Swift framework with some common extensions and functions'
  
@@ -19,6 +19,7 @@ since extensions for UILabel could not provide this functionality.
  - Merged: CurrencyKit. Framework helps presenting money.
  - Merged: AttributedStringWrapper by gaoyu/loopeer. I didn't write this, but it's great work, and I didn't want to add it is a dependency.
  - Merged: FontKit. Framework provides support for icon fonts. First one with FontAwesome 5 support :)
+ - Merged: PopOverKit. Framework provides support for displaying popover balloons on iPhone and iPad.
                        DESC
  
   s.homepage         = 'https://github.com/oskarirauta/CommonKit'
@@ -36,6 +37,9 @@ since extensions for UILabel could not provide this functionality.
   s.swift_version = '4.0' 
   s.ios.deployment_target = '11.0'
   s.source_files = [
+			'CommonKit/PopOverKit/Protocols/*.swift',
+			'CommonKit/PopOverKit/Extensions/*.swift',
+			'CommonKit/PopOverKit/Classes/*.swift',
 			'CommonKit/FontKit/Types/*.swift',
 			'CommonKit/FontKit/Extensions/*.swift',
 			'CommonKit/FontKit/Classes/*.swift',
