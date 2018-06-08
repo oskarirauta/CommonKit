@@ -15,7 +15,7 @@ open class AlertAction: NSObject, NSCopying {
     
     open var title: String
     open var style: AlertActionStyle
-    var handler: ((AlertAction) -> ())?
+    open var handler: ((AlertAction) -> ())?
     
     @objc open var enabled: Bool {
         didSet {

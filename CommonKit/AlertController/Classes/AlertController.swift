@@ -12,22 +12,23 @@ import UIKit
 open class AlertController: DefaultAlertControllerBaseClass, DefaultAlertActionProtocol, UITextFieldDelegate {
 
     // Settings
-    fileprivate var _tinyButtons: Bool = true
-    open var tinyButtons: Bool {
-        get { return self._tinyButtons }
-        set { self._tinyButtons = newValue }
-    }
+    open private(set) var tinyButtons: Bool = true
     
-    open var titleFont: UIFont { get { return UIFont(name: "HelveticaNeue-Bold", size: 16.5)! }}
-    open var titleTextColor: UIColor { get { return UIColor(red:77/255, green:77/255, blue:77/255, alpha:1.0) }}
+    open var titleFont: UIFont = UIFont(name: "HelveticaNeue-Bold", size: 16.5)!
+    open var titleTextColor: UIColor = UIColor(red:77/255, green:77/255, blue:77/255, alpha:1.0)
     
-    open var messageFont: UIFont { get { return UIFont(name: "HelveticaNeue", size: 14.5)! }}
-    open var messageTextColor: UIColor { get { return UIColor(red:77/255, green:77/255, blue:77/255, alpha:1.0) }}
+    open var messageFont: UIFont = UIFont(name: "HelveticaNeue", size: 14.5)!
+    open var messageTextColor: UIColor = UIColor(red:77/255, green:77/255, blue:77/255, alpha:1.0)
     
-    open var textFieldBorderColor: UIColor { get { return UIColor(red: 203.0/255, green: 203.0/255, blue: 203.0/255, alpha: 1.0) }}
-    open var textFieldBgColor: UIColor { get { return UIColor.white }}
-    open var textFieldHeight: CGFloat { get { return 30.0 }}
-    open var textFieldCornerRadius: CGFloat { get { return 4.0 }}
+    open var textFieldBorderColor: UIColor = UIColor(red: 203.0/255, green: 203.0/255, blue: 203.0/255, alpha: 1.0)
+    open var textFieldBgColor: UIColor = UIColor.white
+    open var textFieldHeight: CGFloat = 30.0
+    open var textFieldCornerRadius: CGFloat = 4.0
+    
+    open lazy var buttonFont: [AlertActionStyle: UIFont] = self.defaultButtonFonts
+    open lazy var buttonTextColor: [AlertActionStyle: UIColor] = self.defaultButtonTextColors
+    open lazy var buttonBgColor: [AlertActionStyle: UIColor] = self.defaultButtonBgColors
+    open lazy var buttonBgColorHighlighted: [AlertActionStyle: UIColor] = self.defaultButtonBgColorHighlighteds
     
     // Message
     open var message: String? = nil
@@ -126,10 +127,10 @@ open class AlertController: DefaultAlertControllerBaseClass, DefaultAlertActionP
     open var buttonContainerHeightConstraint: NSLayoutConstraint? = nil
     
     // TextFields
-    fileprivate(set) var textFields: [AnyObject]?
+    open private(set) var textFields: [AnyObject]?
     
     // Actions
-    open fileprivate(set) var actions: [AnyObject] = []
+    open private(set) var actions: [AnyObject] = []
     
     // Buttons
     open var buttons: Array<AlertButton> = []

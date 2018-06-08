@@ -11,13 +11,19 @@ import UIKit
 
 public protocol AlertActionProtocol {
     
-    var buttonFont: [AlertActionStyle: UIFont] { get }
-    var buttonTextColor: [AlertActionStyle: UIColor] { get }
-    var buttonBgColor: [AlertActionStyle: UIColor] { get }
-    var buttonBgColorHighlighted: [AlertActionStyle: UIColor] { get }
-    var buttonCornerRadius: CGFloat { get }
-    var buttonHeight: CGFloat { get }
-    var buttonMargin: CGFloat { get }
+    var defaultButtonFonts: [AlertActionStyle: UIFont] { get }
+    var defaultButtonTextColors: [AlertActionStyle: UIColor] { get }
+    var defaultButtonBgColors: [AlertActionStyle: UIColor] { get }
+    var defaultButtonBgColorHighlighteds: [AlertActionStyle: UIColor] { get }
+
+    var buttonFont: [AlertActionStyle: UIFont] { get set }
+    var buttonTextColor: [AlertActionStyle: UIColor] { get set }
+    var buttonBgColor: [AlertActionStyle: UIColor] { get set }
+    var buttonBgColorHighlighted: [AlertActionStyle: UIColor] { get set }
+    
+    var buttonCornerRadius: CGFloat { get set }
+    var buttonHeight: CGFloat { get set }
+    var buttonMargin: CGFloat { get set }
     
     func setButton(_ button: inout AlertButton, style: AlertActionStyle, controllerStyle: AlertControllerStyle)
 }
@@ -50,11 +56,11 @@ extension AlertActionProtocol {
     }
 }
 
-protocol DefaultAlertActionProtocol: AlertActionProtocol { }
+public protocol DefaultAlertActionProtocol: AlertActionProtocol { }
 
 extension DefaultAlertActionProtocol {
     
-    public var buttonFont: [AlertActionStyle: UIFont] {
+    public var defaultButtonFonts: [AlertActionStyle: UIFont] {
         get { return [
             .plain : UIFont(name: "HelveticaNeue", size: 16) ?? UIFont.systemFont(ofSize: 16),
             .default : UIFont(name: "HelveticaNeue-Bold", size: 16) ?? UIFont.systemFont(ofSize: 16),
@@ -65,7 +71,7 @@ extension DefaultAlertActionProtocol {
             ] }
     }
     
-    public var buttonTextColor: [AlertActionStyle: UIColor] {
+    public var defaultButtonTextColors: [AlertActionStyle: UIColor] {
         get { return [
             .plain   : UIColor(red: 52/255, green: 152/255, blue: 219/255, alpha: 1.0),
             .default : UIColor.white,
@@ -76,7 +82,7 @@ extension DefaultAlertActionProtocol {
             ] }
     }
     
-    public var buttonBgColor: [AlertActionStyle: UIColor] {
+    public var defaultButtonBgColors: [AlertActionStyle: UIColor] {
         get { return [
             .plain   : UIColor.white,
             .default : UIColor(red: 52/255, green: 152/255, blue: 219/255, alpha:1.0),
@@ -87,7 +93,7 @@ extension DefaultAlertActionProtocol {
             ] }
     }
     
-    public var buttonBgColorHighlighted: [AlertActionStyle: UIColor] {
+    public var defaultButtonBgColorHighlighteds: [AlertActionStyle: UIColor] {
         get { return [
             .plain   : UIColor.lightGray,
             .default : UIColor(red: 74/255, green: 163/255, blue: 223/255, alpha: 1.0),
@@ -97,10 +103,6 @@ extension DefaultAlertActionProtocol {
             .hazard  : UIColor(red: 255/255, green: 79/255, blue: 68/255, alpha: 1.0)
             ] }
     }
-    
-    public var buttonCornerRadius: CGFloat { get { return 4.0 }}
-    public var buttonHeight: CGFloat { get { return  38.0 }}
-    public var buttonMargin: CGFloat { get { return 8.0 }}
     
 }
 

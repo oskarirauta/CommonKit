@@ -759,7 +759,6 @@
 			children = (
 				6E75BAFC20CA629800876950 /* Types */,
 				6E75BAFB20CA628800876950 /* Protocols */,
-				6E75BB0620CA647E00876950 /* Extensions */,
 				6E75BB1320CA69B500876950 /* Templates */,
 				6E75BB0320CA63F900876950 /* Classes */,
 			);
@@ -794,13 +793,6 @@
 				6E75BB1420CA69E200876950 /* AlertController.swift */,
 			);
 			path = Classes;
-			sourceTree = "<group>";
-		};
-		6E75BB0620CA647E00876950 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 		6E75BB1320CA69B500876950 /* Templates */ = {

@@ -18,15 +18,19 @@ open class DefaultAlertControllerBaseClass: UIViewController, AlertControllerVie
     open var preferredStyle: AlertControllerStyle { get { return self._preferredStyle }}
     
     // Settings
-    open var actionSheetBounceHeight: CGFloat { get { return 20.0 }}
-    open var alertViewWidth: CGFloat { get { return 270.0 }}
-    open var alertViewPadding: CGFloat { get { return 12.0 }}
-    open var innerContentWidth: CGFloat { get { return 240.0 }}
+    open var actionSheetBounceHeight: CGFloat = 20.0
+    open var alertViewWidth: CGFloat = 270.0
+    open var alertViewPadding: CGFloat = 12.0
+    open var innerContentWidth: CGFloat = 240.0
     
-    open var overlayColor: UIColor { get { return UIColor(red:0, green:0, blue:0, alpha:0.79) }}
-    open var contentViewBgColor: UIColor { get { return UIColor.white }}
+    open var overlayColor: UIColor = UIColor(red:0, green:0, blue:0, alpha:0.79)
+    open var contentViewBgColor: UIColor = UIColor.white
     
-    open var contentViewDefaultHeight: CGFloat { get { return 150.0 }}
+    open var contentViewDefaultHeight: CGFloat = 150.0
+    
+    open var buttonCornerRadius: CGFloat = 4.0
+    open var buttonHeight: CGFloat = 38.0
+    open var buttonMargin: CGFloat = 8.0
     
     open lazy var overlayView: UIView = {
         [unowned self] in
