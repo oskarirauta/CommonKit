@@ -115,6 +115,9 @@
 		6E75BB1E20CA92F700876950 /* TextViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E75BB1D20CA92F700876950 /* TextViewProtocol.swift */; };
 		6E75BB2020CA93A200876950 /* UITextFieldExtended.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E75BB1F20CA93A200876950 /* UITextFieldExtended.swift */; };
 		6E75BB2220CA93DC00876950 /* UITextViewExtended.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E75BB2120CA93DC00876950 /* UITextViewExtended.swift */; };
+		6E75BB4720CAAC8400876950 /* UIBlockLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E75BB4620CAAC8400876950 /* UIBlockLabel.swift */; };
+		6E75BB4920CAACAD00876950 /* UIRoundLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E75BB4820CAACAD00876950 /* UIRoundLabel.swift */; };
+		6E75BB4B20CAACD500876950 /* UIBottomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E75BB4A20CAACD500876950 /* UIBottomLabel.swift */; };
 		6E921A1A20B758B7000B1EC9 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E921A1920B758B7000B1EC9 /* UITextField.swift */; };
 		6E921A1C20B758E5000B1EC9 /* UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E921A1B20B758E5000B1EC9 /* UITextView.swift */; };
 		6E921A1E20B758FC000B1EC9 /* UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E921A1D20B758FB000B1EC9 /* UITableViewCell.swift */; };
@@ -240,6 +243,9 @@
 		6E75BB1D20CA92F700876950 /* TextViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewProtocol.swift; sourceTree = "<group>"; };
 		6E75BB1F20CA93A200876950 /* UITextFieldExtended.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtended.swift; sourceTree = "<group>"; };
 		6E75BB2120CA93DC00876950 /* UITextViewExtended.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextViewExtended.swift; sourceTree = "<group>"; };
+		6E75BB4620CAAC8400876950 /* UIBlockLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBlockLabel.swift; sourceTree = "<group>"; };
+		6E75BB4820CAACAD00876950 /* UIRoundLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIRoundLabel.swift; sourceTree = "<group>"; };
+		6E75BB4A20CAACD500876950 /* UIBottomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBottomLabel.swift; sourceTree = "<group>"; };
 		6E921A1920B758B7000B1EC9 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		6E921A1B20B758E5000B1EC9 /* UITextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextView.swift; sourceTree = "<group>"; };
 		6E921A1D20B758FB000B1EC9 /* UITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCell.swift; sourceTree = "<group>"; };
@@ -612,6 +618,9 @@
 				6E3FB94E20C9D06C0030E838 /* AssetManager.swift */,
 				6E75BB1F20CA93A200876950 /* UITextFieldExtended.swift */,
 				6E75BB2120CA93DC00876950 /* UITextViewExtended.swift */,
+				6E75BB4620CAAC8400876950 /* UIBlockLabel.swift */,
+				6E75BB4820CAACAD00876950 /* UIRoundLabel.swift */,
+				6E75BB4A20CAACD500876950 /* UIBottomLabel.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -928,10 +937,12 @@
 				6E00BE3320C88E1400C68DBD /* Font.swift in Sources */,
 				6E00BD9620C852F700C68DBD /* UTCDate.swift in Sources */,
 				6E75BB1C20CA92D400876950 /* TextFieldProtocol.swift in Sources */,
+				6E75BB4920CAACAD00876950 /* UIRoundLabel.swift in Sources */,
 				6E00BD9120C852E100C68DBD /* DateFormatter.swift in Sources */,
 				6E3C500C20A0E1B0009C3ED7 /* Equatable.swift in Sources */,
 				6E00BE4120C88E3B00C68DBD /* FontAwesome+brands.swift in Sources */,
 				6E00BD8C20C852D400C68DBD /* MinuteIntervalMode.swift in Sources */,
+				6E75BB4720CAAC8400876950 /* UIBlockLabel.swift in Sources */,
 				6E3FB94F20C9D06C0030E838 /* AssetManager.swift in Sources */,
 				6E00BE8C20C89CBC00C68DBD /* FoundationIcons+regular.swift in Sources */,
 				6E00BE5020C88E6600C68DBD /* FontLoader.swift in Sources */,
@@ -949,6 +960,7 @@
 				6E00BDE220C8826900C68DBD /* CurrencyField.swift in Sources */,
 				6E75BB1E20CA92F700876950 /* TextViewProtocol.swift in Sources */,
 				6E00BDA720C854C600C68DBD /* TaskScheduler.swift in Sources */,
+				6E75BB4B20CAACD500876950 /* UIBottomLabel.swift in Sources */,
 				6ED7A94620C7AC5F00CAC025 /* LocaleEntry.swift in Sources */,
 				6E00BD9420C852EB00C68DBD /* UTCDateFormatter.swift in Sources */,
 				6E00BE4220C88E3B00C68DBD /* FontAwesome.swift in Sources */,
