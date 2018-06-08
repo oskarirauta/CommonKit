@@ -118,6 +118,29 @@
 		6E75BB4720CAAC8400876950 /* UIBlockLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E75BB4620CAAC8400876950 /* UIBlockLabel.swift */; };
 		6E75BB4920CAACAD00876950 /* UIRoundLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E75BB4820CAACAD00876950 /* UIRoundLabel.swift */; };
 		6E75BB4B20CAACD500876950 /* UIBottomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E75BB4A20CAACD500876950 /* UIBottomLabel.swift */; };
+		6E75BB4D20CAB08900876950 /* EditingSectionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E75BB4C20CAB08900876950 /* EditingSectionProtocol.swift */; };
+		6E75BB4F20CAB0EF00876950 /* ParentTableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E75BB4E20CAB0EF00876950 /* ParentTableViewProtocol.swift */; };
+		6E75BB5520CAB31500876950 /* TVKIT_UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E75BB5420CAB31500876950 /* TVKIT_UITableViewCell.swift */; };
+		6E75BB5720CAB4FA00876950 /* ExtendedCellSettingsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E75BB5620CAB4FA00876950 /* ExtendedCellSettingsProtocol.swift */; };
+		6E75BB5920CAB5FD00876950 /* BrowsableCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E75BB5820CAB5FD00876950 /* BrowsableCellProtocol.swift */; };
+		6E75BB5B20CAB81600876950 /* UUIDProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E75BB5A20CAB81600876950 /* UUIDProtocol.swift */; };
+		6E75BB5D20CAB89E00876950 /* CellConstraintProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E75BB5C20CAB89E00876950 /* CellConstraintProtocol.swift */; };
+		6E75BB6020CAB8CD00876950 /* CellConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E75BB5F20CAB8CD00876950 /* CellConstraints.swift */; };
+		6E75BB6220CAB91800876950 /* CellHandlerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E75BB6120CAB91800876950 /* CellHandlerProtocol.swift */; };
+		6E75BB6420CAB95300876950 /* CellReturn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E75BB6320CAB95300876950 /* CellReturn.swift */; };
+		6E75BB6620CAB9B400876950 /* CellHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E75BB6520CAB9B400876950 /* CellHandler.swift */; };
+		6E75BB6820CABA1800876950 /* BackButtonProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E75BB6720CABA1800876950 /* BackButtonProtocol.swift */; };
+		6E75BB6B20CABB9A00876950 /* TVKit.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E75BB6A20CABB9A00876950 /* TVKit.xcassets */; };
+		6E75BB6D20CABC2B00876950 /* TableViewSettingsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E75BB6C20CABC2B00876950 /* TableViewSettingsProtocol.swift */; };
+		6E75BB6F20CABC7900876950 /* TableViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E75BB6E20CABC7800876950 /* TableViewControllerProtocol.swift */; };
+		6E75BB7120CABCD800876950 /* TVKIT_UITableViewHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E75BB7020CABCD800876950 /* TVKIT_UITableViewHeaderFooterView.swift */; };
+		6E75BB7420CAC2E700876950 /* UITableViewControllerExtended.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E75BB7320CAC2E700876950 /* UITableViewControllerExtended.swift */; };
+		6E75BB7620CAC3A100876950 /* UITableViewCellExtended.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E75BB7520CAC3A100876950 /* UITableViewCellExtended.swift */; };
+		6E75BB7820CAC45400876950 /* CellTitleProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E75BB7720CAC45400876950 /* CellTitleProtocol.swift */; };
+		6E75BB7A20CAC4AB00876950 /* MultiBadgeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E75BB7920CAC4AB00876950 /* MultiBadgeProtocol.swift */; };
+		6E75BB7C20CAC4DF00876950 /* CustomBadgeConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E75BB7B20CAC4DF00876950 /* CustomBadgeConvertible.swift */; };
+		6E75BB7E20CAC52000876950 /* UIMultiBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E75BB7D20CAC52000876950 /* UIMultiBadge.swift */; };
+		6E75BB8020CAC55C00876950 /* BadgeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E75BB7F20CAC55C00876950 /* BadgeItem.swift */; };
 		6E921A1A20B758B7000B1EC9 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E921A1920B758B7000B1EC9 /* UITextField.swift */; };
 		6E921A1C20B758E5000B1EC9 /* UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E921A1B20B758E5000B1EC9 /* UITextView.swift */; };
 		6E921A1E20B758FC000B1EC9 /* UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E921A1D20B758FB000B1EC9 /* UITableViewCell.swift */; };
@@ -246,6 +269,29 @@
 		6E75BB4620CAAC8400876950 /* UIBlockLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBlockLabel.swift; sourceTree = "<group>"; };
 		6E75BB4820CAACAD00876950 /* UIRoundLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIRoundLabel.swift; sourceTree = "<group>"; };
 		6E75BB4A20CAACD500876950 /* UIBottomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBottomLabel.swift; sourceTree = "<group>"; };
+		6E75BB4C20CAB08900876950 /* EditingSectionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditingSectionProtocol.swift; sourceTree = "<group>"; };
+		6E75BB4E20CAB0EF00876950 /* ParentTableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentTableViewProtocol.swift; sourceTree = "<group>"; };
+		6E75BB5420CAB31500876950 /* TVKIT_UITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVKIT_UITableViewCell.swift; sourceTree = "<group>"; };
+		6E75BB5620CAB4FA00876950 /* ExtendedCellSettingsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtendedCellSettingsProtocol.swift; sourceTree = "<group>"; };
+		6E75BB5820CAB5FD00876950 /* BrowsableCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowsableCellProtocol.swift; sourceTree = "<group>"; };
+		6E75BB5A20CAB81600876950 /* UUIDProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UUIDProtocol.swift; sourceTree = "<group>"; };
+		6E75BB5C20CAB89E00876950 /* CellConstraintProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellConstraintProtocol.swift; sourceTree = "<group>"; };
+		6E75BB5F20CAB8CD00876950 /* CellConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellConstraints.swift; sourceTree = "<group>"; };
+		6E75BB6120CAB91800876950 /* CellHandlerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellHandlerProtocol.swift; sourceTree = "<group>"; };
+		6E75BB6320CAB95300876950 /* CellReturn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellReturn.swift; sourceTree = "<group>"; };
+		6E75BB6520CAB9B400876950 /* CellHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellHandler.swift; sourceTree = "<group>"; };
+		6E75BB6720CABA1800876950 /* BackButtonProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButtonProtocol.swift; sourceTree = "<group>"; };
+		6E75BB6A20CABB9A00876950 /* TVKit.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = TVKit.xcassets; sourceTree = "<group>"; };
+		6E75BB6C20CABC2B00876950 /* TableViewSettingsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewSettingsProtocol.swift; sourceTree = "<group>"; };
+		6E75BB6E20CABC7800876950 /* TableViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewControllerProtocol.swift; sourceTree = "<group>"; };
+		6E75BB7020CABCD800876950 /* TVKIT_UITableViewHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVKIT_UITableViewHeaderFooterView.swift; sourceTree = "<group>"; };
+		6E75BB7320CAC2E700876950 /* UITableViewControllerExtended.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewControllerExtended.swift; sourceTree = "<group>"; };
+		6E75BB7520CAC3A100876950 /* UITableViewCellExtended.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCellExtended.swift; sourceTree = "<group>"; };
+		6E75BB7720CAC45400876950 /* CellTitleProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellTitleProtocol.swift; sourceTree = "<group>"; };
+		6E75BB7920CAC4AB00876950 /* MultiBadgeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiBadgeProtocol.swift; sourceTree = "<group>"; };
+		6E75BB7B20CAC4DF00876950 /* CustomBadgeConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBadgeConvertible.swift; sourceTree = "<group>"; };
+		6E75BB7D20CAC52000876950 /* UIMultiBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIMultiBadge.swift; sourceTree = "<group>"; };
+		6E75BB7F20CAC55C00876950 /* BadgeItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeItem.swift; sourceTree = "<group>"; };
 		6E921A1920B758B7000B1EC9 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		6E921A1B20B758E5000B1EC9 /* UITextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextView.swift; sourceTree = "<group>"; };
 		6E921A1D20B758FB000B1EC9 /* UITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCell.swift; sourceTree = "<group>"; };
@@ -636,6 +682,7 @@
 		6E3C4FD320A0E119009C3ED7 = {
 			isa = PBXGroup;
 			children = (
+				6E75BB5120CAB21200876950 /* TableViewKit */,
 				6E75BAFA20CA624B00876950 /* AlertController */,
 				6E3FB91920C9BD6D0030E838 /* PopOverKit */,
 				6E00BE2720C88BCB00C68DBD /* FontKit */,
@@ -822,6 +869,84 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		6E75BB5120CAB21200876950 /* TableViewKit */ = {
+			isa = PBXGroup;
+			children = (
+				6E75BB5220CAB22800876950 /* Protocols */,
+				6E75BB5E20CAB8AD00876950 /* Types */,
+				6E75BB5320CAB30200876950 /* Extensions */,
+				6E75BB7220CAC2C400876950 /* Classes */,
+				6E75BB8120CAC63D00876950 /* CellClasses */,
+				6E75BB6920CABA2800876950 /* Resources */,
+			);
+			path = TableViewKit;
+			sourceTree = "<group>";
+		};
+		6E75BB5220CAB22800876950 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				6E75BB4C20CAB08900876950 /* EditingSectionProtocol.swift */,
+				6E75BB4E20CAB0EF00876950 /* ParentTableViewProtocol.swift */,
+				6E75BB5620CAB4FA00876950 /* ExtendedCellSettingsProtocol.swift */,
+				6E75BB5820CAB5FD00876950 /* BrowsableCellProtocol.swift */,
+				6E75BB5A20CAB81600876950 /* UUIDProtocol.swift */,
+				6E75BB5C20CAB89E00876950 /* CellConstraintProtocol.swift */,
+				6E75BB6120CAB91800876950 /* CellHandlerProtocol.swift */,
+				6E75BB6720CABA1800876950 /* BackButtonProtocol.swift */,
+				6E75BB6C20CABC2B00876950 /* TableViewSettingsProtocol.swift */,
+				6E75BB6E20CABC7800876950 /* TableViewControllerProtocol.swift */,
+				6E75BB7720CAC45400876950 /* CellTitleProtocol.swift */,
+				6E75BB7B20CAC4DF00876950 /* CustomBadgeConvertible.swift */,
+				6E75BB7920CAC4AB00876950 /* MultiBadgeProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		6E75BB5320CAB30200876950 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6E75BB5420CAB31500876950 /* TVKIT_UITableViewCell.swift */,
+				6E75BB7020CABCD800876950 /* TVKIT_UITableViewHeaderFooterView.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		6E75BB5E20CAB8AD00876950 /* Types */ = {
+			isa = PBXGroup;
+			children = (
+				6E75BB5F20CAB8CD00876950 /* CellConstraints.swift */,
+				6E75BB6320CAB95300876950 /* CellReturn.swift */,
+				6E75BB6520CAB9B400876950 /* CellHandler.swift */,
+				6E75BB7F20CAC55C00876950 /* BadgeItem.swift */,
+			);
+			path = Types;
+			sourceTree = "<group>";
+		};
+		6E75BB6920CABA2800876950 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6E75BB6A20CABB9A00876950 /* TVKit.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		6E75BB7220CAC2C400876950 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				6E75BB7320CAC2E700876950 /* UITableViewControllerExtended.swift */,
+				6E75BB7520CAC3A100876950 /* UITableViewCellExtended.swift */,
+				6E75BB7D20CAC52000876950 /* UIMultiBadge.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		6E75BB8120CAC63D00876950 /* CellClasses */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CellClasses;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -892,6 +1017,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E74545B20C7F76F00A35FC9 /* NumPad.xcassets in Resources */,
+				6E75BB6B20CABB9A00876950 /* TVKit.xcassets in Resources */,
 				6E00BDDD20C8825800C68DBD /* CurrencyKit.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -917,11 +1043,15 @@
 				6E3C500A20A0E1B0009C3ED7 /* UIView.swift in Sources */,
 				6E921A1A20B758B7000B1EC9 /* UITextField.swift in Sources */,
 				6E00BDE420C8826900C68DBD /* CurrencyPadButton.swift in Sources */,
+				6E75BB6020CAB8CD00876950 /* CellConstraints.swift in Sources */,
+				6E75BB7620CAC3A100876950 /* UITableViewCellExtended.swift in Sources */,
+				6E75BB7120CABCD800876950 /* TVKIT_UITableViewHeaderFooterView.swift in Sources */,
 				6E3C501420A0E1B0009C3ED7 /* UIControl.swift in Sources */,
 				6E3C500520A0E1B0009C3ED7 /* UIScrollView.swift in Sources */,
 				6E00BE0320C8838600C68DBD /* CurrencyFormatter.swift in Sources */,
 				6E3C500420A0E1B0009C3ED7 /* EnumCollection.swift in Sources */,
 				6E3C501020A0E1B0009C3ED7 /* DispatchQueue.swift in Sources */,
+				6E75BB5D20CAB89E00876950 /* CellConstraintProtocol.swift in Sources */,
 				6E3C501520A0E1B0009C3ED7 /* DispatchTime.swift in Sources */,
 				6E00BDD220C85F0F00C68DBD /* Dictionary.swift in Sources */,
 				6E3C4FEC20A0E181009C3ED7 /* CommonFuncs.swift in Sources */,
@@ -937,23 +1067,30 @@
 				6E00BE3320C88E1400C68DBD /* Font.swift in Sources */,
 				6E00BD9620C852F700C68DBD /* UTCDate.swift in Sources */,
 				6E75BB1C20CA92D400876950 /* TextFieldProtocol.swift in Sources */,
+				6E75BB6820CABA1800876950 /* BackButtonProtocol.swift in Sources */,
+				6E75BB7420CAC2E700876950 /* UITableViewControllerExtended.swift in Sources */,
 				6E75BB4920CAACAD00876950 /* UIRoundLabel.swift in Sources */,
 				6E00BD9120C852E100C68DBD /* DateFormatter.swift in Sources */,
 				6E3C500C20A0E1B0009C3ED7 /* Equatable.swift in Sources */,
+				6E75BB6420CAB95300876950 /* CellReturn.swift in Sources */,
 				6E00BE4120C88E3B00C68DBD /* FontAwesome+brands.swift in Sources */,
 				6E00BD8C20C852D400C68DBD /* MinuteIntervalMode.swift in Sources */,
 				6E75BB4720CAAC8400876950 /* UIBlockLabel.swift in Sources */,
 				6E3FB94F20C9D06C0030E838 /* AssetManager.swift in Sources */,
+				6E75BB7C20CAC4DF00876950 /* CustomBadgeConvertible.swift in Sources */,
 				6E00BE8C20C89CBC00C68DBD /* FoundationIcons+regular.swift in Sources */,
+				6E75BB5920CAB5FD00876950 /* BrowsableCellProtocol.swift in Sources */,
 				6E00BE5020C88E6600C68DBD /* FontLoader.swift in Sources */,
 				6E00BDA320C854B400C68DBD /* Dispatch_DispatchQueue.swift in Sources */,
 				6E3C500B20A0E1B0009C3ED7 /* Array.swift in Sources */,
+				6E75BB5B20CAB81600876950 /* UUIDProtocol.swift in Sources */,
 				6E3C500920A0E1B0009C3ED7 /* UIRectCorner.swift in Sources */,
 				6E49983820B2BA11008D7ACD /* Character.swift in Sources */,
 				6E3FB91E20C9BDE20030E838 /* PopOver.swift in Sources */,
 				6E3C4FF020A0E1A0009C3ED7 /* ClosureSleeve.swift in Sources */,
 				6E75BB0E20CA692000876950 /* AlertControllerAnimation.swift in Sources */,
 				6E75BB1520CA69E200876950 /* AlertController.swift in Sources */,
+				6E75BB6D20CABC2B00876950 /* TableViewSettingsProtocol.swift in Sources */,
 				6E3C500620A0E1B0009C3ED7 /* UIBarButtonItem.swift in Sources */,
 				6E00BDFD20C8829E00C68DBD /* VATProtocol.swift in Sources */,
 				6E00BE8A20C89CA700C68DBD /* FoundationIcons.swift in Sources */,
@@ -973,13 +1110,18 @@
 				6E75BAFE20CA62B700876950 /* AlertActionStyle.swift in Sources */,
 				6E3C501220A0E1B0009C3ED7 /* Creatable.swift in Sources */,
 				6E74544E20C7F6C100A35FC9 /* NumPadStyle.swift in Sources */,
+				6E75BB6220CAB91800876950 /* CellHandlerProtocol.swift in Sources */,
 				6E00BD8420C8264900C68DBD /* Float.swift in Sources */,
+				6E75BB7A20CAC4AB00876950 /* MultiBadgeProtocol.swift in Sources */,
+				6E75BB8020CAC55C00876950 /* BadgeItem.swift in Sources */,
 				6E75BB2220CA93DC00876950 /* UITextViewExtended.swift in Sources */,
 				6E75BB1020CA695700876950 /* FullscreenAlertControllerAnimation.swift in Sources */,
+				6E75BB7E20CAC52000876950 /* UIMultiBadge.swift in Sources */,
 				6E00BDA120C854AA00C68DBD /* TaskSchedulerProtocol.swift in Sources */,
 				6E921A1C20B758E5000B1EC9 /* UITextView.swift in Sources */,
 				6E00BD8020C8264900C68DBD /* Decimal.swift in Sources */,
 				6E00BDD020C85C5D00C68DBD /* URLRequest.swift in Sources */,
+				6E75BB5720CAB4FA00876950 /* ExtendedCellSettingsProtocol.swift in Sources */,
 				6E14EF6320C5EC63005AAF69 /* CGSize.swift in Sources */,
 				6E75BB0220CA635000876950 /* AlertActionProtocol.swift in Sources */,
 				6E74545020C7F6C600A35FC9 /* NumPadType.swift in Sources */,
@@ -989,14 +1131,18 @@
 				6E00BD8520C8264900C68DBD /* CGFloat.swift in Sources */,
 				6E00BDFF20C8829E00C68DBD /* MoneyCompatible.swift in Sources */,
 				6E00BD7F20C8264900C68DBD /* Int.swift in Sources */,
+				6E75BB6F20CABC7900876950 /* TableViewControllerProtocol.swift in Sources */,
 				6E00BD8120C8264900C68DBD /* Numeric.swift in Sources */,
 				6E3C505B20A0E902009C3ED7 /* UIColor.swift in Sources */,
+				6E75BB5520CAB31500876950 /* TVKIT_UITableViewCell.swift in Sources */,
 				6E00BD9020C852E100C68DBD /* Date.swift in Sources */,
+				6E75BB4F20CAB0EF00876950 /* ParentTableViewProtocol.swift in Sources */,
 				6E00BD8220C8264900C68DBD /* General.swift in Sources */,
 				6E75BB1720CA927A00876950 /* CursorStateEnum.swift in Sources */,
 				6E00BDF620C8828A00C68DBD /* CartItem.swift in Sources */,
 				6E75BB1220CA699300876950 /* DefaultAlertControllerBaseClass.swift in Sources */,
 				6E00BDE520C8826900C68DBD /* CurrencyPadExtension.swift in Sources */,
+				6E75BB4D20CAB08900876950 /* EditingSectionProtocol.swift in Sources */,
 				6E00BE3A20C88E2F00C68DBD /* MaterialIcons+regular.swift in Sources */,
 				6E3C500F20A0E1B0009C3ED7 /* String.swift in Sources */,
 				6E00BE3B20C88E2F00C68DBD /* MaterialIcons.swift in Sources */,
@@ -1006,8 +1152,10 @@
 				6E921A1E20B758FC000B1EC9 /* UITableViewCell.swift in Sources */,
 				6ED7A94D20C7ACAB00CAC025 /* val2str.swift in Sources */,
 				6E3C501320A0E1B0009C3ED7 /* NSLayoutConstraint.swift in Sources */,
+				6E75BB6620CAB9B400876950 /* CellHandler.swift in Sources */,
 				6E00BE4020C88E3B00C68DBD /* FontAwesome+regular.swift in Sources */,
 				6E75BB0A20CA686700876950 /* AlertAction.swift in Sources */,
+				6E75BB7820CAC45400876950 /* CellTitleProtocol.swift in Sources */,
 				6E3C4FEF20A0E1A0009C3ED7 /* HTMLEntities.swift in Sources */,
 				6E3C500E20A0E1B0009C3ED7 /* NSMutableArray.swift in Sources */,
 				6E00BDF720C8828A00C68DBD /* Money.swift in Sources */,
