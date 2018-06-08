@@ -37,6 +37,15 @@ since extensions for UILabel could not provide this functionality.
   s.swift_version = '4.0' 
   s.ios.deployment_target = '11.0'
   s.source_files = [
+			'CommonKit/TableViewKit/Protocols/*.swift',
+			'CommonKit/TableViewKit/Types/*.swift',
+			'CommonKit/TableViewKit/Extensions/*.swift',
+			'CommonKit/TableViewKit/Classes/*.swift',
+			'CommonKit/TableViewKit/CellClasses/*.swift',
+			'CommonKit/AlertController/Types/*.swift',
+			'CommonKit/AlertController/Protocols/*.swift',
+			'CommonKit/AlertController/Templates/*.swift',
+			'CommonKit/AlertController/Classes/*.swift',
 			'CommonKit/PopOverKit/Protocols/*.swift',
 			'CommonKit/PopOverKit/Extensions/*.swift',
 			'CommonKit/PopOverKit/Classes/*.swift',
@@ -60,23 +69,25 @@ since extensions for UILabel could not provide this functionality.
 			'CommonKit/Date/Classes/*.swift',
 			'CommonKit/Date/Functions/*.swift',
 			'CommonKit/Math/Extensions/*.swift',
-			'CommonKit/CommonKit/Extensions/*.swift',
-			'CommonKit/CommonKit/Types/*.swift',
-			'CommonKit/CommonKit/Classes/*.swift',
-			'CommonKit/CommonKit/Functions/*.swift',
 			'CommonKit/AppLocale/Protocols/*.swift',
 			'CommonKit/AppLocale/Types/*.swift',
 			'CommonKit/AppLocale/Extensions/*.swift',
 			'CommonKit/AppLocale/Functions/*.swift',
 			'CommonKit/NumPad/Types/*.swift',
-			'CommonKit/NumPad/Classes/*.swift'
+			'CommonKit/NumPad/Classes/*.swift',
+			'CommonKit/CommonKit/Protocols/*.swift',
+			'CommonKit/CommonKit/Extensions/*.swift',
+			'CommonKit/CommonKit/Types/*.swift',
+			'CommonKit/CommonKit/Classes/*.swift',
+			'CommonKit/CommonKit/Functions/*.swift'
 		]
 
   s.resources = [
 		'CommonKit/FontKit/Resources/*.otf',
 		'CommonKit/FontKit/Resources/*.ttf',
 		'CommonKit/NumPad/Resources/NumPad.xcassets',
-		'CommonKit/Currency/Resources/CurrencyKit.xcassets'
+		'CommonKit/Currency/Resources/CurrencyKit.xcassets',
+		'CommonKit/TableViewKit/Resources/TVKIT.xcassets'
 		]
  
 end
