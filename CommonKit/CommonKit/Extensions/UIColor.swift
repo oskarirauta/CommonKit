@@ -79,6 +79,21 @@ public extension UIColor {
         get { return UIColor(red: 210.0/255.0, green: 213.0/255.0, blue: 219.0/255.0, alpha: 1.0) }
     }
     
+    public var image: UIImage? {
+        get {
+            UIGraphicsBeginImageContext(CGSize(width: 1.0, height: 1.0))
+            guard let contextRef: CGContext = UIGraphicsGetCurrentContext() else { return nil }
+            contextRef.setFillColor(self.cgColor)
+            contextRef.fill(CGRect(x: 0, y: 0, width: 1, height: 1))
+            guard let img: UIImage = UIGraphicsGetImageFromCurrentImageContext() else {
+                UIGraphicsEndImageContext()
+                return nil
+            }
+            UIGraphicsEndImageContext()
+            return img
+        }
+    }
+    
     public convenience init?(red: Int, green: Int, blue: Int, transparency: CGFloat = 1) {
         guard red >= 0 && red <= 255 else { return nil }
         guard green >= 0 && green <= 255 else { return nil }
@@ -137,7 +152,7 @@ public extension UIColor {
         var blue: CGFloat = 0.0
         var alpha: CGFloat = 0.0
         self.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
-        return UIColor(red: ( red + addedRed ) > 1.0 ? 1.0 : ( red + addedRed ), green: green, blue: blue, alpha: alpha)
+        return UIColor(red: min( red + addedRed, 1.0 ), green: green, blue: blue, alpha: alpha)
     }
 
     public func withAddedGreen(_ addedGreen: CGFloat) -> UIColor {
@@ -146,7 +161,7 @@ public extension UIColor {
         var blue: CGFloat = 0.0
         var alpha: CGFloat = 0.0
         self.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
-        return UIColor(red: red, green: ( green + addedGreen ) > 1.0 ? 1.0 : ( green + addedGreen ), blue: blue, alpha: alpha)
+        return UIColor(red: red, green: min( green + addedGreen, 1.0 ), blue: blue, alpha: alpha)
     }
 
     public func withAddedBlue(_ addedBlue: CGFloat) -> UIColor {
@@ -155,35 +170,44 @@ public extension UIColor {
         var blue: CGFloat = 0.0
         var alpha: CGFloat = 0.0
         self.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
-        return UIColor(red: red, green: green, blue: ( blue + addedBlue ) > 1.0 ? 1.0 : ( blue + addedBlue ), alpha: alpha)
+        return UIColor(red: red, green: green, blue: min( blue + addedBlue, 1.0 ), alpha: alpha)
     }
     
-    public func lighter(_ by: CGFloat) -> UIColor {
-        var red: CGFloat = 0.0
-        var green: CGFloat = 0.0
-        var blue: CGFloat = 0.0
-        var alpha: CGFloat = 0.0
+    public func lighter(by percentage: CGFloat) -> UIColor {
+        var red: CGFloat = 0.0, green: CGFloat = 0.0, blue: CGFloat = 0.0, alpha: CGFloat = 0.0
         self.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
-        return UIColor(
-            red: ( red + by ) > 1.0 ? 1.0 : ( red + by ),
-            green: ( green + by ) > 1.0 ? 1.0 : ( green + by ),
-            blue: ( blue + by ) > 1.0 ? 1.0 : ( blue + by ),
-            alpha: alpha
-        )
+        return UIColor(red: min(red + percentage, 1.0),
+                     green: min(green + percentage, 1.0),
+                     blue: min(blue + percentage, 1.0),
+                     alpha: alpha)
     }
 
-    public func darker(_ by: CGFloat) -> UIColor {
-        var red: CGFloat = 0.0
-        var green: CGFloat = 0.0
-        var blue: CGFloat = 0.0
-        var alpha: CGFloat = 0.0
+    public func darker(by percentage: CGFloat) -> UIColor {
+        var red: CGFloat = 0.0, green: CGFloat = 0.0, blue: CGFloat = 0.0, alpha: CGFloat = 0.0
         self.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
-        return UIColor(
-            red: ( red - by ) < 0.0 ? 0.0 : ( red - by ),
-            green: ( green - by ) < 0.0 ? 0.0 : ( green - by ),
-            blue: ( blue - by ) < 0.0 ? 0.0 : ( blue - by ),
-            alpha: alpha
-        )
+        return UIColor(red: max(red - percentage, 0.0),
+                       green: max(green - percentage, 0.0),
+                       blue: max(blue - percentage, 0.0),
+                       alpha: alpha)
     }
 
+    func adjustBrightness(by percentage: CGFloat = 30.0) -> UIColor {
+        var h: CGFloat = 0, s: CGFloat = 0, b: CGFloat = 0, a: CGFloat = 0
+        if self.getHue(&h, saturation: &s, brightness: &b, alpha: &a) {
+            if b < 1.0 {
+                /**
+                 Below is the new part, which makes the code work with black as well as colors
+                 */
+                return UIColor(
+                    hue: h,
+                    saturation: s,
+                    brightness: b == 0.0 ? max(min(b + percentage/100, 1.0), 0.0) : max(min(b + (percentage/100.0)*b, 1.0), 0,0),
+                    alpha: a)
+            } else {
+                return UIColor(hue: h, saturation: min(max(s - (percentage/100.0)*s, 0.0), 1.0), brightness: b, alpha: a)
+            }
+        }
+        return self
+    }
+    
 }
