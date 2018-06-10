@@ -20,6 +20,7 @@ since extensions for UILabel could not provide this functionality.
  - Merged: AttributedStringWrapper by gaoyu/loopeer. I didn't write this, but it's great work, and I didn't want to add it is a dependency.
  - Merged: FontKit. Framework provides support for icon fonts. First one with FontAwesome 5 support :)
  - Merged: PopOverKit. Framework provides support for displaying popover balloons on iPhone and iPad.
+ - Merged: PhotoPicker and PhotoPreview
                        DESC
  
   s.homepage         = 'https://github.com/oskarirauta/CommonKit'
@@ -41,6 +42,11 @@ since extensions for UILabel could not provide this functionality.
 			'CommonKit/TableViewKit/Types/*.swift',
 			'CommonKit/TableViewKit/Extensions/*.swift',
 			'CommonKit/TableViewKit/Classes/*.swift',
+			'CommonKit/PhotoPreview/Classes/*.swift',
+			'CommonKit/PhotoPicker/Classes/*.swift',
+			'CommonKit/PhotoPicker/Cells/*.swift',
+			'CommonKit/PhotoPicker/Views/*.swift',
+			'CommonKit/PhotoPicker/Datasource/*.swift',
 			'CommonKit/AlertController/Types/*.swift',
 			'CommonKit/AlertController/Protocols/*.swift',
 			'CommonKit/AlertController/Templates/*.swift',
@@ -86,7 +92,8 @@ since extensions for UILabel could not provide this functionality.
 		'CommonKit/FontKit/Resources/*.ttf',
 		'CommonKit/NumPad/Resources/NumPad.xcassets',
 		'CommonKit/Currency/Resources/CurrencyKit.xcassets',
-		'CommonKit/TableViewKit/Resources/TVKIT.xcassets'
+		'CommonKit/TableViewKit/Resources/TVKIT.xcassets',
+		'CommonKit/PhotoPicker/Resources/UIPhotoPicker.xcassets'
 		]
  
 end
