@@ -41,7 +41,6 @@ since extensions for UILabel could not provide this functionality.
 			'CommonKit/TableViewKit/Types/*.swift',
 			'CommonKit/TableViewKit/Extensions/*.swift',
 			'CommonKit/TableViewKit/Classes/*.swift',
-			'CommonKit/TableViewKit/CellClasses/*.swift',
 			'CommonKit/AlertController/Types/*.swift',
 			'CommonKit/AlertController/Protocols/*.swift',
 			'CommonKit/AlertController/Templates/*.swift',

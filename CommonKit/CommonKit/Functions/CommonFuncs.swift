@@ -18,3 +18,15 @@ public var newUUID: String {
 }
 
 public func doNothing() {}
+
+public var appName: String {
+    get { return Bundle.main.object(forInfoDictionaryKey: kCFBundleNameKey as String) as! String }
+}
+
+public var appVersion: String {
+    get { return Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String }
+}
+
+public var appBuildVersion: String {
+    get { return Bundle.main.object(forInfoDictionaryKey: kCFBundleVersionKey as String) as! String }
+}

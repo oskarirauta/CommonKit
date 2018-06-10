@@ -20,7 +20,7 @@ public protocol BrowsableCellProtocol: BrowsableCellProtocolBase {
 
 extension UITableViewCell: BrowsableCellProtocol {
     
-    public var prevIndex: IndexPath? {
+    @objc public var prevIndex: IndexPath? {
         get {
             guard let section: Int = self.prevSection, let row: Int = self.prevRow else { return nil }
             return IndexPath(row: row, section: section)
@@ -36,7 +36,7 @@ extension UITableViewCell: BrowsableCellProtocol {
         }
     }
 
-    public var nextIndex: IndexPath? {
+    @objc public var nextIndex: IndexPath? {
         get {
             guard let section: Int = self.nextSection, let row: Int = self.nextRow else { return nil }
             return IndexPath(row: row, section: section)

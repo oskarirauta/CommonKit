@@ -98,6 +98,52 @@ extension String {
         }
     }
     
+    public var base64Decoded: String? {
+        get {
+            guard let decodedData = Data(base64Encoded: self) else { return nil }
+            return String(data: decodedData, encoding: .utf8)
+        }
+    }
+    
+    public var base64Encoded: String? {
+        get { return self.data(using: .utf8)?.base64EncodedString() ?? nil }
+    }
+    
+    public var isEmail: Bool {
+        get { return self.range(of: "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}",
+                         options: .regularExpression, range: nil, locale: nil) != nil }
+    }
+    
+    public var url: URL? {
+        get { return URL(string: self) }
+    }
+    
+    public var trimmed: String {
+        get { return self.trimmingCharacters(in: .whitespacesAndNewlines) }
+    }
+    
+    public var urlDecoded: String {
+        get { return self.removingPercentEncoding ?? self }
+    }
+    
+    public var urlEncoded: String {
+        get { return self.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)! }
+    }
+    
+    public var withoutSpacesAndNewLines: String {
+        get { return self.replacingOccurrences(of: " ", with: "").replacingOccurrences(of: "\n", with: "") }
+    }
+    
+    public var isWhitespace: Bool {
+        get { return self.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty }
+    }
+    
+    public init?(base64: String) {
+        guard let decodedData = Data(base64Encoded: base64) else { return nil }
+        guard let str = String(data: decodedData, encoding: .utf8) else { return nil }
+        self.init(str)
+    }
+    
     public func substring(from: Int) -> String {
         let start = index(startIndex, offsetBy: from)
         return String(self[start ..< endIndex])
@@ -112,12 +158,33 @@ extension String {
         return String(self.substring(from: from).prefix(maxLength))
     }
     
-    public subscript (r: CountableClosedRange<Int>) -> String? {
+    public subscript(i: Int) -> Character? {
+        guard i >= 0 && i < count else { return nil }
+        return self[index(startIndex, offsetBy: i)]
+    }
+    
+    public subscript(safe range: CountableRange<Int>) -> String? {
+        guard let lowerIndex = index(startIndex, offsetBy: max(0, range.lowerBound), limitedBy: endIndex) else { return nil }
+        guard let upperIndex = index(lowerIndex, offsetBy: range.upperBound - range.lowerBound, limitedBy: endIndex) else { return nil }
+        return String(self[lowerIndex..<upperIndex])
+    }
+    
+    public subscript(safe range: ClosedRange<Int>) -> String? {
+        guard let lowerIndex = index(startIndex, offsetBy: max(0, range.lowerBound), limitedBy: endIndex) else { return nil }
+        guard let upperIndex = index(lowerIndex, offsetBy: range.upperBound - range.lowerBound + 1, limitedBy: endIndex) else { return nil }
+        return String(self[lowerIndex..<upperIndex])
+    }
+    
+    public subscript(r: CountableClosedRange<Int>) -> String? {
         get {
             guard r.lowerBound >= 0, let startIndex = self.index(self.startIndex, offsetBy: r.lowerBound, limitedBy: self.endIndex),
                 let endIndex = self.index(startIndex, offsetBy: r.upperBound - r.lowerBound, limitedBy: self.endIndex) else { return nil }
             return String(self[startIndex...endIndex])
         }
+    }
+    
+    public func contains(_ string: String, caseSensitive: Bool = true) -> Bool {
+        return ( !caseSensitive ? self.range(of: string, options: .caseInsensitive) : range(of: string)) != nil
     }
     
     public func replacingCharacters(in: NSRange, with: String) -> String? {
@@ -154,15 +221,16 @@ extension String {
         return self.filter({ String($0).rangeOfCharacter(from: CharacterSet(charactersIn: `in`)) != nil })
     }
     
-    public var url: URL {
-        get { return URL(string: self)! }}
-    
-    public var urlrequest: URLRequest {
-        get { return URLRequest(url: self.url) }}
-    
-    public var lines: Array<String> {
+    public var urlrequest: URLRequest? {
         get {
-            var ret: Array<String> = []
+            guard let url: URL = self.url else { return nil }
+            return URLRequest(url: url)
+        }
+    }
+    
+    public var lines: [String] {
+        get {
+            var ret: [String] = [String]()
             self.enumerateLines { (line, _) -> () in
                 ret.append(line)
             }
@@ -230,12 +298,11 @@ extension Array where Element == String {
 }
 
 extension Range where Bound == String.Index {
+    
     public var nsRange:NSRange {
-        get {
-            return NSRange(location: self.lowerBound.encodedOffset,
+        get { return NSRange(location: self.lowerBound.encodedOffset,
                            length: self.upperBound.encodedOffset -
-                            self.lowerBound.encodedOffset)
-        }
+                            self.lowerBound.encodedOffset) }
     }
 }
 
