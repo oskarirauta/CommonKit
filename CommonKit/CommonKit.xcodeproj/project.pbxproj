@@ -158,6 +158,7 @@
 		6E7F0B3120CDCD4400E18883 /* PhotoPickerViewDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7F0B3020CDCD4400E18883 /* PhotoPickerViewDatasource.swift */; };
 		6E7F0B3320CDCD6800E18883 /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7F0B3220CDCD6800E18883 /* PhotoPicker.swift */; };
 		6E7F0B3520CDCFB200E18883 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7F0B3420CDCFB200E18883 /* AlertView.swift */; };
+		6E7F0B3820CDDBA200E18883 /* UIPhotoPicker.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E7F0B3720CDDBA200E18883 /* UIPhotoPicker.xcassets */; };
 		6E921A1A20B758B7000B1EC9 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E921A1920B758B7000B1EC9 /* UITextField.swift */; };
 		6E921A1C20B758E5000B1EC9 /* UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E921A1B20B758E5000B1EC9 /* UITextView.swift */; };
 		6E921A1E20B758FC000B1EC9 /* UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E921A1D20B758FB000B1EC9 /* UITableViewCell.swift */; };
@@ -326,6 +327,7 @@
 		6E7F0B3020CDCD4400E18883 /* PhotoPickerViewDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerViewDatasource.swift; sourceTree = "<group>"; };
 		6E7F0B3220CDCD6800E18883 /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
 		6E7F0B3420CDCFB200E18883 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
+		6E7F0B3720CDDBA200E18883 /* UIPhotoPicker.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = UIPhotoPicker.xcassets; sourceTree = "<group>"; };
 		6E921A1920B758B7000B1EC9 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		6E921A1B20B758E5000B1EC9 /* UITextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextView.swift; sourceTree = "<group>"; };
 		6E921A1D20B758FB000B1EC9 /* UITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCell.swift; sourceTree = "<group>"; };
@@ -1002,6 +1004,7 @@
 				6E7F0B1D20CDCBD800E18883 /* Cells */,
 				6E7F0B2220CDCC4600E18883 /* Views */,
 				6E7F0B2F20CDCD1200E18883 /* Datasource */,
+				6E7F0B3620CDDB7900E18883 /* Resources */,
 			);
 			path = PhotoPicker;
 			sourceTree = "<group>";
@@ -1044,6 +1047,14 @@
 				6E7F0B3020CDCD4400E18883 /* PhotoPickerViewDatasource.swift */,
 			);
 			path = Datasource;
+			sourceTree = "<group>";
+		};
+		6E7F0B3620CDDB7900E18883 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6E7F0B3720CDDBA200E18883 /* UIPhotoPicker.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1115,6 +1126,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E7F0B3820CDDBA200E18883 /* UIPhotoPicker.xcassets in Resources */,
 				6E74545B20C7F76F00A35FC9 /* NumPad.xcassets in Resources */,
 				6E75BB6B20CABB9A00876950 /* TVKit.xcassets in Resources */,
 				6E00BDDD20C8825800C68DBD /* CurrencyKit.xcassets in Resources */,
