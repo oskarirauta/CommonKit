@@ -25,10 +25,10 @@ open class AlertController: DefaultAlertControllerBaseClass, DefaultAlertActionP
     open var textFieldHeight: CGFloat = 30.0
     open var textFieldCornerRadius: CGFloat = 4.0
     
-    open lazy var buttonFont: [AlertActionStyle: UIFont] = self.defaultButtonFonts
-    open lazy var buttonTextColor: [AlertActionStyle: UIColor] = self.defaultButtonTextColors
-    open lazy var buttonBgColor: [AlertActionStyle: UIColor] = self.defaultButtonBgColors
-    open lazy var buttonBgColorHighlighted: [AlertActionStyle: UIColor] = self.defaultButtonBgColorHighlighteds
+    open lazy var buttonFont: [AlertActionStyle: UIFont] = self.defaults.buttonFont
+    open lazy var buttonTextColor: [AlertActionStyle: UIColor] = self.defaults.buttonTextColor
+    open lazy var buttonBgColor: [AlertActionStyle: UIColor] = self.defaults.buttonBgColor
+    open lazy var buttonBgColorHighlighted: [AlertActionStyle: UIColor] = self.defaults.buttonBgColorHighlighted
     
     // Message
     open var message: String? = nil

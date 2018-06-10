@@ -12,25 +12,27 @@ import UIKit
 @objc(DefaultAlertControllerBaseClass)
 open class DefaultAlertControllerBaseClass: UIViewController, AlertControllerViewProtocol, UIViewControllerTransitioningDelegate {
     
+    public lazy var defaults: DefaultAlertProperties = DefaultAlertProperties()
+    
     open var fullscreen: Bool { get { return false }}
     
     open var _preferredStyle: AlertControllerStyle = .alert
     open var preferredStyle: AlertControllerStyle { get { return self._preferredStyle }}
     
     // Settings
-    open var actionSheetBounceHeight: CGFloat = 20.0
-    open var alertViewWidth: CGFloat = 270.0
-    open var alertViewPadding: CGFloat = 12.0
-    open var innerContentWidth: CGFloat = 240.0
+    open lazy var actionSheetBounceHeight: CGFloat = self.defaults.actionSheetBounceHeight
+    open lazy var alertViewWidth: CGFloat = self.defaults.alertViewWidth
+    open lazy var alertViewPadding: CGFloat = self.defaults.alertViewPadding
+    open lazy var innerContentWidth: CGFloat = self.defaults.innerContentWidth
     
-    open var overlayColor: UIColor = UIColor(red:0, green:0, blue:0, alpha:0.79)
-    open var contentViewBgColor: UIColor = UIColor.white
+    open lazy var overlayColor: UIColor = self.defaults.overlayColor
+    open lazy var contentViewBgColor: UIColor = self.defaults.contentViewBgColor
     
-    open var contentViewDefaultHeight: CGFloat = 150.0
+    open lazy var contentViewDefaultHeight: CGFloat = self.defaults.contentViewDefaultHeight
     
-    open var buttonCornerRadius: CGFloat = 4.0
-    open var buttonHeight: CGFloat = 38.0
-    open var buttonMargin: CGFloat = 8.0
+    open lazy var buttonCornerRadius: CGFloat = self.defaults.buttonCornerRadius
+    open lazy var buttonHeight: CGFloat = self.defaults.buttonHeight
+    open lazy var buttonMargin: CGFloat = self.defaults.buttonMargin
     
     open lazy var overlayView: UIView = {
         [unowned self] in

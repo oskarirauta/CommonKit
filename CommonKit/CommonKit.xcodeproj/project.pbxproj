@@ -144,6 +144,20 @@
 		6E75BBA320CAC7B700876950 /* UITitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E75BB9120CAC7B600876950 /* UITitleCell.swift */; };
 		6E75BBA720CAE4C400876950 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E75BBA620CAE4C400876950 /* UIImage.swift */; };
 		6E7F0B1020CDC0EC00E18883 /* Range.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7F0B0F20CDC0EC00E18883 /* Range.swift */; };
+		6E7F0B1520CDC9F000E18883 /* PhotoPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7F0B1420CDC9F000E18883 /* PhotoPreview.swift */; };
+		6E7F0B1A20CDCB2B00E18883 /* CameraButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7F0B1920CDCB2B00E18883 /* CameraButton.swift */; };
+		6E7F0B1C20CDCB7600E18883 /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7F0B1B20CDCB7500E18883 /* CameraController.swift */; };
+		6E7F0B1F20CDCBFB00E18883 /* AlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7F0B1E20CDCBFB00E18883 /* AlbumCell.swift */; };
+		6E7F0B2120CDCC2300E18883 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7F0B2020CDCC2300E18883 /* PhotoCell.swift */; };
+		6E7F0B2420CDCC6900E18883 /* AlbumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7F0B2320CDCC6900E18883 /* AlbumView.swift */; };
+		6E7F0B2620CDCC8A00E18883 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7F0B2520CDCC8A00E18883 /* CameraView.swift */; };
+		6E7F0B2820CDCCA900E18883 /* PhotoPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7F0B2720CDCCA900E18883 /* PhotoPickerView.swift */; };
+		6E7F0B2A20CDCCC500E18883 /* PhotoPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7F0B2920CDCCC500E18883 /* PhotoPreviewView.swift */; };
+		6E7F0B2C20CDCCDF00E18883 /* PhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7F0B2B20CDCCDF00E18883 /* PhotoView.swift */; };
+		6E7F0B2E20CDCD0100E18883 /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7F0B2D20CDCD0100E18883 /* PreviewView.swift */; };
+		6E7F0B3120CDCD4400E18883 /* PhotoPickerViewDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7F0B3020CDCD4400E18883 /* PhotoPickerViewDatasource.swift */; };
+		6E7F0B3320CDCD6800E18883 /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7F0B3220CDCD6800E18883 /* PhotoPicker.swift */; };
+		6E7F0B3520CDCFB200E18883 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7F0B3420CDCFB200E18883 /* AlertView.swift */; };
 		6E921A1A20B758B7000B1EC9 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E921A1920B758B7000B1EC9 /* UITextField.swift */; };
 		6E921A1C20B758E5000B1EC9 /* UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E921A1B20B758E5000B1EC9 /* UITextView.swift */; };
 		6E921A1E20B758FC000B1EC9 /* UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E921A1D20B758FB000B1EC9 /* UITableViewCell.swift */; };
@@ -298,6 +312,20 @@
 		6E75BB9120CAC7B600876950 /* UITitleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITitleCell.swift; sourceTree = "<group>"; };
 		6E75BBA620CAE4C400876950 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		6E7F0B0F20CDC0EC00E18883 /* Range.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Range.swift; sourceTree = "<group>"; };
+		6E7F0B1420CDC9F000E18883 /* PhotoPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPreview.swift; sourceTree = "<group>"; };
+		6E7F0B1920CDCB2B00E18883 /* CameraButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraButton.swift; sourceTree = "<group>"; };
+		6E7F0B1B20CDCB7500E18883 /* CameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
+		6E7F0B1E20CDCBFB00E18883 /* AlbumCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCell.swift; sourceTree = "<group>"; };
+		6E7F0B2020CDCC2300E18883 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
+		6E7F0B2320CDCC6900E18883 /* AlbumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumView.swift; sourceTree = "<group>"; };
+		6E7F0B2520CDCC8A00E18883 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		6E7F0B2720CDCCA900E18883 /* PhotoPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerView.swift; sourceTree = "<group>"; };
+		6E7F0B2920CDCCC500E18883 /* PhotoPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPreviewView.swift; sourceTree = "<group>"; };
+		6E7F0B2B20CDCCDF00E18883 /* PhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoView.swift; sourceTree = "<group>"; };
+		6E7F0B2D20CDCD0100E18883 /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
+		6E7F0B3020CDCD4400E18883 /* PhotoPickerViewDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerViewDatasource.swift; sourceTree = "<group>"; };
+		6E7F0B3220CDCD6800E18883 /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
+		6E7F0B3420CDCFB200E18883 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		6E921A1920B758B7000B1EC9 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		6E921A1B20B758E5000B1EC9 /* UITextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextView.swift; sourceTree = "<group>"; };
 		6E921A1D20B758FB000B1EC9 /* UITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCell.swift; sourceTree = "<group>"; };
@@ -689,6 +717,8 @@
 			isa = PBXGroup;
 			children = (
 				6E75BB5120CAB21200876950 /* TableViewKit */,
+				6E7F0B1220CDC9BB00E18883 /* PhotoPreview */,
+				6E7F0B1620CDCABA00E18883 /* PhotoPicker */,
 				6E75BAFA20CA624B00876950 /* AlertController */,
 				6E3FB91920C9BD6D0030E838 /* PopOverKit */,
 				6E00BE2720C88BCB00C68DBD /* FontKit */,
@@ -855,6 +885,7 @@
 				6E75BB0D20CA692000876950 /* AlertControllerAnimation.swift */,
 				6E75BB0F20CA695700876950 /* FullscreenAlertControllerAnimation.swift */,
 				6E75BB1420CA69E200876950 /* AlertController.swift */,
+				6E7F0B3420CDCFB200E18883 /* AlertView.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -946,6 +977,73 @@
 				6E75BB9120CAC7B600876950 /* UITitleCell.swift */,
 			);
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		6E7F0B1220CDC9BB00E18883 /* PhotoPreview */ = {
+			isa = PBXGroup;
+			children = (
+				6E7F0B1320CDC9E000E18883 /* Classes */,
+			);
+			path = PhotoPreview;
+			sourceTree = "<group>";
+		};
+		6E7F0B1320CDC9E000E18883 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				6E7F0B1420CDC9F000E18883 /* PhotoPreview.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		6E7F0B1620CDCABA00E18883 /* PhotoPicker */ = {
+			isa = PBXGroup;
+			children = (
+				6E7F0B1820CDCB1800E18883 /* Classes */,
+				6E7F0B1D20CDCBD800E18883 /* Cells */,
+				6E7F0B2220CDCC4600E18883 /* Views */,
+				6E7F0B2F20CDCD1200E18883 /* Datasource */,
+			);
+			path = PhotoPicker;
+			sourceTree = "<group>";
+		};
+		6E7F0B1820CDCB1800E18883 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				6E7F0B1920CDCB2B00E18883 /* CameraButton.swift */,
+				6E7F0B1B20CDCB7500E18883 /* CameraController.swift */,
+				6E7F0B3220CDCD6800E18883 /* PhotoPicker.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		6E7F0B1D20CDCBD800E18883 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				6E7F0B1E20CDCBFB00E18883 /* AlbumCell.swift */,
+				6E7F0B2020CDCC2300E18883 /* PhotoCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		6E7F0B2220CDCC4600E18883 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6E7F0B2320CDCC6900E18883 /* AlbumView.swift */,
+				6E7F0B2520CDCC8A00E18883 /* CameraView.swift */,
+				6E7F0B2720CDCCA900E18883 /* PhotoPickerView.swift */,
+				6E7F0B2920CDCCC500E18883 /* PhotoPreviewView.swift */,
+				6E7F0B2B20CDCCDF00E18883 /* PhotoView.swift */,
+				6E7F0B2D20CDCD0100E18883 /* PreviewView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6E7F0B2F20CDCD1200E18883 /* Datasource */ = {
+			isa = PBXGroup;
+			children = (
+				6E7F0B3020CDCD4400E18883 /* PhotoPickerViewDatasource.swift */,
+			);
+			path = Datasource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1047,6 +1145,7 @@
 				6E75BB6020CAB8CD00876950 /* CellConstraints.swift in Sources */,
 				6E75BB7620CAC3A100876950 /* UITableViewCellExtended.swift in Sources */,
 				6E75BB7120CABCD800876950 /* TVKIT_UITableViewHeaderFooterView.swift in Sources */,
+				6E7F0B2620CDCC8A00E18883 /* CameraView.swift in Sources */,
 				6E3C501420A0E1B0009C3ED7 /* UIControl.swift in Sources */,
 				6E3C500520A0E1B0009C3ED7 /* UIScrollView.swift in Sources */,
 				6E00BE0320C8838600C68DBD /* CurrencyFormatter.swift in Sources */,
@@ -1058,6 +1157,7 @@
 				6E3C4FEC20A0E181009C3ED7 /* CommonFuncs.swift in Sources */,
 				6E3C500820A0E1B0009C3ED7 /* UIApplicationDelegate.swift in Sources */,
 				6E00BDFC20C8829E00C68DBD /* PriceProtocol.swift in Sources */,
+				6E7F0B1A20CDCB2B00E18883 /* CameraButton.swift in Sources */,
 				6E3C500720A0E1B0009C3ED7 /* FileManager.swift in Sources */,
 				6E74545820C7F72E00A35FC9 /* DoneBar.swift in Sources */,
 				6E00BE4520C88E4600C68DBD /* UITitleLabel.swift in Sources */,
@@ -1074,6 +1174,7 @@
 				6E00BD9120C852E100C68DBD /* DateFormatter.swift in Sources */,
 				6E3C500C20A0E1B0009C3ED7 /* Equatable.swift in Sources */,
 				6E75BB6420CAB95300876950 /* CellReturn.swift in Sources */,
+				6E7F0B2C20CDCCDF00E18883 /* PhotoView.swift in Sources */,
 				6E00BE4120C88E3B00C68DBD /* FontAwesome+brands.swift in Sources */,
 				6E00BD8C20C852D400C68DBD /* MinuteIntervalMode.swift in Sources */,
 				6E75BB4720CAAC8400876950 /* UIBlockLabel.swift in Sources */,
@@ -1081,6 +1182,8 @@
 				6E75BB7C20CAC4DF00876950 /* CustomBadgeConvertible.swift in Sources */,
 				6E00BE8C20C89CBC00C68DBD /* FoundationIcons+regular.swift in Sources */,
 				6E75BB5920CAB5FD00876950 /* BrowsableCellProtocol.swift in Sources */,
+				6E7F0B1C20CDCB7600E18883 /* CameraController.swift in Sources */,
+				6E7F0B1F20CDCBFB00E18883 /* AlbumCell.swift in Sources */,
 				6E00BE5020C88E6600C68DBD /* FontLoader.swift in Sources */,
 				6E00BDA320C854B400C68DBD /* Dispatch_DispatchQueue.swift in Sources */,
 				6E3C500B20A0E1B0009C3ED7 /* Array.swift in Sources */,
@@ -1095,6 +1198,7 @@
 				6E3C500620A0E1B0009C3ED7 /* UIBarButtonItem.swift in Sources */,
 				6E00BDFD20C8829E00C68DBD /* VATProtocol.swift in Sources */,
 				6E00BE8A20C89CA700C68DBD /* FoundationIcons.swift in Sources */,
+				6E7F0B2420CDCC6900E18883 /* AlbumView.swift in Sources */,
 				6E00BDE220C8826900C68DBD /* CurrencyField.swift in Sources */,
 				6E75BB1E20CA92F700876950 /* TextViewProtocol.swift in Sources */,
 				6E00BDA720C854C600C68DBD /* TaskScheduler.swift in Sources */,
@@ -1111,6 +1215,7 @@
 				6E75BAFE20CA62B700876950 /* AlertActionStyle.swift in Sources */,
 				6E3C501220A0E1B0009C3ED7 /* Creatable.swift in Sources */,
 				6E74544E20C7F6C100A35FC9 /* NumPadStyle.swift in Sources */,
+				6E7F0B1520CDC9F000E18883 /* PhotoPreview.swift in Sources */,
 				6E75BB6220CAB91800876950 /* CellHandlerProtocol.swift in Sources */,
 				6E00BD8420C8264900C68DBD /* Float.swift in Sources */,
 				6E75BB7A20CAC4AB00876950 /* MultiBadgeProtocol.swift in Sources */,
@@ -1118,17 +1223,21 @@
 				6E75BB2220CA93DC00876950 /* UITextViewExtended.swift in Sources */,
 				6E75BB1020CA695700876950 /* FullscreenAlertControllerAnimation.swift in Sources */,
 				6E75BB7E20CAC52000876950 /* UIMultiBadge.swift in Sources */,
+				6E7F0B2E20CDCD0100E18883 /* PreviewView.swift in Sources */,
 				6E00BDA120C854AA00C68DBD /* TaskSchedulerProtocol.swift in Sources */,
 				6E921A1C20B758E5000B1EC9 /* UITextView.swift in Sources */,
 				6E00BD8020C8264900C68DBD /* Decimal.swift in Sources */,
 				6E75BBA320CAC7B700876950 /* UITitleCell.swift in Sources */,
 				6E00BDD020C85C5D00C68DBD /* URLRequest.swift in Sources */,
+				6E7F0B3520CDCFB200E18883 /* AlertView.swift in Sources */,
 				6E75BB5720CAB4FA00876950 /* ExtendedCellSettingsProtocol.swift in Sources */,
 				6E14EF6320C5EC63005AAF69 /* CGSize.swift in Sources */,
 				6E75BB0220CA635000876950 /* AlertActionProtocol.swift in Sources */,
+				6E7F0B2120CDCC2300E18883 /* PhotoCell.swift in Sources */,
 				6E74545020C7F6C600A35FC9 /* NumPadType.swift in Sources */,
 				6E74545620C7F72700A35FC9 /* NumPadButton.swift in Sources */,
 				6E00BDA920C854C600C68DBD /* DispatchItem.swift in Sources */,
+				6E7F0B3320CDCD6800E18883 /* PhotoPicker.swift in Sources */,
 				6E75BB2020CA93A200876950 /* UITextFieldExtended.swift in Sources */,
 				6E00BD8520C8264900C68DBD /* CGFloat.swift in Sources */,
 				6E00BDFF20C8829E00C68DBD /* MoneyCompatible.swift in Sources */,
@@ -1139,6 +1248,7 @@
 				6E75BB5520CAB31500876950 /* TVKIT_UITableViewCell.swift in Sources */,
 				6E00BD9020C852E100C68DBD /* Date.swift in Sources */,
 				6E75BB4F20CAB0EF00876950 /* ParentTableViewProtocol.swift in Sources */,
+				6E7F0B2A20CDCCC500E18883 /* PhotoPreviewView.swift in Sources */,
 				6E00BD8220C8264900C68DBD /* General.swift in Sources */,
 				6E75BB1720CA927A00876950 /* CursorStateEnum.swift in Sources */,
 				6E75BBA720CAE4C400876950 /* UIImage.swift in Sources */,
@@ -1165,9 +1275,11 @@
 				6E00BDF720C8828A00C68DBD /* Money.swift in Sources */,
 				6E00BD8320C8264900C68DBD /* Double.swift in Sources */,
 				6E3FB92220C9BDF80030E838 /* PopOverProtocol.swift in Sources */,
+				6E7F0B3120CDCD4400E18883 /* PhotoPickerViewDatasource.swift in Sources */,
 				6E3FB92020C9BDEC0030E838 /* PopOver_UIViewController.swift in Sources */,
 				6E74545220C7F71B00A35FC9 /* NumPad.swift in Sources */,
 				6E00BE4A20C88E5500C68DBD /* FontType.swift in Sources */,
+				6E7F0B2820CDCCA900E18883 /* PhotoPickerView.swift in Sources */,
 				6E00BDF520C8828A00C68DBD /* Cart.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

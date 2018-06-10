@@ -11,6 +11,9 @@ import UIKit
 
 public protocol AlertControllerViewProtocol {
     
+    // Defaults
+    var defaults: DefaultAlertProperties { get }
+
     // Settings
     var fullscreen: Bool { get }
     var preferredStyle: AlertControllerStyle { get }
