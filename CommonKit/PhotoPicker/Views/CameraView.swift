@@ -109,9 +109,6 @@ extension PhotoPickerView {
             _buttonFlash.translatesAutoresizingMaskIntoConstraints = false
             _buttonFlash.layer.masksToBounds = true
             
-            let flashImage: UIImage = self.flashImg(for: .auto)
-            print(flashImage.size.width.description + " " + flashImage.size.height.description)
-            
             _buttonFlash.setImage(self.flashImg(for: .auto).withRenderingMode(.alwaysTemplate), for: UIControlState())
             _buttonFlash.setImage(self.flashImg(for: .auto).withRenderingMode(.alwaysTemplate), for: .highlighted)
             _buttonFlash.setImage(self.flashImg(for: .auto).withRenderingMode(.alwaysTemplate), for: .selected)
