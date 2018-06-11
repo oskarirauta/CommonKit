@@ -9,15 +9,28 @@
 import Foundation
 import UIKit
 
-open class AlertView: UIView, DefaultAlertActionProtocol {
+open class AlertView: UIView, AlertActionProtocol {
     
-    public lazy var defaults: DefaultAlertProperties = DefaultAlertProperties()
+    open var buttonFont: [AlertActionStyle : UIFont] = [:]
+    open var buttonTextColor: [AlertActionStyle : UIColor] = [:]
+    open var buttonBgColor: [AlertActionStyle : UIColor] = [:]
+    open var buttonBgColorHighlighted: [AlertActionStyle : UIColor] = [:]
     
-    public lazy var buttonFont: [AlertActionStyle : UIFont] = self.defaults.buttonFont
-    public lazy var buttonTextColor: [AlertActionStyle : UIColor] = self.defaults.buttonTextColor
-    public lazy var buttonBgColor: [AlertActionStyle : UIColor] = self.defaults.buttonBgColor
-    public lazy var buttonBgColorHighlighted: [AlertActionStyle : UIColor] = self.defaults.buttonBgColorHighlighted
-    public lazy var buttonCornerRadius: CGFloat = self.defaults.buttonCornerRadius
-    public lazy var buttonHeight: CGFloat = self.defaults.buttonHeight
-    public lazy var buttonMargin: CGFloat = self.defaults.buttonMargin
+    open var buttonCornerRadius: CGFloat? = nil
+    open var buttonShadowColor: UIColor? = nil
+    open var buttonHeight: CGFloat? = nil
+    open var buttonMargin: CGFloat? = nil
+}
+
+open class AlertImageView: UIImageView, AlertActionProtocol {
+    
+    open var buttonFont: [AlertActionStyle : UIFont] = [:]
+    open var buttonTextColor: [AlertActionStyle : UIColor] = [:]
+    open var buttonBgColor: [AlertActionStyle : UIColor] = [:]
+    open var buttonBgColorHighlighted: [AlertActionStyle : UIColor] = [:]
+    
+    open var buttonCornerRadius: CGFloat? = nil
+    open var buttonShadowColor: UIColor? = nil
+    open var buttonHeight: CGFloat? = nil
+    open var buttonMargin: CGFloat? = nil
 }

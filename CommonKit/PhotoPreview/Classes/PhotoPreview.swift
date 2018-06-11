@@ -9,12 +9,7 @@
 import Foundation
 import UIKit
 
-open class PhotoPreview: DefaultAlertControllerBaseClass, DefaultAlertActionProtocol {
-
-    open lazy var buttonFont: [AlertActionStyle : UIFont] = self.defaults.buttonFont
-    open lazy var buttonTextColor: [AlertActionStyle : UIColor] = self.defaults.buttonTextColor
-    open lazy var buttonBgColor: [AlertActionStyle : UIColor] = self.defaults.buttonBgColor
-    open lazy var buttonBgColorHighlighted: [AlertActionStyle : UIColor] = self.defaults.buttonBgColorHighlighted
+open class PhotoPreview: DefaultAlertControllerBaseClass {
     
     open override var fullscreen: Bool {
         get { return true }

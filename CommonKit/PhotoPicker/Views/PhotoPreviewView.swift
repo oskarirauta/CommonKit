@@ -11,63 +11,45 @@ import UIKit
 
 extension PhotoPickerView {
     
-    open class PhotoPreviewView: UIImageView, DefaultAlertActionProtocol {
+    open class PhotoPreviewView: AlertImageView {
         
-        public lazy var defaults: DefaultAlertProperties = DefaultAlertProperties()
-        
-        public lazy var buttonFont: [AlertActionStyle : UIFont] = self.defaults.buttonFont
-        public lazy var buttonTextColor: [AlertActionStyle : UIColor] = self.defaults.buttonTextColor
-        public lazy var buttonBgColor: [AlertActionStyle : UIColor] = self.defaults.buttonBgColor
-        public lazy var buttonBgColorHighlighted: [AlertActionStyle : UIColor] = self.defaults.buttonBgColorHighlighted
-        public lazy var buttonCornerRadius: CGFloat = self.defaults.buttonCornerRadius
-        public lazy var buttonHeight: CGFloat = self.defaults.buttonHeight
-        public lazy var buttonMargin: CGFloat = self.defaults.buttonMargin
-
         open var back_handler: (() -> ())? = nil
         
-        open lazy var title: UILabel = {
-            var _title: UILabel = UILabel()
-            _title.translatesAutoresizingMaskIntoConstraints = false
-            _title.textColor = UIColor.white
-            _title.font = UIFont.boldSystemFont(ofSize: 14.5)
-            _title.text = nil
-            _title.textAlignment = .left
-            _title.numberOfLines = 1
-            _title.lineBreakMode = .byTruncatingTail
-            _title.setContentHuggingPriority(.defaultLow, for: .horizontal)
-            return _title
-        }()
+        open lazy var title: UILabel = UILabel.create {
+            $0.translatesAutoresizingMaskIntoConstraints = false
+            $0.textColor = UIColor.white
+            $0.font = UIFont.boldSystemFont(ofSize: 14.5)
+            $0.text = nil
+            $0.textAlignment = .left
+            $0.numberOfLines = 1
+            $0.lineBreakMode = .byTruncatingTail
+            $0.setContentHuggingPriority(.defaultLow, for: .horizontal)
+        }
         
-        open lazy var buttonBack: UIButton = {
-            [unowned self] in
-            var _buttonBack: UIButton = UIButton()
-            _buttonBack.translatesAutoresizingMaskIntoConstraints = false
-            _buttonBack.clipsToBounds = true
+        open lazy var buttonBack: UIButton = UIButton.create {
+            $0.translatesAutoresizingMaskIntoConstraints = false
+            $0.clipsToBounds = true
             
-            _buttonBack.setImage(UIImage(named: "photopicker_back")?.scaled(to: CGSize(width: 52.0, height: 52.0)).withRenderingMode(.alwaysTemplate), for: UIControlState())
-            _buttonBack.setImage(UIImage(named: "photopicker_back")?.scaled(to: CGSize(width: 52.0, height: 52.0)).withRenderingMode(.alwaysTemplate), for: .highlighted)
-            _buttonBack.setImage(UIImage(named: "photopicker_back")?.scaled(to: CGSize(width: 52.0, height: 52.0)).withRenderingMode(.alwaysTemplate), for: .selected)
+            $0.setImage(UIImage(named: "photopicker_back")?.scaled(to: CGSize(width: 52.0, height: 52.0)).withRenderingMode(.alwaysTemplate), for: UIControlState())
+            $0.setImage(UIImage(named: "photopicker_back")?.scaled(to: CGSize(width: 52.0, height: 52.0)).withRenderingMode(.alwaysTemplate), for: .highlighted)
+            $0.setImage(UIImage(named: "photopicker_back")?.scaled(to: CGSize(width: 52.0, height: 52.0)).withRenderingMode(.alwaysTemplate), for: .selected)
             
-            _buttonBack.tintColor = UIColor.black
-            _buttonBack.imageEdgeInsets = UIEdgeInsets(top: 2.0, left: 2.0, bottom: 2.0, right: 2.0)
-            _buttonBack.setBackgroundImage(UIColor.gray.image, for: UIControlState())
-            _buttonBack.setBackgroundImage(UIColor.gray.image, for: .selected)
-            _buttonBack.setBackgroundImage(UIColor.lightGray.image, for: .highlighted)
-            _buttonBack.alpha = 0.75
+            $0.tintColor = UIColor.black
+            $0.imageEdgeInsets = UIEdgeInsets(top: 2.0, left: 2.0, bottom: 2.0, right: 2.0)
+            $0.setBackgroundImage(UIColor.gray.image, for: UIControlState())
+            $0.setBackgroundImage(UIColor.gray.image, for: .selected)
+            $0.setBackgroundImage(UIColor.lightGray.image, for: .highlighted)
+            $0.alpha = 0.75
             
-            _buttonBack.isEnabled = true
-            _buttonBack.layer.cornerRadius = self.buttonCornerRadius
-            _buttonBack.addTarget(self, action: #selector(self.action_back), for: .touchUpInside)
-            _buttonBack.setContentHuggingPriority(.defaultHigh, for: .horizontal)
-            
-            return _buttonBack
-            }()
+            $0.isEnabled = true
+            $0.layer.cornerRadius = self.buttonCornerRadius ?? DefaultAlertProperties.buttonCornerRadius
+            $0.addTarget(self, action: #selector(self.action_back), for: .touchUpInside)
+            $0.setContentHuggingPriority(.defaultHigh, for: .horizontal)
+        }
         
-        open lazy var bottomOverlay: CALayer = {
-            var _bottomOverlay: CALayer = CALayer()
-            _bottomOverlay.backgroundColor = UIColor.black.withAlphaComponent(0.55).cgColor
-            return _bottomOverlay
-        }()
+        open lazy var bottomOverlay: CALayer = CALayer.create {
+            $0.backgroundColor = UIColor.black.withAlphaComponent(0.55).cgColor
+        }
         
         public override init(frame: CGRect) {
             super.init(frame: frame)

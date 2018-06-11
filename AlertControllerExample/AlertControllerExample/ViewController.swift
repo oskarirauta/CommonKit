@@ -67,13 +67,13 @@ class ViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate
     func showSimpleAlert(_: IndexPath) {
         let title = "Simple Alert"
         let message = "A message should be a short, complete sentence."
-        let cancelButtonTitle = "OK"
+        let buttonTitle = "OK"
         
         let alertController = AlertController(title: title, message: message, preferredStyle: .alert)
         
         // Create the action.
-        let cancelAction = AlertAction(title: cancelButtonTitle, style: .cancel) { action in
-            NSLog("The simple alert's cancel action occured.")
+        let cancelAction = AlertAction(title: buttonTitle, style: .default) { action in
+            NSLog("The simple alert's dismissal action occured.")
         }
         
         // Add the action.

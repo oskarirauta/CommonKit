@@ -25,7 +25,7 @@ open class AlertAction: NSObject, NSCopying {
         }
     }
     
-    required public init(title: String, style: AlertActionStyle, handler: ((AlertAction) -> ())?) {
+    required public init(title: String, style: AlertActionStyle = .default, handler: ((AlertAction) -> ())?) {
         self.title = title
         self.style = style
         self.handler = handler

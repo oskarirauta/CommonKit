@@ -11,18 +11,8 @@ import UIKit
 
 extension PhotoPickerView {
     
-    open class PreviewView: UIImageView, DefaultAlertActionProtocol {
+    open class PreviewView: AlertImageView {
         
-        public lazy var defaults: DefaultAlertProperties = DefaultAlertProperties()
-        
-        public lazy var buttonFont: [AlertActionStyle : UIFont] = self.defaults.buttonFont
-        public lazy var buttonTextColor: [AlertActionStyle : UIColor] = self.defaults.buttonTextColor
-        public lazy var buttonBgColor: [AlertActionStyle : UIColor] = self.defaults.buttonBgColor
-        public lazy var buttonBgColorHighlighted: [AlertActionStyle : UIColor] = self.defaults.buttonBgColorHighlighted
-        public lazy var buttonCornerRadius: CGFloat = self.defaults.buttonCornerRadius
-        public lazy var buttonHeight: CGFloat = self.defaults.buttonHeight
-        public lazy var buttonMargin: CGFloat = self.defaults.buttonMargin
-
         open var cancel_handler: (() -> ())? = nil
         open var accept_handler: (() -> ())? = nil
         
@@ -32,9 +22,9 @@ extension PhotoPickerView {
             _buttonCancel.translatesAutoresizingMaskIntoConstraints = false
             self.setButton(&_buttonCancel, style: .destructive)
             
-            _buttonCancel.setBackgroundImage(self.buttonBgColor[.destructive]?.darker(by: 31).image, for: UIControlState())
-            _buttonCancel.setBackgroundImage(self.buttonBgColor[.destructive]?.darker(by: 31).image, for: .selected)
-            _buttonCancel.setBackgroundImage(self.buttonBgColorHighlighted[.destructive]?.darker(by: 26).image, for: .highlighted)
+            _buttonCancel.setBackgroundImage((self.buttonBgColor[.destructive] ?? DefaultAlertProperties.buttonBgColor[.destructive])?.darker(by: 31).image, for: UIControlState())
+            _buttonCancel.setBackgroundImage((self.buttonBgColor[.destructive] ?? DefaultAlertProperties.buttonBgColor[.destructive])?.darker(by: 31).image, for: .selected)
+            _buttonCancel.setBackgroundImage((self.buttonBgColorHighlighted[.destructive] ?? DefaultAlertProperties.buttonBgColorHighlighted[.destructive])?.darker(by: 26).image, for: .highlighted)
             
             _buttonCancel.setImage(UIImage(named: "photopicker_cancel")?.scaled(to: CGSize(width: 66.0, height: 66.0)).withRenderingMode(.alwaysTemplate))
             
@@ -57,9 +47,9 @@ extension PhotoPickerView {
             _buttonAccept.translatesAutoresizingMaskIntoConstraints = false
             self.setButton(&_buttonAccept, style: .accept)
             
-            _buttonAccept.setBackgroundImage(self.buttonBgColor[.accept]?.darker(by: 40).image, for: UIControlState())
-            _buttonAccept.setBackgroundImage(self.buttonBgColor[.accept]?.darker(by: 40).image, for: .selected)
-            _buttonAccept.setBackgroundImage(self.buttonBgColorHighlighted[.accept]?.darker(by: 34).image, for: .highlighted)
+            _buttonAccept.setBackgroundImage((self.buttonBgColor[.accept] ?? DefaultAlertProperties.buttonBgColor[.accept])?.darker(by: 40).image, for: UIControlState())
+            _buttonAccept.setBackgroundImage((self.buttonBgColor[.accept] ?? DefaultAlertProperties.buttonBgColor[.accept])?.darker(by: 40).image, for: .selected)
+            _buttonAccept.setBackgroundImage((self.buttonBgColorHighlighted[.accept] ?? DefaultAlertProperties.buttonBgColorHighlighted[.accept])?.darker(by: 34).image, for: .highlighted)
             
             _buttonAccept.setImage(UIImage(named: "photopicker_accept")?.scaled(to: CGSize(width: 66.0, height: 66.0)).withRenderingMode(.alwaysTemplate))
             
@@ -76,11 +66,9 @@ extension PhotoPickerView {
             return _buttonAccept
             }()
         
-        open lazy var bottomOverlay: CALayer = {
-            var _bottomOverlay: CALayer = CALayer()
-            _bottomOverlay.backgroundColor = UIColor.black.withAlphaComponent(0.55).cgColor
-            return _bottomOverlay
-        }()
+        open lazy var bottomOverlay: CALayer = CALayer.create {
+            $0.backgroundColor = UIColor.black.withAlphaComponent(0.55).cgColor
+        }
         
         public override init(frame: CGRect) {
             super.init(frame: frame)

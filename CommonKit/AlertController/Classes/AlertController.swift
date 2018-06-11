@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-open class AlertController: DefaultAlertControllerBaseClass, DefaultAlertActionProtocol, UITextFieldDelegate {
+open class AlertController: DefaultAlertControllerBaseClass, UITextFieldDelegate {
 
     // Settings
     open private(set) var tinyButtons: Bool = true
@@ -25,105 +25,77 @@ open class AlertController: DefaultAlertControllerBaseClass, DefaultAlertActionP
     open var textFieldHeight: CGFloat = 30.0
     open var textFieldCornerRadius: CGFloat = 4.0
     
-    open lazy var buttonFont: [AlertActionStyle: UIFont] = self.defaults.buttonFont
-    open lazy var buttonTextColor: [AlertActionStyle: UIColor] = self.defaults.buttonTextColor
-    open lazy var buttonBgColor: [AlertActionStyle: UIColor] = self.defaults.buttonBgColor
-    open lazy var buttonBgColorHighlighted: [AlertActionStyle: UIColor] = self.defaults.buttonBgColorHighlighted
-    
     // Message
     open var message: String? = nil
     
     // TextAreaScrollView
     fileprivate var textAreaHeight: CGFloat = 0.0
-    open lazy var textAreaScrollView: UIScrollView = {
-        [unowned self] in
-        var _textAreaScrollView: UIScrollView = UIScrollView()
-        _textAreaScrollView.translatesAutoresizingMaskIntoConstraints = false
-        _textAreaScrollView.addSubview(self.textAreaView)
-        return _textAreaScrollView
-        }()
+
+    open lazy var textAreaScrollView: UIScrollView = UIScrollView.create {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.addSubview(self.textAreaView)
+    }
     
     // TextAreaView
-    open lazy var textAreaView: UIView = {
-        [unowned self] in
-        var _textAreaView: UIView = UIView()
-        _textAreaView.translatesAutoresizingMaskIntoConstraints = false
-        _textAreaView.addSubview(self.textContainer)
-        return _textAreaView
-        }()
+    open lazy var textAreaView: UIView = UIView.create {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.addSubview(self.textContainer)
+    }
     
     // TextContainer
-    open lazy var textContainer: UIView = {
-        [unowned self] in
-        var _textContainer: UIView = UIView()
-        _textContainer.translatesAutoresizingMaskIntoConstraints = false
-        return _textContainer
-        }()
+    open lazy var textContainer: UIView = UIView.create {
+       $0.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
     open var textContainerHeightConstraint: NSLayoutConstraint? = nil
     
     // ButtonAreaScrollView
-    open lazy var buttonAreaScrollView: UIScrollView = {
-        [unowned self] in
-        var _buttonAreaScrollView: UIScrollView = UIScrollView()
-        _buttonAreaScrollView.translatesAutoresizingMaskIntoConstraints = false
-        _buttonAreaScrollView.addSubview(self.buttonAreaView)
-        return _buttonAreaScrollView
-        }()
+    open lazy var buttonAreaScrollView: UIScrollView = UIScrollView.create {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.addSubview(self.buttonAreaView)
+    }
+    
     open var buttonAreaScrollViewHeightConstraint: NSLayoutConstraint? = nil
     open var buttonAreaHeight: CGFloat = 0.0
     
     // ButtonAreaView
-    open lazy var buttonAreaView: UIView = {
-        [unowned self] in
-        var _buttonAreaView: UIView = UIView()
-        _buttonAreaView.translatesAutoresizingMaskIntoConstraints = false
-        _buttonAreaView.addSubview(self.buttonContainer)
-        return _buttonAreaView
-        }()
+    open lazy var buttonAreaView: UIView = UIView.create {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.addSubview(self.buttonContainer)
+    }
     
     // TitleLabel
-    open lazy var titleLabel: UILabel = {
-        [unowned self] in
-        var _titleLabel: UILabel = UILabel()
-        _titleLabel.frame.size = CGSize(width: self.innerContentWidth, height: 0.0)
-        _titleLabel.numberOfLines = 0
-        _titleLabel.textAlignment = .center
-        _titleLabel.font = self.titleFont
-        _titleLabel.textColor = self.titleTextColor
-        return _titleLabel
-        }()
-    
+    open lazy var titleLabel: UILabel = UILabel.create {
+        $0.frame.size = CGSize(width: self.innerContentWidth ?? DefaultAlertProperties.innerContentWidth, height: 0.0)
+        $0.numberOfLines = 0
+        $0.textAlignment = .center
+        $0.font = self.titleFont
+        $0.textColor = self.titleTextColor
+    }
+
     // MessageView
-    open lazy var messageView: UILabel = {
-        [unowned self] in
-        var _messageView: UILabel = UILabel()
-        _messageView.frame.size = CGSize(width: self.innerContentWidth, height: 0.0)
-        _messageView.numberOfLines = 0
-        _messageView.textAlignment = .center
-        _messageView.font = self.messageFont
-        _messageView.textColor = self.messageTextColor
-        return _messageView
-        }()
+    open lazy var messageView: UILabel = UILabel.create {
+        $0.frame.size = CGSize(width: self.innerContentWidth ?? DefaultAlertProperties.innerContentWidth, height: 0.0)
+        $0.numberOfLines = 0
+        $0.textAlignment = .center
+        $0.font = self.messageFont
+        $0.textColor = self.messageTextColor
+    }
     
     // TextFieldContainerView
-    open lazy var textFieldContainerView: UIView = {
-        [unowned self] in
-        var _textFieldContainerView: UIView = UIView()
-        _textFieldContainerView.backgroundColor = self.textFieldBorderColor
-        _textFieldContainerView.layer.masksToBounds = true
-        _textFieldContainerView.layer.cornerRadius = self.textFieldCornerRadius
-        _textFieldContainerView.layer.borderWidth = 0.5
-        _textFieldContainerView.layer.borderColor = self.textFieldBorderColor.cgColor
-        return _textFieldContainerView
-        }()
+    open lazy var textFieldContainerView: UIView = UIView.create {
+        $0.backgroundColor = self.textFieldBorderColor
+        $0.layer.masksToBounds = true
+        $0.layer.cornerRadius = self.textFieldCornerRadius
+        $0.layer.borderWidth = 0.5
+        $0.layer.borderColor = self.textFieldBorderColor.cgColor
+    }
     
     // ButtonContainer
-    open lazy var buttonContainer: UIView = {
-        [unowned self] in
-        var _buttonContainer: UIView = UIView()
-        _buttonContainer.translatesAutoresizingMaskIntoConstraints = false
-        return _buttonContainer
-        }()
+    open lazy var buttonContainer: UIView = UIView.create {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
     open var buttonContainerHeightConstraint: NSLayoutConstraint? = nil
     
     // TextFields
@@ -196,7 +168,7 @@ open class AlertController: DefaultAlertControllerBaseClass, DefaultAlertActionP
         // ButtonAreaScrollView
         self.buttonAreaScrollView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor).isActive = true
         self.buttonAreaScrollView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor).isActive = true
-        self.buttonAreaScrollView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: self.preferredStyle == .alert ? 0.0 : -self.actionSheetBounceHeight).isActive = true
+        self.buttonAreaScrollView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: self.preferredStyle == .alert ? 0.0 : -(self.actionSheetBounceHeight ?? DefaultAlertProperties.actionSheetBounceHeight)).isActive = true
         self.buttonAreaScrollViewHeightConstraint = self.buttonAreaScrollView.heightAnchor.constraint(equalToConstant: 0.0)
         self.buttonAreaScrollViewHeightConstraint?.isActive = true
         
@@ -212,7 +184,7 @@ open class AlertController: DefaultAlertControllerBaseClass, DefaultAlertActionP
         // TextContainer
         self.textContainer.topAnchor.constraint(equalTo: self.textAreaView.topAnchor).isActive = true
         self.textContainer.centerXAnchor.constraint(equalTo: self.textAreaView.centerXAnchor).isActive = true
-        self.textContainer.widthAnchor.constraint(equalToConstant: self.innerContentWidth).isActive = true
+        self.textContainer.widthAnchor.constraint(equalToConstant: self.innerContentWidth ?? DefaultAlertProperties.innerContentWidth).isActive = true
         self.textContainerHeightConstraint = self.textContainer.heightAnchor.constraint(equalToConstant: 0.0)
         self.textContainerHeightConstraint?.isActive = true
         
@@ -227,7 +199,7 @@ open class AlertController: DefaultAlertControllerBaseClass, DefaultAlertActionP
         // ButtonContainer
         self.buttonContainer.topAnchor.constraint(equalTo: self.buttonAreaView.topAnchor).isActive = true
         self.buttonContainer.centerXAnchor.constraint(equalTo: self.buttonAreaView.centerXAnchor).isActive = true
-        self.buttonContainer.widthAnchor.constraint(equalToConstant: self.innerContentWidth).isActive = true
+        self.buttonContainer.widthAnchor.constraint(equalToConstant: self.innerContentWidth ?? DefaultAlertProperties.innerContentWidth).isActive = true
         self.buttonContainerHeightConstraint = self.buttonContainer.heightAnchor.constraint(equalToConstant: 0.0)
         self.buttonContainerHeightConstraint?.isActive = true
         
@@ -243,12 +215,12 @@ open class AlertController: DefaultAlertControllerBaseClass, DefaultAlertActionP
         let hasMessage: Bool = ( self.message ?? "" ) != ""
         let hasTextField: Bool = ( self.textFields?.count ?? 0 ) != 0
         
-        var textAreaPositionY: CGFloat = self.preferredStyle == .alert ? ( 2 * alertViewPadding ) : alertViewPadding
+        var textAreaPositionY: CGFloat = self.preferredStyle == .alert ? ( 2 * ( self.alertViewPadding ?? DefaultAlertProperties.alertViewPadding )) : self.alertViewPadding ?? DefaultAlertProperties.alertViewPadding
         
         if ( hasTitle ) {
             self.titleLabel.text = self.title
             self.titleLabel.sizeToFit()
-            self.titleLabel.frame = CGRect(x: 0, y: textAreaPositionY, width: self.innerContentWidth, height: self.titleLabel.frame.height)
+            self.titleLabel.frame = CGRect(x: 0, y: textAreaPositionY, width: self.innerContentWidth ?? DefaultAlertProperties.innerContentWidth, height: self.titleLabel.frame.height)
             self.textContainer.addSubview(self.titleLabel)
             textAreaPositionY += self.titleLabel.frame.height + 5.0
         }
@@ -256,7 +228,7 @@ open class AlertController: DefaultAlertControllerBaseClass, DefaultAlertActionP
         if ( hasMessage ) {
             self.messageView.text = self.message
             self.messageView.sizeToFit()
-            messageView.frame = CGRect(x: 0, y: textAreaPositionY, width: innerContentWidth, height: messageView.frame.height)
+            messageView.frame = CGRect(x: 0, y: textAreaPositionY, width: self.innerContentWidth ?? DefaultAlertProperties.innerContentWidth, height: messageView.frame.height)
             self.textContainer.addSubview(self.messageView)
             textAreaPositionY += self.messageView.frame.height + 5.0
         }
@@ -272,12 +244,12 @@ open class AlertController: DefaultAlertControllerBaseClass, DefaultAlertActionP
             // TextFields
             for (_, obj) in (self.textFields!).enumerated() {
                 let textField = obj as! UITextFieldExtended
-                textField.frame = CGRect(x: 0.0, y: textFieldContainerHeight, width: innerContentWidth, height: textField.frame.height)
+                textField.frame = CGRect(x: 0.0, y: textFieldContainerHeight, width: self.innerContentWidth ?? DefaultAlertProperties.innerContentWidth, height: textField.frame.height)
                 textFieldContainerHeight += textField.frame.height + 0.5
             }
             
             textFieldContainerHeight -= 0.5
-            textFieldContainerView.frame = CGRect(x: 0.0, y: textAreaPositionY, width: innerContentWidth, height: textFieldContainerHeight)
+            textFieldContainerView.frame = CGRect(x: 0.0, y: textAreaPositionY, width: self.innerContentWidth ?? DefaultAlertProperties.innerContentWidth, height: textFieldContainerHeight)
             
             textAreaPositionY += textFieldContainerHeight + 5.0
             
@@ -285,28 +257,32 @@ open class AlertController: DefaultAlertControllerBaseClass, DefaultAlertActionP
         
         // TextAreaScrollView
         self.textAreaHeight = (( hasTitle ) || ( hasMessage ) || ( hasTextField )) ? textAreaPositionY : 0.0
-        textAreaScrollView.contentSize = CGSize(width: alertViewWidth, height: self.textAreaHeight)
+        textAreaScrollView.contentSize = CGSize(width: self.alertViewWidth ?? DefaultAlertProperties.alertViewWidth, height: self.textAreaHeight)
         self.textContainerHeightConstraint?.constant = self.textAreaHeight
         
         // ButtonArea Layout
-        var buttonAreaPositionY: CGFloat = self.buttonMargin
+        var buttonAreaPositionY: CGFloat = self.buttonMargin ?? DefaultAlertProperties.buttonMargin
         
         // Buttons
         if (( self.preferredStyle == .alert ) && ((( self.tinyButtons ) && ([2,3].contains(self.buttons.count))) || (( !self.tinyButtons ) && ( self.buttons.count == 2 )))) {
-            let buttonWidth: CGFloat = self.buttons.count == 2 ? (( self.innerContentWidth - self.buttonMargin) / 2 ) : (( self.innerContentWidth - ( self.buttonMargin * 2 )) / 3 )
+
+            let _innerContentWidth: CGFloat = self.innerContentWidth ?? DefaultAlertProperties.innerContentWidth
+            let _buttonMargin: CGFloat = self.buttonMargin ?? DefaultAlertProperties.buttonMargin
+
+            let buttonWidth: CGFloat = self.buttons.count == 2 ? (( _innerContentWidth - _buttonMargin) / 2 ) : (( _innerContentWidth - ( _buttonMargin * 2 )) / 3 )
             var buttonPositionX: CGFloat = 0.0
             for button in self.buttons {
-                button.frame = CGRect(x: buttonPositionX, y: buttonAreaPositionY, width: buttonWidth, height: self.buttonHeight)
-                buttonPositionX += self.buttonMargin + buttonWidth
+                button.frame = CGRect(x: buttonPositionX, y: buttonAreaPositionY, width: buttonWidth, height: self.buttonHeight ?? DefaultAlertProperties.buttonHeight)
+                buttonPositionX += _buttonMargin + buttonWidth
             }
-            buttonAreaPositionY += self.buttonHeight
+            buttonAreaPositionY += self.buttonHeight ?? DefaultAlertProperties.buttonHeight
         } else {
             
             for button in self.buttons {
                 let action: AlertAction = self.actions[button.tag - 1] as! AlertAction
                 if ( action.style != .cancel ) {
-                    button.frame = CGRect(x: 0, y: buttonAreaPositionY, width: self.innerContentWidth, height: self.buttonHeight)
-                    buttonAreaPositionY += self.buttonHeight + self.buttonMargin
+                    button.frame = CGRect(x: 0, y: buttonAreaPositionY, width: self.innerContentWidth ?? DefaultAlertProperties.innerContentWidth, height: self.buttonHeight ?? DefaultAlertProperties.buttonHeight)
+                    buttonAreaPositionY += ( self.buttonHeight ?? DefaultAlertProperties.buttonHeight ) + ( self.buttonMargin ?? DefaultAlertProperties.buttonMargin )
                 } else {
                     self.cancelButtonTag = button.tag
                 }
@@ -317,26 +293,26 @@ open class AlertController: DefaultAlertControllerBaseClass, DefaultAlertActionP
         if ( self.cancelButtonTag != nil ) {
             
             if (( self.preferredStyle == .alert ) && ( self.buttons.count > 1 )) {
-                buttonAreaPositionY += self.buttonMargin
+                buttonAreaPositionY += self.buttonMargin ?? DefaultAlertProperties.buttonMargin
             }
             
             let button: AlertButton = self.buttonAreaScrollView.viewWithTag(self.cancelButtonTag!) as! AlertButton
             //let action: AlertAction = self.actions[self.cancelButtonTag! - 1] as! AlertAction
-            button.frame = CGRect(x: 0, y: buttonAreaPositionY, width: self.innerContentWidth, height: self.buttonHeight)
-            buttonAreaPositionY += self.buttonHeight + self.buttonMargin
+            button.frame = CGRect(x: 0, y: buttonAreaPositionY, width: self.innerContentWidth ?? DefaultAlertProperties.innerContentWidth, height: self.buttonHeight ?? DefaultAlertProperties.buttonHeight)
+            buttonAreaPositionY += ( self.buttonHeight ?? DefaultAlertProperties.buttonHeight ) + ( self.buttonMargin ?? DefaultAlertProperties.buttonMargin )
         }
         
-        buttonAreaPositionY += self.alertViewPadding
+        buttonAreaPositionY += self.alertViewPadding ?? DefaultAlertProperties.alertViewPadding
         buttonAreaPositionY = self.buttons.count == 0 ? 0.0 : buttonAreaPositionY
         
         // ButtonAreaScrollView Height
         self.buttonAreaHeight = buttonAreaPositionY
-        self.buttonAreaScrollView.contentSize = CGSize(width: alertViewWidth, height: self.buttonAreaHeight)
+        self.buttonAreaScrollView.contentSize = CGSize(width: self.alertViewWidth ?? DefaultAlertProperties.alertViewWidth, height: self.buttonAreaHeight)
         self.buttonContainerHeightConstraint?.constant = self.buttonAreaHeight
         
         // AlertView Layout
         self.reloadAlertViewHeight()
-        self.contentView.frame.size = CGSize(width: self.alertViewWidth, height: self.contentViewHeightConstraint?.constant ?? 150.0 )
+        self.contentView.frame.size = CGSize(width: self.alertViewWidth ?? DefaultAlertProperties.alertViewWidth, height: self.contentViewHeightConstraint?.constant ?? 150.0 )
         
     }
     
@@ -355,7 +331,7 @@ open class AlertController: DefaultAlertControllerBaseClass, DefaultAlertActionP
         // ContentView Height Constraint
         var contentViewHeight: CGFloat = ( self.textAreaHeight + buttonAreaHeight ) > maxHeight ? maxHeight : ( self.textAreaHeight + buttonAreaHeight )
         
-        if ( self.preferredStyle == .actionSheet ) { contentViewHeight += self.actionSheetBounceHeight }
+        if ( self.preferredStyle == .actionSheet ) { contentViewHeight += self.actionSheetBounceHeight ?? DefaultAlertProperties.actionSheetBounceHeight }
         
         self.contentViewHeightConstraint?.constant = contentViewHeight
         
@@ -472,7 +448,7 @@ open class AlertController: DefaultAlertControllerBaseClass, DefaultAlertActionP
         }
         
         let textField: UITextFieldExtended = UITextFieldExtended()
-        textField.frame.size = CGSize(width: self.innerContentWidth, height: self.textFieldHeight)
+        textField.frame.size = CGSize(width: self.innerContentWidth ?? DefaultAlertProperties.innerContentWidth, height: self.textFieldHeight)
         textField.borderStyle = UITextBorderStyle.none
         textField.backgroundColor = self.textFieldBgColor
         textField.delegate = self

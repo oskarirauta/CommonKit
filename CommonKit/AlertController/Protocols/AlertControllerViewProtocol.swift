@@ -11,24 +11,21 @@ import UIKit
 
 public protocol AlertControllerViewProtocol {
     
-    // Defaults
-    var defaults: DefaultAlertProperties { get }
-
     // Settings
     var fullscreen: Bool { get }
     var preferredStyle: AlertControllerStyle { get }
-    var actionSheetBounceHeight: CGFloat { get }
+    var actionSheetBounceHeight: CGFloat? { get set }
     
     // OverlayView
     var overlayView: UIView { get }
-    var overlayColor: UIColor { get }
+    var overlayColor: UIColor? { get set }
     
     // ContainerView
     var containerView: UIView { get }
     
     // ContentView
     var contentView: UIView { get }
-    var contentViewBgColor: UIColor { get }
+    var contentViewBgColor: UIColor? { get set }
     
     // Controller's view
     var view: UIView! { get set }

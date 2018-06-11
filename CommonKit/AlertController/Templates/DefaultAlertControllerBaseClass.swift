@@ -10,56 +10,53 @@ import Foundation
 import UIKit
 
 @objc(DefaultAlertControllerBaseClass)
-open class DefaultAlertControllerBaseClass: UIViewController, AlertControllerViewProtocol, UIViewControllerTransitioningDelegate {
+open class DefaultAlertControllerBaseClass: UIViewController, AlertControllerViewProtocol, AlertActionProtocol, UIViewControllerTransitioningDelegate {
+            
+    open var fullscreen: Bool { get { return DefaultAlertProperties.fullScreen }}
     
-    public lazy var defaults: DefaultAlertProperties = DefaultAlertProperties()
-    
-    open var fullscreen: Bool { get { return false }}
-    
-    open var _preferredStyle: AlertControllerStyle = .alert
+    open internal(set) var _preferredStyle: AlertControllerStyle = .alert
     open var preferredStyle: AlertControllerStyle { get { return self._preferredStyle }}
     
     // Settings
-    open lazy var actionSheetBounceHeight: CGFloat = self.defaults.actionSheetBounceHeight
-    open lazy var alertViewWidth: CGFloat = self.defaults.alertViewWidth
-    open lazy var alertViewPadding: CGFloat = self.defaults.alertViewPadding
-    open lazy var innerContentWidth: CGFloat = self.defaults.innerContentWidth
+
+    open var buttonFont: [AlertActionStyle: UIFont] = [:]
+    open var buttonTextColor: [AlertActionStyle: UIColor] = [:]
+    open var buttonBgColor: [AlertActionStyle: UIColor] = [:]
+    open var buttonBgColorHighlighted: [AlertActionStyle: UIColor] = [:]
     
-    open lazy var overlayColor: UIColor = self.defaults.overlayColor
-    open lazy var contentViewBgColor: UIColor = self.defaults.contentViewBgColor
+    open var actionSheetBounceHeight: CGFloat? = nil
+    open var alertViewWidth: CGFloat? = nil
+    open var alertViewPadding: CGFloat? = nil
+    open var innerContentWidth: CGFloat? = nil
     
-    open lazy var contentViewDefaultHeight: CGFloat = self.defaults.contentViewDefaultHeight
+    open var overlayColor: UIColor? = nil
+    open var contentViewBgColor: UIColor? = nil
     
-    open lazy var buttonCornerRadius: CGFloat = self.defaults.buttonCornerRadius
-    open lazy var buttonHeight: CGFloat = self.defaults.buttonHeight
-    open lazy var buttonMargin: CGFloat = self.defaults.buttonMargin
+    open var contentViewDefaultHeight: CGFloat? = nil
     
-    open lazy var overlayView: UIView = {
-        [unowned self] in
-        var _overlayView: UIView = UIView()
-        _overlayView.translatesAutoresizingMaskIntoConstraints = false
-        _overlayView.backgroundColor = self.overlayColor
-        return _overlayView
-        }()
+    open var buttonCornerRadius: CGFloat? = nil
+    open var buttonShadowColor: UIColor? = nil
+    open var buttonHeight: CGFloat? = nil
+    open var buttonMargin: CGFloat? = nil
     
-    open lazy var containerView: UIView = {
-        [unowned self] in
-        var _containerView: UIView = UIView()
-        _containerView.translatesAutoresizingMaskIntoConstraints = false
-        _containerView.addSubview(self.contentView)
-        return _containerView
-        }()
+    open lazy var overlayView: UIView = UIView.create {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.backgroundColor = self.overlayColor ?? DefaultAlertProperties.overlayColor
+    }
+    
+    open lazy var containerView: UIView = UIView.create {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.addSubview(self.contentView)
+    }
+    
     open var containerViewBottomConstraint: NSLayoutConstraint? = nil
     
-    open lazy var contentView: UIView = {
-        [unowned self] in
-        var _contentView: UIView = UIView()
-        _contentView.translatesAutoresizingMaskIntoConstraints = false
-        _contentView.backgroundColor = self.contentViewBgColor
-        _contentView.layer.masksToBounds = true
-        _contentView.layer.cornerRadius = self.preferredStyle == .alert ? 8.0 : 0.0
-        return _contentView
-        }()
+    open lazy var contentView: UIView = UIView.create {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.backgroundColor = self.contentViewBgColor ?? DefaultAlertProperties.contentViewBgColor
+        $0.layer.masksToBounds = true
+        $0.layer.cornerRadius = self.preferredStyle == .alert ? 8.0 : 0.0
+    }
     
     open var contentViewHeightConstraint: NSLayoutConstraint? = nil
     
@@ -152,8 +149,8 @@ open class DefaultAlertControllerBaseClass: UIViewController, AlertControllerVie
             } else {
                 
                 self.contentView.centerYAnchor.constraint(equalTo: self.containerView.centerYAnchor).isActive = true
-                self.contentView.widthAnchor.constraint(equalToConstant: self.alertViewWidth).isActive = true
-                self.contentViewHeightConstraint = self.contentView.heightAnchor.constraint(equalToConstant: self.contentViewDefaultHeight)
+                self.contentView.widthAnchor.constraint(equalToConstant: self.alertViewWidth ?? DefaultAlertProperties.alertViewWidth).isActive = true
+                self.contentViewHeightConstraint = self.contentView.heightAnchor.constraint(equalToConstant: self.contentViewDefaultHeight ?? DefaultAlertProperties.contentViewDefaultHeight)
                 self.contentViewHeightConstraint?.isActive = true
                 
             }
@@ -164,14 +161,14 @@ open class DefaultAlertControllerBaseClass: UIViewController, AlertControllerVie
                 
                 self.contentView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 8.0).isActive = true
                 self.contentView.widthAnchor.constraint(equalTo: self.containerView.widthAnchor, constant: 0.0).isActive = true
-                self.contentView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: self.actionSheetBounceHeight).isActive = true
+                self.contentView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: self.actionSheetBounceHeight ?? DefaultAlertProperties.actionSheetBounceHeight).isActive = true
                 
             } else {
                 
                 self.contentView.centerXAnchor.constraint(equalTo: self.containerView.centerXAnchor).isActive = true
-                self.contentView.bottomAnchor.constraint(equalTo: self.containerView.safeAreaLayoutGuide.bottomAnchor, constant: self.actionSheetBounceHeight).isActive = true
+                self.contentView.bottomAnchor.constraint(equalTo: self.containerView.safeAreaLayoutGuide.bottomAnchor, constant: self.actionSheetBounceHeight ?? DefaultAlertProperties.actionSheetBounceHeight).isActive = true
                 self.contentView.widthAnchor.constraint(equalTo: self.containerView.widthAnchor, constant: 0.0).isActive = true
-                self.contentViewHeightConstraint = self.contentView.heightAnchor.constraint(equalToConstant: self.contentViewDefaultHeight)
+                self.contentViewHeightConstraint = self.contentView.heightAnchor.constraint(equalToConstant: self.contentViewDefaultHeight ?? DefaultAlertProperties.contentViewDefaultHeight)
                 self.contentViewHeightConstraint?.isActive = true
                 
             }

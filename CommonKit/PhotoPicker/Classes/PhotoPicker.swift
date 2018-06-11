@@ -22,13 +22,8 @@ public struct PhotoPickerSettings {
     var flashMode: AVCaptureDevice.FlashMode = AVCaptureDevice.FlashMode.off
 }
 
-open class PhotoPicker: DefaultAlertControllerBaseClass, DefaultAlertActionProtocol, PHPhotoLibraryChangeObserver {
-    
-    open lazy var buttonFont: [AlertActionStyle : UIFont] = self.defaults.buttonFont
-    open lazy var buttonTextColor: [AlertActionStyle : UIColor] = self.defaults.buttonTextColor
-    open lazy var buttonBgColor: [AlertActionStyle : UIColor] = self.defaults.buttonBgColor
-    open lazy var buttonBgColorHighlighted: [AlertActionStyle : UIColor] = self.defaults.buttonBgColorHighlighted
-    
+open class PhotoPicker: DefaultAlertControllerBaseClass, PHPhotoLibraryChangeObserver {
+        
     open var photo_handler: ((Array<PHAsset>) -> Void)? = nil
     open var camera_handler: ((UIImage?) -> Void)? = nil
     open var dismiss_handler: ((PhotoPicker) -> Void)? = nil

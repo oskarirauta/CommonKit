@@ -25,29 +25,21 @@ extension PhotoPickerView {
         
         open class ContentViewClass: UIView {
             
-            open lazy var topOverlay: CALayer = {
-                var _topOverlay: CALayer = CALayer()
-                _topOverlay.backgroundColor = UIColor.black.withAlphaComponent(0.55).cgColor
-                return _topOverlay
-            }()
+            open lazy var topOverlay: CALayer = CALayer.create {
+                $0.backgroundColor = UIColor.black.withAlphaComponent(0.55).cgColor
+            }
             
-            open lazy var bottomOverlay: CALayer = {
-                var _bottomOverlay: CALayer = CALayer()
-                _bottomOverlay.backgroundColor = UIColor.black.withAlphaComponent(0.55).cgColor
-                return _bottomOverlay
-            }()
+            open lazy var bottomOverlay: CALayer = CALayer.create {
+                $0.backgroundColor = UIColor.black.withAlphaComponent(0.55).cgColor
+            }
             
-            open lazy var leftOverlay: CALayer = {
-                var _leftOverlay: CALayer = CALayer()
-                _leftOverlay.backgroundColor = UIColor.black.withAlphaComponent(0.55).cgColor
-                return _leftOverlay
-            }()
+            open lazy var leftOverlay: CALayer = CALayer.create {
+                $0.backgroundColor = UIColor.black.withAlphaComponent(0.55).cgColor
+            }
             
-            open lazy var rightOverlay: CALayer = {
-                var _rightOverlay: CALayer = CALayer()
-                _rightOverlay.backgroundColor = UIColor.black.withAlphaComponent(0.55).cgColor
-                return _rightOverlay
-            }()
+            open lazy var rightOverlay: CALayer = CALayer.create {
+                $0.backgroundColor = UIColor.black.withAlphaComponent(0.55).cgColor
+            }
             
             public override init(frame: CGRect) {
                 super.init(frame: frame)
@@ -106,7 +98,7 @@ extension PhotoPickerView {
             _buttonToggle.alpha = 0.75
             
             _buttonToggle.isEnabled = true
-            _buttonToggle.layer.cornerRadius = self.buttonCornerRadius
+            _buttonToggle.layer.cornerRadius = self.buttonCornerRadius ?? DefaultAlertProperties.buttonCornerRadius
             _buttonToggle.addTarget(self, action: #selector(self.toggleCamera), for: .touchUpInside)
             return _buttonToggle
             }()
@@ -130,7 +122,7 @@ extension PhotoPickerView {
             _buttonFlash.alpha = 0.75
             
             _buttonFlash.isEnabled = true
-            _buttonFlash.layer.cornerRadius = self.buttonCornerRadius
+            _buttonFlash.layer.cornerRadius = self.buttonCornerRadius ?? DefaultAlertProperties.buttonCornerRadius
             _buttonFlash.addTarget(self, action: #selector(self.toggleFlash), for: .touchUpInside)
             return _buttonFlash
             }()
@@ -161,7 +153,7 @@ extension PhotoPickerView {
             _buttonCancel.alpha = 0.75
             
             _buttonCancel.isEnabled = true
-            _buttonCancel.layer.cornerRadius = self.buttonCornerRadius
+            _buttonCancel.layer.cornerRadius = self.buttonCornerRadius ?? DefaultAlertProperties.buttonCornerRadius
             _buttonCancel.addTarget(self, action: #selector(self.action_cancel), for: .touchUpInside)
             
             return _buttonCancel
@@ -185,7 +177,7 @@ extension PhotoPickerView {
             _buttonAlbum.alpha = 0.75
             
             _buttonAlbum.isEnabled = true
-            _buttonAlbum.layer.cornerRadius = self.buttonCornerRadius
+            _buttonAlbum.layer.cornerRadius = self.buttonCornerRadius ?? DefaultAlertProperties.buttonCornerRadius
             _buttonAlbum.addTarget(self, action: #selector(self.action_album), for: .touchUpInside)
             
             return _buttonAlbum

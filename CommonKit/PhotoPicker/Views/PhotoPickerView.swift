@@ -21,78 +21,56 @@ open class PhotoPickerView: AlertView, UICollectionViewDelegate, UICollectionVie
     open var accept_camera_photo_handler: (() -> Void)? = nil
     
     fileprivate var _settings: PhotoPickerSettings? = nil
+    
     open var settings: PhotoPickerSettings {
         get { return self._settings ?? PhotoPickerSettings() }
     }
     
-    open lazy var assetManager: AssetManager = {
-        [unowned self] in
-        var _assetManager: AssetManager = AssetManager(size: self.cellSize)
-        return _assetManager
-        }()
+    open lazy var assetManager: AssetManager = AssetManager(size: self.cellSize)
     
-    open lazy var photoManager: PHImageManager = {
-        [unowned self] in
-        var _photoManager: PHImageManager = PHImageManager.default()
-        return _photoManager
-        }()
+    open lazy var photoManager: PHImageManager = PHImageManager.default()
     
-    open lazy var photoView: PhotoView = {
-        [unowned self] in
-        var _photoView: PhotoView = PhotoView()
-        _photoView.translatesAutoresizingMaskIntoConstraints = false
-        _photoView.album_handler = self.showAlbumSelector
-        _photoView.camera_handler = self.showCamera
-        _photoView.accept_handler = self.acceptPhotos
-        _photoView.cancel_handler = self.cancel
-        _photoView.albumTitle = self.assetManager.currentAlbum?.name
-        _photoView.delegate = self
-        _photoView.datasource = self
-        _photoView.isHidden = false
-        return _photoView
-        }()
+    open lazy var photoView: PhotoView = PhotoView.create {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.album_handler = self.showAlbumSelector
+        $0.camera_handler = self.showCamera
+        $0.accept_handler = self.acceptPhotos
+        $0.cancel_handler = self.cancel
+        $0.albumTitle = self.assetManager.currentAlbum?.name
+        $0.delegate = self
+        $0.datasource = self
+        $0.isHidden = false
+    }
     
-    open lazy var photoPreviewView: PhotoPreviewView = {
-        [unowned self] in
-        var _photoPreviewView: PhotoPreviewView = PhotoPreviewView(frame: CGRect.zero)
-        _photoPreviewView.translatesAutoresizingMaskIntoConstraints = false
-        _photoPreviewView.isHidden = true
-        _photoPreviewView.back_handler = self.dismissPhotoPreview
-        return _photoPreviewView
-        }()
+    open lazy var photoPreviewView: PhotoPreviewView = PhotoPreviewView.create {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.isHidden = true
+        $0.back_handler = self.dismissPhotoPreview
+    }
     
-    open lazy var albumView: AlbumView = {
-        [unowned self] in
-        var _albumView: AlbumView = AlbumView()
-        _albumView.translatesAutoresizingMaskIntoConstraints = false
-        _albumView.cancel_handler = self.dismissAlbumSelector
-        _albumView.delegate = self
-        _albumView.datasource = self
-        _albumView.isHidden = true
-        return _albumView
-        }()
+    open lazy var albumView: AlbumView = AlbumView.create {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.cancel_handler = self.dismissAlbumSelector
+        $0.delegate = self
+        $0.datasource = self
+        $0.isHidden = true
+    }
     
-    open lazy var cameraView: CameraView = {
-        [unowned self] in
-        var _cameraView: CameraView = CameraView()
-        _cameraView.translatesAutoresizingMaskIntoConstraints = false
-        _cameraView.isHidden = true
-        _cameraView.album_handler = self.dismissCamera
-        _cameraView.shoot_handler = self.showPreview
-        _cameraView.cancel_handler = self.cancel
-        _cameraView.initCamera(self._settings)
-        return _cameraView
-        }()
+    open lazy var cameraView: CameraView = CameraView.create {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.isHidden = true
+        $0.album_handler = self.dismissCamera
+        $0.shoot_handler = self.showPreview
+        $0.cancel_handler = self.cancel
+        $0.initCamera(self._settings)
+    }
     
-    open lazy var previewView: PreviewView = {
-        [unowned self] in
-        var _previewView: PreviewView = PreviewView(frame: CGRect.zero)
-        _previewView.translatesAutoresizingMaskIntoConstraints = false
-        _previewView.isHidden = true
-        _previewView.cancel_handler = self.dismissPreview
-        _previewView.accept_handler = self.acceptPreview
-        return _previewView
-        }()
+    open lazy var previewView: PreviewView = PreviewView.create {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.isHidden = true
+        $0.cancel_handler = self.dismissPreview
+        $0.accept_handler = self.acceptPreview
+    }
     
     open var cellSize: CGSize {
         get {

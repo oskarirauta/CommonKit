@@ -55,7 +55,7 @@ extension PhotoPickerView {
             var _buttonCancel: AlertButton = AlertButton()
             _buttonCancel.translatesAutoresizingMaskIntoConstraints = false
             self.setButton(&_buttonCancel, style: .cancel)
-            _buttonCancel.setBackgroundImage(self.buttonBgColorHighlighted[.cancel]?.image, for: .highlighted)
+            _buttonCancel.setBackgroundImage((self.buttonBgColorHighlighted[.cancel] ?? DefaultAlertProperties.buttonBgColorHighlighted[.cancel])?.image, for: .highlighted)
             _buttonCancel.setTitle(NSLocalizedString("CANCEL", comment: "CANCEL"))
             _buttonCancel.isEnabled = true
             _buttonCancel.addTarget(self, action: #selector(self.action_cancel(_:)), for: .touchUpInside)
@@ -81,7 +81,7 @@ extension PhotoPickerView {
             
             self.buttonCancel.topAnchor.constraint(equalTo: self.buttonArea.topAnchor).isActive = true
             self.buttonCancel.bottomAnchor.constraint(equalTo: self.buttonArea.bottomAnchor).isActive = true
-            self.buttonCancel.heightAnchor.constraint(equalToConstant: self.buttonHeight).isActive = true
+            self.buttonCancel.heightAnchor.constraint(equalToConstant: self.buttonHeight ?? DefaultAlertProperties.buttonHeight).isActive = true
             self.buttonCancel.leadingAnchor.constraint(equalTo: self.buttonArea.leadingAnchor).isActive = true
             self.buttonCancel.widthAnchor.constraint(equalToConstant: self.buttonCancel.intrinsicContentSize.width + ( 2 * 15.0 )).isActive = true
             
