@@ -30,9 +30,9 @@ extension PhotoPickerView {
             $0.translatesAutoresizingMaskIntoConstraints = false
             $0.clipsToBounds = true
             
-            $0.setImage(UIImage(named: "photopicker_back")?.scaled(to: CGSize(width: 52.0, height: 52.0)).withRenderingMode(.alwaysTemplate), for: UIControlState())
-            $0.setImage(UIImage(named: "photopicker_back")?.scaled(to: CGSize(width: 52.0, height: 52.0)).withRenderingMode(.alwaysTemplate), for: .highlighted)
-            $0.setImage(UIImage(named: "photopicker_back")?.scaled(to: CGSize(width: 52.0, height: 52.0)).withRenderingMode(.alwaysTemplate), for: .selected)
+            $0.setImage(UIImage(named: "photopicker_back", in: Bundle(for: CameraView.self), compatibleWith: nil)?.scaled(to: CGSize(width: 52.0, height: 52.0)).withRenderingMode(.alwaysTemplate), for: UIControlState())
+            $0.setImage(UIImage(named: "photopicker_back", in: Bundle(for: CameraView.self), compatibleWith: nil)?.scaled(to: CGSize(width: 52.0, height: 52.0)).withRenderingMode(.alwaysTemplate), for: .highlighted)
+            $0.setImage(UIImage(named: "photopicker_back", in: Bundle(for: CameraView.self), compatibleWith: nil)?.scaled(to: CGSize(width: 52.0, height: 52.0)).withRenderingMode(.alwaysTemplate), for: .selected)
             
             $0.tintColor = UIColor.black
             $0.imageEdgeInsets = UIEdgeInsets(top: 2.0, left: 2.0, bottom: 2.0, right: 2.0)

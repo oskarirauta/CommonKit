@@ -99,7 +99,7 @@ extension PhotoPickerView {
             _buttonCamera.translatesAutoresizingMaskIntoConstraints = false
             self.setButton(&_buttonCamera, style: .default)
             _buttonCamera.setBackgroundImage((self.buttonBgColorHighlighted[.default] ?? DefaultAlertProperties.buttonBgColorHighlighted[.default])?.image, for: .highlighted)
-            _buttonCamera.setImage(UIImage(named: "photopicker_camera")?.scaled(to: CGSize(width: 52.0, height: 52.0)).withRenderingMode(.alwaysTemplate))
+            _buttonCamera.setImage(UIImage(named: "photopicker_camera", in: Bundle(for: CameraView.self), compatibleWith: nil)?.scaled(to: CGSize(width: 52.0, height: 52.0)).withRenderingMode(.alwaysTemplate))
             _buttonCamera.imageEdgeInsets = UIEdgeInsets(top: 4.0, left: 6.0, bottom: 4.0, right: 6.0)
             _buttonCamera.isEnabled = true
             _buttonCamera.addTarget(self, action: #selector(self.action_camera(_:)), for: .touchUpInside)

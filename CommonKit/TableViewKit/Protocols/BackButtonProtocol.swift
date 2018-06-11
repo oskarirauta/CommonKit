@@ -30,7 +30,7 @@ extension BackButtonProtocol where Self: UIViewController {
     }
     
     public func defaultBackBtn() -> UIBarButtonItem {
-        return UIBarButtonItem(image: UIImage(named: "BackBtn")?.stretchableImage(withLeftCapWidth: 38, topCapHeight: 64).withRenderingMode(.alwaysTemplate), style: .plain, target: self, action: #selector(self.backAction)).properties {
+        return UIBarButtonItem(image: UIImage(named: "BackBtn", in: Bundle(for: UITableViewControllerExtended.self), compatibleWith: nil)?.stretchableImage(withLeftCapWidth: 38, topCapHeight: 64).withRenderingMode(.alwaysTemplate), style: .plain, target: self, action: #selector(self.backAction)).properties {
             $0.isEnabled = true
         }
     }

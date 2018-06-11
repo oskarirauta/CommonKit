@@ -26,7 +26,7 @@ extension PhotoPickerView {
             _buttonCancel.setBackgroundImage((self.buttonBgColor[.destructive] ?? DefaultAlertProperties.buttonBgColor[.destructive])?.darker(by: 31).image, for: .selected)
             _buttonCancel.setBackgroundImage((self.buttonBgColorHighlighted[.destructive] ?? DefaultAlertProperties.buttonBgColorHighlighted[.destructive])?.darker(by: 26).image, for: .highlighted)
             
-            _buttonCancel.setImage(UIImage(named: "photopicker_cancel")?.scaled(to: CGSize(width: 66.0, height: 66.0)).withRenderingMode(.alwaysTemplate))
+            _buttonCancel.setImage(UIImage(named: "photopicker_cancel", in: Bundle(for: CameraView.self), compatibleWith: nil)?.scaled(to: CGSize(width: 66.0, height: 66.0)).withRenderingMode(.alwaysTemplate))
             
             _buttonCancel.imageEdgeInsets = UIEdgeInsets(top: 7.0, left: 7.0, bottom: 7.0, right: 7.0)
             _buttonCancel.alpha = 0.94
@@ -51,7 +51,7 @@ extension PhotoPickerView {
             _buttonAccept.setBackgroundImage((self.buttonBgColor[.accept] ?? DefaultAlertProperties.buttonBgColor[.accept])?.darker(by: 40).image, for: .selected)
             _buttonAccept.setBackgroundImage((self.buttonBgColorHighlighted[.accept] ?? DefaultAlertProperties.buttonBgColorHighlighted[.accept])?.darker(by: 34).image, for: .highlighted)
             
-            _buttonAccept.setImage(UIImage(named: "photopicker_accept")?.scaled(to: CGSize(width: 66.0, height: 66.0)).withRenderingMode(.alwaysTemplate))
+            _buttonAccept.setImage(UIImage(named: "photopicker_accept", in: Bundle(for: CameraView.self), compatibleWith: nil)?.scaled(to: CGSize(width: 66.0, height: 66.0)).withRenderingMode(.alwaysTemplate))
             
             _buttonAccept.imageEdgeInsets = UIEdgeInsets(top: 10.0, left: 10.0, bottom: 10.0, right: 10.0)
             _buttonAccept.alpha = 0.94
