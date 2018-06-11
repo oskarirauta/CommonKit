@@ -169,7 +169,7 @@ open class PhotoPickerView: AlertView, UICollectionViewDelegate, UICollectionVie
         let requestOptions: PHImageRequestOptions = PHImageRequestOptions()
         requestOptions.resizeMode = .fast
         requestOptions.deliveryMode = .fastFormat
-        requestOptions.isNetworkAccessAllowed = false;
+        requestOptions.isNetworkAccessAllowed = false
         
         self.photoManager.requestImageData(for: self.assetManager.currentAlbum!.assets.object(at: indexPath.row), options: requestOptions, resultHandler: {
             (data, str, orientation, info) -> Void in

@@ -45,6 +45,14 @@ open class PhotoPicker: DefaultAlertControllerBaseClass, PHPhotoLibraryChangeObs
         $0.accept_camera_photo_handler = self.accept_camera_photo
     }
     
+    public var assetManager: AssetManager {
+        get { return self.photoPickerView.assetManager }
+    }
+    
+    public var photoManager: PHImageManager {
+        get { return self.photoPickerView.photoManager }
+    }
+    
     open override func setupView() {
         super.setupView()
         self.contentView.addSubview(self.photoPickerView)
