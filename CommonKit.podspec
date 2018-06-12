@@ -32,7 +32,8 @@ since extensions for UILabel could not provide this functionality.
 			'https://raw.githubusercontent.com/oskarirauta/CommonKit/master/Screenshots/Phone.png',
 			'https://raw.githubusercontent.com/oskarirauta/CommonKit/master/Screenshots/Landscape.png',
 			'https://raw.githubusercontent.com/oskarirauta/CommonKit/master/Screenshots/Currency.png',
-			'https://raw.githubusercontent.com/oskarirauta/CommonKit/master/Screenshots/FontKit.png'
+			'https://raw.githubusercontent.com/oskarirauta/CommonKit/master/Screenshots/FontKit.png',
+			'https://raw.githubusercontent.com/oskarirauta/CommonKit/master/Screenshots/PhotoPicker.png'
 		]
 
   s.swift_version = '4.0' 
