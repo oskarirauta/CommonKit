@@ -194,13 +194,19 @@ If you want to use them directly, initialize them first with underscore as varia
 ### Code generator did output code that doesn't compile!
 Yes - it's not perfect. It's just something to get you started - some icon names might need tweaking due to Swift syntax not allowing ones that came from generator. Enumerations provided by me already contain necessary changes.
 
+### TableViewKit
+Included since 1.3.2. TableViewKit contains some improvements to UITableViewController, UITableViewCell and UITableView's headers. Also brings few new classes: UITableViewControllerExtended and UITableViewCellExtended which have extended supported functionality. Also UITitleLabel is nice addition, it's a base for custom cells which have icon and title.
+
+### PhotoPicker
+PhotoPicker and PhotoPreview are classes which allow you to present a photo picker with possibility of selecting multiple assets at once, PhotoPrevies is a photo displayer class. These both utilize provided AlertController. Camera support (if device has a camera, simulator doesn't) is also supported in PhotoPicker. Recording or picking a video is not supported by this system, only stills. Camera interface includes common controls.
+
+![PhotoPicker](https://raw.githubusercontent.com/oskarirauta/CommonKit/master/Screenshots/PhotoPicker.png)
+
+### Is there more?
+Yes- much more. This is actually quite a big pod with lots of stuff.
+
 ### Examples
 Examples come with Podfiles, so go to examples root directory and execute ```pod install``` to enable compilation.
-Examples are provided for:
- - AppLocale
- - NumPad ( Depends on my version of PhoneNumberKit, check included Podfile for NumPad )
- - Dispatch: Utilizes included backgrounding task management, check console output.
- - Currency
 
 ### Licenses
 Included resources(fonts, etc) might be under influence of different licenses. Some code, especially AttributedStringWrapper, was not created by me. It was provided from 3rd party framework by loopeer: https://github.com/loopeer/AttributedStringWrapper
