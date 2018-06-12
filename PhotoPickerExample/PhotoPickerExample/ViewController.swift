@@ -28,12 +28,20 @@ class ViewController: UIViewController {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.setTitle("Select photo", for: UIControlState())
         $0.tag = 0
-        $0.titleLabel?.font = UIFont.boldSystemFont(ofSize: 12.0)
+        $0.isHidden = true
+        $0.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14.5)
         $0.setTitleColor(UIColor.buttonForegroundColor, for: UIControlState())
         $0.setTitleColor(UIColor.white, for: UIControlState.highlighted)
         $0.addTarget(self, action: #selector(self.pickPhoto(_:)), for: .touchUpInside)
     }
 
+    lazy var noAccessLabel: UILabel = UILabel.create {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.text = "Photo library authorization required."
+        $0.font = UIFont.boldSystemFont(ofSize: 14.5)
+        $0.isHidden = false
+    }
+    
     lazy var requestOptions: PHImageRequestOptions = PHImageRequestOptions().properties {
         $0.resizeMode = .fast
         $0.deliveryMode = .fastFormat
@@ -44,6 +52,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         self.view.addSubview(self.imageView)
         self.view.addSubview(self.button)
+        self.view.addSubview(self.noAccessLabel)
         
         self.imageView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 35.0).isActive = true
         self.imageView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
@@ -52,8 +61,44 @@ class ViewController: UIViewController {
         
         self.button.topAnchor.constraint(equalTo: self.imageView.bottomAnchor, constant: 35.0).isActive = true
         self.button.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        self.noAccessLabel.topAnchor.constraint(equalTo: self.button.bottomAnchor, constant: 20.0).isActive = true
+        self.noAccessLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        
+        super.viewDidAppear(animated)
+        
+        let session = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInWideAngleCamera], mediaType: AVMediaType.video, position: .unspecified)
+        let cameras = session.devices.compactMap { $0 }
+        let hasCamera: Bool = !cameras.isEmpty
+        
+        if ( hasCamera ) {
+            AVCaptureDevice.requestAccess(for: AVMediaType.video) {
+                response in
+                print(response ? "Camera access granted" : "Camera access not allowed.")
+            }
+        }
+
+        let photos = PHPhotoLibrary.authorizationStatus()
+        if ( photos != .authorized ) {
+            PHPhotoLibrary.requestAuthorization {
+                status in
+                if ( status == .authorized ) {
+                    DispatchQueue.main.async {
+                        self.button.isHidden = false
+                        self.noAccessLabel.isHidden = true
+                    }
+                }
+            }
+        } else {
+            DispatchQueue.main.async {
+                self.button.isHidden = false
+                self.noAccessLabel.isHidden = true
+            }
+        }
+    }
+    
     @objc func pickPhoto(_ sender: Any) {
         self.present(self.photoPicker, animated: true, completion: nil)
     }
