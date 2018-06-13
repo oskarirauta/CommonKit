@@ -17,10 +17,3 @@ public protocol UICellDelegateSelectable: UICellDelegateSelectableBase {
     var handler: CellHandler { get set }
     func returnValues() -> CellReturn
 }
-
-extension UICellDelegateSelectable {
-    
-    public func returnValues() -> CellReturn {
-        return CellReturn(cell: self as! UITableViewCell)
-    }
-}

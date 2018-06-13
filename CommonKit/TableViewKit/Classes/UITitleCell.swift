@@ -85,7 +85,7 @@ open class UITitleCell: UITableViewCellExtended, CellTitleProtocol {
         self.cellConstraints["titleLabel-trailing"] = self.titleLabel.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -8.0)
     }
  
-    public func returnValues() -> CellReturn {
+    open override func returnValues() -> CellReturn {
         return CellReturn(cell: self, values: self.title ?? "")
     }
   

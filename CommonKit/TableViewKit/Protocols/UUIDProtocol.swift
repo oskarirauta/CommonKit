@@ -9,7 +9,7 @@
 import Foundation
 
 public protocol UUIDProtocol {
-    var uuid : String? { get }
+    var uuid : String? { get set }
 }
 
 extension UITableViewCell: UUIDProtocol {}

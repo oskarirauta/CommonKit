@@ -65,7 +65,7 @@ open class CurrencyField: UITextField, CurrencyFieldDelegate, UITextFieldDelegat
     open override func caretRect(for position: UITextPosition) -> CGRect {
         return .zero
     }
-    
+ 
     public func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         if ( self.value == nil ) { self.value = 0 }
         return true
@@ -88,6 +88,7 @@ open class CurrencyField: UITextField, CurrencyFieldDelegate, UITextFieldDelegat
             self.value = Money(Decimal(number) * 0.01)
             return
         }
+
         let newValue: Money = Money(( value.rawValue * 10 ) + ( value.isNegative ? -(Decimal(number) * 0.01) : (Decimal(number) * 0.01)))
         
         guard self.maximum == 0 || abs(newValue.rawValue) <= Decimal(self.maximum) else {

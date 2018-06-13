@@ -83,4 +83,8 @@ open class UITableViewCellExtended: UITableViewCell, CellConstraintProtocol, UIC
         }
     }
     
+    open func returnValues() -> CellReturn {
+        return CellReturn(cell: self)
+    }
+    
 }
