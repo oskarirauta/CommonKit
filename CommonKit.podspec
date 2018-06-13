@@ -39,6 +39,10 @@ since extensions for UILabel could not provide this functionality.
   s.swift_version = '4.0' 
   s.ios.deployment_target = '11.0'
   s.source_files = [
+			'CommonKit/BarCode/Types/*.swift',
+			'CommonKit/BarCode/Extensions/*.swift',
+			'CommonKit/QRCode/Types/*.swift',
+			'CommonKit/QRCode/Extensions/*.swift',
 			'CommonKit/TableViewKit/Protocols/*.swift',
 			'CommonKit/TableViewKit/Types/*.swift',
 			'CommonKit/TableViewKit/Extensions/*.swift',
