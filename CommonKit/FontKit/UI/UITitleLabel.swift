@@ -136,7 +136,7 @@ open class UITitleLabel: UIView, IconSettingsProtocol, TitleLabelProtocol {
         set { self.textLabel.allowsDefaultTighteningForTruncation = newValue }
     }
     
-    open var baseLineAdjustment: UIBaselineAdjustment {
+    open var baselineAdjustment: UIBaselineAdjustment {
         get { return self.textLabel.baselineAdjustment }
         set { self.textLabel.baselineAdjustment = newValue }
     }
