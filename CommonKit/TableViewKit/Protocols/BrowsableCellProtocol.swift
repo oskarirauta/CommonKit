@@ -54,11 +54,13 @@ extension UITableViewCell: BrowsableCellProtocol {
 
     open func prevField(_ sender: Any) {
         guard self.prevIndex != nil else { return }
+        self.tableView?.endEditing(true)
         self.tableView?.selectRow(at: self.prevIndex!, animated: true, scrollPosition: .middle)
     }
     
     open func nextField(_ sender: Any) {
         guard self.nextIndex != nil else { return }
+        self.tableView?.endEditing(true)
         self.tableView?.selectRow(at: self.nextIndex!, animated: true, scrollPosition: .middle)
     }
     

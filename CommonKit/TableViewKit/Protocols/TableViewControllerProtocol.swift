@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-public protocol TableViewControllerProtocol: UITableViewDelegate, UITableViewDataSource {
+public protocol TableViewControllerProtocol: UITableViewDelegate, UITableViewDataSource, TableViewSettingsProtocol {
     
     var delegate: UITableViewDelegate? { get set }
     var datasource: UITableViewDataSource? { get set }
@@ -33,9 +33,9 @@ public protocol TableViewControllerProtocol: UITableViewDelegate, UITableViewDat
     func scrollToRow(at indexPath: IndexPath, at: UITableViewScrollPosition, animated: Bool)
 }
 
-protocol InternalTableViewControllerProtocol: InternalTableViewSettingsProtocol, TableViewControllerProtocol { }
+protocol InternalTableViewControllerProtocol: TableViewControllerProtocol, InternalTableViewSettingsProtocol { }
 
-extension InternalTableViewControllerProtocol {
+extension TableViewControllerProtocol {
     
     public func setEditingSection(section: Int?) {
         self.editingSection = section

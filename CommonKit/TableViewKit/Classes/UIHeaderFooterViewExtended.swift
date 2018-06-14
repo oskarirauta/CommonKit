@@ -54,15 +54,15 @@ open class UIHeaderFooterViewExtended: UITableViewHeaderFooterView, HeaderConstr
         }
     }
     
-    open var fixedHeight: CGFloat? = nil {
+    open var fixedTitleHeight: CGFloat? = nil {
         didSet {
             self.headerConstraints["titleLabel-height"]?.isActive = false
-            guard self.fixedHeight != nil else {
+            guard self.fixedTitleHeight != nil else {
                 self.headerConstraints.removeValue(forKey: "titleLabel-height")
                 self.setNeedsUpdateConstraints()
                 return
             }
-            self.headerConstraints["titleLabel-height"] = self.titleLabel.heightAnchor.constraint(equalToConstant: self.fixedHeight!)
+            self.headerConstraints["titleLabel-height"] = self.titleLabel.heightAnchor.constraint(equalToConstant: self.fixedTitleHeight!)
             self.headerConstraints["titleLabel-height"]?.isActive = true
             self.setNeedsUpdateConstraints()
         }
@@ -126,6 +126,13 @@ open class UIHeaderFooterViewExtended: UITableViewHeaderFooterView, HeaderConstr
     open override func secondaryConstraints() {
         
         self.headerConstraints["titleLabel-trailing"] = self.titleLabel.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -4.0).withPriority(999)
+        
+        if ( self.fixedTitleHeight != nil ) {
+            self.headerConstraints["titleLabel-height"] = self.titleLabel.heightAnchor.constraint(equalToConstant: self.fixedTitleHeight!)
+        } else if ( self.headerConstraints["titleLabel-height"] != nil ) {
+            self.headerConstraints["titleLabel-height"]?.isActive = false
+            self.headerConstraints.removeValue(forKey: "titleLabel-height")
+        }        
     }
     
     open func activateHeaderConstraints(_ key: String? = nil) {
