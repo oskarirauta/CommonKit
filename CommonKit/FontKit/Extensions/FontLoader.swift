@@ -13,7 +13,10 @@ public extension UIFont {
     @discardableResult class func loadFont(_ name: String, size: CGFloat, resource: String, ext: String = "otf", bundle: Bundle? = nil, subdirectory: String? = nil ) -> UIFont? {
 
         guard let font: UIFont = UIFont(name: name, size: size) else {
-            let bundle = bundle ?? Bundle.main
+            // let bundle = bundle ?? Bundle.main
+            let bundle = Bundle(for: UITitleLabel.self)
+            // let identifier = bundle.bundleIdentifier
+            // print(bundle.bundlePath)
             let fontURL: URL = bundle.url(forResource: resource, withExtension: ext, subdirectory: subdirectory)!
             
             guard
