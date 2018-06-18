@@ -12,10 +12,8 @@
 		6E3FB93720C9BE460030E838 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E3FB93620C9BE460030E838 /* Assets.xcassets */; };
 		6E3FB93A20C9BE460030E838 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E3FB93820C9BE460030E838 /* LaunchScreen.storyboard */; };
 		6E3FB94320C9BE600030E838 /* CommonKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E3FB94220C9BE600030E838 /* CommonKit.framework */; };
-		6E3FB94820C9BECD0030E838 /* PopOverExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3FB94420C9BECC0030E838 /* PopOverExample.swift */; };
-		6E3FB94920C9BECD0030E838 /* PopOverAutosize3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3FB94520C9BECC0030E838 /* PopOverAutosize3.swift */; };
-		6E3FB94A20C9BECD0030E838 /* PopOverAutosize2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3FB94620C9BECC0030E838 /* PopOverAutosize2.swift */; };
-		6E3FB94B20C9BECD0030E838 /* PopOverAutosize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3FB94720C9BECD0030E838 /* PopOverAutosize.swift */; };
+		6E3FB94A20C9BECD0030E838 /* HelloLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3FB94620C9BECC0030E838 /* HelloLabel.swift */; };
+		6E3FB94B20C9BECD0030E838 /* PopOverCustomContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3FB94720C9BECD0030E838 /* PopOverCustomContent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,10 +24,8 @@
 		6E3FB93920C9BE460030E838 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6E3FB93B20C9BE460030E838 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E3FB94220C9BE600030E838 /* CommonKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CommonKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6E3FB94420C9BECC0030E838 /* PopOverExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopOverExample.swift; sourceTree = "<group>"; };
-		6E3FB94520C9BECC0030E838 /* PopOverAutosize3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopOverAutosize3.swift; sourceTree = "<group>"; };
-		6E3FB94620C9BECC0030E838 /* PopOverAutosize2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopOverAutosize2.swift; sourceTree = "<group>"; };
-		6E3FB94720C9BECD0030E838 /* PopOverAutosize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopOverAutosize.swift; sourceTree = "<group>"; };
+		6E3FB94620C9BECC0030E838 /* HelloLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelloLabel.swift; sourceTree = "<group>"; };
+		6E3FB94720C9BECD0030E838 /* PopOverCustomContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopOverCustomContent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,10 +62,8 @@
 			children = (
 				6E3FB92F20C9BE450030E838 /* AppDelegate.swift */,
 				6E3FB93120C9BE450030E838 /* ViewController.swift */,
-				6E3FB94720C9BECD0030E838 /* PopOverAutosize.swift */,
-				6E3FB94620C9BECC0030E838 /* PopOverAutosize2.swift */,
-				6E3FB94520C9BECC0030E838 /* PopOverAutosize3.swift */,
-				6E3FB94420C9BECC0030E838 /* PopOverExample.swift */,
+				6E3FB94620C9BECC0030E838 /* HelloLabel.swift */,
+				6E3FB94720C9BECD0030E838 /* PopOverCustomContent.swift */,
 				6E3FB93620C9BE460030E838 /* Assets.xcassets */,
 				6E3FB93820C9BE460030E838 /* LaunchScreen.storyboard */,
 				6E3FB93B20C9BE460030E838 /* Info.plist */,
@@ -155,12 +149,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E3FB94820C9BECD0030E838 /* PopOverExample.swift in Sources */,
-				6E3FB94B20C9BECD0030E838 /* PopOverAutosize.swift in Sources */,
+				6E3FB94B20C9BECD0030E838 /* PopOverCustomContent.swift in Sources */,
 				6E3FB93220C9BE450030E838 /* ViewController.swift in Sources */,
 				6E3FB93020C9BE450030E838 /* AppDelegate.swift in Sources */,
-				6E3FB94920C9BECD0030E838 /* PopOverAutosize3.swift in Sources */,
-				6E3FB94A20C9BECD0030E838 /* PopOverAutosize2.swift in Sources */,
+				6E3FB94A20C9BECD0030E838 /* HelloLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

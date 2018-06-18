@@ -10,6 +10,8 @@ import Foundation
 
 public protocol PopOverProtocol: UIPopoverPresentationControllerDelegate {
     
+    var contentView: UIView { get set }
+
     var popoverLayoutMargins: UIEdgeInsets { get set }
     var backgroundColor: UIColor? { get set }
     var passthroughViews: [UIView]? { get set }

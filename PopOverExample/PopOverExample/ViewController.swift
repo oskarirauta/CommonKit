@@ -75,27 +75,20 @@ class ViewController: UIViewController {
         
         switch sender.tag {
         case 0: // Popover with fixed size
-            let popOver: PopOver = PopOverExample(from: self.button, size: CGSize(width: 120.0, height: 45.0), arrowDirection: .up)
+            let popOver: PopOver = PopOver(PopOverCustomContent(), from: self.button, arrowDirection: .up, size: CGSize(width: 120.0, height: 45.0))
             self.present(popOver, animated: true, completion: nil)
             
         case 1: // Popover with automatic constraints, view with subviews
-            let popOver: PopOver = PopOverAutosize(from: self.button2, size: .zero, arrowDirection: .down)
+            let popOver: PopOver = PopOver(PopOverCustomContent(), from: self.button2, arrowDirection: .down)
             self.present(popOver, animated: true, completion: nil)
             
         case 2: // Popover with automatic constraints, single view without subviews
-            let popOver: PopOver = PopOverAutosize2(from: self.button3, size: .zero, arrowDirection: .down)
+            let popOver: PopOver = PopOver(HelloLabel(), from: self.button3, arrowDirection: .down)
             self.present(popOver, animated: true, completion: nil)
             
         case 3: // Popover with automatic constraints and dynamicly created content
-            let popOver: PopOver = PopOverAutosize3(from: self.button4, size: .zero, arrowDirection: .down).properties {
-                $0.contentView = UILabel.create {
-                    $0.translatesAutoresizingMaskIntoConstraints = false
-                    $0.font = UIFont.boldSystemFont(ofSize: 13.5)
-                    $0.textColor = UIColor.black
-                    $0.text = "Hello World!"
-                }
-                $0.setupView()
-                $0.setupConstraints()
+            let popOver: PopOver = PopOver(UIView(), from: self.button4, arrowDirection: .down).properties {
+                $0.contentView = HelloLabel()
             }
             self.present(popOver, animated: true, completion: nil)
             
