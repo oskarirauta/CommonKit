@@ -122,7 +122,7 @@ extension UIImage {
 extension UIImage {
     
     /// Represents a scaling mode
-    enum ScalingMode {
+    public enum ScalingMode {
         case aspectFill
         case aspectFit
         
@@ -153,7 +153,7 @@ extension UIImage {
     ///     - scalingMode: the desired scaling mode
     ///
     /// - returns: a new scaled image.
-    func scaled(to newSize: CGSize, scalingMode: UIImage.ScalingMode = .aspectFill) -> UIImage {
+    public func scaled(to newSize: CGSize, scalingMode: UIImage.ScalingMode = .aspectFill) -> UIImage {
         
         let aspectRatio = scalingMode.aspectRatio(between: newSize, and: size)
         
@@ -175,4 +175,13 @@ extension UIImage {
         
         return scaledImage!
     }
+
+    public func cropped(to: CGRect) -> UIImage? {
+        guard let cgImage = self.cgImage?.cropping(to: to) else {
+            return nil
+        }
+        
+        return UIImage(cgImage: cgImage)
+    }
+    
 }
