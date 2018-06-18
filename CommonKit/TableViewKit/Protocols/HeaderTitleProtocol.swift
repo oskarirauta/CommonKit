@@ -29,7 +29,7 @@ extension HeaderTitleProtocol where Self: UIHeaderFooterViewExtended {
     
     public var title: String? {
         get { return self.titleLabel.text }
-        set { self.titleLabel.text = newValue.isEmpty ? " " : newValue }
+        set { self.titleLabel.text = newValue.isEmpty ? " " : newValue?.uppercased() }
     }
     
     public var font: UIFont! {

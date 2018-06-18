@@ -21,7 +21,7 @@ open class UIHeaderFooterViewExtended: UITableViewHeaderFooterView, HeaderConstr
         $0.iconColor = self.iconColor
         $0.iconSize = 16.0
         $0.iconWidthSource = .manual(18.5)
-        $0.font = UIFont.systemFont(ofSize: 13.0)
+        $0.font = UIFont.systemFont(ofSize: 13.4)
         $0.text = ""
         $0.setContentHuggingPriority(.defaultLow, for: .horizontal)
     }
@@ -33,7 +33,7 @@ open class UIHeaderFooterViewExtended: UITableViewHeaderFooterView, HeaderConstr
         }
     }
     
-    open var italic: Bool = true {
+    open var italic: Bool = false {
         didSet {
             self.titleLabel.font = self.italic ? UIFont.italicSystemFont(ofSize: self.titleLabel.font.pointSize) : UIFont.boldSystemFont(ofSize: self.titleLabel.font.pointSize)
         }
@@ -114,13 +114,9 @@ open class UIHeaderFooterViewExtended: UITableViewHeaderFooterView, HeaderConstr
         
         self.titleLabel.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 8.0).isActive = true
 
-        self.titleLabel.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 1.0).isActive = true
-
-        self.titleLabel.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -5.0).isActive = true
-        
-        self.titleLabel.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor).isActive = true
         self.titleLabel.topAnchor.constraint(greaterThanOrEqualTo: self.contentView.topAnchor, constant: 8.0).isActive = true
-        self.titleLabel.bottomAnchor.constraint(lessThanOrEqualTo: self.contentView.bottomAnchor, constant: -8.0).isActive = true
+
+        self.titleLabel.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -5.0).isActive = true        
     }
     
     open override func secondaryConstraints() {

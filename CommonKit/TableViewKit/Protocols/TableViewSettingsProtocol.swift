@@ -67,11 +67,11 @@ extension InternalTableViewSettingsProtocol {
     }
     
     public var _defaultHeaderHeight: CGFloat {
-        get { return self.settingsProtocol?.defaultHeaderHeight ?? 5.0 }
+        get { return self.settingsProtocol?.defaultHeaderHeight ?? 25.0 }
     }
     
     public var _defaultFooterHeight: CGFloat {
-        get { return self.settingsProtocol?.defaultFooterHeight ?? 1.0 }
+        get { return self.settingsProtocol?.defaultFooterHeight ?? 25.0 }
     }
     
     public var _defaultBottomSpacing: CGFloat {

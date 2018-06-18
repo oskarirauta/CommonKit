@@ -29,7 +29,7 @@ open class UITitleCell: UITableViewCellExtended, CellTitleProtocol {
         }
     }
     
-    open var italic: Bool = true {
+    open var italic: Bool = false {
         didSet {
             self.titleLabel.font = self.italic ? UIFont.italicSystemFont(ofSize: self.titleLabel.font.pointSize) : UIFont.boldSystemFont(ofSize: self.titleLabel.font.pointSize)
         }
