@@ -12,6 +12,16 @@ public protocol PopOverProtocol: UIPopoverPresentationControllerDelegate {
     
     var contentView: UIView { get set }
 
+    var overlayColor: UIColor? { get set }
+    var dismiss_handler: (() -> Void)? { get set }
+
+    var horizontalPadding: CGFloat { get set }
+    var verticalPadding: CGFloat { get set }
+    var sizeSetting: CGSize? { get set }
+    
+    var centerXConstraint: NSLayoutConstraint? { get set }
+    var centerYConstraint: NSLayoutConstraint? { get set }
+
     var popoverLayoutMargins: UIEdgeInsets { get set }
     var backgroundColor: UIColor? { get set }
     var passthroughViews: [UIView]? { get set }
@@ -24,5 +34,5 @@ public protocol PopOverProtocol: UIPopoverPresentationControllerDelegate {
     var arrowDirection: UIPopoverArrowDirection { get }
     
     func setupView()
-    func setupConstraints()
+    func setPadding(_ padding: CGFloat)
 }

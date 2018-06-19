@@ -76,18 +76,21 @@ class ViewController: UIViewController {
         switch sender.tag {
         case 0: // Popover with fixed size
             let popOver: PopOver = PopOver(PopOverCustomContent(), from: self.button, arrowDirection: .up, size: CGSize(width: 120.0, height: 45.0))
+            popOver.setPadding(0.0)
             self.present(popOver, animated: true, completion: nil)
             
-        case 1: // Popover with automatic constraints, view with subviews
+        case 1: // Popover with automatic constraints, view with subviews, padded by contentView
             let popOver: PopOver = PopOver(PopOverCustomContent(), from: self.button2, arrowDirection: .down)
+            popOver.setPadding(0.0)
             self.present(popOver, animated: true, completion: nil)
             
         case 2: // Popover with automatic constraints, single view without subviews
             let popOver: PopOver = PopOver(HelloLabel(), from: self.button3, arrowDirection: .down)
             self.present(popOver, animated: true, completion: nil)
             
-        case 3: // Popover with automatic constraints and dynamicly created content
+        case 3: // Popover with automatic constraints and dynamicly created content, custom padding
             let popOver: PopOver = PopOver(UIView(), from: self.button4, arrowDirection: .down).properties {
+                $0.setPadding(10.0)
                 $0.contentView = HelloLabel()
             }
             self.present(popOver, animated: true, completion: nil)
