@@ -114,7 +114,7 @@ extension UITableViewControllerExtended {
 }
 
 open class UITableViewControllerExtended: UIViewController, InternalTableViewControllerProtocol, BackButtonProtocol {
-    
+        
     open lazy var delegate: UITableViewDelegate? = {
         guard var _delegate: UITableViewDelegate = self as UITableViewDelegate? else { return nil }
         return _delegate

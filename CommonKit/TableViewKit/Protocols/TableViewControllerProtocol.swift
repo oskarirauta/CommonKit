@@ -18,6 +18,9 @@ public protocol TableViewControllerProtocol: UITableViewDelegate, UITableViewDat
     
     var isEditing: Bool { get set }
     
+    func numSections() -> Int
+    func numRows(in section: Int) -> Int
+    
     func setEditingSection(section: Int?)
     func setEditing(_ editing: Bool, animated: Bool, section: Int? )
     func setEditing(_ editing: Bool, animated: Bool)
@@ -36,6 +39,16 @@ public protocol TableViewControllerProtocol: UITableViewDelegate, UITableViewDat
 protocol InternalTableViewControllerProtocol: TableViewControllerProtocol, InternalTableViewSettingsProtocol { }
 
 extension TableViewControllerProtocol {
+    
+    public func numSections() -> Int {
+        return self.numberOfSections!(in: self.tableView)
+    }
+
+    public func numRows(in section: Int) -> Int {
+        guard section < self.numSections() else { return 0 }
+        return self.tableView(self.tableView, numberOfRowsInSection: section)
+    }
+    
     
     public func setEditingSection(section: Int?) {
         self.editingSection = section
