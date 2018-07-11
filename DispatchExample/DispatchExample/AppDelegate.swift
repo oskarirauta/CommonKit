@@ -24,6 +24,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var myTask: MyTask {
         return MyTask(taskScheduler: self.taskScheduler)
     }
+    var myTask2: MyTask2 {
+        return MyTask2(taskScheduler: self.taskScheduler)
+    }
     var task: Task {
         return Task(nil, taskScheduler: self.taskScheduler, block: {
             
@@ -75,8 +78,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var classPid: Int = taskScheduler.addTask(execute: myTask)
         print("myTask added to queue with pid #" + String(classPid))
 
-        classPid = taskScheduler.addTask(execute: myTask.copy() as! Task)
+        classPid = taskScheduler.addTask(execute: myTask.taskCopy())
         print("Copy of myTask added to queue with pid #" + String(classPid))
+        
+        taskScheduler.addTask(execute: myTask2)
         
         taskScheduler.addTask(execute: self.task, wait: true)
         

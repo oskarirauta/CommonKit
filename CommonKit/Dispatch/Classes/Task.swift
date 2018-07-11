@@ -59,6 +59,10 @@ open class Task: TaskBaseProtocol, TaskProtocol, NSCopying {
         return copy
     }
 
+    public func taskCopy() -> Task {
+        return self.copy() as! Task
+    }
+    
     internal func override(block: @escaping TaskBlock, completed: TaskBlock? = nil) {
         self.block = block
         self.completed = completed
