@@ -14,7 +14,7 @@ open class Task: TaskBaseProtocol, TaskProtocol, NSCopying {
     open private(set) var workItem: DispatchWorkItem!
     
     open var pid: Int?
-    open private(set) var taskScheduler: TaskScheduler?
+    open private(set) var taskScheduler: TaskScheduler?    
     
     private(set) var completed: TaskBlock? = nil
     open var isCancelled: Bool { get { return self.workItem.isCancelled }}
@@ -59,5 +59,15 @@ open class Task: TaskBaseProtocol, TaskProtocol, NSCopying {
         return copy
     }
 
+    internal func override(block: @escaping TaskBlock, completed: TaskBlock? = nil) {
+        self.block = block
+        self.completed = completed
+        self.workItem = DispatchWorkItem(block: {
+            [weak self] in
+            self?.result = nil
+            self?.block(self!)
+            self?.finishTask()
+        })
+    }
     
 }

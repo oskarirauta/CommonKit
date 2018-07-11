@@ -12,6 +12,7 @@
 		6E00BDBE20C854FB00C68DBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E00BDBD20C854FB00C68DBD /* Assets.xcassets */; };
 		6E00BDC120C854FB00C68DBD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E00BDBF20C854FB00C68DBD /* LaunchScreen.storyboard */; };
 		6E3FB91020C8A40A0030E838 /* CommonKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E3FB90F20C8A40A0030E838 /* CommonKit.framework */; };
+		6E9EC66C20F5C75F0023515C /* MyTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9EC66B20F5C75F0023515C /* MyTask.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		6E00BDC020C854FB00C68DBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6E00BDC220C854FB00C68DBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E3FB90F20C8A40A0030E838 /* CommonKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CommonKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E9EC66B20F5C75F0023515C /* MyTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTask.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				6E00BDB620C854FA00C68DBD /* AppDelegate.swift */,
 				6E00BDB820C854FA00C68DBD /* ViewController.swift */,
+				6E9EC66B20F5C75F0023515C /* MyTask.swift */,
 				6E00BDBD20C854FB00C68DBD /* Assets.xcassets */,
 				6E00BDBF20C854FB00C68DBD /* LaunchScreen.storyboard */,
 				6E00BDC220C854FB00C68DBD /* Info.plist */,
@@ -143,6 +146,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E9EC66C20F5C75F0023515C /* MyTask.swift in Sources */,
 				6E00BDB920C854FA00C68DBD /* ViewController.swift in Sources */,
 				6E00BDB720C854FA00C68DBD /* AppDelegate.swift in Sources */,
 			);

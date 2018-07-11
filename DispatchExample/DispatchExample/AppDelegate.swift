@@ -21,6 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }()
     
     var taskScheduler: TaskScheduler = TaskScheduler()
+    var myTask: MyTask {
+        return MyTask(taskScheduler: self.taskScheduler)
+    }
     var task: Task {
         return Task(nil, taskScheduler: self.taskScheduler, block: {
             
@@ -52,7 +55,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let pid: Int = taskScheduler.addTask(execute: {
             var cnt: Int = 0
             print("Running pid " + String($0.pid ?? -1))
-            var i: Int = 0
+            var i: Int = -1
             while (( i != 0 ) && ( !$0.isCancelled )) { // This task should be cancelled, so it runs forever
                 i = Int.random(lower: 1, 50000)
                 // print("#" + String(cnt) + ": " + String(i))
@@ -68,6 +71,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("Task #" + String($0.pid ?? -1) + " completed " + ($0.isCancelled ? "with failure" : "with success"))
             if let i: Int = $0.result as? Int { print("Result is \(i)") }
         }, wait: true)
+        
+        var classPid: Int = taskScheduler.addTask(execute: myTask)
+        print("myTask added to queue with pid #" + String(classPid))
+
+        classPid = taskScheduler.addTask(execute: myTask.copy() as! Task)
+        print("Copy of myTask added to queue with pid #" + String(classPid))
         
         taskScheduler.addTask(execute: self.task, wait: true)
         

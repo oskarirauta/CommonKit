@@ -10,7 +10,7 @@ import Foundation
 
 extension Date {
     
-    static var `nil`: Date {
+    public static var `nil`: Date {
         get { return Date(timeIntervalSinceReferenceDate: 0) }
     }
     
