@@ -20,13 +20,13 @@ public var newUUID: String {
 public func doNothing() {}
 
 public var appName: String {
-    get { return Bundle.main.object(forInfoDictionaryKey: kCFBundleNameKey as String) as! String }
+    get { return UIApplication.shared.delegate!.appName }
 }
 
 public var appVersion: String {
-    get { return Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String }
+    get { return UIApplication.shared.delegate!.appVersion }
 }
 
 public var appBuildVersion: String {
-    get { return Bundle.main.object(forInfoDictionaryKey: kCFBundleVersionKey as String) as! String }
+    get { return UIApplication.shared.delegate!.appBuildVersion }
 }

@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-extension UIApplicationDelegate {
+public extension UIApplicationDelegate {
     
     public var appName: String {
         get { return Bundle.main.object(forInfoDictionaryKey: kCFBundleNameKey as String) as! String }}
@@ -19,5 +19,5 @@ extension UIApplicationDelegate {
     
     public var appBuildVersion: String {
         get { return Bundle.main.object(forInfoDictionaryKey: kCFBundleVersionKey as String) as! String }}
-    
+        
 }
