@@ -92,8 +92,8 @@ extension String: CustomIconConvertible {
     public var convertedIcon: IconType? {
         var prefix: String? = nil
         if ( self.components(separatedBy: " ").count > 1 ) { prefix = self.components(separatedBy: " ")[0]}
-        else if ( self.components(separatedBy: ":").count > 1 ) { prefix = self.components(separatedBy: " ")[0]}
-        else if ( self.components(separatedBy: "#").count > 1 ) { prefix = self.components(separatedBy: " ")[0]}
+        else if ( self.components(separatedBy: ":").count > 1 ) { prefix = self.components(separatedBy: ":")[0]}
+        else if ( self.components(separatedBy: "#").count > 1 ) { prefix = self.components(separatedBy: "#")[0]}
         else if ( self.components(separatedBy: "_").count > 1 ) {
             prefix = self.components(separatedBy: "_")[0] }
         else if ( self.components(separatedBy: "-").count > 1 ) {
