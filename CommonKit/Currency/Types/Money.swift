@@ -60,7 +60,7 @@ public struct Money: ExpressibleByFloatLiteral, ExpressibleByIntegerLiteral, Sig
     }
     
     public init(_ value: Int) {
-        self._rawValue = Decimal(value)
+        self._rawValue = Decimal(value).rounded(to: 2)
     }
 
     public init(_ value: Float) {

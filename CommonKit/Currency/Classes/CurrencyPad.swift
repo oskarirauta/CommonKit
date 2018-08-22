@@ -16,7 +16,7 @@ public final class CurrencyPad: UIInputView, UIInputViewAudioFeedback {
     private(set) weak var textInput: UITextInput? = nil
     private(set) var currencyField: CurrencyFieldDelegate? = nil
     
-    public var enableInputClicks: Bool = true
+    public var enableInputClicksWhenVisible: Bool = true
     
     public var allowSignChange: Bool = true {
         didSet {

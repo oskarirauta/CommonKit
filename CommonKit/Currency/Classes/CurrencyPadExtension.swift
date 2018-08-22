@@ -109,7 +109,7 @@ extension CurrencyPad {
         
     internal func buttonHandler(_ tag: Int) {
         
-        if ( self.enableInputClicks ) {
+        if ( self.enableInputClicksWhenVisible ) {
             UIDevice.current.playInputClick()
         }
         

@@ -46,7 +46,7 @@ open class UITitleLabel: UIView, IconSettingsProtocol, TitleLabelProtocol {
             let constructedIcon: AttributedStringWrapper? = self.icon?.convertedIcon?.text.toAttributed
                 .font(self.icon!.convertedIcon!.font(ofSize: self.iconSize ?? self.font.pointSize)!)
                 .foregroundColor(self.iconColor ?? self.textLabel.textColor ) ?? nil
-            
+                        
             if ( self.iconBaseLineOffset != nil ) {
                 constructedIcon?.baselineOffset(value: self.iconBaseLineOffset ?? 0.0)
             }

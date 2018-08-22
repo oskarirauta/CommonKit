@@ -28,16 +28,14 @@ extension Decimal {
     public var fractionPart2: Decimal { get { return self.distance(to: Decimal(self.intValue)) }}
     
     public func rounded(to scale: Int = 0, mode: NSDecimalNumber.RoundingMode = .plain) -> Decimal {
-        /*  This function gave wrong results when whole part was too small; so it's tweaked. Some
-            values from top scale are unavailable, but Decimal should have quite a big range, so
-            for most cases it's enough.
-        */
-        let isNegative: Bool = self < 0 ? true : false
-        var decimalValue: Decimal = 119 + abs(self).fractionPart
-        var result: Decimal = Decimal()
-        NSDecimalRound(&result, &decimalValue, scale, mode)
-        result = result + abs(self.wholePart) - 119
-        return isNegative ? -result : result
+        // Source: https://stackoverflow.com/questions/28651848/nsdecimalround-in-swift
+        // Thank you: Ruben Kazumov
+        let amount: NSDecimalNumber = NSDecimalNumber(decimal: self)
+        let uMPtr = UnsafeMutablePointer<Decimal>.allocate(capacity: 1)
+        uMPtr[0] = amount.decimalValue
+        let uPtr = UnsafePointer<Decimal>.init(uMPtr)
+        NSDecimalRound(uMPtr, uPtr, scale, mode)
+        return uMPtr.pointee
     }
 
 }

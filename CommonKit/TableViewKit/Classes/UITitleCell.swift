@@ -16,7 +16,7 @@ open class UITitleCell: UITableViewCellExtended, CellTitleProtocol {
         $0.textColor = self.enabled ? self.titleColor : UIColor.gray
         $0.iconColor = self.enabled ? ( self.iconColor ?? self.titleColor ) : UIColor.gray
         $0.iconSize = 16.5
-        $0.iconWidthSource = .manual(18.5)
+        $0.iconWidthSource = .manual(19.5)
         $0.font = UIFont.boldSystemFont(ofSize: 13.5)
         $0.text = ""
         $0.setContentHuggingPriority(.defaultLow, for: .horizontal)

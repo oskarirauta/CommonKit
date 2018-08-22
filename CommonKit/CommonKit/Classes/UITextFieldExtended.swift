@@ -16,6 +16,7 @@ open class UITextFieldExtended: UITextField, TextFieldProtocol, TextFieldHandler
     public var selectableContent: Bool = true
     public var maxLength: Int = 0
     public var trimText: Bool = true
+    public var customClosestPosition: ((CGPoint)->(UITextPosition?))? = nil
     
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -68,4 +69,9 @@ extension UITextFieldExtended {
         
         return (( !self.selectableContent ) && ([#selector(select(_:)), #selector(cut(_:)), #selector(delete(_:)), #selector(copy(_:)), #selector(selectAll(_:)), #selector(paste(_:))].contains(action))) ? false : super.canPerformAction(action, withSender: sender)
     }
+    
+    open override func closestPosition(to point: CGPoint) -> UITextPosition? {
+        return self.customClosestPosition?(point) ?? super.closestPosition(to: point)
+    }    
+    
 }
