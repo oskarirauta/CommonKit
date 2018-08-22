@@ -18,9 +18,13 @@ public protocol TableViewControllerProtocol: UITableViewDelegate, UITableViewDat
     
     var isEditing: Bool { get set }
     
+    var contentOffset: CGPoint { get set }
+    var topOffset: CGPoint { get }
+    
     func numSections() -> Int
     func numRows(in section: Int) -> Int
-    
+    func hasIndexPath(_ indexPath: IndexPath) -> Bool
+
     func setEditingSection(section: Int?)
     func setEditing(_ editing: Bool, animated: Bool, section: Int? )
     func setEditing(_ editing: Bool, animated: Bool)
@@ -30,9 +34,10 @@ public protocol TableViewControllerProtocol: UITableViewDelegate, UITableViewDat
     
     func reloadData()
     
+    func setContentOffset(contentOffset: CGPoint, animated: Bool)
     func scrollToTop(animated: Bool)
-    func scrollToTop(section: Int, animated: Bool)
     func scrollToBottom(section: Int, animated: Bool, at: UITableViewScrollPosition)
+    func scrollToFirstRow(animated: Bool)
     func scrollToRow(at indexPath: IndexPath, at: UITableViewScrollPosition, animated: Bool)
 }
 
@@ -57,6 +62,29 @@ extension TableViewControllerProtocol {
     public var isEditing: Bool {
         get { return self.tableView.isEditing }
         set { self.setEditing(newValue, animated: true) }
+    }
+
+    public var contentOffset: CGPoint {
+        get { return self.tableView.contentOffset }
+        set { self.tableView.contentOffset = newValue }
+    }
+    
+    public var topOffset: CGPoint {
+        get {
+            if #available(iOS 11.0, *) {
+                return CGPoint(x: 0, y: -self.tableView.adjustedContentInset.top)
+            } else {
+                return CGPoint(x: 0, y: -self.tableView.contentInset.top)
+            }
+        }
+    }
+
+    public func hasIndexPath(_ indexPath: IndexPath) -> Bool {
+        return indexPath.section < self.tableView.numberOfSections && indexPath.row < self.tableView.numberOfRows(inSection: indexPath.section)
+    }
+    
+    public func setContentOffset(contentOffset: CGPoint, animated: Bool) {
+        self.tableView.setContentOffset(contentOffset, animated: animated)
     }
     
     public func setEditing(_ editing: Bool, animated: Bool, section: Int? ) {
@@ -104,13 +132,7 @@ extension TableViewControllerProtocol {
     }
     
     public func scrollToTop(animated: Bool) {
-        if (( self.tableView.numberOfSections >= 1 ) && ( self.tableView.numberOfRows(inSection: 0) > 0 )) {
-            self.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: animated)
-        }
-    }
-    
-    public func scrollToTop(section: Int, animated: Bool) {
-        self.tableView.setContentOffset(CGPoint(x: 0, y: 0), animated: animated)
+        self.setContentOffset(contentOffset: self.topOffset, animated: animated)
     }
     
     public func scrollToBottom(section: Int, animated: Bool, at: UITableViewScrollPosition = .bottom) {
@@ -124,10 +146,14 @@ extension TableViewControllerProtocol {
         }
     }
     
+    public func scrollToFirstRow(animated: Bool) {
+        let indexPath: IndexPath = IndexPath(row: 0, section: 0)
+        guard self.hasIndexPath(indexPath) else { return }
+        self.tableView.scrollToRow(at: indexPath, at: .top, animated: animated)
+    }
+
     public func scrollToRow(at indexPath: IndexPath, at: UITableViewScrollPosition = .top, animated: Bool = true) {
-        
-        if ( self.tableView.cellForRow(at: indexPath) != nil ) {
-            self.tableView.scrollToRow(at: indexPath, at: at, animated: animated)
-        }
+        guard self.hasIndexPath(indexPath) else { return }
+        self.tableView.scrollToRow(at: indexPath, at: at, animated: animated)
     }
 }
