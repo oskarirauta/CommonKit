@@ -26,7 +26,7 @@ extension Decimal {
     public var wholePart: Decimal { get { return Decimal(self.intValue) }}
     public var fractionPart: Decimal { get { return self - Decimal(self.intValue) }}
     public var fractionPart2: Decimal { get { return self.distance(to: Decimal(self.intValue)) }}
-    
+
     public func rounded(to scale: Int = 0, mode: NSDecimalNumber.RoundingMode = .plain) -> Decimal {
         // Source: https://stackoverflow.com/questions/28651848/nsdecimalround-in-swift
         // Thank you: Ruben Kazumov

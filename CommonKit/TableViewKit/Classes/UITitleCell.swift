@@ -56,10 +56,22 @@ open class UITitleCell: UITableViewCellExtended, CellTitleProtocol {
             self.titleLabel.iconColor = self.iconColor != nil ? ( self.enabled ? self.iconColor! : UIColor.gray ) : nil
         }
     }
-        
+    
     override open func cellProperties() {
         super.cellProperties()
         self.selectable = false
+        self.enabled = true
+        self.titleColor = UIColor.black
+        self.iconColor = nil
+        self.italic = false
+        self.icon = nil
+        self.title = nil
+        self.accessoryType = .none
+        self.shouldIndentWhileEditing = true
+        self.selectionStyle = .none
+        self.accessoryType = .none
+        self.editingAccessoryType = .none
+        self.focusStyle = .default
     }
     
     override open func setupViews() {

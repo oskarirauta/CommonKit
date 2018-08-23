@@ -59,12 +59,12 @@ extension UITableViewCell {
     }
 
     internal var nextSection: Int? {
-        get { return objc_getAssociatedObject(self, &TV_AssociatedKeys.prevSection) as? Int }
+        get { return objc_getAssociatedObject(self, &TV_AssociatedKeys.nextSection) as? Int }
         set { objc_setAssociatedObject(self, &TV_AssociatedKeys.nextSection, newValue as Int?, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC) }
     }
     
     internal var nextRow: Int? {
-        get { return objc_getAssociatedObject(self, &TV_AssociatedKeys.prevRow) as? Int }
+        get { return objc_getAssociatedObject(self, &TV_AssociatedKeys.nextRow) as? Int }
         set { objc_setAssociatedObject(self, &TV_AssociatedKeys.nextRow, newValue as Int?, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC) }
     }
 
