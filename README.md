@@ -202,6 +202,44 @@ PhotoPicker and PhotoPreview are classes which allow you to present a photo pick
 
 ![PhotoPicker](https://raw.githubusercontent.com/oskarirauta/CommonKit/master/Screenshots/PhotoPicker.png)
 
+### ConditionalInit protocol
+ConditionalInit protocol is very handy when you need a lazy class (yes, class, because this one requires something that has init), but cannot use lazy because you want to in control and need to reset it once in a while. There are other ways to do this as well, like initializer function which is executed lazily, but here's another approach.
+Before:
+```
+    var _realVar: UIViewController? = nil
+    var accessedVar: UIViewController? {
+        get {
+            if ( self._realVar == nil ) {
+                self._realVar = UIViewController()
+            }
+	    return self._realVar
+	}
+        set { self._realVar = newValue }
+    }
+```
+
+After:
+```
+    var _realVar: UIViewController? = nil
+    var accessedVar: UIViewController? {
+        get { return self._realVar.conditionalInit() }
+        set { self._realVar = newValue }
+    }
+```
+
+Or you can even have a creator function for it:
+```
+    var _realVar: UIViewController? = nil
+    var accessedVar: UIViewController? {
+        get { return self._realVar.conditionalInit{ $0?.title = "Title text" } }
+        set { self._realVar = newValue }
+    }
+```
+
+It is extended only to optional NSObject classes, so you cannot use it to non-optional classes.
+Saves some writing if you use a lot of these..
+Introduced since release 1.4.2.
+
 ### Is there more?
 Yes- much more. This is actually quite a big pod with lots of stuff.
 
