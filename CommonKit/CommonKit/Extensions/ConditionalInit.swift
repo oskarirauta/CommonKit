@@ -13,6 +13,7 @@ public protocol ConditionalInit {
 
 extension Optional:ConditionalInit where Wrapped: NSObject {
     
+    @discardableResult
     public mutating func conditionalInit(_ creatorFunc: ((Optional<Wrapped>) -> Void)? = nil) -> Optional<Wrapped> {
         guard self == nil else { return self! }
         self = Wrapped.init()
