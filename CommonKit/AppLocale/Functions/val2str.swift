@@ -59,3 +59,16 @@ public func val2str(_ value: Double, withDecimal decimalBool: Bool) -> String {
     return ( decimalBool == true && floor(value) == value && value != 0.0 ) ? nf.string(from: NSNumber(value: value as Double))! + nf.decimalSeparator! + "0" : nf.string(from: NSNumber(value: value as Double))!
 }
 
+public func val2str(_ value: Decimal) -> String {
+    let nf : NumberFormatter = NumberFormatter()
+    nf.numberStyle = .decimal
+    nf.locale = Locale.appLocale
+    return nf.string(from: value.nsdecimalnumberValue)!
+}
+
+public func val2str(_ value: Decimal, withDecimal decimalBool: Bool) -> String {
+    let nf : NumberFormatter = NumberFormatter()
+    nf.numberStyle = .decimal
+    nf.locale = Locale.appLocale
+    return ( decimalBool && value.floor() == value && value != 0 ) ? nf.string(from: value.nsdecimalnumberValue)! + nf.decimalSeparator! + "0" : nf.string(from: value.nsdecimalnumberValue)!
+}

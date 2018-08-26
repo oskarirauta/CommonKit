@@ -64,14 +64,20 @@ open class UITitleCell: UITableViewCellExtended, CellTitleProtocol {
         self.titleColor = UIColor.black
         self.iconColor = nil
         self.italic = false
+        self.titleLabel.iconWidthSource = .manual(19.5)
+        self.titleFont = UIFont.boldSystemFont(ofSize: 13.5)
+        self.titleLabel.padding = nil
         self.icon = nil
         self.title = nil
+        self.iconSize = 16.5
+        self.iconMargin = 2.0
         self.accessoryType = .none
         self.shouldIndentWhileEditing = true
         self.selectionStyle = .none
         self.accessoryType = .none
         self.editingAccessoryType = .none
         self.focusStyle = .default
+        self.handler = nil
     }
     
     override open func setupViews() {

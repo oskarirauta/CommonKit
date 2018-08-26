@@ -219,26 +219,27 @@ extension Date {
         return retArray
     }
     
-    public func hoursBetween(_ date: Date) -> Double {
+    public func hoursBetween(_ date: Date) -> Decimal {
         
         let date1: Date = Date(year: 2000, month: 1, day: 1, hour: self.hour, minute: self.minute)
         var date2: Date = Date(year: 2000, month: 1, day: 1, hour: date.hour, minute: date.minute)
         
         if ( date2.timeIntervalSince1970 <= date1.timeIntervalSince1970 ) { date2 = Date(year: 2000, month: 1, day: 2, hour: date.hour, minute: date.minute) }
         
-        var between = date2.timeIntervalSince(date1) as Double
+        var between: Decimal = Decimal(date2.timeIntervalSince(date1))
         
-        let hours: Int = Int(floor(Double(between / 3600.0)))
-        if ( hours > 0 ) { between -= Double(hours) * 3600.0 }
-        
-        let minutes: Int = Int(floor(Double(between / 60.0)))
-        if ( minutes > 0 ) { between -= Double(minutes) * 60.0 }
-        
-        if ( minutes == 15 ) { return (( Double(hours) * 1.0 ) + 0.25 ) }
-        else if ( minutes == 30 ) { return (( Double(hours) * 1.0 ) + 0.50 ) }
-        else if ( minutes == 45 ) { return (( Double(hours) * 1.0 ) + 0.75 ) }
-        
-        return ( Double(hours) * 1.0 )
+        let hours: Decimal = Decimal((between / 3600).floor().intValue)
+        if hours > 0 { between -= hours * 3600.0 }
+
+        let minutes: Decimal = Decimal((between / 60.0).floor().intValue)
+        if ( minutes > 0 ) { between -= minutes * 60.0 }
+
+        switch minutes {
+        case 15: return hours + 0.25
+        case 30: return hours + 0.50
+        case 45: return hours + 0.75
+        default: return hours
+        }
     }
     
     public func convertToUtc(from: TimeZone) -> Date {

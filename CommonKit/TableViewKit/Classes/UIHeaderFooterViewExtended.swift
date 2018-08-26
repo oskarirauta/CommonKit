@@ -101,6 +101,12 @@ open class UIHeaderFooterViewExtended: UITableViewHeaderFooterView, HeaderConstr
         self.headerProperties()
     }
     
+    open override func headerProperties() {
+        super.headerProperties()
+        self.title = nil
+        self.titleLabel.textAlignment = .left
+    }
+    
     override open func setupViews() {
         super.setupViews()
         self.contentView.addSubview(self.titleLabel)

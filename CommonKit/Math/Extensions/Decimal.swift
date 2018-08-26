@@ -21,6 +21,8 @@ extension Decimal {
     
     public var doubleValue: Double { get { return NSDecimalNumber(decimal: self).doubleValue }}
 
+    public var nsdecimalnumberValue: NSDecimalNumber { get { return NSDecimalNumber(decimal: self) }}
+    
     public var significantFractionalDecimalDigits: Int { return max(-exponent, 0) }
 
     public var wholePart: Decimal { get { return Decimal(self.intValue) }}
@@ -38,4 +40,16 @@ extension Decimal {
         return uMPtr.pointee
     }
 
+    public func floor(scale: Int = 0) -> Decimal {
+        return NSDecimalNumber(decimal: self).rounding(accordingToBehavior: NSDecimalNumberHandler(roundingMode: .down, scale: 0, raiseOnExactness: false, raiseOnOverflow: false, raiseOnUnderflow: false, raiseOnDivideByZero: false)).decimalValue
+    }
+    
+    public func ceil(scale: Int = 0) -> Decimal {
+        return NSDecimalNumber(decimal: self).rounding(accordingToBehavior: NSDecimalNumberHandler(roundingMode: .up, scale: 0, raiseOnExactness: false, raiseOnOverflow: false, raiseOnUnderflow: false, raiseOnDivideByZero: false)).decimalValue
+    }
+    
+    public func round(scale: Int = 0) -> Decimal {
+        return NSDecimalNumber(decimal: self).rounding(accordingToBehavior: NSDecimalNumberHandler(roundingMode: .plain, scale: 0, raiseOnExactness: false, raiseOnOverflow: false, raiseOnUnderflow: false, raiseOnDivideByZero: false)).decimalValue
+    }
+    
 }

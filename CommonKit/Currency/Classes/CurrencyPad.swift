@@ -23,7 +23,6 @@ public final class CurrencyPad: UIInputView, UIInputViewAudioFeedback {
             guard self.button.count > 10 else { return }
             self.button[10].isEnabled = self.allowSignChange
             self.button[10].isHidden = !self.allowSignChange
-            print(self.allowSignChange ? "Showing" : "Hiding")
         }
     }
     

@@ -16,6 +16,8 @@ open class UITableViewCellExtended: UITableViewCell, CellConstraintProtocol, UIC
     
     open override func prepareForReuse() {
         super.prepareForReuse()
+        self.cellConstraints = [:]
+        self.handler = nil
         self.cellProperties()
     }
     
