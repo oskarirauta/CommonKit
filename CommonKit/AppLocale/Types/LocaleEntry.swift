@@ -8,7 +8,7 @@
 
 import Foundation
 
-public typealias LocaleEntry = (countryCode: String, countryName: String)
+public typealias LocaleEntry = (countryCode: String, countryName: String, currencyCode: String)
 
 extension Array where Element == LocaleEntry {
     
@@ -18,5 +18,9 @@ extension Array where Element == LocaleEntry {
 
     public var names: Array<String> {
         get { return self.map { $0.countryName }}
-    }    
+    }
+    
+    public var currencies: Array<String> {
+        get { return self.map { $0.currencyCode }}
+    }
 }

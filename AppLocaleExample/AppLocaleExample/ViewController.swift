@@ -27,6 +27,10 @@ class ViewController: UIViewController {
         
         print("Region: " + ( Locale.appLocale.regionCode ?? "" ) + "\nDescription: " + ( Locale.appLocale.description))
         
+        print("\nAvailable locales:")
+        Locale.locales.forEach {
+            print($0.countryCode + "\t\t" + $0.countryName + "\t\t\t" + $0.currencyCode)
+        }
     }
     
     /*

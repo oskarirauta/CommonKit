@@ -29,35 +29,27 @@ public extension Locale {
         }
     }
     
-    static var locales: [String: String] {
-        get {
-            var _locales: [String: String] = [:]
-            self.availableIdentifiers.filter({ !$0.isEmpty }).forEach {
-                if let desc = Locale.autoupdatingCurrent.localizedString(forIdentifier: $0) {
-                    _locales[$0] = desc
-                }
-            }
-            _locales[""] = NSLocalizedString("SYSTEM_DEFAULT", comment: "System default")
-            return _locales
-        }
-    }
-
     static var countryCodes: [String] {
-        get { return Array(self.locales.keys) }
+        get { return self.locales.map { $0.countryCode } }
     }
     
     static var countryNames: [String] {
-        get { return Array(self.locales.values) }
+        get { return self.locales.map { $0.countryName } }
     }
 
-    static var localeArray: [LocaleEntry] {
+    static var currencyCodes: [String] {
+        get { return self.locales.map { $0.currencyCode } }
+    }
+
+    static var locales: [LocaleEntry] {
         get {
-            var array: [LocaleEntry] = self.locales.filter({ !$0.key.isEmpty }).map {
-                return (countryCode: $0.key, countryName: $0.value)
+            var array: [LocaleEntry] = self.availableIdentifiers.filter({ !$0.isEmpty && !Locale.appLocale.localizedString(forIdentifier: $0).isEmpty && !Locale(identifier: $0).currencyCode.isEmpty }).map {
+                return (countryCode: $0, countryName: Locale.appLocale.localizedString(forIdentifier: $0)!, currencyCode: Locale(identifier: $0).currencyCode!)
             }.sorted(by: { $0.countryName.localizedCaseInsensitiveCompare($1.countryName) == ComparisonResult.orderedAscending })
-            array.insert((countryCode: "", countryName: NSLocalizedString("SYSTEM_DEFAULT", comment: "System default")), at: 0)
+            array.insert((countryCode: "", countryName: NSLocalizedString("SYSTEM_DEFAULT", comment: "System default"), currencyCode: Locale.autoupdatingCurrent.currencyCode!), at: 0)
             return array
         }
     }
     
+
 }
