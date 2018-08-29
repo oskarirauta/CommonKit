@@ -24,7 +24,7 @@ open class UIMultiBadge: UIView, MultiBadgeProperties, MultiBadgeMethods, MultiB
         }
     }
     
-    open var badgeElements: [UILabelPadded]? {
+    open var badgeElements: [UILabelExtended]? {
         get {
             if (( self._badgeElements?.count ?? -1 ) == 0 ) { self._badgeElements = nil }
             return self._badgeElements
@@ -59,8 +59,12 @@ open class UIMultiBadge: UIView, MultiBadgeProperties, MultiBadgeMethods, MultiB
         didSet { self.refreshBadges() }
     }
     
+    open var badgePadding: UIEdgeInsets? = nil {
+        didSet { self.refreshBadges() }
+    }
+    
     private var _badges: [BadgeCompatible]? = nil
-    private var _badgeElements: [UILabelPadded]? = nil
+    private var _badgeElements: [UILabelExtended]? = nil
     private var _badgeConstraints: [NSLayoutConstraint] = []
     private var viewConstraints: [NSLayoutConstraint]? = nil
 }
@@ -73,7 +77,7 @@ extension UIMultiBadge {
         self._badgeElements = nil
     }
     
-    internal func updateNewBadgesSet(newBadges: Array<UILabelPadded>?) {
+    internal func updateNewBadgesSet(newBadges: Array<UILabelExtended>?) {
         
         guard ( newBadges?.count ?? 0 ) > 0 else { return }
         
@@ -90,10 +94,11 @@ extension UIMultiBadge {
             newBadge.setContentHuggingPriority(.defaultHigh, for: .horizontal)
             newBadge.layer.cornerRadius = 0.0
             newBadge.layer.masksToBounds = false
-            
+            newBadge.padding = self.badgePadding ?? newBadge.padding
+
             var badgeHeight: CGFloat = newBadge.text?.toAttributed.font(self.badgeFont).getHeight(by: 500.0) ?? 0
             badgeHeight += badgeHeight > 0 ? ( 2.5 ) : 0
-            let cornerRadius: CGFloat = CGFloat(self.badgeCornerRadius ?? ceil( badgeHeight * 0.6 ))
+            let cornerRadius: CGFloat = self.badgeRounding ? CGFloat(self.badgeCornerRadius ?? ceil( badgeHeight * 0.6 )) : 0.0
             
             if (( self.badgeRounding ) && ( !self.groupBadge )) {
                 newBadge.layer.masksToBounds = true
@@ -104,8 +109,7 @@ extension UIMultiBadge {
                 if ( index == 0 ) { newBadge.layer.maskedCorners = newBadges!.count == 1 ? UIRectCorner.allCorners.cornerMask : leadingCorners.cornerMask }
                 newBadge.layer.cornerRadius = cornerRadius
             } else if (( self.badgeRounding ) && ( self.groupBadge) && ( index == lastIndex )) {
-                newBadge.layer.masksToBounds = true
-                
+                newBadge.layer.masksToBounds = true                
                 newBadge.layer.maskedCorners = trailingCorners.cornerMask
                 newBadge.layer.cornerRadius = cornerRadius
             }
@@ -126,12 +130,12 @@ extension UIMultiBadge {
         defer { self.createConstraints() }
         guard filteredBadges.count != 0 else { return }
         
-        var newElements: [UILabelPadded]? = []
+        var newElements: [UILabelExtended]? = []
         
         filteredBadges.enumerated().forEach {
             index, badge in
             
-            newElements?.append(UILabelPadded.create {
+            newElements?.append(UILabelExtended.create {
                 
                 let leftPadding: CGFloat = self.badgeRounding && self.groupBadge && index == 0 ? 5.0 : ( self.badgeRounding && !self.groupBadge ? 5.0 : 2.0 )
                 

@@ -100,6 +100,7 @@
 		6E3FB91E20C9BDE20030E838 /* PopOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3FB91D20C9BDE20030E838 /* PopOver.swift */; };
 		6E3FB92220C9BDF80030E838 /* PopOverProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3FB92120C9BDF70030E838 /* PopOverProtocol.swift */; };
 		6E3FB94F20C9D06C0030E838 /* AssetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3FB94E20C9D06C0030E838 /* AssetManager.swift */; };
+		6E460ADB2137302F003F8248 /* UILabelExtended.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E460ADA2137302F003F8248 /* UILabelExtended.swift */; };
 		6E49983820B2BA11008D7ACD /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E49983720B2BA11008D7ACD /* Character.swift */; };
 		6E74544E20C7F6C100A35FC9 /* NumPadStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E74544D20C7F6C000A35FC9 /* NumPadStyle.swift */; };
 		6E74545020C7F6C600A35FC9 /* NumPadType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E74544F20C7F6C600A35FC9 /* NumPadType.swift */; };
@@ -284,6 +285,7 @@
 		6E3FB91D20C9BDE20030E838 /* PopOver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopOver.swift; sourceTree = "<group>"; };
 		6E3FB92120C9BDF70030E838 /* PopOverProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopOverProtocol.swift; sourceTree = "<group>"; };
 		6E3FB94E20C9D06C0030E838 /* AssetManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetManager.swift; sourceTree = "<group>"; };
+		6E460ADA2137302F003F8248 /* UILabelExtended.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExtended.swift; sourceTree = "<group>"; };
 		6E49983720B2BA11008D7ACD /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		6E74544D20C7F6C000A35FC9 /* NumPadStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumPadStyle.swift; sourceTree = "<group>"; };
 		6E74544F20C7F6C600A35FC9 /* NumPadType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumPadType.swift; sourceTree = "<group>"; };
@@ -734,6 +736,7 @@
 		6E1C882E20A6C03E0042055F /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				6E460ADA2137302F003F8248 /* UILabelExtended.swift */,
 				6E1C883120A6C40E0042055F /* UILabelPadded.swift */,
 				6E3FB94E20C9D06C0030E838 /* AssetManager.swift */,
 				6E75BB1F20CA93A200876950 /* UITextFieldExtended.swift */,
@@ -1368,6 +1371,7 @@
 				6E75BB2020CA93A200876950 /* UITextFieldExtended.swift in Sources */,
 				6E00BD8520C8264900C68DBD /* CGFloat.swift in Sources */,
 				6E8BE84320D8F1FF00F600D2 /* PopOverExtension.swift in Sources */,
+				6E460ADB2137302F003F8248 /* UILabelExtended.swift in Sources */,
 				6E00BDFF20C8829E00C68DBD /* MoneyCompatible.swift in Sources */,
 				6E00BD7F20C8264900C68DBD /* Int.swift in Sources */,
 				6E75BB6F20CABC7900876950 /* TableViewControllerProtocol.swift in Sources */,

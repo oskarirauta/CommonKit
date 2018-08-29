@@ -31,7 +31,7 @@ extension PhotoPickerView {
             }
         }
 
-        open lazy var label: UILabelPadded = UILabelPadded.create {
+        open lazy var label: UILabelExtended = UILabelExtended.create {
             $0.translatesAutoresizingMaskIntoConstraints = false
             $0.isHidden = true
             $0.font = UIFont(name: "HelveticaNeue-Bold", size: 14) ?? UIFont.systemFont(ofSize: 14)

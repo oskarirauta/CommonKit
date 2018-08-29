@@ -22,17 +22,16 @@ open class UITitleCell: UITableViewCellExtended, CellTitleProtocol {
         $0.setContentHuggingPriority(.defaultLow, for: .horizontal)
     }
     
-    open var titleColor: UIColor! = UIColor.black {
+    open var titleColor: UIColor! = UIColor.defaultTitleColor {
         didSet {
             self.titleLabel.titleColor = self.enabled ? self.titleColor : UIColor.gray
             self.titleLabel.iconColor = self.iconColor != nil ? ( self.enabled ? self.iconColor! : UIColor.gray ) : nil
         }
     }
     
-    open var italic: Bool = false {
-        didSet {
-            self.titleLabel.font = self.italic ? UIFont.italicSystemFont(ofSize: self.titleLabel.font.pointSize) : UIFont.boldSystemFont(ofSize: self.titleLabel.font.pointSize)
-        }
+    open var italic: Bool {
+        get { return self.titleFont.fontDescriptor.symbolicTraits.contains(.traitItalic) }
+        set { self.titleLabel.font = self.italic ? UIFont.italicSystemFont(ofSize: self.titleLabel.font.pointSize) : UIFont.boldSystemFont(ofSize: self.titleLabel.font.pointSize) }
     }
     
     open var titleFont: UIFont! {
@@ -63,7 +62,6 @@ open class UITitleCell: UITableViewCellExtended, CellTitleProtocol {
         self.enabled = true
         self.titleColor = UIColor.black
         self.iconColor = nil
-        self.italic = false
         self.titleLabel.iconWidthSource = .manual(19.5)
         self.titleFont = UIFont.boldSystemFont(ofSize: 13.5)
         self.titleLabel.padding = nil
@@ -72,10 +70,10 @@ open class UITitleCell: UITableViewCellExtended, CellTitleProtocol {
         self.iconSize = 16.5
         self.iconMargin = 2.0
         self.accessoryType = .none
+        self.editingAccessoryType = .none
         self.shouldIndentWhileEditing = true
         self.selectionStyle = .none
         self.accessoryType = .none
-        self.editingAccessoryType = .none
         self.focusStyle = .default
         self.handler = nil
     }

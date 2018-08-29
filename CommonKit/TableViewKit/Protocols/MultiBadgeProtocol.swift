@@ -17,10 +17,11 @@ public protocol MultiBadgeProperties {
     var hideOnZero: Bool { get set }
     var badgeCornerRadius: CGFloat? { get set }
     var badgeFont: UIFont { get set }
+    var badgePadding: UIEdgeInsets? { get set }
 }
 
 public protocol MultiBadgeBase {
-    var badgeElements: [UILabelPadded]? { get set }
+    var badgeElements: [UILabelExtended]? { get set }
     
 }
 

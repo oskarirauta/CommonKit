@@ -23,7 +23,7 @@ extension PhotoPickerView {
             set { self.label.text = newValue }
         }
         
-        open lazy var label: UILabelPadded = UILabelPadded.create {
+        open lazy var label: UILabelExtended = UILabelExtended.create {
             $0.translatesAutoresizingMaskIntoConstraints = false
             $0.font = UIFont(name: "HelveticaNeue-Bold", size: 14) ?? UIFont.systemFont(ofSize: 14)
             $0.textColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.95)
