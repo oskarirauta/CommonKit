@@ -13,8 +13,8 @@ open class UITitleCell: UITableViewCellExtended, CellTitleProtocol {
             
     open lazy var titleLabel: UITitleLabel = UITitleLabel.´default´.properties {
         $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.textColor = self.enabled ? self.titleColor : UIColor.gray
-        $0.iconColor = self.enabled ? ( self.iconColor ?? self.titleColor ) : UIColor.gray
+        $0.textColor = self.enabled ? self.titleColor : self.disabledColor
+        $0.iconColor = self.enabled ? ( self.iconColor ?? self.titleColor ) : self.disabledColor
         $0.iconSize = 16.5
         $0.iconWidthSource = .manual(19.5)
         $0.font = UIFont.boldSystemFont(ofSize: 13.5)
@@ -24,8 +24,15 @@ open class UITitleCell: UITableViewCellExtended, CellTitleProtocol {
     
     open var titleColor: UIColor! = UIColor.defaultTitleColor {
         didSet {
-            self.titleLabel.titleColor = self.enabled ? self.titleColor : UIColor.gray
-            self.titleLabel.iconColor = self.iconColor != nil ? ( self.enabled ? self.iconColor! : UIColor.gray ) : nil
+            self.titleLabel.titleColor = self.enabled ? self.titleColor : self.disabledColor
+            self.titleLabel.iconColor = self.iconColor != nil ? ( self.enabled ? self.iconColor! : self.disabledColor ) : nil
+        }
+    }
+    
+    open var disabledColor: UIColor! = UIColor.gray {
+        didSet {
+            self.titleLabel.titleColor = self.enabled ? self.titleColor : self.disabledColor
+            self.titleLabel.iconColor = self.iconColor != nil ? ( self.enabled ? self.iconColor! : self.disabledColor ) : nil
         }
     }
     
@@ -44,15 +51,15 @@ open class UITitleCell: UITableViewCellExtended, CellTitleProtocol {
     
     open var iconColor: UIColor? = nil {
         didSet {
-            self.titleLabel.textColor = self.enabled ? self.titleColor : UIColor.gray
-            self.titleLabel.iconColor = self.iconColor != nil ? ( self.enabled ? self.iconColor! : UIColor.gray ) : nil
+            self.titleLabel.textColor = self.enabled ? self.titleColor : self.disabledColor
+            self.titleLabel.iconColor = self.iconColor != nil ? ( self.enabled ? self.iconColor! : self.disabledColor ) : nil
         }
     }
     
     override open var enabled: Bool {
         didSet {
-            self.titleLabel.textColor = self.enabled ? self.titleColor : UIColor.gray
-            self.titleLabel.iconColor = self.iconColor != nil ? ( self.enabled ? self.iconColor! : UIColor.gray ) : nil
+            self.titleLabel.textColor = self.enabled ? self.titleColor : self.disabledColor
+            self.titleLabel.iconColor = self.iconColor != nil ? ( self.enabled ? self.iconColor! : self.disabledColor ) : nil
         }
     }
     
@@ -60,7 +67,8 @@ open class UITitleCell: UITableViewCellExtended, CellTitleProtocol {
         super.cellProperties()
         self.selectable = false
         self.enabled = true
-        self.titleColor = UIColor.black
+        self.titleColor = UIColor.defaultTitleColor
+        self.disabledColor = UIColor.gray
         self.iconColor = nil
         self.titleLabel.iconWidthSource = .manual(19.5)
         self.titleFont = UIFont.boldSystemFont(ofSize: 13.5)
@@ -82,8 +90,8 @@ open class UITitleCell: UITableViewCellExtended, CellTitleProtocol {
         super.setupViews()
         self.contentView.addSubview(self.titleLabel)
         
-        self.titleLabel.textColor = self.enabled ? self.titleColor : UIColor.gray
-        self.titleLabel.iconColor = self.iconColor != nil ? ( self.enabled ? self.iconColor! : UIColor.gray ) : nil
+        self.titleLabel.textColor = self.enabled ? self.titleColor : self.disabledColor
+        self.titleLabel.iconColor = self.iconColor != nil ? ( self.enabled ? self.iconColor! : self.disabledColor ) : nil
     }
     
     override open func setupConstraints() {

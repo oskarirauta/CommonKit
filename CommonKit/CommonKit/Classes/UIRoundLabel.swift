@@ -11,7 +11,7 @@ import UIKit
 
 open class UIRoundLabel: UILabelExtended {
 
-    open var paddingAdjustment: UIEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0) {
+    open var paddingAdjustment: UIEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0.0, right: 0.0) {
         didSet { self.setNeedsContentUpdate() }
     }
     

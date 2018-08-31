@@ -58,11 +58,7 @@ open class UIMultiBadge: UIView, MultiBadgeProperties, MultiBadgeMethods, MultiB
     open var badgeFont: UIFont = UIFont.boldSystemFont(ofSize: 14.0) {
         didSet { self.refreshBadges() }
     }
-    
-    open var badgePadding: UIEdgeInsets? = nil {
-        didSet { self.refreshBadges() }
-    }
-    
+        
     private var _badges: [BadgeCompatible]? = nil
     private var _badgeElements: [UILabelExtended]? = nil
     private var _badgeConstraints: [NSLayoutConstraint] = []
@@ -94,7 +90,6 @@ extension UIMultiBadge {
             newBadge.setContentHuggingPriority(.defaultHigh, for: .horizontal)
             newBadge.layer.cornerRadius = 0.0
             newBadge.layer.masksToBounds = false
-            newBadge.padding = self.badgePadding ?? newBadge.padding
 
             var badgeHeight: CGFloat = newBadge.text?.toAttributed.font(self.badgeFont).getHeight(by: 500.0) ?? 0
             badgeHeight += badgeHeight > 0 ? ( 2.5 ) : 0
@@ -141,7 +136,9 @@ extension UIMultiBadge {
                 
                 let rightPadding: CGFloat = self.badgeRounding && self.groupBadge && index == filteredBadges.lastIndex ? 5.0 : ( self.badgeRounding && !self.groupBadge ? 5.0 : 2.0 )
                 
-                $0.padding = UIEdgeInsets(top: 0.5, left: leftPadding, bottom: 0.5, right: rightPadding )
+                let extraPadding: CGFloat = self.badgeFont.pointSize < 12 ? ( badge.text.count == 1 ? 3.0 : 1.0 ) : ( badge.text.count == 1 ? 5.0 : 3.0 )
+                
+                $0.padding = UIEdgeInsets(top: 0.5, left: leftPadding + extraPadding, bottom: 0.5, right: rightPadding + extraPadding)
                 $0.text = badge.text
                 $0.font = self.badgeFont
                 $0.textColor = badge.foregroundColor ?? UIColor.badgeForegroundColor

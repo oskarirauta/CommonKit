@@ -11,11 +11,22 @@ import UIKit
 
 public extension Locale {
     
+    private struct AppLocale_AssociatedKeys {
+        static var _appRegionCached: String? = nil
+    }
+
+    private static var appRegionCached: String? {
+        get { return objc_getAssociatedObject(self, &AppLocale_AssociatedKeys._appRegionCached) as? String }
+        set { objc_setAssociatedObject(self, &AppLocale_AssociatedKeys._appRegionCached, newValue as String?, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC) }
+    }
+
     static var appRegion: String? {
         get {
+            guard Thread.isMainThread else { return self.appRegionCached }
             guard let delegate: AppLocale = UIApplication.shared.delegate as? AppLocale else {
                 return nil
             }
+            self.appRegionCached = delegate.regionCode ?? nil
             return delegate.regionCode ?? nil
         }
     }
