@@ -26,11 +26,17 @@ class ViewController: UIViewController {
         super.viewWillAppear(animated)
         
         print("Region: " + ( Locale.appLocale.regionCode ?? "" ) + "\nDescription: " + ( Locale.appLocale.description))
-        
+
+        DispatchQueue.background.async {
+            print("Background Region: " + ( Locale.appLocale.regionCode ?? "" ) + "\nDescription: " + ( Locale.appLocale.description))
+            
+        }
+
         print("\nAvailable locales:")
         Locale.locales.forEach {
             print($0.countryCode + "\t\t" + $0.countryName + "\t\t\t" + $0.currencyCode)
         }
+        
     }
     
     /*

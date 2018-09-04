@@ -29,6 +29,10 @@ extension DispatchTime {
     public static var superLate: DispatchTime {
         get { return .now() + Double(Int64(0.5 * Double(NSEC_PER_MSEC))) / Double(NSEC_PER_SEC) }
     }
+
+    public static var prettySoon: DispatchTime {
+        get { return .now() + Double(Int64(0.35 * Double(NSEC_PER_MSEC))) / Double(NSEC_PER_SEC) }
+    }
     
     public static var late: DispatchTime {
         get { return .now() + Double(Int64(0.2 * Double(NSEC_PER_MSEC))) / Double(NSEC_PER_SEC) }
