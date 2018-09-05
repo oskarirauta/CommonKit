@@ -187,6 +187,7 @@
 		6ED7A94920C7AC7600CAC025 /* AppLocale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED7A94820C7AC7600CAC025 /* AppLocale.swift */; };
 		6ED7A94B20C7AC8700CAC025 /* Locale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED7A94A20C7AC8700CAC025 /* Locale.swift */; };
 		6ED7A94D20C7ACAB00CAC025 /* val2str.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED7A94C20C7ACAB00CAC025 /* val2str.swift */; };
+		6EE70DF8213F420900EE0FEF /* SharedAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE70DF7213F420900EE0FEF /* SharedAppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -372,6 +373,7 @@
 		6ED7A94820C7AC7600CAC025 /* AppLocale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppLocale.swift; sourceTree = "<group>"; };
 		6ED7A94A20C7AC8700CAC025 /* Locale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Locale.swift; sourceTree = "<group>"; };
 		6ED7A94C20C7ACAB00CAC025 /* val2str.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = val2str.swift; sourceTree = "<group>"; };
+		6EE70DF7213F420900EE0FEF /* SharedAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedAppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -944,6 +946,7 @@
 				6E75BB1920CA92A900876950 /* TextFieldHandlerProtocol.swift */,
 				6E75BB1B20CA92D400876950 /* TextFieldProtocol.swift */,
 				6E75BB1D20CA92F700876950 /* TextViewProtocol.swift */,
+				6EE70DF7213F420900EE0FEF /* SharedAppDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -1277,6 +1280,7 @@
 				6E00BDD220C85F0F00C68DBD /* Dictionary.swift in Sources */,
 				6E3C4FEC20A0E181009C3ED7 /* CommonFuncs.swift in Sources */,
 				6E3C500820A0E1B0009C3ED7 /* UIApplicationDelegate.swift in Sources */,
+				6EE70DF8213F420900EE0FEF /* SharedAppDelegate.swift in Sources */,
 				6E00BDFC20C8829E00C68DBD /* PriceProtocol.swift in Sources */,
 				6E7F0B1A20CDCB2B00E18883 /* CameraButton.swift in Sources */,
 				6E95460A21335D66001C7204 /* Date_Decimal.swift in Sources */,

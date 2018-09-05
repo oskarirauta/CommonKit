@@ -36,7 +36,14 @@ class ViewController: UIViewController {
         Locale.locales.forEach {
             print($0.countryCode + "\t\t" + $0.countryName + "\t\t\t" + $0.currencyCode)
         }
-        
+
+        DispatchQueue.main.async {
+            print("Main thread results: " + AppDelegate.shared.regionCode)
+        }
+        DispatchQueue.background.async {
+            print("Background thread results: " + AppDelegate.shared.regionCode)
+        }
+ 
     }
     
     /*

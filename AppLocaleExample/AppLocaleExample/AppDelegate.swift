@@ -10,8 +10,8 @@ import UIKit
 import CommonKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, AppLocale {
-    
+class AppDelegate: UIResponder, UIApplicationDelegate, SharedAppDelegate, AppLocale {
+        
     var regionCode: String = "fi_FI"
     
     lazy var window: UIWindow? = {
