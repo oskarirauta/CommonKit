@@ -114,4 +114,15 @@ public struct Money: ExpressibleByFloatLiteral, ExpressibleByIntegerLiteral, Sig
     public static func < (lhs: Money, rhs: Money) -> Bool {
         return lhs.rawValue < rhs.rawValue
     }
+
+    public func mutated(by percentage: Decimal) -> Money {
+        return self.rawValue.mutated(by: percentage).asMoney
+    }
+    
+    public func with(locale: Locale) -> Money {
+        var _money: Money = self
+        _money.locale = locale
+        return _money
+    }
+    
 }
