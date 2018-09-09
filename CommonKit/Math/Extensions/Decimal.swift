@@ -52,4 +52,11 @@ extension Decimal {
         return NSDecimalNumber(decimal: self).rounding(accordingToBehavior: NSDecimalNumberHandler(roundingMode: .plain, scale: 0, raiseOnExactness: false, raiseOnOverflow: false, raiseOnUnderflow: false, raiseOnDivideByZero: false)).decimalValue
     }
     
+    public func mutated(by percentage: Decimal) -> Decimal {
+        let absSelf: Decimal = abs(self)
+        let absPercentage: Decimal = abs(percentage.rounded(to: 1)) * 0.01
+        let newValue: Decimal = percentage.isSignMinus ? ( absSelf - ( absSelf * absPercentage )) : ( absSelf + ( absSelf * absPercentage ))
+        return self.isSignMinus ? -newValue : newValue
+    }
+    
 }
