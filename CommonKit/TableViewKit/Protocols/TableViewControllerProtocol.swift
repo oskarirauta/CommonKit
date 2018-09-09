@@ -84,6 +84,7 @@ extension TableViewControllerProtocol {
     }
     
     public func setContentOffset(contentOffset: CGPoint, animated: Bool) {
+        if !animated { self.tableView.layer.removeAllAnimations() }
         self.tableView.setContentOffset(contentOffset, animated: animated)
     }
     

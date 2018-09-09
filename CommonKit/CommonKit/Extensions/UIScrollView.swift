@@ -18,6 +18,7 @@ extension UIScrollView {
         } else {
             offset.y = -contentInset.top
         }
+        if  ( !animated ) { self.layer.removeAllAnimations() }
         setContentOffset(offset, animated: animated)
     }
 }
