@@ -15,38 +15,71 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AppLocale {
     var regionCode: String = "fi_FI"
     
     func test() {
+        
+        func printCart(_ cart: Cart) {
+            cart.forEach {
+                var line: String = ( $0.name ?? "--" ) + "\t| "
+                line += $0.price.description + "\t| "
+                line += $0.count.description + ( $0.unit ?? "\t" ) + "\t| "
+                line += $0.VAT_percent.description + "%\t| "
+                line += $0.VAT.description + "\t| "
+                line += $0.totalVAT0.description + "\t| "
+                line += $0.total.description
+                print(line)
+            }
+            
+            print("\t\t\t\t\t\t\t\t\t  " + cart.VAT.description + "\t| " + cart.totalVAT0.description + "\t| " + cart.total.description)
+        }
+        
+        func printMutator(_ mutatorItem: CartMutatorSummary) {
+
+            let name: String = ((mutatorItem.name ?? "Unnamed mutator")).fillTrailing(until: 16, with: " ")
+            print("\( name )\t| " + mutatorItem.percentage.description + "% \t|\t\t| " + mutatorItem.VAT.description + "\t| " + mutatorItem.totalVAT0.description + "\t| " + mutatorItem.total.description)
+        }
+        
         var wallet: Money = Money(100.0)
         var cart: Cart = Cart()
         cart.append(CartItem(name: "Item1", price: 15.0))
         cart.append(CartItem(name: "Item2", price: 10.0, VAT: 24.0))
         cart.append(CartItem(name: "Item3", count: 2, unit: "pcs", price: 15.0, VAT: 24.0))
-        cart.append(CartItem(name: "Item4", count: 0, price: 20.0))
-        cart.append(CartItem(name: "Item5", count: 0, price: 9.0, VAT: 24.0))
-        cart.append(CartItem(name: "Item6", count: 0, price: 1.0))
         
+        var cart2: Cart = CartItem(name: "Item4", count: 1, price: 20.0) + CartItem(name: "Item5", count: 1, price: 9.0, VAT: 24.0)
+        
+        cart2 += [ CartItem(name: "Item6", count: 1, price: 1.0) ]
+        cart = cart + cart2
+
         cart[3].VAT_percent = 15.5
         cart[5].count = 1
+
+        print("\nCart contents:")
+        printCart(cart)
         
-        cart.forEach {
-            var line: String = ( $0.name ?? "--" ) + "\t| "
-            line += $0.price.description + "\t| "
-            line += $0.count.description + ( $0.unit ?? "\t" ) + "\t| "
-            line += $0.VAT_percent.description + "%\t| "
-            line += $0.VAT.description + "\t| "
-            line += $0.totalVAT0.description + "\t| "
-            line += $0.total.description
-            print(line)
+        let mutators: [CartMutator] = [
+            CartMutator(name: "Discount 10%", percentage: -10),
+            CartMutator(name: "Discount 50%", percentage: -50),
+            CartMutator(name: "Commission 5%", percentage: 5)
+        ]
+
+        if !mutators.isEmpty { print("Mutators:") }
+        
+        let summaries: [CartMutatorSummary] = cart.mutatorSummary(for: mutators)
+        summaries.forEach {
+            printMutator($0)
+        }
+        if summaries.count > 1 {
+            print("Total mutated:\t\t  " + summaries.percentage.description + "% \t\t\t  " + summaries.VAT.description + "\t| " + summaries.totalVAT0.description + "\t| " + summaries.total.description)
         }
         
-        print("\t\t\t\t\t\t\t\t\t  " + cart.VAT.description + "\t| " + cart.totalVAT0.description + "\t| " + cart.total.description)
+        cart = cart.mutated(by: mutators)
         
+        print("\nCart results after mutation:")
+
+        printCart(cart)
         
-        print("Wallet contains: " + wallet.description)
-        
+        print("Wallet contains: \( wallet.description ) - after purchase of \( cart.total.description ), wallet contains: \( ( wallet - Money(cart)).description)")
+
+        // Reduce cart from wallet:
         wallet -= Money(cart)
-        
-        print("After purchase of " + cart.total.description + ", wallet contains: " + wallet.description)
-        
     }
     
     lazy var window: UIWindow? = {
