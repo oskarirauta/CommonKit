@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct CartItem: MoneyCompatible, PriceProtocol, VATProtocol, CustomStringConvertible {
+public struct CartItem: CartCompatible {
     
     public var name: String? = nil
     public var count: Decimal {
@@ -45,5 +45,30 @@ public struct CartItem: MoneyCompatible, PriceProtocol, VATProtocol, CustomStrin
         self.unit = unit
         self.price = price
         self._vat_percent = VAT.rounded(to: 1) > 0 ? VAT.rounded(to: 1) : Decimal(0)
-    }    
+    }
+
+    public func mutated(by percentage: Decimal) -> CartItem {
+        return CartItem(name: self.name, count: self.count, unit: self.unit, price: self.price.mutated(by: percentage), VAT: self.VAT_percent)
+    }
+    
+    public func mutated(by mutator: CartMutator) -> CartItem {
+        return self.mutated(by: mutator.percentage)
+    }
+
+    public func mutated(by from: [Decimal]) -> CartItem {
+        var mutatedItem: CartItem = self
+        from.forEach { mutatedItem = mutatedItem.mutated(by: $0) }
+        return mutatedItem
+    }
+    
+    public func mutated(by from: [CartMutator]) -> CartItem {
+        var mutatedItem: CartItem = self
+        from.forEach { mutatedItem = mutatedItem.mutated(by: $0.percentage) }
+        return mutatedItem
+    }
+
+    static public func + (lhs: CartItem, rhs: CartItem) -> [CartItem] {
+        return [lhs, rhs]
+    }
+        
 }
