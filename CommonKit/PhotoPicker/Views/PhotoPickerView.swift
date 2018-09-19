@@ -178,9 +178,9 @@ open class PhotoPickerView: AlertView, UICollectionViewDelegate, UICollectionVie
             }
         })
         
-        let options: UIViewAnimationOptions = [
-            UIViewAnimationOptions.showHideTransitionViews,
-            UIViewAnimationOptions.transitionFlipFromLeft
+        let options: UIView.AnimationOptions = [
+            UIView.AnimationOptions.showHideTransitionViews,
+            UIView.AnimationOptions.transitionFlipFromLeft
         ]
         UIView.transition(from: self.photoView, to: self.photoPreviewView, duration: 0.4, options: options, completion: nil)
         
@@ -188,9 +188,9 @@ open class PhotoPickerView: AlertView, UICollectionViewDelegate, UICollectionVie
     
     open func dismissPhotoPreview() {
         
-        let options: UIViewAnimationOptions = [
-            UIViewAnimationOptions.showHideTransitionViews,
-            UIViewAnimationOptions.transitionFlipFromRight
+        let options: UIView.AnimationOptions = [
+            UIView.AnimationOptions.showHideTransitionViews,
+            UIView.AnimationOptions.transitionFlipFromRight
         ]
         
         UIView.transition(from: self.photoPreviewView, to: self.photoView, duration: 0.4, options: options, completion: nil)
@@ -201,18 +201,18 @@ open class PhotoPickerView: AlertView, UICollectionViewDelegate, UICollectionVie
         
         // guard self.assetManager.albums.count > 1 else { return }
         
-        let options: UIViewAnimationOptions = [
-            UIViewAnimationOptions.showHideTransitionViews,
-            UIViewAnimationOptions.transitionFlipFromLeft
+        let options: UIView.AnimationOptions = [
+            UIView.AnimationOptions.showHideTransitionViews,
+            UIView.AnimationOptions.transitionFlipFromLeft
         ]
         UIView.transition(from: self.photoView, to: self.albumView, duration: 0.4, options: options, completion: nil)
     }
     
     open func dismissAlbumSelector() {
         
-        let options: UIViewAnimationOptions = [
-            UIViewAnimationOptions.showHideTransitionViews,
-            UIViewAnimationOptions.transitionFlipFromRight
+        let options: UIView.AnimationOptions = [
+            UIView.AnimationOptions.showHideTransitionViews,
+            UIView.AnimationOptions.transitionFlipFromRight
         ]
         
         UIView.transition(from: self.albumView, to: self.photoView, duration: 0.4, options: options, completion: nil)
@@ -222,9 +222,9 @@ open class PhotoPickerView: AlertView, UICollectionViewDelegate, UICollectionVie
         
         self.cameraView.enableCamera()
         
-        let options: UIViewAnimationOptions = [
-            UIViewAnimationOptions.showHideTransitionViews,
-            UIViewAnimationOptions.transitionFlipFromLeft
+        let options: UIView.AnimationOptions = [
+            UIView.AnimationOptions.showHideTransitionViews,
+            UIView.AnimationOptions.transitionFlipFromLeft
         ]
         
         UIView.transition(from: self.photoView, to: self.cameraView, duration: 0.4, options: options, completion: nil)
@@ -234,9 +234,9 @@ open class PhotoPickerView: AlertView, UICollectionViewDelegate, UICollectionVie
         
         self.cameraView.disableCamera()
         
-        let options: UIViewAnimationOptions = [
-            UIViewAnimationOptions.showHideTransitionViews,
-            UIViewAnimationOptions.transitionFlipFromRight
+        let options: UIView.AnimationOptions = [
+            UIView.AnimationOptions.showHideTransitionViews,
+            UIView.AnimationOptions.transitionFlipFromRight
         ]
         
         UIView.transition(from: self.cameraView, to: self.photoView, duration: 0.4, options: options, completion: nil)
@@ -247,9 +247,9 @@ open class PhotoPickerView: AlertView, UICollectionViewDelegate, UICollectionVie
         
         self.previewView.image = image
         
-        let options: UIViewAnimationOptions = [
-            UIViewAnimationOptions.showHideTransitionViews,
-            UIViewAnimationOptions.transitionFlipFromLeft
+        let options: UIView.AnimationOptions = [
+            UIView.AnimationOptions.showHideTransitionViews,
+            UIView.AnimationOptions.transitionFlipFromLeft
         ]
         
         UIView.transition(from: self.photoView, to: self.previewView, duration: 0.4, options: options, completion: nil)
@@ -259,9 +259,9 @@ open class PhotoPickerView: AlertView, UICollectionViewDelegate, UICollectionVie
         
         self.cameraView.enableCamera()
         
-        let options: UIViewAnimationOptions = [
-            UIViewAnimationOptions.showHideTransitionViews,
-            UIViewAnimationOptions.transitionFlipFromRight
+        let options: UIView.AnimationOptions = [
+            UIView.AnimationOptions.showHideTransitionViews,
+            UIView.AnimationOptions.transitionFlipFromRight
         ]
         
         UIView.transition(from: self.previewView, to: self.cameraView, duration: 0.4, options: options, completion: nil)

@@ -17,13 +17,13 @@ open class UILabelPadded: UILabel {
 
     override open func textRect(forBounds bounds: CGRect, limitedToNumberOfLines numberOfLines: Int) -> CGRect {
         guard self.padding != nil else { return super.textRect(forBounds: bounds, limitedToNumberOfLines: numberOfLines) }
-        let insetRect = UIEdgeInsetsInsetRect(bounds, self.padding ?? .zero)
+        let insetRect = bounds.inset(by: self.padding ?? .zero)
         let textRect = super.textRect(forBounds: insetRect, limitedToNumberOfLines: numberOfLines)
         let invertedInsets = UIEdgeInsets(top: -(self.padding?.top ?? 0.0),
                                           left: -(self.padding?.left ?? 0.0),
                                           bottom: -(self.padding?.bottom ?? 0.0),
                                           right: -(self.padding?.right ?? 0.0))
-        return UIEdgeInsetsInsetRect(textRect, invertedInsets)
+        return textRect.inset(by: invertedInsets)
     }
     
     open override func drawText(in rect: CGRect) {
@@ -31,7 +31,7 @@ open class UILabelPadded: UILabel {
             super.drawText(in: rect)
             return
         }
-        super.drawText(in: UIEdgeInsetsInsetRect(rect, self.padding ?? .zero))
+        super.drawText(in: rect.inset(by: self.padding ?? .zero))
     }
     
     override open var intrinsicContentSize: CGSize {

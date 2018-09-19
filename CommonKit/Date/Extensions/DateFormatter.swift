@@ -10,7 +10,7 @@ import Foundation
 
 extension DateFormatter {
     
-    convenience public init(mode: UIDatePickerMode) {
+    convenience public init(mode: UIDatePicker.Mode) {
         self.init()
         self.locale = Locale.appLocale
         self.dateStyle = (( mode == .date ) || ( mode == .dateAndTime )) ? .short : .none

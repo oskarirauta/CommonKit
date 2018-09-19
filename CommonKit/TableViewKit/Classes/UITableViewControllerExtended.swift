@@ -52,15 +52,15 @@ extension UITableViewControllerExtended {
     }
     
     open func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return UITableViewAutomaticDimension
+        return UITableView.automaticDimension
     }
     
     open func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return UITableViewAutomaticDimension
+        return UITableView.automaticDimension
     }
     
     open func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableViewAutomaticDimension
+        return UITableView.automaticDimension
     }
     
     open func tableView(_ tableView: UITableView, numberOfRowsInSection: Int) -> Int {
@@ -89,7 +89,7 @@ extension UITableViewControllerExtended {
         return false
     }
     
-    open func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    open func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
     }
     
     open func tableView(_ tableView: UITableView, targetIndexPathForMoveFromRowAt targetIndexPathForMoveFromRowAtIndexPath: IndexPath, toProposedIndexPath: IndexPath) -> IndexPath {
@@ -105,7 +105,7 @@ extension UITableViewControllerExtended {
         return false
     }
     
-    open func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+    open func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         return .delete
     }
     
@@ -116,7 +116,7 @@ extension UITableViewControllerExtended {
 }
 
 open class UITableViewControllerExtended: UIViewController, InternalTableViewControllerProtocol, BackButtonProtocol {
-        
+    
     open lazy var delegate: UITableViewDelegate? = {
         guard var _delegate: UITableViewDelegate = self as UITableViewDelegate? else { return nil }
         return _delegate

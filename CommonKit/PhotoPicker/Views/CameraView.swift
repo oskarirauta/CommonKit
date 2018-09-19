@@ -86,13 +86,13 @@ extension PhotoPickerView {
             _buttonToggle.translatesAutoresizingMaskIntoConstraints = false
             _buttonToggle.layer.masksToBounds = true
             
-            _buttonToggle.setImage(UIImage(named: "photopicker_switch", in: Bundle(for: CameraView.self), compatibleWith: nil)?.scaled(to: CGSize(width: 52.0, height: 52.0)).withRenderingMode(.alwaysTemplate), for: UIControlState())
+            _buttonToggle.setImage(UIImage(named: "photopicker_switch", in: Bundle(for: CameraView.self), compatibleWith: nil)?.scaled(to: CGSize(width: 52.0, height: 52.0)).withRenderingMode(.alwaysTemplate), for: UIControl.State())
             _buttonToggle.setImage(UIImage(named: "photopicker_switch", in: Bundle(for: CameraView.self), compatibleWith: nil)?.scaled(to: CGSize(width: 52.0, height: 52.0)).withRenderingMode(.alwaysTemplate), for: .highlighted)
             _buttonToggle.setImage(UIImage(named: "photopicker_switch", in: Bundle(for: CameraView.self), compatibleWith: nil)?.scaled(to: CGSize(width: 52.0, height: 52.0)).withRenderingMode(.alwaysTemplate), for: .selected)
             
             _buttonToggle.tintColor = UIColor.black
             _buttonToggle.imageEdgeInsets = UIEdgeInsets(top: 4.0, left: 2.0, bottom: 0.0, right: 2.0)
-            _buttonToggle.setBackgroundImage(UIColor.gray.image, for: UIControlState())
+            _buttonToggle.setBackgroundImage(UIColor.gray.image, for: UIControl.State())
             _buttonToggle.setBackgroundImage(UIColor.gray.image, for: .selected)
             _buttonToggle.setBackgroundImage(UIColor.lightGray.image, for: .highlighted)
             _buttonToggle.alpha = 0.75
@@ -109,13 +109,13 @@ extension PhotoPickerView {
             _buttonFlash.translatesAutoresizingMaskIntoConstraints = false
             _buttonFlash.layer.masksToBounds = true
             
-            _buttonFlash.setImage(self.flashImg(for: .auto).withRenderingMode(.alwaysTemplate), for: UIControlState())
+            _buttonFlash.setImage(self.flashImg(for: .auto).withRenderingMode(.alwaysTemplate), for: UIControl.State())
             _buttonFlash.setImage(self.flashImg(for: .auto).withRenderingMode(.alwaysTemplate), for: .highlighted)
             _buttonFlash.setImage(self.flashImg(for: .auto).withRenderingMode(.alwaysTemplate), for: .selected)
             
             _buttonFlash.tintColor = UIColor.black
             _buttonFlash.imageEdgeInsets = UIEdgeInsets(top: 3.0, left: 2.0, bottom: 1.0, right: 2.0)
-            _buttonFlash.setBackgroundImage(UIColor.gray.image, for: UIControlState())
+            _buttonFlash.setBackgroundImage(UIColor.gray.image, for: UIControl.State())
             _buttonFlash.setBackgroundImage(UIColor.gray.image, for: .selected)
             _buttonFlash.setBackgroundImage(UIColor.lightGray.image, for: .highlighted)
             
@@ -141,13 +141,13 @@ extension PhotoPickerView {
             _buttonCancel.translatesAutoresizingMaskIntoConstraints = false
             _buttonCancel.clipsToBounds = true
             
-            _buttonCancel.setImage(UIImage(named: "photopicker_cancel", in: Bundle(for: CameraView.self), compatibleWith: nil)?.scaled(to: CGSize(width: 52.0, height: 52.0)).withRenderingMode(.alwaysTemplate), for: UIControlState())
+            _buttonCancel.setImage(UIImage(named: "photopicker_cancel", in: Bundle(for: CameraView.self), compatibleWith: nil)?.scaled(to: CGSize(width: 52.0, height: 52.0)).withRenderingMode(.alwaysTemplate), for: UIControl.State())
             _buttonCancel.setImage(UIImage(named: "photopicker_cancel", in: Bundle(for: CameraView.self), compatibleWith: nil)?.scaled(to: CGSize(width: 52.0, height: 52.0)).withRenderingMode(.alwaysTemplate), for: .highlighted)
             _buttonCancel.setImage(UIImage(named: "photopicker_cancel", in: Bundle(for: CameraView.self), compatibleWith: nil)?.scaled(to: CGSize(width: 52.0, height: 52.0)).withRenderingMode(.alwaysTemplate), for: .selected)
             
             _buttonCancel.tintColor = UIColor.black
             _buttonCancel.imageEdgeInsets = UIEdgeInsets(top: 2.0, left: 2.0, bottom: 2.0, right: 2.0)
-            _buttonCancel.setBackgroundImage(UIColor.gray.image, for: UIControlState())
+            _buttonCancel.setBackgroundImage(UIColor.gray.image, for: UIControl.State())
             _buttonCancel.setBackgroundImage(UIColor.gray.image, for: .selected)
             _buttonCancel.setBackgroundImage(UIColor.lightGray.image, for: .highlighted)
             _buttonCancel.alpha = 0.75
@@ -165,13 +165,13 @@ extension PhotoPickerView {
             _buttonAlbum.translatesAutoresizingMaskIntoConstraints = false
             _buttonAlbum.clipsToBounds = true
             
-            _buttonAlbum.setImage(UIImage(named: "photopicker_disk", in: Bundle(for: CameraView.self), compatibleWith: nil)?.scaled(to: CGSize(width: 52.0, height: 52.0)).withRenderingMode(.alwaysTemplate), for: UIControlState())
+            _buttonAlbum.setImage(UIImage(named: "photopicker_disk", in: Bundle(for: CameraView.self), compatibleWith: nil)?.scaled(to: CGSize(width: 52.0, height: 52.0)).withRenderingMode(.alwaysTemplate), for: UIControl.State())
             _buttonAlbum.setImage(UIImage(named: "photopicker_disk", in: Bundle(for: CameraView.self), compatibleWith: nil)?.scaled(to: CGSize(width: 52.0, height: 52.0)).withRenderingMode(.alwaysTemplate), for: .highlighted)
             _buttonAlbum.setImage(UIImage(named: "photopicker_disk", in: Bundle(for: CameraView.self), compatibleWith: nil)?.scaled(to: CGSize(width: 52.0, height: 52.0)).withRenderingMode(.alwaysTemplate), for: .selected)
             
             _buttonAlbum.tintColor = UIColor.black
             _buttonAlbum.imageEdgeInsets = UIEdgeInsets(top: 4.0, left: 4.0, bottom: 4.0, right: 4.0)
-            _buttonAlbum.setBackgroundImage(UIColor.gray.image, for: UIControlState())
+            _buttonAlbum.setBackgroundImage(UIColor.gray.image, for: UIControl.State())
             _buttonAlbum.setBackgroundImage(UIColor.gray.image, for: .selected)
             _buttonAlbum.setBackgroundImage(UIColor.lightGray.image, for: .highlighted)
             _buttonAlbum.alpha = 0.75
@@ -267,7 +267,7 @@ extension PhotoPickerView {
             }
             
             self.buttonFlash.isHidden = self.cameraController?.availableFlashModes.count ?? 0 < 2
-            self.buttonFlash.setImage(self.flashImg(for: self.cameraController?.flashMode ?? .off).withRenderingMode(.alwaysTemplate), for: UIControlState())
+            self.buttonFlash.setImage(self.flashImg(for: self.cameraController?.flashMode ?? .off).withRenderingMode(.alwaysTemplate), for: UIControl.State())
             self.buttonFlash.setImage(self.flashImg(for: self.cameraController?.flashMode ?? .off).withRenderingMode(.alwaysTemplate), for: .highlighted)
             self.buttonFlash.setImage(self.flashImg(for: self.cameraController?.flashMode ?? .off).withRenderingMode(.alwaysTemplate), for: .selected)
             
@@ -367,7 +367,7 @@ extension PhotoPickerView {
             
             try? self.cameraController?.toggleFlashMode()
             
-            self.buttonFlash.setImage(self.flashImg(for: self.cameraController?.flashMode ?? .off).withRenderingMode(.alwaysTemplate), for: UIControlState())
+            self.buttonFlash.setImage(self.flashImg(for: self.cameraController?.flashMode ?? .off).withRenderingMode(.alwaysTemplate), for: UIControl.State())
             self.buttonFlash.setImage(self.flashImg(for: self.cameraController?.flashMode ?? .off).withRenderingMode(.alwaysTemplate), for: .highlighted)
             self.buttonFlash.setImage(self.flashImg(for: self.cameraController?.flashMode ?? .off).withRenderingMode(.alwaysTemplate), for: .selected)
         }

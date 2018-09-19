@@ -190,14 +190,14 @@ class ViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate
             // Listen for changes to the text field's text so that we can toggle the current
             // action's enabled property based on whether the user has entered a sufficiently
             // secure entry.
-            NotificationCenter.default.addObserver(self, selector: #selector(ViewController.handleTextFieldTextDidChangeNotification(_:)), name: NSNotification.Name.UITextFieldTextDidChange, object: textField)
+            NotificationCenter.default.addObserver(self, selector: #selector(ViewController.handleTextFieldTextDidChangeNotification(_:)), name: UITextField.textDidChangeNotification, object: textField)
             
             textField?.isSecureTextEntry = true
         }
         
         // Stop listening for text change notifications on the text field. This closure will be called in the two action handlers.
         let removeTextFieldObserver: () -> Void = {
-            NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UITextFieldTextDidChange, object: alertController.textFields!.first)
+            NotificationCenter.default.removeObserver(self, name: UITextField.textDidChangeNotification, object: alertController.textFields!.first)
         }
         
         // Create the actions.
@@ -268,7 +268,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate
             label.text = " ID"
             label.font = UIFont(name: "GillSans-Bold", size: 15.0)
             textField?.leftView = label
-            textField?.leftViewMode = UITextFieldViewMode.always
+            textField?.leftViewMode = UITextField.ViewMode.always
             
             textField?.delegate = self
         }
@@ -286,7 +286,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate
             label.text = " PASS"
             label.font = UIFont(name: "GillSans-Bold", size: 15.0)
             textField?.leftView = label
-            textField?.leftViewMode = UITextFieldViewMode.always
+            textField?.leftViewMode = UITextField.ViewMode.always
             
             textField?.delegate = self
         }

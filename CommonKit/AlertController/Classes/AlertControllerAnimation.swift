@@ -11,7 +11,7 @@ import UIKit
 
 open class AlertControllerAnimation: NSObject, UIViewControllerAnimatedTransitioning {
     
-    open let isPresenting: Bool
+    public let isPresenting: Bool
     
     public init(isPresenting: Bool) {
         

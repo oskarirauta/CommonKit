@@ -11,7 +11,7 @@ import UIKit
 
 public final class CurrencyPad: UIInputView, UIInputViewAudioFeedback {
     
-    private(set) var style: NumPad.Style = NumPad.Style.default
+    private(set) var style: NumPadStyle = .default
     private(set) var inputViewType: NumPad.InputViewType? = nil
     private(set) weak var textInput: UITextInput? = nil
     private(set) var currencyField: CurrencyFieldDelegate? = nil
@@ -43,7 +43,7 @@ public final class CurrencyPad: UIInputView, UIInputViewAudioFeedback {
     internal var button: [UIButton] = []
     
     public override var intrinsicContentSize: CGSize {
-        get { return CGSize(width: UIViewNoIntrinsicMetric, height: UIViewNoIntrinsicMetric) }
+        get { return CGSize(width: UIView.noIntrinsicMetric, height: UIView.noIntrinsicMetric) }
     }
     
     public init() {
@@ -51,7 +51,7 @@ public final class CurrencyPad: UIInputView, UIInputViewAudioFeedback {
         self.setup(style: .default)
     }
     
-    public init(style: NumPad.Style = .default) {
+    public init(style: NumPadStyle = .default) {
         super.init(frame: .zero, inputViewStyle: .default)
         self.setup(style: style)
     }
@@ -63,20 +63,20 @@ public final class CurrencyPad: UIInputView, UIInputViewAudioFeedback {
         self.setup(style: .default)
     }
     
-    private override init(frame: CGRect, inputViewStyle: UIInputViewStyle) {
+    private override init(frame: CGRect, inputViewStyle: UIInputView.Style) {
         super.init(frame: frame, inputViewStyle: inputViewStyle)
         self.translatesAutoresizingMaskIntoConstraints = false
         self.setupViews()
         self.setup(style: .default)
     }
     
-    internal func setup(style: NumPad.Style = .default) {
+    internal func setup(style: NumPadStyle = .default) {
         self.translatesAutoresizingMaskIntoConstraints = false
         self.style = style
         self.textInput = nil
         self.setupViews()
-        NotificationCenter.default.addObserver(self, selector: #selector(self.setupTextInput(_:)), name: NSNotification.Name.UITextFieldTextDidBeginEditing, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.setupTextInput(_:)), name: NSNotification.Name.UITextViewTextDidEndEditing, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.setupTextInput(_:)), name: UITextField.textDidBeginEditingNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.setupTextInput(_:)), name: UITextView.textDidEndEditingNotification, object: nil)
     }
     
     @objc internal func setupTextInput(_ notification: Notification) {
@@ -99,10 +99,10 @@ public final class CurrencyPad: UIInputView, UIInputViewAudioFeedback {
         self.currencyField = delegate
         
         self.textInput = textInput
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UITextFieldTextDidBeginEditing, object: nil)
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UITextViewTextDidBeginEditing, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UITextField.textDidBeginEditingNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UITextView.textDidBeginEditingNotification, object: nil)
         
-        self.inputViewType = notification.name == NSNotification.Name.UITextFieldTextDidBeginEditing ? .textField : .textView
+        self.inputViewType = notification.name == UITextField.textDidBeginEditingNotification ? .textField : .textView
     }
     
     public override func willMove(toSuperview newSuperview: UIView?) {

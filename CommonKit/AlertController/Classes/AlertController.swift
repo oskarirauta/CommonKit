@@ -130,9 +130,9 @@ open class AlertController: DefaultAlertControllerBaseClass, UITextFieldDelegate
         // NotificationCenter
         NotificationCenter.default.addObserver(self, selector: #selector(self.handleAlertActionEnabledDidChangeNotification(_:)), name: NSNotification.Name(rawValue: AlertActionEnabledDidChangeNotification), object: nil)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(self.handleKeyboardWillShowNotification(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.handleKeyboardWillShowNotification(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(self.handleKeyboardWillHideNotification(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.handleKeyboardWillHideNotification(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     open override func setupView() {
@@ -320,7 +320,7 @@ open class AlertController: DefaultAlertControllerBaseClass, UITextFieldDelegate
     func reloadAlertViewHeight() {
         
         var screenSize: CGSize = self.presentingViewController != nil ? self.presentingViewController!.view.bounds.size : UIScreen.main.bounds.size
-        if ((( UIDevice.current.systemVersion as NSString).floatValue < 8.0 ) && ( UIInterfaceOrientationIsLandscape(self.currentOrientation))) {
+        if ((( UIDevice.current.systemVersion as NSString).floatValue < 8.0 ) && ( self.currentOrientation.isLandscape)) {
             screenSize = CGSize(width: screenSize.height, height: screenSize.width)
         }
         let maxHeight: CGFloat = screenSize.height - self.keyboardHeight
@@ -374,12 +374,12 @@ open class AlertController: DefaultAlertControllerBaseClass, UITextFieldDelegate
         guard
             !self.fullscreen,
             let userInfo = notification.userInfo as? [String: NSValue],
-            let keyboardSize = userInfo[UIKeyboardFrameEndUserInfoKey]?.cgRectValue.size
+            let keyboardSize = userInfo[UIResponder.keyboardFrameEndUserInfoKey]?.cgRectValue.size
             else { return }
         
         var _keyboardSize = keyboardSize
         if ((UIDevice.current.systemVersion as NSString).floatValue < 8.0) {
-            if (UIInterfaceOrientationIsLandscape(self.currentOrientation)) {
+            if (self.currentOrientation.isLandscape) {
                 _keyboardSize = CGSize(width: _keyboardSize.height, height: _keyboardSize.width)
             }
         }
@@ -449,7 +449,7 @@ open class AlertController: DefaultAlertControllerBaseClass, UITextFieldDelegate
         
         let textField: UITextFieldExtended = UITextFieldExtended()
         textField.frame.size = CGSize(width: self.innerContentWidth ?? DefaultAlertProperties.innerContentWidth, height: self.textFieldHeight)
-        textField.borderStyle = UITextBorderStyle.none
+        textField.borderStyle = UITextField.BorderStyle.none
         textField.backgroundColor = self.textFieldBgColor
         textField.delegate = self
         

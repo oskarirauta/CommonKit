@@ -195,7 +195,7 @@ open class CellReturn: NSObject {
         super.init()
     }
     
-    open static var `nil`: CellReturn {
+    public static var `nil`: CellReturn {
         get { return CellReturn() }
     }
     

@@ -34,7 +34,7 @@ open class UITableViewCellExtended: UITableViewCell, CellConstraintProtocol, UIC
         self.setNeedsUpdateConstraints()
     }
     
-    override public init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    override public init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.tableView = nil
         self.cellProperties()

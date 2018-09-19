@@ -64,10 +64,10 @@ extension CellTitleProtocol where Self: UITableViewCellExtended {
         get { return self.titleLabel.iconBaseLineOffset }
         set { self.titleLabel.iconBaseLineOffset = newValue }
     }
-    
+/*
     public var textBaselineOffset: Float? {
         get { return self.textBaselineOffset }
         set { self.textBaselineOffset = newValue }
     }
-    
+*/
 }

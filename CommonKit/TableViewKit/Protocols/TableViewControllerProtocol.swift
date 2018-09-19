@@ -36,9 +36,9 @@ public protocol TableViewControllerProtocol: UITableViewDelegate, UITableViewDat
     
     func setContentOffset(contentOffset: CGPoint, animated: Bool)
     func scrollToTop(animated: Bool)
-    func scrollToBottom(section: Int, animated: Bool, at: UITableViewScrollPosition)
+    func scrollToBottom(section: Int, animated: Bool, at: UITableView.ScrollPosition)
     func scrollToFirstRow(animated: Bool)
-    func scrollToRow(at indexPath: IndexPath, at: UITableViewScrollPosition, animated: Bool)
+    func scrollToRow(at indexPath: IndexPath, at: UITableView.ScrollPosition, animated: Bool)
 }
 
 protocol InternalTableViewControllerProtocol: TableViewControllerProtocol, InternalTableViewSettingsProtocol { }
@@ -136,7 +136,7 @@ extension TableViewControllerProtocol {
         self.setContentOffset(contentOffset: self.topOffset, animated: animated)
     }
     
-    public func scrollToBottom(section: Int, animated: Bool, at: UITableViewScrollPosition = .bottom) {
+    public func scrollToBottom(section: Int, animated: Bool, at: UITableView.ScrollPosition = .bottom) {
         
         let csz: CGSize = self.tableView.contentSize
         let bsz: CGSize = self.tableView.bounds.size
@@ -153,7 +153,7 @@ extension TableViewControllerProtocol {
         self.tableView.scrollToRow(at: indexPath, at: .top, animated: animated)
     }
 
-    public func scrollToRow(at indexPath: IndexPath, at: UITableViewScrollPosition = .top, animated: Bool = true) {
+    public func scrollToRow(at indexPath: IndexPath, at: UITableView.ScrollPosition = .top, animated: Bool = true) {
         guard self.hasIndexPath(indexPath) else { return }
         self.tableView.scrollToRow(at: indexPath, at: at, animated: animated)
     }

@@ -156,7 +156,7 @@ extension UITextViewExtended: UITextViewDelegate {
         
     }
     
-    override open func selectionRects(for range: UITextRange) -> [Any] {
+    override open func selectionRects(for range: UITextRange) -> [UITextSelectionRect] {
         return self.selectableContent ? super.selectionRects(for: range) : []
     }
     

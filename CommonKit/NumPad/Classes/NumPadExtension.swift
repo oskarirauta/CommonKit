@@ -110,7 +110,7 @@ extension NumPad {
             let textInput: UITextInput = self.textInput
             else { return }
 
-        NotificationCenter.default.post(name: inputViewType == .textField ? NSNotification.Name.UITextFieldTextDidChange : NSNotification.Name.UITextViewTextDidChange, object: inputViewType == .textField ? (textInput as! UITextField) : (textInput as! UITextView))
+        NotificationCenter.default.post(name: inputViewType == .textField ? UITextField.textDidChangeNotification : UITextView.textDidChangeNotification, object: inputViewType == .textField ? (textInput as! UITextField) : (textInput as! UITextView))
     }
     
     internal func updateState() {

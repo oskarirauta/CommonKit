@@ -65,9 +65,10 @@ extension HeaderTitleProtocol where Self: UIHeaderFooterViewExtended {
         set { self.titleLabel.iconBaseLineOffset = newValue }
     }
     
+    /* TODO: fix this?
     public var textBaselineOffset: Float? {
         get { return self.textBaselineOffset }
         set { self.textBaselineOffset = newValue }
     }
-    
+    */
 }

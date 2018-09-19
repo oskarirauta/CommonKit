@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 @objc public protocol TableViewSettingsProtocolBase {
-    @objc optional var tableViewStyle: UITableViewStyle { get set }
+    @objc optional var tableViewStyle: UITableView.Style { get set }
     @objc optional var _tableView: UITableView { get set }
     @objc optional var cellReuseIdentifiers: [String: AnyClass] { get set }
     @objc optional var headerReuseIdentifiers: [String: AnyClass] { get set }
@@ -32,7 +32,7 @@ public protocol TableViewSettingsProtocol: TableViewSettingsProtocolBase {
 
 internal protocol InternalTableViewSettingsProtocol: TableViewSettingsProtocol {
     var settingsProtocol: TableViewSettingsProtocolBase? { get }
-    var _tableViewStyle: UITableViewStyle { get }
+    var _tableViewStyle: UITableView.Style { get }
     var _cellReuseIdentifiers: [String: AnyClass] { get }
     var _headerReuseIdentifiers: [String: AnyClass] { get }
     var _defaultRowHeight: CGFloat { get }
@@ -50,7 +50,7 @@ extension InternalTableViewSettingsProtocol {
         get { return self as TableViewSettingsProtocolBase? }
     }
     
-    public var _tableViewStyle: UITableViewStyle {
+    public var _tableViewStyle: UITableView.Style {
         get { return self.settingsProtocol?.tableViewStyle ?? .grouped }
     }
     

@@ -190,7 +190,7 @@ extension CameraController {
         if (( self.captureSession != nil ) && ( self.captureSession?.isRunning ?? false )) {
             self.captureSession?.stopRunning()
         }
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIDevice.orientationDidChangeNotification, object: nil)
     }
     
     open func resetCamera() {
@@ -238,7 +238,7 @@ extension CameraController {
             self.resetCamera()
         }
         
-        NotificationCenter.default.addObserver(self, selector: #selector(self.rotated), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.rotated), name: UIDevice.orientationDidChangeNotification, object: nil)
         
     }
     

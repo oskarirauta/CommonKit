@@ -8,12 +8,29 @@
 
 /* Begin PBXBuildFile section */
 		6E3FB90B20C8A3BF0030E838 /* CommonKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E3FB90A20C8A3BF0030E838 /* CommonKit.framework */; };
-		6E3FB90D20C8A4030030E838 /* PhoneNumberKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E3FB90C20C8A4030030E838 /* PhoneNumberKit.framework */; };
 		6E74546920C7F9CA00A35FC9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E74546820C7F9CA00A35FC9 /* AppDelegate.swift */; };
 		6E74546B20C7F9CA00A35FC9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E74546A20C7F9CA00A35FC9 /* ViewController.swift */; };
 		6E74547020C7F9CC00A35FC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E74546F20C7F9CC00A35FC9 /* Assets.xcassets */; };
 		6E74547320C7F9CC00A35FC9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E74547120C7F9CC00A35FC9 /* LaunchScreen.storyboard */; };
+		6EE0C5FE21523E6C00FA2A18 /* PhoneNumberKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EE0C5FB21523E6100FA2A18 /* PhoneNumberKit.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6EE0C5FA21523E6100FA2A18 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6EE0C5F421523E6100FA2A18 /* PhoneNumberKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 342418641BB6E5A000EE70E7;
+			remoteInfo = PhoneNumberKit;
+		};
+		6EE0C5FC21523E6100FA2A18 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6EE0C5F421523E6100FA2A18 /* PhoneNumberKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3424186E1BB6E5A000EE70E7;
+			remoteInfo = PhoneNumberKitTests;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		6E3FB90A20C8A3BF0030E838 /* CommonKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CommonKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -24,6 +41,7 @@
 		6E74546F20C7F9CC00A35FC9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6E74547220C7F9CC00A35FC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6E74547420C7F9CC00A35FC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6EE0C5F421523E6100FA2A18 /* PhoneNumberKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PhoneNumberKit.xcodeproj; path = ../../PhoneNumberKit/PhoneNumberKit.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,7 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E3FB90D20C8A4030030E838 /* PhoneNumberKit.framework in Frameworks */,
+				6EE0C5FE21523E6C00FA2A18 /* PhoneNumberKit.framework in Frameworks */,
 				6E3FB90B20C8A3BF0030E838 /* CommonKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -42,6 +60,7 @@
 		6E3FB90920C8A3BF0030E838 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6EE0C5F421523E6100FA2A18 /* PhoneNumberKit.xcodeproj */,
 				6E3FB90C20C8A4030030E838 /* PhoneNumberKit.framework */,
 				6E3FB90A20C8A3BF0030E838 /* CommonKit.framework */,
 			);
@@ -77,6 +96,15 @@
 			path = NumPadExample;
 			sourceTree = "<group>";
 		};
+		6EE0C5F521523E6100FA2A18 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6EE0C5FB21523E6100FA2A18 /* PhoneNumberKit.framework */,
+				6EE0C5FD21523E6100FA2A18 /* PhoneNumberKitTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -109,6 +137,7 @@
 				TargetAttributes = {
 					6E74546420C7F9CA00A35FC9 = {
 						CreatedOnToolsVersion = 9.4;
+						LastSwiftMigration = 1000;
 					};
 				};
 			};
@@ -123,12 +152,35 @@
 			mainGroup = 6E74545C20C7F9CA00A35FC9;
 			productRefGroup = 6E74546620C7F9CA00A35FC9 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 6EE0C5F521523E6100FA2A18 /* Products */;
+					ProjectRef = 6EE0C5F421523E6100FA2A18 /* PhoneNumberKit.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				6E74546420C7F9CA00A35FC9 /* NumPadExample */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		6EE0C5FB21523E6100FA2A18 /* PhoneNumberKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = PhoneNumberKit.framework;
+			remoteRef = 6EE0C5FA21523E6100FA2A18 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		6EE0C5FD21523E6100FA2A18 /* PhoneNumberKitTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = PhoneNumberKitTests.xctest;
+			remoteRef = 6EE0C5FC21523E6100FA2A18 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		6E74546320C7F9CA00A35FC9 /* Resources */ = {
@@ -287,14 +339,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LBFBZP3Z4J;
 				INFOPLIST_FILE = NumPadExample/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.oskarirauta.NumPadExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -306,14 +358,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LBFBZP3Z4J;
 				INFOPLIST_FILE = NumPadExample/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.oskarirauta.NumPadExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

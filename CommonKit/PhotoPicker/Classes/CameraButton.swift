@@ -71,11 +71,11 @@ open class CameraButton: UIButton {
         self.heightAnchor.constraint(equalToConstant: height).isActive = true
         
         //clear the title
-        self.setTitle("", for:UIControlState.normal)
+        self.setTitle("", for:UIControl.State.normal)
         
         //add out target for event handling
-        self.addTarget(self, action: #selector(touchUpInside), for: [UIControlEvents.touchUpInside, UIControlEvents.touchCancel, UIControlEvents.touchDragExit, UIControlEvents.touchUpOutside, UIControlEvents.touchDragOutside])
-        self.addTarget(self, action: #selector(touchDown), for: [UIControlEvents.touchDown, UIControlEvents.touchDragEnter])
+        self.addTarget(self, action: #selector(touchUpInside), for: [UIControl.Event.touchUpInside, UIControl.Event.touchCancel, UIControl.Event.touchDragExit, UIControl.Event.touchUpOutside, UIControl.Event.touchDragOutside])
+        self.addTarget(self, action: #selector(touchDown), for: [UIControl.Event.touchDown, UIControl.Event.touchDragEnter])
     }
     
     override open var isSelected: Bool {
@@ -83,13 +83,13 @@ open class CameraButton: UIButton {
             //change the inner shape to match the state
             let morph = CABasicAnimation(keyPath: "path")
             morph.duration = self.isSelected ? 0.18 : 0.1
-            morph.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+            morph.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
             
             //change the shape according to the current state of the control
             morph.toValue = self.currentInnerPath.cgPath
             
             //ensure the animation is not reverted once completed
-            morph.fillMode = kCAFillModeForwards
+            morph.fillMode = CAMediaTimingFillMode.forwards
             morph.isRemovedOnCompletion = false
             
             //add the animation

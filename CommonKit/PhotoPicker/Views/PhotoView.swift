@@ -21,7 +21,7 @@ extension PhotoPickerView {
         
         open var albumTitle: String? = nil {
             didSet {
-                self.buttonAlbum.setTitle(self.albumTitle, for: UIControlState())
+                self.buttonAlbum.setTitle(self.albumTitle, for: UIControl.State())
             }
         }
         
@@ -42,9 +42,9 @@ extension PhotoPickerView {
         
         open lazy var buttonAlbum: UIButton = UIButton.create {
             $0.translatesAutoresizingMaskIntoConstraints = false
-            $0.setTitle(self.albumTitle, for: UIControlState())
+            $0.setTitle(self.albumTitle, for: UIControl.State())
             $0.titleLabel?.font = UIFont(name: "HelveticaNeue-Bold", size: 16.5) ?? UIFont.systemFont(ofSize: 16.5)
-            $0.setTitleColor(UIColor.black, for: UIControlState())
+            $0.setTitleColor(UIColor.black, for: UIControl.State())
             $0.addTarget(self, action: #selector(self.action_album(_:)), for: .touchUpInside)
         }
         
@@ -55,7 +55,7 @@ extension PhotoPickerView {
             $0.scrollsToTop = true
             $0.bounces = true
             $0.tag = 0
-            $0.contentInset = UIEdgeInsetsMake(5.0, 3.0, 3.0, 3.0)
+            $0.contentInset = UIEdgeInsets.init(top: 5.0, left: 3.0, bottom: 3.0, right: 3.0)
             
             $0.register(PhotoCell.self, forCellWithReuseIdentifier: "photoCell")
         }

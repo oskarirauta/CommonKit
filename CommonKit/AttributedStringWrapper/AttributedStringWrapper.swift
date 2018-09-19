@@ -39,7 +39,7 @@ public extension AttributedStringWrapper {
     func paragraph(range: NSRange? = nil, setup: ParagraphStyleSetup) -> AttributedStringWrapper {
         let paragraphStyle = NSMutableParagraphStyle()
         setup(paragraphStyle)
-        rawValue.addAttributes([NSAttributedStringKey.paragraphStyle: paragraphStyle],
+        rawValue.addAttributes([NSAttributedString.Key.paragraphStyle: paragraphStyle],
                                range: range ?? allRange)
         return self
     }
@@ -47,7 +47,7 @@ public extension AttributedStringWrapper {
     /// NSForegroundColorAttributeName(字体颜色)
     @discardableResult
     func foregroundColor(_ color: UIColor, range: NSRange? = nil) -> AttributedStringWrapper {
-        rawValue.addAttributes([NSAttributedStringKey.foregroundColor: color],
+        rawValue.addAttributes([NSAttributedString.Key.foregroundColor: color],
                                range: range ?? allRange)
         return self
     }
@@ -55,14 +55,14 @@ public extension AttributedStringWrapper {
     /// NSFontAttributeName(字体)
     @discardableResult
     func font(_ font: UIFont, range: NSRange? = nil) -> AttributedStringWrapper {
-        rawValue.addAttributes([NSAttributedStringKey.font: font],
+        rawValue.addAttributes([NSAttributedString.Key.font: font],
                                range: range ?? allRange)
         return self
     }
     /// NSBackgroundColorAttributeName(字体背景色)
     @discardableResult
     func backgroundColor(_ color: UIColor, range: NSRange? = nil) -> AttributedStringWrapper {
-        rawValue.addAttributes([NSAttributedStringKey.backgroundColor: color],
+        rawValue.addAttributes([NSAttributedString.Key.backgroundColor: color],
                                range: range ?? allRange)
         return self
     }
@@ -73,9 +73,9 @@ public extension AttributedStringWrapper {
                        color: UIColor? = nil,
                        range: NSRange? = nil) -> AttributedStringWrapper {
         // iOS10.3 bugs: https://stackoverflow.com/questions/43070335/nsstrikethroughstyleattributename-how-to-strike-out-the-string-in-ios-10-3
-        rawValue.addAttributes([NSAttributedStringKey.strikethroughStyle: style.reduce(0) { $0 | $1.rawValue }, NSAttributedStringKey.baselineOffset: 0], range: range ?? allRange)
+        rawValue.addAttributes([NSAttributedString.Key.strikethroughStyle: style.reduce(0) { $0 | $1.rawValue }, NSAttributedString.Key.baselineOffset: 0], range: range ?? allRange)
         guard let color = color else { return self }
-        rawValue.addAttributes([NSAttributedStringKey.strikethroughColor: color], range: range ?? allRange)
+        rawValue.addAttributes([NSAttributedString.Key.strikethroughColor: color], range: range ?? allRange)
         return self
     }
     
@@ -84,9 +84,9 @@ public extension AttributedStringWrapper {
     func underLine(style: [NSUnderlineStyle],
                    color: UIColor? = nil,
                    range: NSRange? = nil) -> AttributedStringWrapper {
-        rawValue.addAttributes([NSAttributedStringKey.underlineStyle: style.reduce(0) { $0 | $1.rawValue }], range: range ?? allRange)
+        rawValue.addAttributes([NSAttributedString.Key.underlineStyle: style.reduce(0) { $0 | $1.rawValue }], range: range ?? allRange)
         guard let color = color else { return self }
-        rawValue.addAttributes([NSAttributedStringKey.underlineColor: color], range: range ?? allRange)
+        rawValue.addAttributes([NSAttributedString.Key.underlineColor: color], range: range ?? allRange)
         return self
     }
     
@@ -95,14 +95,14 @@ public extension AttributedStringWrapper {
     func shadow(range: NSRange? = nil, setup: ShadowStyleSetup) -> AttributedStringWrapper {
         let shadow = NSShadow()
         setup(shadow)
-        rawValue.addAttributes([NSAttributedStringKey.shadow: shadow], range: range ?? allRange)
+        rawValue.addAttributes([NSAttributedString.Key.shadow: shadow], range: range ?? allRange)
         return self
     }
     
     /// NSObliquenessAttributeName 设置字形倾斜度,正值右倾，负值左倾
     @discardableResult
     func obliqueness(angle: CGFloat, range: NSRange? = nil) -> AttributedStringWrapper {
-        rawValue.addAttributes([NSAttributedStringKey.obliqueness: angle], range: range ?? allRange)
+        rawValue.addAttributes([NSAttributedString.Key.obliqueness: angle], range: range ?? allRange)
         return self
     }
     
@@ -110,57 +110,57 @@ public extension AttributedStringWrapper {
     @available(iOS 9.0, *)
     @discardableResult
     func writingDirection(write: WriteDirection, range: NSRange? = nil) -> AttributedStringWrapper {
-        rawValue.addAttributes([NSAttributedStringKey.writingDirection: [write.direction.rawValue | write.formatType.rawValue]], range: range ?? allRange)
+        rawValue.addAttributes([NSAttributedString.Key.writingDirection: [write.direction.rawValue | write.formatType.rawValue]], range: range ?? allRange)
         return self
     }
     
     /// 空心字 颜色, 线宽
     @discardableResult
     func stroke(color: UIColor, width: CGFloat, range: NSRange? = nil) -> AttributedStringWrapper {
-        rawValue.addAttributes([NSAttributedStringKey.strokeColor: color], range: range ?? allRange)
-        rawValue.addAttributes([NSAttributedStringKey.strokeWidth: width], range: range ?? allRange)
+        rawValue.addAttributes([NSAttributedString.Key.strokeColor: color], range: range ?? allRange)
+        rawValue.addAttributes([NSAttributedString.Key.strokeWidth: width], range: range ?? allRange)
         return self
     }
     
     /// NSKernAttributeName 文字间的间距
     @discardableResult
     func kern(padding: CGFloat, range: NSRange? = nil) -> AttributedStringWrapper {
-        rawValue.addAttributes([NSAttributedStringKey.kern: padding], range: range ?? allRange)
+        rawValue.addAttributes([NSAttributedString.Key.kern: padding], range: range ?? allRange)
         return self
     }
     
     /// NSExpansionAttributeName 拉伸压缩  正值横向拉伸 负值横向压缩
     @discardableResult
     func expansion(value: CGFloat, range: NSRange? = nil) -> AttributedStringWrapper {
-        rawValue.addAttributes([NSAttributedStringKey.expansion: value], range: range ?? allRange)
+        rawValue.addAttributes([NSAttributedString.Key.expansion: value], range: range ?? allRange)
         return self
     }
     
     /// NSLigatureAttributeName 连体 0 表示没有连体字符。1 表示使用默认的连体字符。2表示使用所有连体符号。默认值为 1（注意，iOS 不支持值为 2）
     @discardableResult
     func ligature(value: CGFloat, range: NSRange? = nil) -> AttributedStringWrapper {
-        rawValue.addAttributes([NSAttributedStringKey.ligature: value], range: range ?? allRange)
+        rawValue.addAttributes([NSAttributedString.Key.ligature: value], range: range ?? allRange)
         return self
     }
     
     /// NSBaselineOffsetAttributeName 基线偏移量  正值上偏 负值下偏
     @discardableResult
     func baselineOffset(value: CGFloat, range: NSRange? = nil) -> AttributedStringWrapper {
-        rawValue.addAttributes([NSAttributedStringKey.baselineOffset: value], range: range ?? allRange)
+        rawValue.addAttributes([NSAttributedString.Key.baselineOffset: value], range: range ?? allRange)
         return self
     }
     
     /// NSTextEffectAttributeName 特殊效果 目前只有NSTextEffectLetterpressStyle(凸版印刷效果)可用
     @discardableResult
     func textEffect(value: NSAttributedString.TextEffectStyle = .letterpressStyle, range: NSRange? = nil) -> AttributedStringWrapper {
-        rawValue.addAttributes([NSAttributedStringKey.textEffect: value], range: range ?? allRange)
+        rawValue.addAttributes([NSAttributedString.Key.textEffect: value], range: range ?? allRange)
         return self
     }
     
     /// NSVerticalGlyphFormAttributeName 横、竖排版  0横向排版 1竖向排版
     @discardableResult
     func verticalGlyphForm(value: Int, range: NSRange? = nil) -> AttributedStringWrapper {
-        rawValue.addAttributes([NSAttributedStringKey.verticalGlyphForm: value], range: range ?? allRange)
+        rawValue.addAttributes([NSAttributedString.Key.verticalGlyphForm: value], range: range ?? allRange)
         return self
     }
     

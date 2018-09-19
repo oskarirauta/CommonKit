@@ -22,7 +22,7 @@ extension PhotoPickerView {
             _buttonCancel.translatesAutoresizingMaskIntoConstraints = false
             self.setButton(&_buttonCancel, style: .destructive)
             
-            _buttonCancel.setBackgroundImage((self.buttonBgColor[.destructive] ?? DefaultAlertProperties.buttonBgColor[.destructive])?.darker(by: 31).image, for: UIControlState())
+            _buttonCancel.setBackgroundImage((self.buttonBgColor[.destructive] ?? DefaultAlertProperties.buttonBgColor[.destructive])?.darker(by: 31).image, for: UIControl.State())
             _buttonCancel.setBackgroundImage((self.buttonBgColor[.destructive] ?? DefaultAlertProperties.buttonBgColor[.destructive])?.darker(by: 31).image, for: .selected)
             _buttonCancel.setBackgroundImage((self.buttonBgColorHighlighted[.destructive] ?? DefaultAlertProperties.buttonBgColorHighlighted[.destructive])?.darker(by: 26).image, for: .highlighted)
             
@@ -47,7 +47,7 @@ extension PhotoPickerView {
             _buttonAccept.translatesAutoresizingMaskIntoConstraints = false
             self.setButton(&_buttonAccept, style: .accept)
             
-            _buttonAccept.setBackgroundImage((self.buttonBgColor[.accept] ?? DefaultAlertProperties.buttonBgColor[.accept])?.darker(by: 40).image, for: UIControlState())
+            _buttonAccept.setBackgroundImage((self.buttonBgColor[.accept] ?? DefaultAlertProperties.buttonBgColor[.accept])?.darker(by: 40).image, for: UIControl.State())
             _buttonAccept.setBackgroundImage((self.buttonBgColor[.accept] ?? DefaultAlertProperties.buttonBgColor[.accept])?.darker(by: 40).image, for: .selected)
             _buttonAccept.setBackgroundImage((self.buttonBgColorHighlighted[.accept] ?? DefaultAlertProperties.buttonBgColorHighlighted[.accept])?.darker(by: 34).image, for: .highlighted)
             

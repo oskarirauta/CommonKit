@@ -14,7 +14,7 @@ extension NumPad {
         
         public var handler: ((Int) -> Void)? = nil
         public var timer: Timer? = nil
-        private(set) var style: NumPad.Style = NumPad.Style.default
+        private(set) var style: NumPadStyle = .default
         private(set) var type: NumPad.KeyboardType = .number
         private(set) var count: Int = 0
         
@@ -27,7 +27,7 @@ extension NumPad {
             super.init(coder: aDecoder)
         }
         
-        public init(type: NumPad.KeyboardType, style: NumPad.Style = NumPad.Style.default, title: String, tag: Int, handler: ((Int) -> Void)? = nil) {
+        public init(type: NumPad.KeyboardType, style: NumPadStyle = .default, title: String, tag: Int, handler: ((Int) -> Void)? = nil) {
             super.init(frame: .zero)
             self.translatesAutoresizingMaskIntoConstraints = false
             self.style = style
@@ -61,7 +61,7 @@ extension NumPad {
                 buttonTitle.setAttributes([ .font: style.phoneFont ], range: NSRange(location: 0, length: 1))
             }
             
-            self.setAttributedTitle(buttonTitle, for: UIControlState())
+            self.setAttributedTitle(buttonTitle, for: UIControl.State())
             
             self.addTarget(self, action: #selector(self.buttonDown), for: .touchDown)
             self.addTarget(self, action: #selector(self.buttonUp), for: .touchUpInside)
@@ -91,7 +91,7 @@ extension NumPad {
     public class NumPadFunctionButton: UIButton {
         
         public var handler: ((Int) -> Void)? = nil
-        private(set) var style: NumPad.Style = NumPad.Style.default
+        private(set) var style: NumPadStyle = .default
         private(set) var type: NumPad.KeyboardType = .number
         
         override public var isEnabled: Bool {
@@ -102,7 +102,7 @@ extension NumPad {
             super.init(coder: aDecoder)
         }
         
-        public init(style: NumPad.Style = NumPad.Style.default, type: NumPad.KeyboardType, handler: ((Int) -> Void)? = nil) {
+        public init(style: NumPadStyle = .default, type: NumPad.KeyboardType, handler: ((Int) -> Void)? = nil) {
             super.init(frame: .zero)
             self.translatesAutoresizingMaskIntoConstraints = false
             
@@ -115,9 +115,9 @@ extension NumPad {
             self.titleLabel?.font = style.font
             self.titleLabel?.textAlignment = .center
             switch type {
-            case .decimal: self.setTitle(NumPad.decimalChar, for: UIControlState())
-            case .phone: self.setTitle("+", for: UIControlState())
-            default: self.setTitle("", for: UIControlState())
+            case .decimal: self.setTitle(NumPad.decimalChar, for: UIControl.State())
+            case .phone: self.setTitle("+", for: UIControl.State())
+            default: self.setTitle("", for: UIControl.State())
             }
             self.isEnabled = type == .number ? false : true
             self.handler = handler
@@ -133,17 +133,17 @@ extension NumPad {
         
         public var handler: ((Int) -> Void)? = nil
         public var timer: Timer? = nil
-        private(set) var style: NumPad.Style = NumPad.Style.default
+        private(set) var style: NumPadStyle = .default
         private(set) var count: Int = 0
         
         required public init?(coder aDecoder: NSCoder) {
             super.init(coder: aDecoder)
         }
         
-        public init(style: NumPad.Style = NumPad.Style.default, handler: ((Int) -> Void)? = nil) {
+        public init(style: NumPadStyle = .default, handler: ((Int) -> Void)? = nil) {
             super.init(frame: .zero)
             self.translatesAutoresizingMaskIntoConstraints = false
-            self.setImage(UIImage(named: "Backspace", in: Bundle(for: NumPad.self), compatibleWith: nil)?.withRenderingMode(.alwaysTemplate), for: UIControlState())
+            self.setImage(UIImage(named: "Backspace", in: Bundle(for: NumPad.self), compatibleWith: nil)?.withRenderingMode(.alwaysTemplate), for: UIControl.State())
             self.showsTouchWhenHighlighted = true
             self.style = style
             self.tag = 11

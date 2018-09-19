@@ -48,7 +48,7 @@ extension NSAttributedString {
 // From Kyohei Ito's AttributedLabel
 extension NSMutableAttributedString {
     
-    @discardableResult public func addAttribute(_ attr: NSAttributedStringKey, value: AnyObject, range: NSRange? = nil) -> Self {
+    @discardableResult public func addAttribute(_ attr: NSAttributedString.Key, value: AnyObject, range: NSRange? = nil) -> Self {
         let range = range ?? NSRange(location: 0, length: self.length)
         enumerateAttribute(attr, in: range, options: .reverse) { object, range, pointer in
             if object == nil {

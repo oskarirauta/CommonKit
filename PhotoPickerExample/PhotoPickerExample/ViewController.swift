@@ -26,12 +26,12 @@ class ViewController: UIViewController {
     
     lazy var button: UIButton = UIButton.create {
         $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.setTitle("Select photo", for: UIControlState())
+        $0.setTitle("Select photo", for: UIControl.State())
         $0.tag = 0
         $0.isHidden = true
         $0.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14.5)
-        $0.setTitleColor(UIColor.buttonForegroundColor, for: UIControlState())
-        $0.setTitleColor(UIColor.white, for: UIControlState.highlighted)
+        $0.setTitleColor(UIColor.buttonForegroundColor, for: UIControl.State())
+        $0.setTitleColor(UIColor.white, for: UIControl.State.highlighted)
         $0.addTarget(self, action: #selector(self.pickPhoto(_:)), for: .touchUpInside)
     }
 

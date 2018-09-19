@@ -25,8 +25,8 @@ public final class DoneBar: UIToolbar {
             UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil),
             UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneAction(_:)))
         ]
-        NotificationCenter.default.addObserver(self, selector: #selector(self.setupTextInput(_:)), name: NSNotification.Name.UITextFieldTextDidBeginEditing, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.setupTextInput(_:)), name: NSNotification.Name.UITextViewTextDidEndEditing, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.setupTextInput(_:)), name: UITextField.textDidBeginEditingNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.setupTextInput(_:)), name: UITextView.textDidEndEditingNotification, object: nil)
     }
     
     @objc internal func setupTextInput(_ notification: Notification) {
@@ -37,10 +37,10 @@ public final class DoneBar: UIToolbar {
             else { return }
         
         self.textInput = textInput
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UITextFieldTextDidBeginEditing, object: nil)
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UITextViewTextDidBeginEditing, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UITextField.textDidBeginEditingNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UITextView.textDidBeginEditingNotification, object: nil)
         
-        self.inputViewType = notification.name == NSNotification.Name.UITextFieldTextDidBeginEditing ? .textField : .textView
+        self.inputViewType = notification.name == UITextField.textDidBeginEditingNotification ? .textField : .textView
     }
 
     
@@ -54,10 +54,10 @@ public final class DoneBar: UIToolbar {
         switch inputViewType {
         case .textField:
             (textInput as! UITextField).resignFirstResponder()
-            NotificationCenter.default.post(name: Notification.Name.UITextFieldTextDidEndEditing, object: textInput as! UITextField)
+            NotificationCenter.default.post(name: UITextField.textDidEndEditingNotification, object: textInput as! UITextField)
         case .textView:
             (textInput as! UITextView).resignFirstResponder()
-            NotificationCenter.default.post(name: Notification.Name.UITextViewTextDidEndEditing, object: textInput as! UITextView)
+            NotificationCenter.default.post(name: UITextView.textDidEndEditingNotification, object: textInput as! UITextView)
         }
     }
     

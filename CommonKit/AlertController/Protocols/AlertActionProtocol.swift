@@ -37,7 +37,7 @@ extension AlertActionProtocol {
         button.titleLabel?.font = self.buttonFont[style] ?? DefaultAlertProperties.buttonFont[style]
         button.setTitleColor(self.buttonTextColor[style] ?? DefaultAlertProperties.buttonTextColor[style])
         button.tintColor = self.buttonTextColor[style] ?? DefaultAlertProperties.buttonTextColor[style]
-        button.setBackgroundImage((self.buttonBgColor[style] ?? DefaultAlertProperties.buttonBgColor[style])?.image, for: UIControlState())
+        button.setBackgroundImage((self.buttonBgColor[style] ?? DefaultAlertProperties.buttonBgColor[style])?.image, for: UIControl.State())
         button.setBackgroundImage((self.buttonBgColor[style] ?? DefaultAlertProperties.buttonBgColor[style])?.image, for: .selected)
         button.setBackgroundImage((self.buttonBgColorHighlighted[style] ?? self.buttonBgColorHighlighted[style])?.image, for: .highlighted)
         

@@ -40,7 +40,7 @@ public protocol IconType: IconDetails, FontDetails, CustomIconConvertible, Custo
 
     func font(ofSize: CGFloat) -> UIFont?
     func isEqual(to: IconType?) -> Bool
-    func attributedText(ofSize: CGFloat, attributes: [NSAttributedStringKey : Any]) -> NSAttributedString
+    func attributedText(ofSize: CGFloat, attributes: [NSAttributedString.Key : Any]) -> NSAttributedString
     func attributedText(ofSize: CGFloat) -> NSAttributedString
     func size(for fontSize: CGFloat) -> CGSize
 }
@@ -57,8 +57,8 @@ extension IconType {
         return ((( self.convertedIcon == nil ) && ( to == nil )) || (( self.convertedIcon != nil ) && ( to != nil ))) && ( self.convertedIcon?.unichar == to?.unichar ) && ( self.convertedIcon?.name == to?.name ) && ( self.convertedIcon?.prefix == to?.prefix )
     }
 
-    public func attributedText(ofSize: CGFloat, attributes: [NSAttributedStringKey : Any]) -> NSAttributedString {
-        var attrs: [NSAttributedStringKey : Any] = attributes
+    public func attributedText(ofSize: CGFloat, attributes: [NSAttributedString.Key : Any]) -> NSAttributedString {
+        var attrs: [NSAttributedString.Key : Any] = attributes
         if ( attrs[.font] != nil ) { attrs.removeValue(forKey: .font)}
         attrs[.font] = self.font(ofSize: ofSize)!
         return NSAttributedString(string: self.text, attributes: attrs)

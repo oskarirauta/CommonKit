@@ -37,7 +37,7 @@ extension PhotoPickerView {
             $0.scrollsToTop = true
             $0.bounces = true
             $0.tag = 1
-            $0.contentInset = UIEdgeInsetsMake(5.0, 3.0, 3.0, 3.0)
+            $0.contentInset = UIEdgeInsets.init(top: 5.0, left: 3.0, bottom: 3.0, right: 3.0)
             $0.register(AlbumCell.self, forCellWithReuseIdentifier: "albumCell")
         }
         

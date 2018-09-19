@@ -47,7 +47,7 @@ extension PhotoPickerView {
             super.init(frame: frame)
             self.contentView.addSubview(self.imageView)
             self.contentView.addSubview(self.label)
-            self.contentView.bringSubview(toFront: self.label)
+            self.contentView.bringSubviewToFront(self.label)
             self.imageView.topAnchor.constraint(equalTo: self.contentView.topAnchor).isActive = true
             self.imageView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor).isActive = true
             self.imageView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor).isActive = true

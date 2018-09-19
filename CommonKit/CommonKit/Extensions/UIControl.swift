@@ -11,7 +11,7 @@ import UIKit
 
 extension UIControl {
     
-    public func add(for controlEvents: UIControlEvents, _ execute: @escaping () -> (Void)) {
+    public func add(for controlEvents: UIControl.Event, _ execute: @escaping () -> (Void)) {
         
         self.addTarget(ClosureSleeve(for: self, execute), action: #selector(ClosureSleeve.invoke), for: controlEvents)
     }

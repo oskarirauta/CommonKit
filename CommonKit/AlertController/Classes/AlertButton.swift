@@ -35,25 +35,25 @@ import UIKit
     }
     
     open func setImage(_ image: UIImage?) {
-        self.setImage(image, for: UIControlState())
+        self.setImage(image, for: UIControl.State())
         self.setImage(image, for: .highlighted)
         self.setImage(image, for: .selected)
     }
     
     open func setBackgroundImage(_ image: UIImage?) {
-        self.setBackgroundImage(image, for: UIControlState())
+        self.setBackgroundImage(image, for: UIControl.State())
         self.setBackgroundImage(image, for: .highlighted)
         self.setBackgroundImage(image, for: .selected)
     }
     
     open func setTitle(_ title: String?) {
-        self.setTitle(title, for: UIControlState())
+        self.setTitle(title, for: UIControl.State())
         self.setTitle(title, for: .highlighted)
         self.setTitle(title, for: .selected)
     }
     
     open func setTitleColor(_ color: UIColor?) {
-        self.setTitleColor(color, for: UIControlState())
+        self.setTitleColor(color, for: UIControl.State())
         self.setTitleColor(color, for: .highlighted)
         self.setTitleColor(color, for: .selected)
     }

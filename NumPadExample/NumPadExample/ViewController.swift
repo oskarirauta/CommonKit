@@ -53,7 +53,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     lazy var dismissBtn: UIButton = UIButton.create {
         $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.setTitle("Dismiss", for: UIControlState())
+        $0.setTitle("Dismiss", for: UIControl.State())
         $0.isEnabled = false
         $0.setTitleColor(UIColor.blue, for: .normal)
         $0.setTitleColor(UIColor.lightGray, for: .disabled)

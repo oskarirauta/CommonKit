@@ -14,7 +14,7 @@ extension CurrencyPad {
     public class CurrencyFunctionButton: UIButton {
         
         public var handler: ((Int) -> Void)? = nil
-        private(set) var style: NumPad.Style = NumPad.Style.default
+        private(set) var style: NumPadStyle = .default
         
         override public var isEnabled: Bool {
             didSet { self.setTitleColor(self.isEnabled ? self.style.foregroundColor : self.style.foregroundColorHighlighted, for: .normal) }
@@ -24,10 +24,10 @@ extension CurrencyPad {
             super.init(coder: aDecoder)
         }
         
-        public init(style: NumPad.Style = NumPad.Style.default, handler: ((Int) -> Void)? = nil) {
+        public init(style: NumPadStyle = .default, handler: ((Int) -> Void)? = nil) {
             super.init(frame: .zero)
             self.translatesAutoresizingMaskIntoConstraints = false
-            self.setImage(UIImage(named: "plusminus", in: Bundle(for: CurrencyPad.self), compatibleWith: nil)?.withRenderingMode(.alwaysTemplate), for: UIControlState())
+            self.setImage(UIImage(named: "plusminus", in: Bundle(for: CurrencyPad.self), compatibleWith: nil)?.withRenderingMode(.alwaysTemplate), for: UIControl.State())
             self.showsTouchWhenHighlighted = true
             
             self.style = style
