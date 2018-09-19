@@ -34,7 +34,7 @@ class ViewController: UIViewController {
         label[1].icon = "fas-audio-description"
         label[1].title = "Font Awesome: *Solid: audio-description"
         
-        label[2].icon = "far-calendarCheck"
+        label[2].icon = "far:calendarCheck"
         label[2].title = "Font Awesome: Regular: calendarCheck"
         
         label[3].icon = MaterialIcons.airportShuttle
@@ -42,7 +42,7 @@ class ViewController: UIViewController {
 
         label[4].icon = FoundationIcons.power
         label[4].title = "FoundationIcons: *Regular: power"
-        
+ 
     }
     
 }

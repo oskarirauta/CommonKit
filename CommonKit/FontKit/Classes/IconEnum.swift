@@ -18,7 +18,7 @@ extension TypeInstance {
     public static var typeInstance: SelfType { return Self.self }
 }
 
-public protocol IconEnum: IconType, EnumCollection, TypeInstance, RawRepresentable where Self.RawValue == String {
+public protocol IconEnum: IconType, CaseIterable, TypeInstance, RawRepresentable where Self.RawValue == String {
     static func font(ofSize: CGFloat) -> UIFont?
 }
 
@@ -71,13 +71,13 @@ extension IconEnum {
     
     public init?(rawValue: Self.RawValue) {
         let lname: String = rawValue.lowercased()
-        guard let icon = Self.allValues.first(where: { $0.name == lname || $0.enumName.lowercased() == lname }) else { return nil }
+        guard let icon = Self.allCases.first(where: { $0.name == lname || $0.enumName.lowercased() == lname }) else { return nil }
         self = icon
     }
     
     public init?(named: String) {
         let lname: String = named.lowercased()
-        guard let icon = Self.allValues.first(where: { $0.name == lname || $0.enumName.lowercased() == lname }) else { return nil }
+        guard let icon = Self.allCases.first(where: { $0.name == lname || $0.enumName.lowercased() == lname }) else { return nil }
         self = icon
     }
     
