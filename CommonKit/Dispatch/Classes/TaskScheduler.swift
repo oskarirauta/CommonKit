@@ -8,6 +8,8 @@
 
 import Foundation
 
+public typealias TaskSchedulerClass = AbstractTaskSchedulerProtocol & TaskSchedulerProtocol & Any
+
 open class TaskScheduler: AbstractTaskSchedulerProtocol, TaskSchedulerProtocol {
         
     open private(set) var task: Task?

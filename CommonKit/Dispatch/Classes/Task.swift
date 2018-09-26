@@ -9,13 +9,13 @@
 import Foundation
 
 open class Task: AbstractTaskProtocol, TaskProtocol, NSCopying {
-    
+
     public private(set) var block: TaskBlock
     open private(set) var workItem: DispatchWorkItem!
     
     open var pid: Int?
     open var taskType: Int?
-    open private(set) var taskScheduler: TaskScheduler?    
+    open private(set) var taskScheduler: TaskSchedulerClass?
     open private(set) var isRunning: Bool
 
     public private(set) var completed: TaskBlock? = nil
@@ -25,7 +25,7 @@ open class Task: AbstractTaskProtocol, TaskProtocol, NSCopying {
     
     public required init(
         _ pid: Int? = nil,
-        taskScheduler: TaskScheduler,
+        taskScheduler: TaskSchedulerClass,
         block: @escaping TaskBlock,
         completed: TaskBlock? = nil,
         taskType: Int? = nil

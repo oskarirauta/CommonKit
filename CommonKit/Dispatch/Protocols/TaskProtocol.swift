@@ -21,12 +21,12 @@ public protocol TaskProtocol: class {
     
     var pid: Int? { get set }
     var taskType: Int? { get }
-    var taskScheduler: TaskScheduler? { get }
+    var taskScheduler: TaskSchedulerClass? { get }
     var isCancelled: Bool { get }
     var isRunning: Bool { get }
     var result: Any? { get set }
     
-    init(_ pid: Int?, taskScheduler: TaskScheduler, block: @escaping TaskBlock, completed: TaskBlock?, taskType: Int?)
+    init(_ pid: Int?, taskScheduler: TaskSchedulerClass, block: @escaping TaskBlock, completed: TaskBlock?, taskType: Int?)
     
     func finishTask()
     func cancel()
