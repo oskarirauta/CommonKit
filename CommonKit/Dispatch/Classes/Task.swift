@@ -8,15 +8,17 @@
 
 import Foundation
 
-open class Task: TaskBaseProtocol, TaskProtocol, NSCopying {
+open class Task: AbstractTaskProtocol, TaskProtocol, NSCopying {
     
-    internal var block: TaskBlock
+    public private(set) var block: TaskBlock
     open private(set) var workItem: DispatchWorkItem!
     
     open var pid: Int?
+    open var taskType: Int?
     open private(set) var taskScheduler: TaskScheduler?    
-    
-    private(set) var completed: TaskBlock? = nil
+    open private(set) var isRunning: Bool
+
+    public private(set) var completed: TaskBlock? = nil
     open var isCancelled: Bool { get { return self.workItem.isCancelled }}
 
     open var result: Any? = nil
@@ -25,15 +27,19 @@ open class Task: TaskBaseProtocol, TaskProtocol, NSCopying {
         _ pid: Int? = nil,
         taskScheduler: TaskScheduler,
         block: @escaping TaskBlock,
-        completed: TaskBlock? = nil
+        completed: TaskBlock? = nil,
+        taskType: Int? = nil
         ) {
 
         self.pid = pid
+        self.taskType = taskType
         self.taskScheduler = taskScheduler
         self.block = block
         self.completed = completed
+        self.isRunning = false
         self.workItem = DispatchWorkItem(block: {
             [weak self] in
+            self?.isRunning = true
             self?.result = nil
             self?.block(self!)
             self?.finishTask()
@@ -42,20 +48,23 @@ open class Task: TaskBaseProtocol, TaskProtocol, NSCopying {
 
     open func finishTask() {
         DispatchQueue.main.async {
+            self.isRunning = false
             self.taskScheduler?.finishTask(self)
         }
     }
     
     open func cancel() {
+        self.isRunning = false
         self.workItem.cancel()
     }
     
     open func perform() {
+        self.isRunning = true
         self.workItem.perform()
     }
 
     public func copy(with zone: NSZone? = nil) -> Any {
-        let copy: Task = Task(self.pid, taskScheduler: self.taskScheduler!, block: self.block, completed: self.completed)
+        let copy: Task = Task(self.pid, taskScheduler: self.taskScheduler!, block: self.block, completed: self.completed, taskType: self.taskType)
         return copy
     }
 
@@ -63,11 +72,18 @@ open class Task: TaskBaseProtocol, TaskProtocol, NSCopying {
         return self.copy() as! Task
     }
     
-    internal func override(block: @escaping TaskBlock, completed: TaskBlock? = nil) {
+    internal func override(block: @escaping TaskBlock, completed: TaskBlock? = nil, taskType: Int? = nil) {
+        
+        guard !self.isRunning else {
+            fatalError("Overriding is only allowed while task is not running.")
+        }
+        
         self.block = block
         self.completed = completed
+        self.taskType = taskType
         self.workItem = DispatchWorkItem(block: {
             [weak self] in
+            self?.isRunning = true
             self?.result = nil
             self?.block(self!)
             self?.finishTask()

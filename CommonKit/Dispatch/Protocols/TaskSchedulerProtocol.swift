@@ -8,8 +8,8 @@
 
 import Foundation
 
-protocol TaskSchedulerBaseProtocol {
-    var thread: DispatchQueue { get set }
+public protocol AbstractTaskSchedulerProtocol {
+    var thread: DispatchQueue { get }
     func finishTask(_ task: Task)
 }
 

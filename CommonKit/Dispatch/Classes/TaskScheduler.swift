@@ -8,7 +8,7 @@
 
 import Foundation
 
-open class TaskScheduler: TaskSchedulerBaseProtocol, TaskSchedulerProtocol {
+open class TaskScheduler: AbstractTaskSchedulerProtocol, TaskSchedulerProtocol {
         
     open private(set) var task: Task?
     open private(set) var nextPid: Int
@@ -18,7 +18,7 @@ open class TaskScheduler: TaskSchedulerBaseProtocol, TaskSchedulerProtocol {
     open var pid: Int? { get { return self.task?.pid }}
     open var processing: Bool { get { return self.task != nil }}
     
-    internal var thread: DispatchQueue
+    public private(set) var thread: DispatchQueue
     
     public required init(thread: DispatchQueue = DispatchQueue.global(qos: .background)) {
         self.nextPid = -1
@@ -82,7 +82,7 @@ open class TaskScheduler: TaskSchedulerBaseProtocol, TaskSchedulerProtocol {
         tasks.forEach({ $0.cancel() })
     }
     
-    internal func finishTask(_ task: Task) {
+    public func finishTask(_ task: Task) {
 
         if ( !task.isCancelled ) {
             task.completed?(task)

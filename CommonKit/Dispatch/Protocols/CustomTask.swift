@@ -18,6 +18,6 @@ extension CustomTask where Self: Task {
     
     public init(_ pid: Int? = nil, taskScheduler: TaskScheduler) {
         self.init(pid, taskScheduler: taskScheduler, block: { _ in }, completed: nil)
-        self.override(block: self.taskCode, completed: self.taskCompleted)
+        self.override(block: self.taskCode, completed: self.taskCompleted, taskType: self.taskType)
     }
 }

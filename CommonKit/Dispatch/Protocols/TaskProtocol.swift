@@ -10,7 +10,7 @@ import Foundation
 
 public typealias TaskBlock = (Task) -> Void
 
-protocol TaskBaseProtocol: class {
+public protocol AbstractTaskProtocol: class {
     var block: TaskBlock { get }
     var completed: TaskBlock? { get }
 }
@@ -20,11 +20,13 @@ public protocol TaskProtocol: class {
     var workItem: DispatchWorkItem! { get }
     
     var pid: Int? { get set }
+    var taskType: Int? { get }
     var taskScheduler: TaskScheduler? { get }
     var isCancelled: Bool { get }
+    var isRunning: Bool { get }
     var result: Any? { get set }
     
-    init(_ pid: Int?, taskScheduler: TaskScheduler, block: @escaping TaskBlock, completed: TaskBlock?)
+    init(_ pid: Int?, taskScheduler: TaskScheduler, block: @escaping TaskBlock, completed: TaskBlock?, taskType: Int?)
     
     func finishTask()
     func cancel()
