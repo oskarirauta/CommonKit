@@ -22,6 +22,24 @@ extension Array {
         self.insert(self.remove(at: from), at: to)
     }
 
+    @discardableResult
+    public mutating func removeIndexes(at: [Int]) -> [Element] {
+        var ret: [Element] = []
+        at.filter { $0 < self.count }.sorted(by: { $0 > $1 }).forEach {
+            ret.append(self.remove(at: $0))
+        }
+        return ret
+    }
+
+    @discardableResult
+    public mutating func removeIndexes(at: Int...) -> [Element] {
+        var ret: [Element] = []
+        at.filter { $0 < self.count }.sorted(by: { $0 > $1 }).forEach {
+            ret.append(self.remove(at: $0))
+        }
+        return ret
+    }
+
 }
 
 extension Optional: IsEmptyProtocol where Wrapped: Collection {

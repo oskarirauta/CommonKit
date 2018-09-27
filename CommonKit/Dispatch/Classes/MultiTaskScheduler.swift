@@ -1,20 +1,18 @@
 //
-//  TaskScheduler.swift
-//  DispatchKit
+//  MultiTaskScheduler.swift
+//  CommonKit
 //
-//  Created by Oskari Rauta on 26/04/2018.
+//  Created by Oskari Rauta on 27/09/2018.
 //  Copyright © 2018 Oskari Rauta. All rights reserved.
 //
 
 import Foundation
 
-public typealias TaskSchedulerClass = AbstractTaskSchedulerProtocol & TaskSchedulerProtocol & Any
-
-open class TaskScheduler: AbstractTaskSchedulerProtocol, TaskSchedulerProtocol {
-        
+open class MultiTaskScheduler: AbstractTaskSchedulerProtocol, TaskSchedulerProtocol {
+    
     open private(set) var task: Task?
     open private(set) var nextPid: Int
-
+    
     open private(set) var tasks: [Task]
     
     open var pid: Int? { get { return self.task?.pid }}
@@ -57,16 +55,19 @@ open class TaskScheduler: AbstractTaskSchedulerProtocol, TaskSchedulerProtocol {
     }
     
     @discardableResult open func executeTasks() -> Int? {
-        guard !self.processing, self.task == nil, let nextTask = self.tasks.first else {
+        guard !self.processing else {
             return self.pid
         }
-        guard !nextTask.isCancelled else {
-            let pid: Int? = nextTask.pid
-            self.tasks.removeIndexes(at: self.tasks.enumerated().filter { $0.element.pid == pid }.map { $0.offset })
-            return self.executeTasks()
+        
+        self.tasks.removeIndexes(at: self.tasks.enumerated().filter { $0.element.isCancelled }.map { $0.offset })
+        
+        var pid: Int? = nil
+        
+        self.tasks.filter { !$0.isRunning && !$0.isCancelled }.forEach {
+            if ( pid == nil ) { pid = $0.pid }
+            thread.async(execute: $0.workItem)
         }
-        self.task = nextTask
-        thread.async(execute: self.task!.workItem)
+        
         return self.pid
     }
     
@@ -77,13 +78,13 @@ open class TaskScheduler: AbstractTaskSchedulerProtocol, TaskSchedulerProtocol {
         task.cancel()
         return true
     }
-   
+    
     open func cancelAllTasks() {
         tasks.forEach({ $0.cancel() })
     }
     
     public func finishTask(_ task: Task) {
-
+        
         if ( !task.isCancelled ) {
             task.completed?(task)
         }

@@ -154,6 +154,7 @@
 		6E75BB8020CAC55C00876950 /* BadgeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E75BB7F20CAC55C00876950 /* BadgeItem.swift */; };
 		6E75BBA320CAC7B700876950 /* UITitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E75BB9120CAC7B600876950 /* UITitleCell.swift */; };
 		6E75BBA720CAE4C400876950 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E75BBA620CAE4C400876950 /* UIImage.swift */; };
+		6E7873A9215D535800644CF1 /* MultiTaskScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7873A8215D535800644CF1 /* MultiTaskScheduler.swift */; };
 		6E7F0B1520CDC9F000E18883 /* PhotoPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7F0B1420CDC9F000E18883 /* PhotoPreview.swift */; };
 		6E7F0B1A20CDCB2B00E18883 /* CameraButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7F0B1920CDCB2B00E18883 /* CameraButton.swift */; };
 		6E7F0B1C20CDCB7600E18883 /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7F0B1B20CDCB7500E18883 /* CameraController.swift */; };
@@ -343,6 +344,7 @@
 		6E75BB7F20CAC55C00876950 /* BadgeItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeItem.swift; sourceTree = "<group>"; };
 		6E75BB9120CAC7B600876950 /* UITitleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITitleCell.swift; sourceTree = "<group>"; };
 		6E75BBA620CAE4C400876950 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		6E7873A8215D535800644CF1 /* MultiTaskScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiTaskScheduler.swift; sourceTree = "<group>"; };
 		6E7F0B1420CDC9F000E18883 /* PhotoPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPreview.swift; sourceTree = "<group>"; };
 		6E7F0B1920CDCB2B00E18883 /* CameraButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraButton.swift; sourceTree = "<group>"; };
 		6E7F0B1B20CDCB7500E18883 /* CameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
@@ -559,6 +561,7 @@
 				6E00BDA620C854C600C68DBD /* DispatchItem.swift */,
 				6E00BDA520C854C600C68DBD /* Task.swift */,
 				6E00BDA420C854C600C68DBD /* TaskScheduler.swift */,
+				6E7873A8215D535800644CF1 /* MultiTaskScheduler.swift */,
 				6E9EC66920F5C7430023515C /* TaskClass.swift */,
 			);
 			path = Classes;
@@ -1320,6 +1323,7 @@
 				6E00BE8C20C89CBC00C68DBD /* FoundationIcons+regular.swift in Sources */,
 				6E75BB5920CAB5FD00876950 /* BrowsableCellProtocol.swift in Sources */,
 				6E7F0B1C20CDCB7600E18883 /* CameraController.swift in Sources */,
+				6E7873A9215D535800644CF1 /* MultiTaskScheduler.swift in Sources */,
 				6E7F0B1F20CDCBFB00E18883 /* AlbumCell.swift in Sources */,
 				6E00BE5020C88E6600C68DBD /* FontLoader.swift in Sources */,
 				6E00BDA320C854B400C68DBD /* Dispatch_DispatchQueue.swift in Sources */,

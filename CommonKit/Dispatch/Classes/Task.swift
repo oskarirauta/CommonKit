@@ -48,14 +48,13 @@ open class Task: AbstractTaskProtocol, TaskProtocol, NSCopying {
 
     open func finishTask() {
         DispatchQueue.main.async {
-            self.isRunning = false
             self.taskScheduler?.finishTask(self)
         }
     }
     
     open func cancel() {
-        self.isRunning = false
         self.workItem.cancel()
+        self.isRunning = false
     }
     
     open func perform() {

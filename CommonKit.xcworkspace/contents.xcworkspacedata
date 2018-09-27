@@ -14,6 +14,9 @@
       location = "group:DispatchExample/DispatchExample.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:CustomDispatchExample/CustomDispatchExample.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:CurrencyExample/CurrencyExample.xcodeproj">
    </FileRef>
    <FileRef
