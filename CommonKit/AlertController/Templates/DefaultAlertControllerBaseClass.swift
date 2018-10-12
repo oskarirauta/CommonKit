@@ -32,7 +32,11 @@ open class DefaultAlertControllerBaseClass: UIViewController, AlertControllerVie
     open var overlayColor: UIColor? = nil
     open var contentViewBgColor: UIColor? = nil
     
-    open var contentViewDefaultHeight: CGFloat? = nil
+    open var contentViewDefaultHeight: CGFloat? = nil {
+        didSet {
+            self.contentViewHeightConstraint?.constant = self.contentViewDefaultHeight ?? DefaultAlertProperties.contentViewDefaultHeight
+        }
+    }
     
     open var buttonCornerRadius: CGFloat? = nil
     open var buttonShadowColor: UIColor? = nil
