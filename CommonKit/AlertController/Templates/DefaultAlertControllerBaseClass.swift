@@ -119,7 +119,6 @@ open class DefaultAlertControllerBaseClass: UIViewController, AlertControllerVie
         self.setupNotifications()
         self.title = nil
         self._preferredStyle = preferredStyle
-        self._preferredStyle = .alert
         
         if !stockInit {
             self.setupView()
