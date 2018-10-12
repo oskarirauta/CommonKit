@@ -73,7 +73,6 @@ open class DefaultAlertControllerBaseClass: UIViewController, AlertControllerVie
     }
     
     public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         self.setupNotifications()
         self.providesPresentationContextTransitionStyle = true
@@ -112,6 +111,22 @@ open class DefaultAlertControllerBaseClass: UIViewController, AlertControllerVie
         self.setupConstraints()
     }
     
+    public init(stockInit: Bool, preferredStyle: AlertControllerStyle = .alert) {
+        super.init(nibName: nil, bundle: nil)
+        self.providesPresentationContextTransitionStyle = true
+        self.definesPresentationContext = true
+        self.modalPresentationStyle = .overCurrentContext
+        self.setupNotifications()
+        self.title = nil
+        self._preferredStyle = preferredStyle
+        self._preferredStyle = .alert
+        
+        if !stockInit {
+            self.setupView()
+            self.setupConstraints()
+        }
+    }
+
     open func setupNotifications() { }
     
     open func setupView() {
