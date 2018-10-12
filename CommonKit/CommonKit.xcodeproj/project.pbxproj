@@ -59,6 +59,7 @@
 		6E00BE5020C88E6600C68DBD /* FontLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E00BE4E20C88E6600C68DBD /* FontLoader.swift */; };
 		6E00BE8A20C89CA700C68DBD /* FoundationIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E00BE8920C89CA700C68DBD /* FoundationIcons.swift */; };
 		6E00BE8C20C89CBC00C68DBD /* FoundationIcons+regular.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E00BE8B20C89CBC00C68DBD /* FoundationIcons+regular.swift */; };
+		6E08E73A21708ABD00CF7E14 /* DefaultActionSheetControllerBaseClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E08E73921708ABD00CF7E14 /* DefaultActionSheetControllerBaseClass.swift */; };
 		6E14EF6320C5EC63005AAF69 /* CGSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E14EF6220C5EC63005AAF69 /* CGSize.swift */; };
 		6E1C883220A6C40E0042055F /* UILabelPadded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1C883120A6C40E0042055F /* UILabelPadded.swift */; };
 		6E2689FE20C71DAF00ABB28B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E2689FD20C71DAF00ABB28B /* UIKit.framework */; };
@@ -252,6 +253,7 @@
 		6E00BE8720C8994700C68DBD /* foundation-icons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "foundation-icons.ttf"; sourceTree = "<group>"; };
 		6E00BE8920C89CA700C68DBD /* FoundationIcons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundationIcons.swift; sourceTree = "<group>"; };
 		6E00BE8B20C89CBC00C68DBD /* FoundationIcons+regular.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FoundationIcons+regular.swift"; sourceTree = "<group>"; };
+		6E08E73921708ABD00CF7E14 /* DefaultActionSheetControllerBaseClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultActionSheetControllerBaseClass.swift; sourceTree = "<group>"; };
 		6E14EF6220C5EC63005AAF69 /* CGSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGSize.swift; sourceTree = "<group>"; };
 		6E1C883120A6C40E0042055F /* UILabelPadded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelPadded.swift; sourceTree = "<group>"; };
 		6E2689FD20C71DAF00ABB28B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -948,6 +950,7 @@
 			isa = PBXGroup;
 			children = (
 				6E75BB1120CA699300876950 /* DefaultAlertControllerBaseClass.swift */,
+				6E08E73921708ABD00CF7E14 /* DefaultActionSheetControllerBaseClass.swift */,
 			);
 			path = Templates;
 			sourceTree = "<group>";
@@ -1423,6 +1426,7 @@
 				6E75BB7820CAC45400876950 /* CellTitleProtocol.swift in Sources */,
 				6E3C4FEF20A0E1A0009C3ED7 /* HTMLEntities.swift in Sources */,
 				6E3C500E20A0E1B0009C3ED7 /* NSMutableArray.swift in Sources */,
+				6E08E73A21708ABD00CF7E14 /* DefaultActionSheetControllerBaseClass.swift in Sources */,
 				6E00BDF720C8828A00C68DBD /* Money.swift in Sources */,
 				6E29DB3420D2E3F400BD4830 /* UIHeaderFooterViewExtended.swift in Sources */,
 				6E00BD8320C8264900C68DBD /* Double.swift in Sources */,
