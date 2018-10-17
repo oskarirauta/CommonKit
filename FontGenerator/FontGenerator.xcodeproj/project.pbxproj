@@ -14,13 +14,13 @@
 		6E00BE7820C8909000C68DBD /* codepoints.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6E00BE7620C8909000C68DBD /* codepoints.txt */; };
 		6E00BE7920C8909000C68DBD /* _variables.less in Resources */ = {isa = PBXBuildFile; fileRef = 6E00BE7720C8909000C68DBD /* _variables.less */; };
 		6E00BE7B20C890A400C68DBD /* FontGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E00BE7A20C890A400C68DBD /* FontGenerator.swift */; };
-		6E00BE7C20C8910300C68DBD /* Font Awesome 5 Brands-Regular-400.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6E00BE7520C8908300C68DBD /* Font Awesome 5 Brands-Regular-400.otf */; };
-		6E00BE7D20C8910300C68DBD /* Font Awesome 5 Free-Regular-400.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6E00BE7320C8908300C68DBD /* Font Awesome 5 Free-Regular-400.otf */; };
-		6E00BE7E20C8910300C68DBD /* Font Awesome 5 Free-Solid-900.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6E00BE7220C8908300C68DBD /* Font Awesome 5 Free-Solid-900.otf */; };
 		6E00BE7F20C8910300C68DBD /* MaterialIcons-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E00BE7420C8908300C68DBD /* MaterialIcons-Regular.ttf */; };
 		6E00BE8420C8955400C68DBD /* foundation-icons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E00BE8320C8954500C68DBD /* foundation-icons.ttf */; };
 		6E00BE8620C895B900C68DBD /* foundation-icons.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6E00BE8520C895B900C68DBD /* foundation-icons.txt */; };
 		6E3FB91820C8A41B0030E838 /* CommonKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E3FB91720C8A41B0030E838 /* CommonKit.framework */; };
+		6E7188C62177C31A00CB81AA /* Font Awesome 5 Brands-Regular-400.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6E7188C52177C2D700CB81AA /* Font Awesome 5 Brands-Regular-400.otf */; };
+		6E7188C72177C31A00CB81AA /* Font Awesome 5 Free-Regular-400.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6E7188C42177C2D700CB81AA /* Font Awesome 5 Free-Regular-400.otf */; };
+		6E7188C82177C31A00CB81AA /* Font Awesome 5 Free-Solid-900.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6E7188C32177C2D700CB81AA /* Font Awesome 5 Free-Solid-900.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,10 +30,7 @@
 		6E00BE6520C8904000C68DBD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6E00BE6820C8904000C68DBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6E00BE6A20C8904000C68DBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6E00BE7220C8908300C68DBD /* Font Awesome 5 Free-Solid-900.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 5 Free-Solid-900.otf"; sourceTree = "<group>"; };
-		6E00BE7320C8908300C68DBD /* Font Awesome 5 Free-Regular-400.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 5 Free-Regular-400.otf"; sourceTree = "<group>"; };
 		6E00BE7420C8908300C68DBD /* MaterialIcons-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MaterialIcons-Regular.ttf"; sourceTree = "<group>"; };
-		6E00BE7520C8908300C68DBD /* Font Awesome 5 Brands-Regular-400.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 5 Brands-Regular-400.otf"; sourceTree = "<group>"; };
 		6E00BE7620C8909000C68DBD /* codepoints.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = codepoints.txt; sourceTree = "<group>"; };
 		6E00BE7720C8909000C68DBD /* _variables.less */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = _variables.less; sourceTree = "<group>"; };
 		6E00BE7A20C890A400C68DBD /* FontGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontGenerator.swift; sourceTree = "<group>"; };
@@ -41,6 +38,9 @@
 		6E00BE8320C8954500C68DBD /* foundation-icons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "foundation-icons.ttf"; sourceTree = "<group>"; };
 		6E00BE8520C895B900C68DBD /* foundation-icons.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "foundation-icons.txt"; sourceTree = "<group>"; };
 		6E3FB91720C8A41B0030E838 /* CommonKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CommonKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E7188C32177C2D700CB81AA /* Font Awesome 5 Free-Solid-900.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 5 Free-Solid-900.otf"; sourceTree = "<group>"; };
+		6E7188C42177C2D700CB81AA /* Font Awesome 5 Free-Regular-400.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 5 Free-Regular-400.otf"; sourceTree = "<group>"; };
+		6E7188C52177C2D700CB81AA /* Font Awesome 5 Brands-Regular-400.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 5 Brands-Regular-400.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,9 +90,9 @@
 		6E00BE7020C8905F00C68DBD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				6E00BE7520C8908300C68DBD /* Font Awesome 5 Brands-Regular-400.otf */,
-				6E00BE7320C8908300C68DBD /* Font Awesome 5 Free-Regular-400.otf */,
-				6E00BE7220C8908300C68DBD /* Font Awesome 5 Free-Solid-900.otf */,
+				6E7188C52177C2D700CB81AA /* Font Awesome 5 Brands-Regular-400.otf */,
+				6E7188C42177C2D700CB81AA /* Font Awesome 5 Free-Regular-400.otf */,
+				6E7188C32177C2D700CB81AA /* Font Awesome 5 Free-Solid-900.otf */,
 				6E00BE7420C8908300C68DBD /* MaterialIcons-Regular.ttf */,
 				6E00BE8320C8954500C68DBD /* foundation-icons.ttf */,
 			);
@@ -177,10 +177,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E7188C62177C31A00CB81AA /* Font Awesome 5 Brands-Regular-400.otf in Resources */,
+				6E7188C72177C31A00CB81AA /* Font Awesome 5 Free-Regular-400.otf in Resources */,
+				6E7188C82177C31A00CB81AA /* Font Awesome 5 Free-Solid-900.otf in Resources */,
 				6E00BE8420C8955400C68DBD /* foundation-icons.ttf in Resources */,
-				6E00BE7C20C8910300C68DBD /* Font Awesome 5 Brands-Regular-400.otf in Resources */,
-				6E00BE7D20C8910300C68DBD /* Font Awesome 5 Free-Regular-400.otf in Resources */,
-				6E00BE7E20C8910300C68DBD /* Font Awesome 5 Free-Solid-900.otf in Resources */,
 				6E00BE7F20C8910300C68DBD /* MaterialIcons-Regular.ttf in Resources */,
 				6E00BE8620C895B900C68DBD /* foundation-icons.txt in Resources */,
 				6E00BE7820C8909000C68DBD /* codepoints.txt in Resources */,

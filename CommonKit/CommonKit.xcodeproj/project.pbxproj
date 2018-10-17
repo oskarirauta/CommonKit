@@ -68,9 +68,6 @@
 		6E29DB3820D309DD00BD4830 /* HeaderConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E29DB3720D309DD00BD4830 /* HeaderConstraints.swift */; };
 		6E29DB3A20D30A3400BD4830 /* ExtendedHeaderSettingsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E29DB3920D30A3400BD4830 /* ExtendedHeaderSettingsProtocol.swift */; };
 		6E29DB3C20D30CE400BD4830 /* HeaderTitleProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E29DB3B20D30CE400BD4830 /* HeaderTitleProtocol.swift */; };
-		6E29DB6420D322CF00BD4830 /* Font Awesome 5 Brands-Regular-400.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6E00BE3720C88E2200C68DBD /* Font Awesome 5 Brands-Regular-400.otf */; };
-		6E29DB6520D322CF00BD4830 /* Font Awesome 5 Free-Regular-400.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6E00BE3520C88E2100C68DBD /* Font Awesome 5 Free-Regular-400.otf */; };
-		6E29DB6620D322CF00BD4830 /* Font Awesome 5 Free-Solid-900.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6E00BE3420C88E2100C68DBD /* Font Awesome 5 Free-Solid-900.otf */; };
 		6E29DB6720D322CF00BD4830 /* MaterialIcons-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E00BE3620C88E2200C68DBD /* MaterialIcons-Regular.ttf */; };
 		6E29DB6820D322CF00BD4830 /* foundation-icons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E00BE8720C8994700C68DBD /* foundation-icons.ttf */; };
 		6E3C4FE220A0E119009C3ED7 /* CommonKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E3C4FE020A0E119009C3ED7 /* CommonKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -104,6 +101,9 @@
 		6E3FB94F20C9D06C0030E838 /* AssetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3FB94E20C9D06C0030E838 /* AssetManager.swift */; };
 		6E460ADB2137302F003F8248 /* UILabelExtended.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E460ADA2137302F003F8248 /* UILabelExtended.swift */; };
 		6E49983820B2BA11008D7ACD /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E49983720B2BA11008D7ACD /* Character.swift */; };
+		6E7188C92177C33300CB81AA /* Font Awesome 5 Brands-Regular-400.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6E7188C22177C0A500CB81AA /* Font Awesome 5 Brands-Regular-400.otf */; };
+		6E7188CA2177C33300CB81AA /* Font Awesome 5 Free-Regular-400.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6E7188C12177C0A500CB81AA /* Font Awesome 5 Free-Regular-400.otf */; };
+		6E7188CB2177C33300CB81AA /* Font Awesome 5 Free-Solid-900.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6E7188C02177C0A400CB81AA /* Font Awesome 5 Free-Solid-900.otf */; };
 		6E74544E20C7F6C100A35FC9 /* NumPadStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E74544D20C7F6C000A35FC9 /* NumPadStyle.swift */; };
 		6E74545020C7F6C600A35FC9 /* NumPadType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E74544F20C7F6C600A35FC9 /* NumPadType.swift */; };
 		6E74545220C7F71B00A35FC9 /* NumPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E74545120C7F71B00A35FC9 /* NumPad.swift */; };
@@ -234,10 +234,7 @@
 		6E00BE0220C8838600C68DBD /* CurrencyFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatter.swift; sourceTree = "<group>"; };
 		6E00BE2920C88C5500C68DBD /* AttributedStringWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributedStringWrapper.swift; sourceTree = "<group>"; };
 		6E00BE3220C88E1400C68DBD /* Font.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
-		6E00BE3420C88E2100C68DBD /* Font Awesome 5 Free-Solid-900.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 5 Free-Solid-900.otf"; sourceTree = "<group>"; };
-		6E00BE3520C88E2100C68DBD /* Font Awesome 5 Free-Regular-400.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 5 Free-Regular-400.otf"; sourceTree = "<group>"; };
 		6E00BE3620C88E2200C68DBD /* MaterialIcons-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MaterialIcons-Regular.ttf"; sourceTree = "<group>"; };
-		6E00BE3720C88E2200C68DBD /* Font Awesome 5 Brands-Regular-400.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 5 Brands-Regular-400.otf"; sourceTree = "<group>"; };
 		6E00BE3820C88E2E00C68DBD /* MaterialIcons+regular.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MaterialIcons+regular.swift"; sourceTree = "<group>"; };
 		6E00BE3920C88E2F00C68DBD /* MaterialIcons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialIcons.swift; sourceTree = "<group>"; };
 		6E00BE3C20C88E3B00C68DBD /* FontAwesome+regular.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FontAwesome+regular.swift"; sourceTree = "<group>"; };
@@ -295,6 +292,9 @@
 		6E3FB94E20C9D06C0030E838 /* AssetManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetManager.swift; sourceTree = "<group>"; };
 		6E460ADA2137302F003F8248 /* UILabelExtended.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExtended.swift; sourceTree = "<group>"; };
 		6E49983720B2BA11008D7ACD /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		6E7188C02177C0A400CB81AA /* Font Awesome 5 Free-Solid-900.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 5 Free-Solid-900.otf"; sourceTree = "<group>"; };
+		6E7188C12177C0A500CB81AA /* Font Awesome 5 Free-Regular-400.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 5 Free-Regular-400.otf"; sourceTree = "<group>"; };
+		6E7188C22177C0A500CB81AA /* Font Awesome 5 Brands-Regular-400.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 5 Brands-Regular-400.otf"; sourceTree = "<group>"; };
 		6E74544D20C7F6C000A35FC9 /* NumPadStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumPadStyle.swift; sourceTree = "<group>"; };
 		6E74544F20C7F6C600A35FC9 /* NumPadType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumPadType.swift; sourceTree = "<group>"; };
 		6E74545120C7F71B00A35FC9 /* NumPad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumPad.swift; sourceTree = "<group>"; };
@@ -724,9 +724,9 @@
 		6E00BE3020C88DCB00C68DBD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				6E00BE3720C88E2200C68DBD /* Font Awesome 5 Brands-Regular-400.otf */,
-				6E00BE3520C88E2100C68DBD /* Font Awesome 5 Free-Regular-400.otf */,
-				6E00BE3420C88E2100C68DBD /* Font Awesome 5 Free-Solid-900.otf */,
+				6E7188C22177C0A500CB81AA /* Font Awesome 5 Brands-Regular-400.otf */,
+				6E7188C12177C0A500CB81AA /* Font Awesome 5 Free-Regular-400.otf */,
+				6E7188C02177C0A400CB81AA /* Font Awesome 5 Free-Solid-900.otf */,
 				6E00BE3620C88E2200C68DBD /* MaterialIcons-Regular.ttf */,
 				6E00BE8720C8994700C68DBD /* foundation-icons.ttf */,
 			);
@@ -1245,9 +1245,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E29DB6420D322CF00BD4830 /* Font Awesome 5 Brands-Regular-400.otf in Resources */,
-				6E29DB6520D322CF00BD4830 /* Font Awesome 5 Free-Regular-400.otf in Resources */,
-				6E29DB6620D322CF00BD4830 /* Font Awesome 5 Free-Solid-900.otf in Resources */,
+				6E7188C92177C33300CB81AA /* Font Awesome 5 Brands-Regular-400.otf in Resources */,
+				6E7188CA2177C33300CB81AA /* Font Awesome 5 Free-Regular-400.otf in Resources */,
+				6E7188CB2177C33300CB81AA /* Font Awesome 5 Free-Solid-900.otf in Resources */,
 				6E29DB6720D322CF00BD4830 /* MaterialIcons-Regular.ttf in Resources */,
 				6E29DB6820D322CF00BD4830 /* foundation-icons.ttf in Resources */,
 				6E7F0B3820CDDBA200E18883 /* UIPhotoPicker.xcassets in Resources */,

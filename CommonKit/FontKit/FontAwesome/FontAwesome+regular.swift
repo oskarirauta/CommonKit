@@ -164,5 +164,6 @@ extension FontAwesome { // regular
         case windowClose = "window-close \u{f410}"
         case windowMaximize = "window-maximize \u{f2d0}"
         case windowMinimize = "window-minimize \u{f2d1}"
-        case windowRestore = "window-restore \u{f2d2}"    }
+        case windowRestore = "window-restore \u{f2d2}"
+    }
 }

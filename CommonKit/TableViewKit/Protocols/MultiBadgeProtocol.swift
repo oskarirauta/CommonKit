@@ -21,7 +21,6 @@ public protocol MultiBadgeProperties {
 
 public protocol MultiBadgeBase {
     var badgeElements: [UILabelExtended]? { get set }
-    
 }
 
 public protocol MultiBadgeMethods {

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 public extension UIFont {
     
@@ -17,6 +18,7 @@ public extension UIFont {
             let bundle = Bundle(for: UITitleLabel.self)
             // let identifier = bundle.bundleIdentifier
             // print(bundle.bundlePath)
+            
             let fontURL: URL = bundle.url(forResource: resource, withExtension: ext, subdirectory: subdirectory)!
             
             guard

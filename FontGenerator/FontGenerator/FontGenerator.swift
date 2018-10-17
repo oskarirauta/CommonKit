@@ -319,15 +319,15 @@ class FontGenerator {
     
     class func loadFonts() {
         
-        for font in fa_fonts.allValues as [FontType] {
+        for font in fa_fonts.allCases as [FontType] {
             let _ = UIFont.loadFont(font.fontName, size: 0, resource: font.fontResource, ext: font.fontFormat)
         }
         
-        for font in mat_fonts.allValues as [FontType] {
+        for font in mat_fonts.allCases as [FontType] {
             let _ = UIFont.loadFont(font.fontName, size: 0, resource: font.fontResource, ext: font.fontFormat)
         }
         
-        for font in fi_fonts.allValues as [FontType] {
+        for font in fi_fonts.allCases as [FontType] {
             let _ = UIFont.loadFont(font.fontName, size: 0, resource: font.fontResource, ext: font.fontFormat)
         }
         
@@ -335,22 +335,22 @@ class FontGenerator {
     
     class func generateSourcecode() {
         
-        for font in fa_fonts.allValues as [FontType] {
+        for font in fa_fonts.allCases as [FontType] {
             self.fontTypeCode(font: font, glyphs: FontGenerator.fa_variables)
         }
         
-        for font in mat_fonts.allValues as [FontType] {
+        for font in mat_fonts.allCases as [FontType] {
             self.fontTypeCode(font: font, glyphs: FontGenerator.ma_variables)
         }
         
-        for font in fi_fonts.allValues as [FontType] {
+        for font in fi_fonts.allCases as [FontType] {
             self.fontTypeCode(font: font, glyphs: FontGenerator.fi_variables)
         }
         
         self.fontListCode(fonts:
-                        (FontGenerator.fa_variables, fa_fonts.allValues as [FontType]),
-                        (FontGenerator.ma_variables, mat_fonts.allValues as [FontType]),
-                        (FontGenerator.fi_variables, fi_fonts.allValues as [FontType])
+                        (FontGenerator.fa_variables, fa_fonts.allCases as [FontType]),
+                        (FontGenerator.ma_variables, mat_fonts.allCases as [FontType]),
+                        (FontGenerator.fi_variables, fi_fonts.allCases as [FontType])
         )
 
     }
