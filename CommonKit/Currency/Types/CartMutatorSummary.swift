@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct CartMutatorSummary {
+public struct CartMutatorSummary: Codable {
     
     public var name: String?
     public var VAT: Money

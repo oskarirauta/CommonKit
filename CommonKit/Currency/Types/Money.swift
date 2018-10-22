@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct Money: ExpressibleByFloatLiteral, ExpressibleByIntegerLiteral, SignedNumeric, RawRepresentable, CustomStringConvertible, Comparable, Equatable, Encodable, Decodable, MoneyCompatible {
+public struct Money: ExpressibleByFloatLiteral, ExpressibleByIntegerLiteral, SignedNumeric, RawRepresentable, CustomStringConvertible, Comparable, Equatable, Codable, MoneyCompatible {
     
     public typealias FloatLiteralType = Double
     public typealias IntegerLiteralType = Int

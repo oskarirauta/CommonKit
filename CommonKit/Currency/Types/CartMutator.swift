@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct CartMutator: ExpressibleByFloatLiteral, ExpressibleByIntegerLiteral, SignedNumeric, RawRepresentable, CustomStringConvertible, Equatable, Comparable, Encodable, Decodable {
+public struct CartMutator: ExpressibleByFloatLiteral, ExpressibleByIntegerLiteral, SignedNumeric, RawRepresentable, CustomStringConvertible, Equatable, Comparable, Codable {
     
     public typealias RawValue = Decimal
     public typealias Magnitude = Decimal

@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct CartItem: CartCompatible {
+public struct CartItem: CartCompatible, Codable {
     
     public var name: String? = nil
     public var count: Decimal {
