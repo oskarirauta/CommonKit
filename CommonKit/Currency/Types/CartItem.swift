@@ -13,7 +13,7 @@ public struct CartItem: CartCompatible, Codable {
     public var name: String? = nil
     public var count: Decimal {
         get { return self._count }
-        set { self._count = newValue.rounded(to: 0) > 0 ? newValue.rounded(to: 0) : Decimal(0) }
+        set { self._count = newValue.rounded(to: 2) > 0 ? newValue.rounded(to: 2) : Decimal(0) }
     }
     public var unit: String? = nil
     public var price: Money
@@ -41,7 +41,7 @@ public struct CartItem: CartCompatible, Codable {
 
     public init(name: String? = nil, count: Decimal = 1, unit: String? = nil, price: Money, VAT: Decimal = Decimal(0)) {
         self.name = name
-        self._count = count.rounded(to: 0) > 0 ? count.rounded(to: 0) : Decimal(0)
+        self._count = count.rounded(to: 2) > 0 ? count.rounded(to: 2) : Decimal(0)
         self.unit = unit
         self.price = price
         self._vat_percent = VAT.rounded(to: 1) > 0 ? VAT.rounded(to: 1) : Decimal(0)
