@@ -9,6 +9,51 @@
 import Foundation
 import UIKit
 
+extension NSLayoutXAxisAnchor {
+    
+    public func constraint(equalTo anchor: NSLayoutXAxisAnchor, multiplier m: CGFloat, constant c: CGFloat = 0.0) -> NSLayoutConstraint {
+        return self.constraint(equalTo: anchor, constant: c).constraint(multiplier: m)
+    }
+
+    public func constraint(greaterThanOrEqualTo anchor: NSLayoutXAxisAnchor, multiplier m: CGFloat, constant c: CGFloat = 0.0) -> NSLayoutConstraint {
+        return self.constraint(greaterThanOrEqualTo: anchor, constant: c).constraint(multiplier: m)
+    }
+    
+    public func constraint(lessThanOrEqualTo anchor: NSLayoutXAxisAnchor, multiplier m: CGFloat, constant c: CGFloat = 0.0) -> NSLayoutConstraint {
+        return self.constraint(lessThanOrEqualTo: anchor, constant: c).constraint(multiplier: m)
+    }
+    
+}
+
+extension NSLayoutYAxisAnchor {
+    
+    public func constraint(equalTo anchor: NSLayoutYAxisAnchor, multiplier m: CGFloat, constant c: CGFloat = 0.0) -> NSLayoutConstraint {
+        return self.constraint(equalTo: anchor, constant: c).constraint(multiplier: m)
+    }
+    
+    public func constraint(greaterThanOrEqualTo anchor: NSLayoutYAxisAnchor, multiplier m: CGFloat, constant c: CGFloat = 0.0) -> NSLayoutConstraint {
+        return self.constraint(greaterThanOrEqualTo: anchor, constant: c).constraint(multiplier: m)
+    }
+    
+    public func constraint(lessThanOrEqualTo anchor: NSLayoutYAxisAnchor, multiplier m: CGFloat, constant c: CGFloat = 0.0) -> NSLayoutConstraint {
+        return self.constraint(lessThanOrEqualTo: anchor, constant: c).constraint(multiplier: m)
+    }
+}
+
+private extension NSLayoutConstraint {
+    
+    func constraint(multiplier: CGFloat) -> NSLayoutConstraint {
+        return NSLayoutConstraint(item: firstItem!,
+                                  attribute: firstAttribute,
+                                  relatedBy: relation,
+                                  toItem: secondItem,
+                                  attribute: secondAttribute,
+                                  multiplier: multiplier,
+                                  constant: constant)
+    }
+    
+}
+
 public protocol NSLayoutConstraintPriorityProtocol {
     func withPriority(_ priority: Int) -> NSLayoutConstraint
     func withPriority(_ priority: Float) -> NSLayoutConstraint
