@@ -39,7 +39,15 @@ extension Array {
         }
         return ret
     }
+    
+    public func filterIndex(at index: Int) -> [Element] {
+        return self.enumerated().filter({ $0.offset != index }).map { $0.element }
+    }
 
+    public func filterIndex(at indexes: [Int]) -> [Element] {
+        return self.enumerated().filter({ !indexes.contains($0.offset) }).map { $0.element }
+    }
+    
 }
 
 extension Optional: IsEmptyProtocol where Wrapped: Collection {
