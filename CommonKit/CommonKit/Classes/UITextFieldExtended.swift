@@ -17,6 +17,7 @@ open class UITextFieldExtended: UITextField, TextFieldProtocol, TextFieldHandler
     public var maxLength: Int = 0
     public var trimText: Bool = true
     public var customClosestPosition: ((CGPoint, UITextPosition?)->(UITextPosition?))? = nil
+    public var customSelectionRects: ((UITextRange, [UITextSelectionRect])->([UITextSelectionRect]))? = nil
     
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -62,7 +63,7 @@ extension UITextFieldExtended {
     }
     
     override open func selectionRects(for range: UITextRange) -> [UITextSelectionRect] {
-        return self.selectableContent ? super.selectionRects(for: range) : []
+        return self.selectableContent ? ( self.customSelectionRects?(range, super.selectionRects(for: range)) ?? super.selectionRects(for: range)) : []
     }
     
     override open func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
