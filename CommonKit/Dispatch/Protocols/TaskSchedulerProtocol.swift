@@ -27,4 +27,6 @@ public protocol TaskSchedulerProtocol: class {
     func executeTasks() -> Int?
     func cancelTask(pid: Int) -> Bool
     func cancelAllTasks()
+    func removeAllTasks()
+    func removeTask(at index: Int)
 }
