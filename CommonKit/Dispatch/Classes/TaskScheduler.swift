@@ -75,11 +75,23 @@ open class TaskScheduler: AbstractTaskSchedulerProtocol, TaskSchedulerProtocol {
             return false
         }
         task.cancel()
+        if let taskPid = task.pid, taskPid != self.pid, let index = self.tasks.firstIndex(where: { $0.pid == taskPid }) {
+            self.tasks.remove(at: index)
+        }
         return true
     }
    
     open func cancelAllTasks() {
         tasks.forEach({ $0.cancel() })
+        if !self.processing { tasks.removeAll() }
+    }
+    
+    open func removeAllTasks() {
+        tasks.removeAll()
+    }
+    
+    open func removeTask(at index: Int) {
+        tasks.remove(at: index)
     }
     
     public func finishTask(_ task: Task) {
