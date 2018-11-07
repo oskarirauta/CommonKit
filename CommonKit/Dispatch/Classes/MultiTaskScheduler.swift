@@ -16,10 +16,11 @@ open class MultiTaskScheduler: AbstractTaskSchedulerProtocol, TaskSchedulerProto
     open private(set) var tasks: [Task]
     
     open var pid: Int? { get { return self.task?.pid }}
-    open var processing: Bool { get { return self.task != nil }}
+    open var processing: Bool { get { return self._processing }}
     
     public private(set) var thread: DispatchQueue
-    
+    internal var _processing: Bool = false
+
     public required init(thread: DispatchQueue = DispatchQueue.global(qos: .background)) {
         self.nextPid = -1
         self.task = nil
@@ -47,24 +48,21 @@ open class MultiTaskScheduler: AbstractTaskSchedulerProtocol, TaskSchedulerProto
     
     @discardableResult open func addTask(execute: Task, wait: Bool = false) -> Int {
         self.nextPid = self.nextPid + 1 > 99999 ? 0 : self.nextPid + 1
-        execute.pid = self.nextPid
-        self.tasks.append(execute.copy() as! Task)
+        self.tasks.append((execute.copy() as! Task).properties { $0.pid = self.nextPid })
         guard !wait else { return self.nextPid }
         self.executeTasks()
         return self.nextPid
     }
     
     @discardableResult open func executeTasks() -> Int? {
-        guard !self.processing else {
-            return self.pid
-        }
         
         self.tasks.removeIndexes(at: self.tasks.enumerated().filter { $0.element.isCancelled }.map { $0.offset })
         
         var pid: Int? = nil
         
         self.tasks.filter { !$0.isRunning && !$0.isCancelled }.forEach {
-            if ( pid == nil ) { pid = $0.pid }
+            pid = pid ?? $0.pid
+            self._processing = true
             thread.async(execute: $0.workItem)
         }
         
@@ -76,7 +74,7 @@ open class MultiTaskScheduler: AbstractTaskSchedulerProtocol, TaskSchedulerProto
             return false
         }
         task.cancel()
-        if let taskPid = task.pid, taskPid != self.pid, let index = self.tasks.firstIndex(where: { $0.pid == taskPid }) {
+        if let taskPid = task.pid, !task.isRunning, let index = self.tasks.firstIndex(where: { $0.pid == taskPid }) {
             self.tasks.remove(at: index)
         }
         return true
@@ -102,6 +100,9 @@ open class MultiTaskScheduler: AbstractTaskSchedulerProtocol, TaskSchedulerProto
         }
         self.tasks.removeIndexes(at: self.tasks.enumerated().filter { $0.element.pid == pid }.map { $0.offset })
         self.task = nil
+        if ( self._processing ) && ( self.tasks.isEmpty ) {
+            self._processing = false
+        }
         self.executeTasks()
     }
     

@@ -18,9 +18,10 @@ open class TaskScheduler: AbstractTaskSchedulerProtocol, TaskSchedulerProtocol {
     open private(set) var tasks: [Task]
     
     open var pid: Int? { get { return self.task?.pid }}
-    open var processing: Bool { get { return self.task != nil }}
+    open var processing: Bool { get { return self._processing }}
     
     public private(set) var thread: DispatchQueue
+    internal var _processing: Bool = false
     
     public required init(thread: DispatchQueue = DispatchQueue.global(qos: .background)) {
         self.nextPid = -1
@@ -57,9 +58,13 @@ open class TaskScheduler: AbstractTaskSchedulerProtocol, TaskSchedulerProtocol {
     }
     
     @discardableResult open func executeTasks() -> Int? {
+        if self._processing, self.tasks.first == nil {
+            self._processing = false
+        }
         guard !self.processing, self.task == nil, let nextTask = self.tasks.first else {
             return self.pid
         }
+        self._processing = true
         guard !nextTask.isCancelled else {
             let pid: Int? = nextTask.pid
             self.tasks.removeIndexes(at: self.tasks.enumerated().filter { $0.element.pid == pid }.map { $0.offset })
@@ -101,6 +106,9 @@ open class TaskScheduler: AbstractTaskSchedulerProtocol, TaskSchedulerProtocol {
         }
         self.tasks.removeIndexes(at: self.tasks.enumerated().filter { $0.element.pid == pid }.map { $0.offset })
         self.task = nil
+        if ( self._processing ) && ( self.tasks.isEmpty ) {
+            self._processing = false
+        }
         self.executeTasks()
     }
     

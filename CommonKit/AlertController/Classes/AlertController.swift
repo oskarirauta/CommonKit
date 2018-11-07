@@ -114,7 +114,7 @@ open class AlertController: DefaultAlertControllerBaseClass, UITextFieldDelegate
         super.init(nibName: nil, bundle: nil)
         self.providesPresentationContextTransitionStyle = true
         self.definesPresentationContext = true
-        self.modalPresentationStyle = .fullScreen
+        self.modalPresentationStyle = .overFullScreen
         self.title = title
         self.message = message
         self._preferredStyle = preferredStyle

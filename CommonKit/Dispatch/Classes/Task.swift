@@ -19,9 +19,11 @@ open class Task: AbstractTaskProtocol, TaskProtocol, NSCopying {
     open private(set) var isRunning: Bool
 
     public private(set) var completed: TaskBlock? = nil
-    open var isCancelled: Bool { get { return self.workItem.isCancelled }}
+    open var isCancelled: Bool { get { return self._isCancelled }}
 
     open var result: Any? = nil
+    
+    internal var _isCancelled: Bool
     
     public required init(
         _ pid: Int? = nil,
@@ -37,6 +39,7 @@ open class Task: AbstractTaskProtocol, TaskProtocol, NSCopying {
         self.block = block
         self.completed = completed
         self.isRunning = false
+        self._isCancelled = false
         self.workItem = DispatchWorkItem(block: {
             [weak self] in
             self?.isRunning = true
@@ -53,11 +56,13 @@ open class Task: AbstractTaskProtocol, TaskProtocol, NSCopying {
     }
     
     open func cancel() {
+        self._isCancelled = true
         self.workItem.cancel()
         self.isRunning = false
     }
     
     open func perform() {
+        guard !self.isCancelled else { return }
         self.isRunning = true
         self.workItem.perform()
     }
@@ -83,10 +88,18 @@ open class Task: AbstractTaskProtocol, TaskProtocol, NSCopying {
         self.workItem = DispatchWorkItem(block: {
             [weak self] in
             self?.isRunning = true
+            self?._isCancelled = false
             self?.result = nil
             self?.block(self!)
             self?.finishTask()
         })
     }
+    
+    public func properties(_ modifyFunc: (inout Task) -> Void) -> Task {
+        var retVal: Task = self
+        modifyFunc(&retVal)
+        return retVal
+    }
+
     
 }
