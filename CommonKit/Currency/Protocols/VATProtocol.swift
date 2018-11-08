@@ -10,4 +10,5 @@ import Foundation
 
 public protocol VATProtocol {
     var VAT_percent: Decimal { get set }
+    var VATPercentIsNil: Bool { get }
 }
