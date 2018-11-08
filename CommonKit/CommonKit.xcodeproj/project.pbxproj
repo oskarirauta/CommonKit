@@ -111,6 +111,7 @@
 		6E74545620C7F72700A35FC9 /* NumPadButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E74545520C7F72700A35FC9 /* NumPadButton.swift */; };
 		6E74545820C7F72E00A35FC9 /* DoneBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E74545720C7F72E00A35FC9 /* DoneBar.swift */; };
 		6E74545B20C7F76F00A35FC9 /* NumPad.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E74545A20C7F76F00A35FC9 /* NumPad.xcassets */; };
+		6E759E6E2194678000C5C15D /* CGRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E759E6D2194678000C5C15D /* CGRect.swift */; };
 		6E75BAFE20CA62B700876950 /* AlertActionStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E75BAFD20CA62B700876950 /* AlertActionStyle.swift */; };
 		6E75BB0020CA62E700876950 /* AlertControllerStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E75BAFF20CA62E700876950 /* AlertControllerStyle.swift */; };
 		6E75BB0220CA635000876950 /* AlertActionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E75BB0120CA635000876950 /* AlertActionProtocol.swift */; };
@@ -302,6 +303,7 @@
 		6E74545520C7F72700A35FC9 /* NumPadButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumPadButton.swift; sourceTree = "<group>"; };
 		6E74545720C7F72E00A35FC9 /* DoneBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoneBar.swift; sourceTree = "<group>"; };
 		6E74545A20C7F76F00A35FC9 /* NumPad.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = NumPad.xcassets; sourceTree = "<group>"; };
+		6E759E6D2194678000C5C15D /* CGRect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGRect.swift; sourceTree = "<group>"; };
 		6E75BAFD20CA62B700876950 /* AlertActionStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertActionStyle.swift; sourceTree = "<group>"; };
 		6E75BAFF20CA62E700876950 /* AlertControllerStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertControllerStyle.swift; sourceTree = "<group>"; };
 		6E75BB0120CA635000876950 /* AlertActionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertActionProtocol.swift; sourceTree = "<group>"; };
@@ -844,6 +846,7 @@
 				6E3C4FF820A0E1AF009C3ED7 /* Array.swift */,
 				6E3C500320A0E1B0009C3ED7 /* Bool.swift */,
 				6E14EF6220C5EC63005AAF69 /* CGSize.swift */,
+				6E759E6D2194678000C5C15D /* CGRect.swift */,
 				6E8F13FA20D1B82800151AA0 /* CIColor.swift */,
 				6E8F13FC20D1B89800151AA0 /* CIImage.swift */,
 				6E49983720B2BA11008D7ACD /* Character.swift */,
@@ -1375,6 +1378,7 @@
 				6E00BDA120C854AA00C68DBD /* TaskSchedulerProtocol.swift in Sources */,
 				6E921A1C20B758E5000B1EC9 /* UITextView.swift in Sources */,
 				6E00BD8020C8264900C68DBD /* Decimal.swift in Sources */,
+				6E759E6E2194678000C5C15D /* CGRect.swift in Sources */,
 				6E75BBA320CAC7B700876950 /* UITitleCell.swift in Sources */,
 				6E00BDD020C85C5D00C68DBD /* URLRequest.swift in Sources */,
 				6E7F0B3520CDCFB200E18883 /* AlertView.swift in Sources */,
