@@ -77,7 +77,7 @@ open class DefaultAlertControllerBaseClass: UIViewController, AlertControllerVie
         self.setupNotifications()
         self.providesPresentationContextTransitionStyle = true
         self.definesPresentationContext = true
-        self.modalPresentationStyle = .overCurrentContext
+        self.modalPresentationStyle = .overFullScreen
         self.transitioningDelegate = self
         self.viewRespectsSystemMinimumLayoutMargins = false
     }
@@ -91,7 +91,7 @@ open class DefaultAlertControllerBaseClass: UIViewController, AlertControllerVie
         super.init(nibName: nil, bundle: nil)
         self.providesPresentationContextTransitionStyle = true
         self.definesPresentationContext = true
-        self.modalPresentationStyle = .overCurrentContext
+        self.modalPresentationStyle = .overFullScreen
         self.setupNotifications()
         self.title = title
         self._preferredStyle = preferredStyle
@@ -103,7 +103,7 @@ open class DefaultAlertControllerBaseClass: UIViewController, AlertControllerVie
         super.init(nibName: nil, bundle: nil)
         self.providesPresentationContextTransitionStyle = true
         self.definesPresentationContext = true
-        self.modalPresentationStyle = .overCurrentContext
+        self.modalPresentationStyle = .overFullScreen
         self.setupNotifications()
         self.title = nil
         self._preferredStyle = .alert
@@ -115,7 +115,7 @@ open class DefaultAlertControllerBaseClass: UIViewController, AlertControllerVie
         super.init(nibName: nil, bundle: nil)
         self.providesPresentationContextTransitionStyle = true
         self.definesPresentationContext = true
-        self.modalPresentationStyle = .overCurrentContext
+        self.modalPresentationStyle = .overFullScreen
         self.setupNotifications()
         self.title = nil
         self._preferredStyle = preferredStyle
