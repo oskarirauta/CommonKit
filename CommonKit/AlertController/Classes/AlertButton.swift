@@ -26,6 +26,10 @@ import UIKit
         return _shadowView
         }()
     
+    open override var isHidden: Bool {
+        didSet { self.shadowView.isHidden = self.isHidden }
+    }
+    
     public override init(frame: CGRect) {
         super.init(frame: frame)
     }
