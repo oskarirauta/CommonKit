@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension NSObject : Creatable {}
+extension NSObject: Creatable {}
 
 public protocol Creatable {
     init()
@@ -27,4 +27,24 @@ extension Creatable {
         modifyFunc(retVal)
         return retVal
     }
+}
+
+public protocol MutatingCreatable {
+    init()
+}
+
+extension MutatingCreatable {
+    
+    public static func create(_ creatorFunc: (inout Self) -> Void) -> Self {
+        var retVal = self.init()
+        creatorFunc(&retVal)
+        return retVal
+    }
+    
+    public func properties(_ modifyFunc: (inout Self) -> Void) -> Self {
+        var retVal = self
+        modifyFunc(&retVal)
+        return retVal
+    }
+    
 }

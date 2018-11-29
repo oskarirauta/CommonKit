@@ -50,6 +50,8 @@ extension Array {
     
 }
 
+extension Array: MutatingCreatable { }
+
 extension Optional: IsEmptyProtocol where Wrapped: Collection {
     
     public var isEmpty: Bool {
