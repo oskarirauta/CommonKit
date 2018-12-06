@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'CommonKit'
-  s.version          = '1.7.4'
+  s.version          = '1.7.5'
   s.license          = { :type => 'Free', :text => 'Free' }
   s.summary          = 'A Swift framework with some common extensions and functions'
  
@@ -39,6 +39,7 @@ since extensions for UILabel could not provide this functionality.
   s.swift_version = '4.2' 
   s.ios.deployment_target = '11.4'
   s.source_files = [
+			'CommonKit/LocationService/*.swift',
 			'CommonKit/BarCode/Types/*.swift',
 			'CommonKit/BarCode/Extensions/*.swift',
 			'CommonKit/QRCode/Types/*.swift',
