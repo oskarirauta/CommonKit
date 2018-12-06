@@ -19,6 +19,7 @@ extension LocationService {
         
         internal var timer: Timer? = nil
         open internal(set) var lastLocation: CLPlacemark? = nil
+        open var locationValidationTimeout: TimeInterval? = nil
         
         public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
             
@@ -29,10 +30,15 @@ extension LocationService {
                 
                 self.lastLocation = placemark
                 
+                guard self.locationValidationTimeout == nil || ( self.locationValidationTimeout != nil && self.locationValidationTimeout! > 0.0 ) else {
+                    self.handler?(placemark)
+                    return
+                }
+
                 self.timer?.invalidate()
-                self.timer = Timer.scheduledTimer(withTimeInterval: 1.5, repeats: false, block: {
+                self.timer = Timer.scheduledTimer(withTimeInterval: self.locationValidationTimeout ?? 1.5, repeats: false, block: {
                     timer in
-                    if timer.isValid, let placemark: CLPlacemark = self.lastLocation {
+                    if ( timer.isValid || self.locationValidationTimeout != 0.0 ), let placemark: CLPlacemark = self.lastLocation {
                         self.handler?(placemark)
                     }
                 })

@@ -36,6 +36,11 @@ public struct LocationService {
         get { return self._delegate.lastLocation }
     }
     
+    static public var locationValidationTimeout: TimeInterval? {
+        get { return self._delegate.locationValidationTimeout }
+        set { self._delegate.locationValidationTimeout = newValue }
+    }
+    
     static public internal(set) var _delegate: LocationDelegate = LocationDelegate()
     
     static internal var _locationManager: CLLocationManager? = nil
@@ -67,6 +72,23 @@ public struct LocationService {
         guard authStatus == .authorizedWhenInUse || authStatus == .authorizedAlways else { return }
         let _ = self.locationManager
         self.locationManager?.stopUpdatingLocation()
+    }
+
+    static public func requestWhenInUseAuthorization() {
+        let _ = self.locationManager
+        self.locationManager?.requestWhenInUseAuthorization()
+    }
+
+    static public func requestAlwaysAuthorization() {
+        let _ = self.locationManager
+        self.locationManager?.requestAlwaysAuthorization()
+    }
+
+    static public func requestLocation() {
+        let authStatus: CLAuthorizationStatus = self.authorizationStatus
+        guard authStatus == .authorizedWhenInUse || authStatus == .authorizedAlways else { return }
+        let _ = self.locationManager
+        self.locationManager?.requestLocation()
     }
     
     static public func reset() {
