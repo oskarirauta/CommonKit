@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:CKUserResponseExample/CKUserResponseExample.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:LabelExample/LabelExample/LabelExample.xcodeproj">
    </FileRef>
    <FileRef
