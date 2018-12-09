@@ -31,7 +31,17 @@ public extension CKUserResponse {
                 }
             })
             
+            let timer: Timer = Timer.scheduledTimer(withTimeInterval: 3.0, repeats: false, block: {
+                _timer in
+                if !_timer.isValid, result == nil {
+                    result = .failure(error: NSError(domain: Bundle.main.bundleIdentifier ?? "", code: 500, userInfo: [
+                        NSLocalizedDescriptionKey: "Timed-out. Propably network error or network is not reachable."
+                        ]))
+                }
+            })
+            
             while result == nil { }
+            timer.invalidate()
             return result!
         }
     }
@@ -56,7 +66,17 @@ public extension CKUserResponse {
                 }
             })
             
+            let timer: Timer = Timer.scheduledTimer(withTimeInterval: 3.0, repeats: false, block: {
+                _timer in
+                if !_timer.isValid, result == nil {
+                    result = .failure(error: NSError(domain: Bundle.main.bundleIdentifier ?? "", code: 500, userInfo: [
+                        NSLocalizedDescriptionKey: "Timed-out. Propably network error or network is not reachable."
+                        ]))
+                }
+            })
+            
             while result == nil { }
+            timer.invalidate()
             return result!
         }
     }
