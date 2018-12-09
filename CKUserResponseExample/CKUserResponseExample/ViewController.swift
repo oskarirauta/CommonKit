@@ -75,6 +75,7 @@ class ViewController: UIViewController {
             }
         }
         
+        print("Finished getting userinfo.")
     }
 
 }

@@ -31,18 +31,11 @@ public extension CKUserResponse {
                 }
             })
             
-            let timer: Timer = Timer.scheduledTimer(withTimeInterval: 3.0, repeats: false, block: {
-                _timer in
-                if !_timer.isValid, result == nil {
-                    result = .failure(error: NSError(domain: Bundle.main.bundleIdentifier ?? "", code: 500, userInfo: [
-                        NSLocalizedDescriptionKey: "Timed-out. Propably network error or network is not reachable."
-                        ]))
-                }
-            })
-            
-            while result == nil { }
-            timer.invalidate()
-            return result!
+            let timeout: TimeInterval = Date().timeIntervalSinceReferenceDate + 3.5
+            while result == nil, Date().timeIntervalSinceReferenceDate <= timeout { }
+            return result ?? .failure(error: NSError(domain: Bundle.main.bundleIdentifier ?? "", code: 500, userInfo: [
+                NSLocalizedDescriptionKey: "Timed-out. Propably network error or network is not reachable."
+                ]))
         }
     }
     
@@ -66,18 +59,11 @@ public extension CKUserResponse {
                 }
             })
             
-            let timer: Timer = Timer.scheduledTimer(withTimeInterval: 3.0, repeats: false, block: {
-                _timer in
-                if !_timer.isValid, result == nil {
-                    result = .failure(error: NSError(domain: Bundle.main.bundleIdentifier ?? "", code: 500, userInfo: [
-                        NSLocalizedDescriptionKey: "Timed-out. Propably network error or network is not reachable."
-                        ]))
-                }
-            })
-            
-            while result == nil { }
-            timer.invalidate()
-            return result!
+            let timeout: TimeInterval = Date().timeIntervalSinceReferenceDate + 3.5
+            while result == nil, Date().timeIntervalSinceReferenceDate <= timeout { }
+            return result ?? .failure(error: NSError(domain: Bundle.main.bundleIdentifier ?? "", code: 500, userInfo: [
+                NSLocalizedDescriptionKey: "Timed-out. Propably network error or network is not reachable."
+                ]))
         }
     }
 

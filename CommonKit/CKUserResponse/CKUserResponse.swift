@@ -50,8 +50,11 @@ public enum CKUserResponse {
             else { result = .notSignedIn(accountStatus: accountStatus) }
         }
         
-        while result == nil { }
-        self = result!
+        let timeout: TimeInterval = Date().timeIntervalSinceReferenceDate + 3.5
+        while result == nil, Date().timeIntervalSinceReferenceDate <= timeout { }
+        self = result ?? .failure(error: NSError(domain: Bundle.main.bundleIdentifier ?? "", code: 500, userInfo: [
+            NSLocalizedDescriptionKey: "Timed-out. Propably network error or network is not reachable."
+            ]))
     }
             
 }
