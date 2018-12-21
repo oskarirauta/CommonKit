@@ -205,6 +205,7 @@
 		6ED7A94B20C7AC8700CAC025 /* Locale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED7A94A20C7AC8700CAC025 /* Locale.swift */; };
 		6ED7A94D20C7ACAB00CAC025 /* val2str.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED7A94C20C7ACAB00CAC025 /* val2str.swift */; };
 		6EE70DF8213F420900EE0FEF /* SharedAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE70DF7213F420900EE0FEF /* SharedAppDelegate.swift */; };
+		6EFA2E9121CCED6600AC09B2 /* UIDevice+Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFA2E9021CCED6600AC09B2 /* UIDevice+Reachability.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -408,6 +409,7 @@
 		6ED7A94A20C7AC8700CAC025 /* Locale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Locale.swift; sourceTree = "<group>"; };
 		6ED7A94C20C7ACAB00CAC025 /* val2str.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = val2str.swift; sourceTree = "<group>"; };
 		6EE70DF7213F420900EE0FEF /* SharedAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedAppDelegate.swift; sourceTree = "<group>"; };
+		6EFA2E9021CCED6600AC09B2 /* UIDevice+Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Reachability.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -800,6 +802,7 @@
 		6E3C4FD320A0E119009C3ED7 = {
 			isa = PBXGroup;
 			children = (
+				6EFA2E8E21CCED3A00AC09B2 /* Reachability */,
 				6E8CA2DF21BC741700481E40 /* CKUserResponse */,
 				6E8CA1CA21B92B8100481E40 /* LocationService */,
 				6E8F140520D1B9CC00151AA0 /* BarCode */,
@@ -1228,6 +1231,22 @@
 			path = Types;
 			sourceTree = "<group>";
 		};
+		6EFA2E8E21CCED3A00AC09B2 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				6EFA2E8F21CCED4C00AC09B2 /* Extensions */,
+			);
+			path = Reachability;
+			sourceTree = "<group>";
+		};
+		6EFA2E8F21CCED4C00AC09B2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6EFA2E9021CCED6600AC09B2 /* UIDevice+Reachability.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -1412,6 +1431,7 @@
 				6E29DB3620D3098700BD4830 /* HeaderConstraintProtocol.swift in Sources */,
 				6E00BE4B20C88E5500C68DBD /* IconType.swift in Sources */,
 				6E00BDCE20C85B0800C68DBD /* Data.swift in Sources */,
+				6EFA2E9121CCED6600AC09B2 /* UIDevice+Reachability.swift in Sources */,
 				6E3C500D20A0E1B0009C3ED7 /* NSAttributedString.swift in Sources */,
 				6E3C501620A0E1B0009C3ED7 /* Bool.swift in Sources */,
 				6E00BDFE20C8829E00C68DBD /* CurrencyFieldDelegate.swift in Sources */,

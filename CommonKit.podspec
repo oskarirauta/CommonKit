@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'CommonKit'
-  s.version          = '1.7.10'
+  s.version          = '1.7.11'
   s.license          = { :type => 'Free', :text => 'Free' }
   s.summary          = 'A Swift framework with some common extensions and functions'
  
@@ -10,17 +10,6 @@ collected online. And some are variations. This framework is supposed
 to give you a faster start with your project by combining some useful
 and often used code. Includes few UI classes extending UILabel as well
 since extensions for UILabel could not provide this functionality.
-
- - Merged: LocaleKit support. LocaleKit allows a fixed App wide locale to be defined.
- - Merged: NumPad. NumPad for both iPhone and iPad, also with phone style keypad.
- - Merged: MathKit support. Math extensions are now merged to CommonKit.
- - Merged: DateKit support. Extension to Date and general helpers to handle dates in UTC timezone.
- - Merged: DispatchKit. Extensions to DispatchQueue and a simple but powerful backgrounding Task Manager support.
- - Merged: CurrencyKit. Framework helps presenting money.
- - Merged: AttributedStringWrapper by gaoyu/loopeer. I didn't write this, but it's great work, and I didn't want to add it is a dependency.
- - Merged: FontKit. Framework provides support for icon fonts. First one with FontAwesome 5 support :)
- - Merged: PopOverKit. Framework provides support for displaying popover balloons on iPhone and iPad.
- - Merged: PhotoPicker and PhotoPreview
                        DESC
  
   s.homepage         = 'https://github.com/oskarirauta/CommonKit'
@@ -39,6 +28,7 @@ since extensions for UILabel could not provide this functionality.
   s.swift_version = '4.2' 
   s.ios.deployment_target = '11.4'
   s.source_files = [
+			'CommonKit/Reachability/Extensions/*.swift',
 			'CommonKit/CKUserResponse/*.swift',
 			'CommonKit/LocationService/*.swift',
 			'CommonKit/BarCode/Types/*.swift',
