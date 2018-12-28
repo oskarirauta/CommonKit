@@ -20,7 +20,7 @@ extension UIView {
     }
 
     @discardableResult
-    final func addBorder(edges: UIRectEdge, color: UIColor = UIColor.white, thickness: CGFloat = 1.0) -> [UIView] {
+    public final func addBorder(edges: UIRectEdge, color: UIColor = UIColor.white, thickness: CGFloat = 1.0) -> [UIView] {
         
         var borders: [UIView] = []
 
