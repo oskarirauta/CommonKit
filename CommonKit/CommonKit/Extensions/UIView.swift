@@ -20,7 +20,7 @@ extension UIView {
     }
 
     @discardableResult
-    public final func addBorder(edges: UIRectEdge, color: UIColor = UIColor.white, thickness: CGFloat = 1.0) -> [UIView] {
+    public final func addBorder(edges: UIRectEdge, color: UIColor = UIColor.white, thickness: CGFloat = 1.0, padding1: CGFloat? = nil, padding2: CGFloat? = nil) -> [UIView] {
         
         var borders: [UIView] = []
 
@@ -40,9 +40,9 @@ extension UIView {
                                                metrics: ["thickness": thickness],
                                                views: ["top": top]))
             addConstraints(
-                NSLayoutConstraint.constraints(withVisualFormat: "H:|-(0)-[top]-(0)-|",
+                NSLayoutConstraint.constraints(withVisualFormat: "H:|-(==padding1)-[top]-(==padding2)-|",
                                                options: [],
-                                               metrics: nil,
+                                               metrics: ["padding1": padding1 ?? 0.0, "padding2": -(padding2 ?? 0.0)],
                                                views: ["top": top]))
             borders.append(top)
         }
@@ -56,9 +56,9 @@ extension UIView {
                                                metrics: ["thickness": thickness],
                                                views: ["left": left]))
             addConstraints(
-                NSLayoutConstraint.constraints(withVisualFormat: "V:|-(0)-[left]-(0)-|",
+                NSLayoutConstraint.constraints(withVisualFormat: "V:|-(==padding1)-[left]-(==padding2)-|",
                                                options: [],
-                                               metrics: nil,
+                                               metrics: ["padding1": padding1 ?? 0.0, "padding2": -(padding2 ?? 0.0)],
                                                views: ["left": left]))
             borders.append(left)
         }
@@ -72,9 +72,9 @@ extension UIView {
                                                metrics: ["thickness": thickness],
                                                views: ["right": right]))
             addConstraints(
-                NSLayoutConstraint.constraints(withVisualFormat: "V:|-(0)-[right]-(0)-|",
+                NSLayoutConstraint.constraints(withVisualFormat: "V:|-(==padding1)-[right]-(==padding2)-|",
                                                options: [],
-                                               metrics: nil,
+                                               metrics: ["padding1": padding1 ?? 0.0, "padding2": -(padding2 ?? 0.0)],
                                                views: ["right": right]))
             borders.append(right)
         }
@@ -88,9 +88,9 @@ extension UIView {
                                                metrics: ["thickness": thickness],
                                                views: ["bottom": bottom]))
             addConstraints(
-                NSLayoutConstraint.constraints(withVisualFormat: "H:|-(0)-[bottom]-(0)-|",
+                NSLayoutConstraint.constraints(withVisualFormat: "H:|-(==padding1)-[bottom]-(==padding2)-|",
                                                options: [],
-                                               metrics: nil,
+                                               metrics: ["padding1": padding1 ?? 0.0, "padding2": -(padding2 ?? 0.0)],
                                                views: ["bottom": bottom]))
             borders.append(bottom)
         }

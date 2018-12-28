@@ -79,6 +79,10 @@ public extension UIColor {
         get { return UIColor(red: 210.0/255.0, green: 213.0/255.0, blue: 219.0/255.0, alpha: 1.0) }
     }
     
+    class var tableViewSeparatorColor: UIColor {
+        get { return UIColor(red: 224.0/255.0, green: 224.0/255.0, blue: 224.0/255.0, alpha: 1.0) }
+    }
+    
     public var image: UIImage? {
         get {
             UIGraphicsBeginImageContext(CGSize(width: 1.0, height: 1.0))
