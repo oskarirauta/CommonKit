@@ -196,6 +196,7 @@
 		6E95460A21335D66001C7204 /* Date_Decimal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E95460921335D66001C7204 /* Date_Decimal.swift */; };
 		6E9EC66A20F5C7430023515C /* TaskClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9EC66920F5C7430023515C /* TaskClass.swift */; };
 		6E9EC66E20F60BD40023515C /* CustomTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9EC66D20F60BD40023515C /* CustomTask.swift */; };
+		6EA99EB221D70A6A00DF63C5 /* NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA99EB121D70A6A00DF63C5 /* NSObject.swift */; };
 		6EC2140C212EB15C00501A1E /* ConditionalInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC2140B212EB15C00501A1E /* ConditionalInit.swift */; };
 		6ECC5D8B21423F1F00908CC8 /* MutatorCompatible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ECC5D8A21423F1F00908CC8 /* MutatorCompatible.swift */; };
 		6ECC5D8D2145B82E00908CC8 /* CartMutatorSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ECC5D8C2145B82E00908CC8 /* CartMutatorSummary.swift */; };
@@ -400,6 +401,7 @@
 		6E95460921335D66001C7204 /* Date_Decimal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date_Decimal.swift; sourceTree = "<group>"; };
 		6E9EC66920F5C7430023515C /* TaskClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskClass.swift; sourceTree = "<group>"; };
 		6E9EC66D20F60BD40023515C /* CustomTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTask.swift; sourceTree = "<group>"; };
+		6EA99EB121D70A6A00DF63C5 /* NSObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObject.swift; sourceTree = "<group>"; };
 		6EC2140B212EB15C00501A1E /* ConditionalInit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConditionalInit.swift; sourceTree = "<group>"; };
 		6ECC5D8A21423F1F00908CC8 /* MutatorCompatible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MutatorCompatible.swift; sourceTree = "<group>"; };
 		6ECC5D8C2145B82E00908CC8 /* CartMutatorSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartMutatorSummary.swift; sourceTree = "<group>"; };
@@ -889,6 +891,7 @@
 				6E3C4FFA20A0E1AF009C3ED7 /* NSAttributedString.swift */,
 				6E3C500020A0E1B0009C3ED7 /* NSLayoutConstraint.swift */,
 				6E3C4FFB20A0E1AF009C3ED7 /* NSMutableArray.swift */,
+				6EA99EB121D70A6A00DF63C5 /* NSObject.swift */,
 				6E3C4FFC20A0E1AF009C3ED7 /* String.swift */,
 				6E3C4FF520A0E1AF009C3ED7 /* UIApplicationDelegate.swift */,
 				6E3C4FF320A0E1AE009C3ED7 /* UIBarButtonItem.swift */,
@@ -1464,6 +1467,7 @@
 				6E7F0B2120CDCC2300E18883 /* PhotoCell.swift in Sources */,
 				6E74545020C7F6C600A35FC9 /* NumPadType.swift in Sources */,
 				6E8CA2E721BC743D00481E40 /* CKUserResponse+values.swift in Sources */,
+				6EA99EB221D70A6A00DF63C5 /* NSObject.swift in Sources */,
 				6E74545620C7F72700A35FC9 /* NumPadButton.swift in Sources */,
 				6E00BDA920C854C600C68DBD /* DispatchItem.swift in Sources */,
 				6E7F0B3320CDCD6800E18883 /* PhotoPicker.swift in Sources */,
