@@ -19,5 +19,17 @@ public extension UIApplicationDelegate {
     
     public var appBuildVersion: String {
         get { return Bundle.main.object(forInfoDictionaryKey: kCFBundleVersionKey as String) as! String }}
-        
+    
+    public var appBuildDate: Date? {
+        get {
+            guard
+                let infoPath: String = Bundle.main.path(forResource: "Info.plist", ofType: nil),
+                FileManager.default.fileExists(atPath: infoPath),
+                let infoAttr: [FileAttributeKey: Any] = try? FileManager.default.attributesOfItem(atPath: infoPath),
+                let infoDate: Date = infoAttr[.creationDate] as? Date
+                else { return nil }
+            return infoDate
+        }
+    }
+
 }

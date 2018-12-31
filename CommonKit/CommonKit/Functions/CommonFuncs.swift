@@ -30,3 +30,7 @@ public var appVersion: String {
 public var appBuildVersion: String {
     get { return UIApplication.shared.delegate!.appBuildVersion }
 }
+
+public var appBuildDate: Date? {
+    get { return UIApplication.shared.delegate!.appBuildDate }
+}
