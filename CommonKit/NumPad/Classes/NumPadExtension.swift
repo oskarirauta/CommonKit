@@ -123,7 +123,6 @@ extension NumPad {
         if self.type != .phone, self.inputViewType == .textField, self.delegate != nil, self.delegate?.clearButtonMode == .never, self.delegate?.valueForNumpad == 0 {
             self.button[11].isEnabled = false
         } else {
-            print("Value is: " + ( self.value ?? "nil"))
             self.button[11].isEnabled = self.textInput?.hasText ?? false
         }
         
