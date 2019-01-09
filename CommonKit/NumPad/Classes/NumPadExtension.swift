@@ -120,7 +120,12 @@ extension NumPad {
             (self.button[11] as! NumPadBackspaceButton).timer = nil
         }
         
-        self.button[11].isEnabled = self.textInput?.hasText ?? false
+        if self.type != .phone, self.inputViewType == .textField, self.delegate != nil, self.delegate?.clearButtonMode == .never, self.delegate?.valueForNumpad == 0 {
+            self.button[11].isEnabled = false
+        } else {
+            print("Value is: " + ( self.value ?? "nil"))
+            self.button[11].isEnabled = self.textInput?.hasText ?? false
+        }
         
         if ( self.type == .decimal ) {
             self.button[10].isEnabled = (self.value?.contains(self.decimalChar) ?? false) ? false : true

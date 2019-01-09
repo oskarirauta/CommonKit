@@ -13,6 +13,7 @@ public protocol CurrencyFieldDelegate {
     var value: Money? { get set }
     var allowSignChange: Bool { get set }
     var locale: Locale { get set }
+    var clearButtonMode: UITextField.ViewMode { get set }
     
     func pressNumber(number: Int)
     func pressBackspace()

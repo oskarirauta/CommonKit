@@ -103,7 +103,7 @@ extension CurrencyPad {
             (self.button[11] as! NumPad.NumPadBackspaceButton).timer = nil
         }
         
-        self.button[11].isEnabled = abs( self.currencyField?.value?.rawValue ?? 0 ) != 0
+        self.button[11].isEnabled = self.currencyField?.clearButtonMode != .never && self.currencyField?.value?.rawValue == 0 ? true : abs( self.currencyField?.value?.rawValue ?? 0 ) != 0
         self.button[10].isEnabled = self.allowSignChange ? ( abs( self.currencyField?.value?.rawValue ?? 0 ) != 0 ) : false
     }
         

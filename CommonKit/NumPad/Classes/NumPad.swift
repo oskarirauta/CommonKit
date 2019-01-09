@@ -15,6 +15,8 @@ public final class NumPad: UIInputView, UIInputViewAudioFeedback {
     private(set) var inputViewType: InputViewType? = nil
     private(set) weak var textInput: UITextInput? = nil
 
+    public var delegate: NumPadDelegate? = nil
+    
     public var enableInputClicksWhenVisible: Bool = true
  
     public var cursorOffset: Int {
@@ -55,7 +57,7 @@ public final class NumPad: UIInputView, UIInputViewAudioFeedback {
     }()
     
     internal var button: [UIButton] = []
-
+    
     public override var intrinsicContentSize: CGSize {
         get { return CGSize(width: UIView.noIntrinsicMetric, height: UIView.noIntrinsicMetric) }
     }

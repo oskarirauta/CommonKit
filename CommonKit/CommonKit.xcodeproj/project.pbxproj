@@ -99,6 +99,7 @@
 		6E3FB91E20C9BDE20030E838 /* PopOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3FB91D20C9BDE20030E838 /* PopOver.swift */; };
 		6E3FB92220C9BDF80030E838 /* PopOverProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3FB92120C9BDF70030E838 /* PopOverProtocol.swift */; };
 		6E3FB94F20C9D06C0030E838 /* AssetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3FB94E20C9D06C0030E838 /* AssetManager.swift */; };
+		6E3FE43021E695E900E60A80 /* NumPadDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3FE42F21E695E900E60A80 /* NumPadDelegate.swift */; };
 		6E460ADB2137302F003F8248 /* UILabelExtended.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E460ADA2137302F003F8248 /* UILabelExtended.swift */; };
 		6E49983820B2BA11008D7ACD /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E49983720B2BA11008D7ACD /* Character.swift */; };
 		6E7188C92177C33300CB81AA /* Font Awesome 5 Brands-Regular-400.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6E7188C22177C0A500CB81AA /* Font Awesome 5 Brands-Regular-400.otf */; };
@@ -304,6 +305,7 @@
 		6E3FB91D20C9BDE20030E838 /* PopOver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopOver.swift; sourceTree = "<group>"; };
 		6E3FB92120C9BDF70030E838 /* PopOverProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopOverProtocol.swift; sourceTree = "<group>"; };
 		6E3FB94E20C9D06C0030E838 /* AssetManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetManager.swift; sourceTree = "<group>"; };
+		6E3FE42F21E695E900E60A80 /* NumPadDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumPadDelegate.swift; sourceTree = "<group>"; };
 		6E460ADA2137302F003F8248 /* UILabelExtended.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExtended.swift; sourceTree = "<group>"; };
 		6E49983720B2BA11008D7ACD /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		6E7188C02177C0A400CB81AA /* Font Awesome 5 Free-Solid-900.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 5 Free-Solid-900.otf"; sourceTree = "<group>"; };
@@ -429,6 +431,7 @@
 		6E00BD6C20C814EE00C68DBD /* NumPad */ = {
 			isa = PBXGroup;
 			children = (
+				6E3FE42E21E695C200E60A80 /* Protocols */,
 				6E00BD6D20C8150D00C68DBD /* Types */,
 				6E00BD6F20C8151C00C68DBD /* Classes */,
 				6E00BD7120C8156900C68DBD /* Resources */,
@@ -940,6 +943,14 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
+		6E3FE42E21E695C200E60A80 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				6E3FE42F21E695E900E60A80 /* NumPadDelegate.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		6E75BAFA20CA624B00876950 /* AlertController */ = {
 			isa = PBXGroup;
 			children = (
@@ -1415,6 +1426,7 @@
 				6E49983820B2BA11008D7ACD /* Character.swift in Sources */,
 				6E3FB91E20C9BDE20030E838 /* PopOver.swift in Sources */,
 				6E3C4FF020A0E1A0009C3ED7 /* ClosureSleeve.swift in Sources */,
+				6E3FE43021E695E900E60A80 /* NumPadDelegate.swift in Sources */,
 				6E75BB0E20CA692000876950 /* AlertControllerAnimation.swift in Sources */,
 				6E75BB1520CA69E200876950 /* AlertController.swift in Sources */,
 				6E75BB6D20CABC2B00876950 /* TableViewSettingsProtocol.swift in Sources */,

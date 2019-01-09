@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'CommonKit'
-  s.version          = '1.7.18'
+  s.version          = '1.7.19'
   s.license          = { :type => 'Free', :text => 'Free' }
   s.summary          = 'A Swift framework with some common extensions and functions'
  
@@ -75,6 +75,7 @@ since extensions for UILabel could not provide this functionality.
 			'CommonKit/AppLocale/Types/*.swift',
 			'CommonKit/AppLocale/Extensions/*.swift',
 			'CommonKit/AppLocale/Functions/*.swift',
+			'CommonKit/NumPad/Protocols/*.swift',
 			'CommonKit/NumPad/Types/*.swift',
 			'CommonKit/NumPad/Classes/*.swift',
 			'CommonKit/CommonKit/Protocols/*.swift',
