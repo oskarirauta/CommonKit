@@ -10,6 +10,12 @@ import Foundation
 
 extension UIDevice {
     
+    public enum DebugModeEnum {
+        case notDetermined
+        case production
+        case development
+    }
+    
     public static var machine: String? {
         get {
             var systemInfo = utsname()
@@ -32,13 +38,31 @@ extension UIDevice {
             #endif
         }
     }
-    
+
+    public static var inDebugMode: UIDevice.DebugModeEnum {
+        get {
+            guard
+                !UIDevice.isSimulator,
+                let filePath: String = Bundle.main.path(forResource: "embedded", ofType: "mobileprivision"),
+                FileManager.default.fileExists(atPath: filePath),
+                let url: URL = URL(fileURLWithPath: filePath) as URL?,
+                let data: Data = try? Data(contentsOf: url),
+                let content: String = String(data: data, encoding: .ascii)
+                else { return .notDetermined }
+            return content.contains("<key>aps-environment</key>\n\t\t<string>development</string>") ? .development : .production
+        }
+    }
+
     public var machine: String? {
         get { return UIDevice.machine }
     }
 
     public var isSimulator: Bool {
         get { return UIDevice.isSimulator }
+    }
+
+    public var inDebugMode: UIDevice.DebugModeEnum {
+        get { return UIDevice.inDebugMode }
     }
     
 }
