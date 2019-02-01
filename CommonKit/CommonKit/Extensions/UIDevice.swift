@@ -10,7 +10,7 @@ import Foundation
 
 extension UIDevice {
     
-    public var machine: String? {
+    public static var machine: String? {
         get {
             var systemInfo = utsname()
             uname(&systemInfo)
@@ -22,4 +22,23 @@ extension UIDevice {
             return modelCode == nil ? nil : String(validatingUTF8: modelCode!)
         }
     }
+
+    public static var isSimulator: Bool {
+        get {
+            #if targetEnvironment(simulator)
+            return true
+            #else
+            return false
+            #endif
+        }
+    }
+    
+    public var machine: String? {
+        get { return UIDevice.machine }
+    }
+
+    public var isSimulator: Bool {
+        get { return UIDevice.isSimulator }
+    }
+    
 }
