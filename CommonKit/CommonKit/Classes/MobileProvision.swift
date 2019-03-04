@@ -43,9 +43,9 @@ public struct MobileProvision: Decodable {
     
     // Sublevel: decode entitlements informations
     public struct Entitlements: Decodable {
-        let keychainAccessGroups: [String]
-        let getTaskAllow: Bool
-        let apsEnvironment: Environment
+        public let keychainAccessGroups: [String]
+        public let getTaskAllow: Bool
+        public let apsEnvironment: Environment
         
         private enum CodingKeys: String, CodingKey {
             case keychainAccessGroups = "keychain-access-groups"
