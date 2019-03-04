@@ -22,7 +22,7 @@ import Foundation
  
  */
 
-struct MobileProvision: Decodable {
+public struct MobileProvision: Decodable {
     var name: String
     var appIDName: String
     var platform: [String]
@@ -42,7 +42,7 @@ struct MobileProvision: Decodable {
     }
     
     // Sublevel: decode entitlements informations
-    struct Entitlements: Decodable {
+    public struct Entitlements: Decodable {
         let keychainAccessGroups: [String]
         let getTaskAllow: Bool
         let apsEnvironment: Environment
@@ -53,17 +53,17 @@ struct MobileProvision: Decodable {
             case apsEnvironment = "aps-environment"
         }
         
-        enum Environment: String, Decodable {
+        public enum Environment: String, Decodable {
             case development, production, disabled
         }
         
-        init(keychainAccessGroups: Array<String>, getTaskAllow: Bool, apsEnvironment: Environment) {
+        public init(keychainAccessGroups: Array<String>, getTaskAllow: Bool, apsEnvironment: Environment) {
             self.keychainAccessGroups = keychainAccessGroups
             self.getTaskAllow = getTaskAllow
             self.apsEnvironment = apsEnvironment
         }
         
-        init(from decoder: Decoder) throws {
+        public init(from decoder: Decoder) throws {
             let container = try decoder.container(keyedBy: CodingKeys.self)
             let keychainAccessGroups: [String] = (try? container.decode([String].self, forKey: .keychainAccessGroups)) ?? []
             let getTaskAllow: Bool = (try? container.decode(Bool.self, forKey: .getTaskAllow)) ?? false
@@ -75,16 +75,16 @@ struct MobileProvision: Decodable {
 }
 
 // Factory methods
-extension MobileProvision {
+public extension MobileProvision {
     // Read mobileprovision file embedded in app.
-    static func read() -> MobileProvision? {
+    public static func read() -> MobileProvision? {
         let profilePath: String? = Bundle.main.path(forResource: "embedded", ofType: "mobileprovision")
         guard let path = profilePath else { return nil }
         return read(from: path)
     }
     
     // Read a .mobileprovision file on disk
-    static func read(from profilePath: String) -> MobileProvision? {
+    public static func read(from profilePath: String) -> MobileProvision? {
         guard let plistDataString = try? NSString.init(contentsOfFile: profilePath,
                                                        encoding: String.Encoding.isoLatin1.rawValue) else { return nil }
         
