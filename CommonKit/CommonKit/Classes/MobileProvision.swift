@@ -23,13 +23,13 @@ import Foundation
  */
 
 public struct MobileProvision: Decodable {
-    var name: String
-    var appIDName: String
-    var platform: [String]
-    var isXcodeManaged: Bool? = false
-    var creationDate: Date
-    var expirationDate: Date
-    var entitlements: Entitlements
+    public var name: String
+    public var appIDName: String
+    public var platform: [String]
+    public var isXcodeManaged: Bool? = false
+    public var creationDate: Date
+    public var expirationDate: Date
+    public var entitlements: Entitlements
     
     private enum CodingKeys : String, CodingKey {
         case name = "Name"
