@@ -43,7 +43,7 @@ extension UIDevice {
         get {
             guard
                 !UIDevice.isSimulator,
-                let filePath: String = Bundle.main.path(forResource: "embedded", ofType: "mobileprivision"),
+                let filePath: String = Bundle.main.path(forResource: "embedded", ofType: "mobileprovision"),
                 FileManager.default.fileExists(atPath: filePath),
                 let url: URL = URL(fileURLWithPath: filePath) as URL?,
                 let data: Data = try? Data(contentsOf: url),
