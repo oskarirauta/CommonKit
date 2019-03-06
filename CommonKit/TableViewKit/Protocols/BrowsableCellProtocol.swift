@@ -21,7 +21,7 @@ public protocol BrowsableCellProtocol: BrowsableCellProtocolBase {
 
 extension UITableViewCell: BrowsableCellProtocol {
     
-    @objc public var browsingDisabled: Bool {
+    @objc open var browsingDisabled: Bool {
         get { return self._browsingDisabled }
         set { self._browsingDisabled = newValue }
     }
