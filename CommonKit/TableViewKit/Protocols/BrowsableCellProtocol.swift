@@ -16,9 +16,15 @@ import Foundation
 public protocol BrowsableCellProtocol: BrowsableCellProtocolBase {
     var prevIndex: IndexPath? { get set }
     var nextIndex: IndexPath? { get set }
+    var browsingDisabled: Bool { get set }
 }
 
 extension UITableViewCell: BrowsableCellProtocol {
+    
+    @objc public var browsingDisabled: Bool {
+        get { return self._browsingDisabled }
+        set { self._browsingDisabled = newValue }
+    }
     
     @objc open var prevIndex: IndexPath? {
         get {
@@ -51,7 +57,7 @@ extension UITableViewCell: BrowsableCellProtocol {
             self.nextSection = newValue!.section
         }
     }
-
+    
     open func prevField(_ sender: Any) {
         guard self.prevIndex != nil else { return }
         self.tableView?.endEditing(true)

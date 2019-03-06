@@ -21,6 +21,7 @@ extension UITableViewCell {
         static var prevRow: Int? = nil
         static var nextSection: Int? = nil
         static var nextRow: Int? = nil
+        static var browsingDisabled: Bool = false
     }
     
     open var tableView: UITableView? {
@@ -68,5 +69,8 @@ extension UITableViewCell {
         set { objc_setAssociatedObject(self, &TV_AssociatedKeys.nextRow, newValue as Int?, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC) }
     }
 
-    
+    internal var _browsingDisabled: Bool {
+        get { return objc_getAssociatedObject(self, &TV_AssociatedKeys.browsingDisabled) as? Bool ?? false }
+        set { objc_setAssociatedObject(self, &TV_AssociatedKeys.browsingDisabled, newValue as Bool, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC) }
+    }
 }
