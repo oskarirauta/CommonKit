@@ -263,7 +263,7 @@ extension PhotoPickerView {
             
             self.cameraController?.start()
             if (( self.currentCameraPosition != nil ) && ( self.cameraController?.currentCameraPosition != self.currentCameraPosition )) {
-                try? self.cameraController?.switchCameras()
+                ((try? self.cameraController?.switchCameras()) as ()??)
             }
             
             self.buttonFlash.isHidden = self.cameraController?.availableFlashModes.count ?? 0 < 2
@@ -365,7 +365,7 @@ extension PhotoPickerView {
                 self.cameraController?.availableFlashModes.count ?? 0 > 1
                 else { return }
             
-            try? self.cameraController?.toggleFlashMode()
+            ((try? self.cameraController?.toggleFlashMode()) as ()??)
             
             self.buttonFlash.setImage(self.flashImg(for: self.cameraController?.flashMode ?? .off).withRenderingMode(.alwaysTemplate), for: UIControl.State())
             self.buttonFlash.setImage(self.flashImg(for: self.cameraController?.flashMode ?? .off).withRenderingMode(.alwaysTemplate), for: .highlighted)
@@ -378,7 +378,7 @@ extension PhotoPickerView {
                 self.cameraController?.multipleCameras ?? false
                 else { return }
             
-            try? self.cameraController?.switchCameras()
+            ((try? self.cameraController?.switchCameras()) as ()??)
         }
         
     }

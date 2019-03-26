@@ -11,16 +11,16 @@ import UIKit
 
 public extension UIApplicationDelegate {
     
-    public var appName: String {
+    var appName: String {
         get { return Bundle.main.object(forInfoDictionaryKey: kCFBundleNameKey as String) as! String }}
     
-    public var appVersion: String {
+    var appVersion: String {
         get { return Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String }}
     
-    public var appBuildVersion: String {
+    var appBuildVersion: String {
         get { return Bundle.main.object(forInfoDictionaryKey: kCFBundleVersionKey as String) as! String }}
     
-    public var appBuildDate: Date? {
+    var appBuildDate: Date? {
         get {
             guard
                 let infoPath: String = Bundle.main.path(forResource: "Info.plist", ofType: nil),

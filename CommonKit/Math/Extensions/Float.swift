@@ -23,13 +23,13 @@ public extension Float {
         }
     }
 
-    public var fractionInt: Int { get {
+    var fractionInt: Int { get {
         guard self != 0 else { return 0 }
         return self == 0 ? 0 : ( self < 0 ? -Int(String(abs(self.fractionPart)).substring(from: 2))! : Int(String(abs(self.fractionPart)).substring(from: 2))!)
         }}
 
     static func random(lower: Float = 0, _ upper: Float = 100) -> Float {
-        return (Float(arc4random()) / 0xFFFFFFFF) * (upper - lower) + lower
+        return (Float(arc4random()) / 4294967296) * (upper - lower) + lower
     }
 
     func toStr(_ forcedDecimal: Bool = false) -> String {
@@ -41,7 +41,7 @@ public extension Float {
         return (( forcedDecimal ) && ( floor(self) == self ) && ( self != 0 )) ? ( nf.string(from: NSNumber(value: self))! + nf.decimalSeparator! + "0" ) : nf.string(from: NSNumber(value: self))!
     }
     
-    public func rounded(to scale: Int = 0, mode: NSDecimalNumber.RoundingMode = .plain) -> Float {
+    func rounded(to scale: Int = 0, mode: NSDecimalNumber.RoundingMode = .plain) -> Float {
         return Float(Decimal(Double(self)).rounded(to: scale, mode: mode).doubleValue)
     }
 

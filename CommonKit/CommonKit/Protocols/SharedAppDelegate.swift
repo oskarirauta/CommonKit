@@ -15,7 +15,7 @@ public protocol SharedAppDelegate {
 
 public extension SharedAppDelegate where Self: UIResponder, Self: UIApplicationDelegate {
     
-    public static var shared: selfType {
+    static var shared: selfType {
         get {
             return Thread.isMainThread ? ( UIApplication.shared.delegate as! selfType ) : { DispatchQueue.main.sync { return UIApplication.shared.delegate as! selfType }
                 }()

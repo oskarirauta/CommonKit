@@ -10,7 +10,7 @@ import Foundation
 
 public extension CKUserResponse {
     
-    public enum PermissionStatus {
+    enum PermissionStatus {
         
         case notDecided
         case failure(error: Error?)

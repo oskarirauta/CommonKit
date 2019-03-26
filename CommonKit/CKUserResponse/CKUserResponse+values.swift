@@ -11,7 +11,7 @@ import CloudKit
 
 public extension CKUserResponse {
     
-    public var record: CKRecord.ID? {
+    var record: CKRecord.ID? {
         get {
             switch self {
             case let .success(record: _record): return _record
@@ -20,7 +20,7 @@ public extension CKUserResponse {
         }
     }
     
-    public var accountStatus: CKAccountStatus? {
+    var accountStatus: CKAccountStatus? {
         get {
             switch self {
             case let .notSignedIn(accountStatus: _accountStatus): return _accountStatus
@@ -29,7 +29,7 @@ public extension CKUserResponse {
         }
     }
     
-    public var error: Error? {
+    var error: Error? {
         get {
             switch self {
             case let .failure(error: _error): return _error

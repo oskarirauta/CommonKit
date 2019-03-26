@@ -12,15 +12,15 @@ public typealias dispatch_cancelable_closure = (Bool) -> (Void)
 
 public extension NSObject {
     
-    public final var className:String { return "\(type(of: self))" }
+    final var className:String { return "\(type(of: self))" }
     
-    public final func cancelDelay(closure: inout dispatch_cancelable_closure?) {
+    final func cancelDelay(closure: inout dispatch_cancelable_closure?) {
         closure?(true)
         closure = nil
     }
     
     @discardableResult
-    public final func delay( time:TimeInterval, closure: @escaping () -> (Void)) -> dispatch_cancelable_closure? {
+    final func delay( time:TimeInterval, closure: @escaping () -> (Void)) -> dispatch_cancelable_closure? {
         
         func dispatch_later(closure: @escaping () -> (Void)) {
             DispatchQueue.main.asyncAfter(deadline: .now() + time, execute: closure)
@@ -47,7 +47,7 @@ public extension NSObject {
         return cancelableClosure
     }
     
-    public final func waitWhile(condition: @escaping () -> Bool?, completion: @escaping () -> () ) {
+    final func waitWhile(condition: @escaping () -> Bool?, completion: @escaping () -> () ) {
         guard let conditionMet:Bool = condition() else { return }
         
         guard !conditionMet else {

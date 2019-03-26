@@ -11,7 +11,7 @@ import CoreLocation
 
 public extension CLPlacemark {
     
-    public func roughlyEqual(with anotherPlace: CLPlacemark?) -> Bool {
+    func roughlyEqual(with anotherPlace: CLPlacemark?) -> Bool {
         guard
             let _place: CLPlacemark = anotherPlace,
             _place.name == self.name,

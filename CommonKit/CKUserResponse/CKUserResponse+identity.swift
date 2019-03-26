@@ -11,7 +11,7 @@ import CloudKit
 
 public extension CKUserResponse {
     
-    public enum IdentityStatus {
+    enum IdentityStatus {
         
         case success(identity: CKUserIdentity)
         case failure(error: Error?)
@@ -50,7 +50,7 @@ public extension CKUserResponse {
         
     }
 
-    public var userInfo: IdentityStatus? {
+    var userInfo: IdentityStatus? {
         get {
             guard
                 self.type == .success,

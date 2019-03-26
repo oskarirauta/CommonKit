@@ -11,7 +11,7 @@ import CloudKit
 
 public extension CKUserResponse {
     
-    public var userDiscoverabilityPermissionStatus: CKUserResponse.PermissionStatus? {
+    var userDiscoverabilityPermissionStatus: CKUserResponse.PermissionStatus? {
         get {
             guard self.type == .success else { return nil }
             var result: CKUserResponse.PermissionStatus? = nil
@@ -39,7 +39,7 @@ public extension CKUserResponse {
         }
     }
     
-    public var requestUserDiscoverabilityPermission: CKUserResponse.PermissionStatus? {
+    var requestUserDiscoverabilityPermission: CKUserResponse.PermissionStatus? {
         get {
             guard self.type == .success else { return nil }
             var result: CKUserResponse.PermissionStatus? = nil

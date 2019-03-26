@@ -20,7 +20,7 @@ public extension CIColor {
     ///     `aabbccff`
     ///
     /// - parameter rgba:    The hex string to parse in rgba format
-    public convenience init(rgba: String) {
+    convenience init(rgba: String) {
         var r: CGFloat = 0.0
         var g: CGFloat = 0.0
         var b: CGFloat = 0.0

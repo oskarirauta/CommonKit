@@ -118,23 +118,23 @@ public struct CartMutator: ExpressibleByFloatLiteral, ExpressibleByIntegerLitera
 
 public extension Array where Element == CartMutator {
 
-    static public func + (lhs: [CartMutator], rhs: [CartMutator]) -> [CartMutator] {
+    static func + (lhs: [CartMutator], rhs: [CartMutator]) -> [CartMutator] {
         var _mutatorArray: [CartMutator] = lhs
         _mutatorArray.append(from: rhs)
         return _mutatorArray
     }
     
-    static public func += (lhs: inout [CartMutator], rhs: [CartMutator]) {
+    static func += (lhs: inout [CartMutator], rhs: [CartMutator]) {
         lhs.append(from: rhs)
     }
     
-    static public func + (lhs: [CartMutator], rhs: CartMutator) -> [CartMutator] {
+    static func + (lhs: [CartMutator], rhs: CartMutator) -> [CartMutator] {
         var _mutatorArray: [CartMutator] = lhs
         _mutatorArray.append(rhs)
         return _mutatorArray
     }
     
-    static public func += (lhs: inout [CartMutator], rhs: CartMutator) {
+    static func += (lhs: inout [CartMutator], rhs: CartMutator) {
         lhs.append(rhs)
     }
 

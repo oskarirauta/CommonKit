@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'CommonKit'
-  s.version          = '1.7.31'
+  s.version          = '1.8.0'
   s.license          = { :type => 'Free', :text => 'Free' }
   s.summary          = 'A Swift framework with some common extensions and functions'
  
@@ -25,8 +25,8 @@ since extensions for UILabel could not provide this functionality.
 			'https://raw.githubusercontent.com/oskarirauta/CommonKit/master/Screenshots/PhotoPicker.png'
 		]
 
-  s.swift_version = '4.2' 
-  s.ios.deployment_target = '11.4'
+  s.swift_version = '5.0'
+  s.ios.deployment_target = '12.2'
   s.source_files = [
 			'CommonKit/Reachability/Extensions/*.swift',
 			'CommonKit/CKUserResponse/*.swift',

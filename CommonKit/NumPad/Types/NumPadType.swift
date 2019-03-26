@@ -10,13 +10,13 @@ import Foundation
 
 public extension NumPad {
 
-    public enum KeyboardType: Int {
+    enum KeyboardType: Int {
         case number = 0
         case decimal = 1
         case phone = 2
     }
     
-    public enum InputViewType: Int {
+    enum InputViewType: Int {
         case textField = 0
         case textView = 1
     }

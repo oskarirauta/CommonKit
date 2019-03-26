@@ -83,7 +83,7 @@ public extension UIColor {
         get { return UIColor(red: 224.0/255.0, green: 224.0/255.0, blue: 224.0/255.0, alpha: 1.0) }
     }
     
-    public var image: UIImage? {
+    var image: UIImage? {
         get {
             UIGraphicsBeginImageContext(CGSize(width: 1.0, height: 1.0))
             guard let contextRef: CGContext = UIGraphicsGetCurrentContext() else { return nil }
@@ -98,7 +98,7 @@ public extension UIColor {
         }
     }
     
-    public convenience init?(red: Int, green: Int, blue: Int, transparency: CGFloat = 1) {
+    convenience init?(red: Int, green: Int, blue: Int, transparency: CGFloat = 1) {
         guard red >= 0 && red <= 255 else { return nil }
         guard green >= 0 && green <= 255 else { return nil }
         guard blue >= 0 && blue <= 255 else { return nil }
@@ -115,7 +115,7 @@ public extension UIColor {
     /// - Parameters:
     ///   - hex: hex Int (example: 0xDECEB5).
     ///   - transparency: optional transparency value (default is 1).
-    public convenience init?(hex: Int, transparency: CGFloat = 1) {
+    convenience init?(hex: Int, transparency: CGFloat = 1) {
         var trans = transparency
         if trans < 0 { trans = 0 }
         if trans > 1 { trans = 1 }
@@ -126,7 +126,7 @@ public extension UIColor {
         self.init(red: red, green: green, blue: blue, transparency: trans)
     }
     
-    public convenience init?(hexString: String, transparency: CGFloat = 1) {
+    convenience init?(hexString: String, transparency: CGFloat = 1) {
         var string = ""
         if hexString.lowercased().hasPrefix("0x") {
             string =  hexString.replacingOccurrences(of: "0x", with: "")
@@ -150,7 +150,7 @@ public extension UIColor {
         self.init(red: red, green: green, blue: blue, transparency: transparency < 0 ? 0 : ( transparency > 1 ? 1 : transparency))
     }
     
-    public func withAddedRed(_ addedRed: CGFloat) -> UIColor {
+    func withAddedRed(_ addedRed: CGFloat) -> UIColor {
         var red: CGFloat = 0.0
         var green: CGFloat = 0.0
         var blue: CGFloat = 0.0
@@ -159,7 +159,7 @@ public extension UIColor {
         return UIColor(red: min( red + addedRed, 1.0 ), green: green, blue: blue, alpha: alpha)
     }
 
-    public func withAddedGreen(_ addedGreen: CGFloat) -> UIColor {
+    func withAddedGreen(_ addedGreen: CGFloat) -> UIColor {
         var red: CGFloat = 0.0
         var green: CGFloat = 0.0
         var blue: CGFloat = 0.0
@@ -168,7 +168,7 @@ public extension UIColor {
         return UIColor(red: red, green: min( green + addedGreen, 1.0 ), blue: blue, alpha: alpha)
     }
 
-    public func withAddedBlue(_ addedBlue: CGFloat) -> UIColor {
+    func withAddedBlue(_ addedBlue: CGFloat) -> UIColor {
         var red: CGFloat = 0.0
         var green: CGFloat = 0.0
         var blue: CGFloat = 0.0
@@ -177,7 +177,7 @@ public extension UIColor {
         return UIColor(red: red, green: green, blue: min( blue + addedBlue, 1.0 ), alpha: alpha)
     }
     
-    public func lighter(by percentage: CGFloat) -> UIColor {
+    func lighter(by percentage: CGFloat) -> UIColor {
         var red: CGFloat = 0.0, green: CGFloat = 0.0, blue: CGFloat = 0.0, alpha: CGFloat = 0.0
         self.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
         return UIColor(red: min(red + percentage, 1.0),
@@ -186,7 +186,7 @@ public extension UIColor {
                      alpha: alpha)
     }
 
-    public func darker(by percentage: CGFloat) -> UIColor {
+    func darker(by percentage: CGFloat) -> UIColor {
         var red: CGFloat = 0.0, green: CGFloat = 0.0, blue: CGFloat = 0.0, alpha: CGFloat = 0.0
         self.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
         return UIColor(red: max(red - percentage, 0.0),

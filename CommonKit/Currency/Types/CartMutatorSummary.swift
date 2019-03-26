@@ -35,11 +35,11 @@ public struct CartMutatorSummary: Codable {
 
 public extension Array where Element == CartItem {
     
-    public func mutatorSummary(for mutator: CartMutator) -> CartMutatorSummary {
+    func mutatorSummary(for mutator: CartMutator) -> CartMutatorSummary {
         return CartMutatorSummary(cart: self, mutator: mutator)
     }
     
-    public func mutatorSummary(for mutators: [CartMutator]) -> [CartMutatorSummary] {
+    func mutatorSummary(for mutators: [CartMutator]) -> [CartMutatorSummary] {
         var _cart: Cart = self
         var summaries: [CartMutatorSummary] = [CartMutatorSummary]()
         mutators.forEach {
@@ -53,7 +53,7 @@ public extension Array where Element == CartItem {
 
 public extension Array where Element == CartMutatorSummary {
     
-    public var VAT: Money {
+    var VAT: Money {
         get {
             var _VAT: Money = Money(0)
             self.forEach { _VAT += $0.VAT }
@@ -61,7 +61,7 @@ public extension Array where Element == CartMutatorSummary {
         }
     }
     
-    public var totalVAT0: Money {
+    var totalVAT0: Money {
         get {
             var _totalVAT0: Money = Money(0)
             self.forEach { _totalVAT0 += $0.totalVAT0 }
@@ -69,7 +69,7 @@ public extension Array where Element == CartMutatorSummary {
         }
     }
     
-    public var total: Money {
+    var total: Money {
         get {
             var _total: Money = Money(0)
             self.forEach { _total += $0.total }
@@ -77,7 +77,7 @@ public extension Array where Element == CartMutatorSummary {
         }
     }
    
-    public var percentage: Decimal {
+    var percentage: Decimal {
         get {
             var _percentage: Decimal = Decimal(0)
             self.forEach { _percentage += $0.percentage }
@@ -85,23 +85,23 @@ public extension Array where Element == CartMutatorSummary {
         }
     }
     
-    static public func + (lhs: [CartMutatorSummary], rhs: [CartMutatorSummary]) -> [CartMutatorSummary] {
+    static func + (lhs: [CartMutatorSummary], rhs: [CartMutatorSummary]) -> [CartMutatorSummary] {
         var _summaryArray: [CartMutatorSummary] = lhs
         _summaryArray.append(from: rhs)
         return _summaryArray
     }
     
-    static public func += (lhs: inout [CartMutatorSummary], rhs: [CartMutatorSummary]) {
+    static func += (lhs: inout [CartMutatorSummary], rhs: [CartMutatorSummary]) {
         lhs.append(from: rhs)
     }
     
-    static public func + (lhs: [CartMutatorSummary], rhs: CartMutatorSummary) -> [CartMutatorSummary] {
+    static func + (lhs: [CartMutatorSummary], rhs: CartMutatorSummary) -> [CartMutatorSummary] {
         var _summaryArray: [CartMutatorSummary] = lhs
         _summaryArray.append(rhs)
         return _summaryArray
     }
     
-    static public func += (lhs: inout [CartMutatorSummary], rhs: CartMutatorSummary) {
+    static func += (lhs: inout [CartMutatorSummary], rhs: CartMutatorSummary) {
         lhs.append(rhs)
     }
 

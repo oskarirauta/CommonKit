@@ -23,12 +23,12 @@ public extension CGFloat {
         }
     }
     
-    public var fractionInt: Int { get {
+    var fractionInt: Int { get {
         guard self != 0 else { return 0 }
         return self == 0 ? 0 : ( self < 0 ? -Int(String(abs(Float(self.fractionPart))).substring(from: 2))! : Int(String(abs(Float(self.fractionPart))).substring(from: 2))!)
         }}
 
-    public static func random(lower: CGFloat = 0, _ upper: CGFloat = 100) -> CGFloat {
+    static func random(lower: CGFloat = 0, _ upper: CGFloat = 100) -> CGFloat {
         return (CGFloat(arc4random()) / 0xFFFFFFFF) * (upper - lower) + lower
     }
 

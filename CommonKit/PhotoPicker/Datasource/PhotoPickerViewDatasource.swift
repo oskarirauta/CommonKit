@@ -41,7 +41,7 @@ extension PhotoPickerView {
             let cell: PhotoCell = collectionView.dequeueReusableCell(withReuseIdentifier: "photoCell", for: indexPath) as! PhotoCell
             
             cell.tag = indexPath.row
-            cell.number = self.selectedAssetIndexes.index(of: cell.tag)
+            cell.number = self.selectedAssetIndexes.firstIndex(of: cell.tag)
             
             self.photoManager.requestImage(
                 for: self.assetManager.currentAlbum!.assets.object(at: indexPath.row),

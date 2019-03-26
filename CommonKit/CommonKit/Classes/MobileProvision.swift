@@ -77,14 +77,14 @@ public struct MobileProvision: Decodable {
 // Factory methods
 public extension MobileProvision {
     // Read mobileprovision file embedded in app.
-    public static func read() -> MobileProvision? {
+    static func read() -> MobileProvision? {
         let profilePath: String? = Bundle.main.path(forResource: "embedded", ofType: "mobileprovision")
         guard let path = profilePath else { return nil }
         return read(from: path)
     }
     
     // Read a .mobileprovision file on disk
-    public static func read(from profilePath: String) -> MobileProvision? {
+    static func read(from profilePath: String) -> MobileProvision? {
         guard let plistDataString = try? NSString.init(contentsOfFile: profilePath,
                                                        encoding: String.Encoding.isoLatin1.rawValue) else { return nil }
         

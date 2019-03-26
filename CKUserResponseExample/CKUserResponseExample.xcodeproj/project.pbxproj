@@ -12,6 +12,7 @@
 		6E8CA31C21BC794200481E40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E8CA31B21BC794200481E40 /* Assets.xcassets */; };
 		6E8CA31F21BC794200481E40 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E8CA31D21BC794200481E40 /* LaunchScreen.storyboard */; };
 		6E8CA32921BC7A2700481E40 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E8CA32821BC7A2700481E40 /* CloudKit.framework */; };
+		6EAA7047224A0747008E5EDD /* CommonKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EAA7046224A0747008E5EDD /* CommonKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		6E8CA32021BC794200481E40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E8CA32621BC7A2300481E40 /* CKUserResponseExample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CKUserResponseExample.entitlements; sourceTree = "<group>"; };
 		6E8CA32821BC7A2700481E40 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		6EAA7046224A0747008E5EDD /* CommonKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CommonKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EAA7047224A0747008E5EDD /* CommonKit.framework in Frameworks */,
 				6E8CA32921BC7A2700481E40 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -70,6 +73,7 @@
 		6E8CA32721BC7A2700481E40 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6EAA7046224A0747008E5EDD /* CommonKit.framework */,
 				6E8CA32821BC7A2700481E40 /* CloudKit.framework */,
 			);
 			name = Frameworks;
@@ -107,6 +111,7 @@
 				TargetAttributes = {
 					6E8CA31021BC794100481E40 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 						SystemCapabilities = {
 							com.apple.Push = {
 								enabled = 1;
@@ -223,7 +228,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -278,7 +283,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -296,13 +301,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LBFBZP3Z4J;
 				INFOPLIST_FILE = CKUserResponseExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.oskarirauta.CKUserResponseExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -315,13 +321,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LBFBZP3Z4J;
 				INFOPLIST_FILE = CKUserResponseExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.oskarirauta.CKUserResponseExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

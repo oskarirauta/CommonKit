@@ -35,7 +35,8 @@ extension Decimal {
         let amount: NSDecimalNumber = NSDecimalNumber(decimal: self)
         let uMPtr = UnsafeMutablePointer<Decimal>.allocate(capacity: 1)
         uMPtr[0] = amount.decimalValue
-        let uPtr = UnsafePointer<Decimal>.init(uMPtr)
+        let uPtr = UnsafePointer<Decimal>(uMPtr)
+        //let uPtr = UnsafePointer<Decimal>.init(uMPtr)
         NSDecimalRound(uMPtr, uPtr, scale, mode)
         return uMPtr.pointee
     }

@@ -104,14 +104,14 @@ extension PhotoPickerView {
                     
                     if let indexPath = collectionView.indexPath(for: self) {
                         
-                        if let index: Int = controller.selectedAssetIndexes.index(of: indexPath.row) {
+                        if let index: Int = controller.selectedAssetIndexes.firstIndex(of: indexPath.row) {
                             controller.selectedAssetIndexes.remove(at: index)
                         } else {
                             controller.selectedAssetIndexes.append(indexPath.row)
                         }
                         
                         for cell in collectionView.visibleCells as! [PhotoCell] {
-                            cell.number = controller.selectedAssetIndexes.index(of: cell.tag)
+                            cell.number = controller.selectedAssetIndexes.firstIndex(of: cell.tag)
                         }
                     }
                 }

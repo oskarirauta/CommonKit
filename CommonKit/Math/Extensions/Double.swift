@@ -23,7 +23,7 @@ public extension Double {
         }
     }
 
-    public var fractionInt: Int { get {
+    var fractionInt: Int { get {
         guard self != 0 else { return 0 }
         return self == 0 ? 0 : ( self < 0 ? -Int(String(abs(self.fractionPart)).substring(from: 2))! : Int(String(abs(self.fractionPart)).substring(from: 2))!)
         }}
@@ -41,7 +41,7 @@ public extension Double {
         return (( forcedDecimal ) && ( floor(self) == self ) && ( self != 0 )) ? ( nf.string(from: NSNumber(value: self))! + nf.decimalSeparator! + "0" ) : nf.string(from: NSNumber(value: self))!
     }
     
-    public func rounded(to scale: Int = 0, mode: NSDecimalNumber.RoundingMode = .plain) -> Double {
+    func rounded(to scale: Int = 0, mode: NSDecimalNumber.RoundingMode = .plain) -> Double {
         return Decimal(self).rounded(to: scale, mode: mode).doubleValue
     }
     

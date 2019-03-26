@@ -245,7 +245,7 @@ extension CameraController {
     open func toggleFlashMode() throws {
         guard self.photoOutput != nil, self.availableFlashModes.count > 1 else { throw CameraControllerError.invalidOperation }
         
-        let index = self.availableFlashModes.index(of: self.flashMode) ?? 0
+        let index = self.availableFlashModes.firstIndex(of: self.flashMode) ?? 0
         
         self.flashMode = self.availableFlashModes[ index == ( self.availableFlashModes.count - 1 ) ? 0 : ( index + 1 ) ]
     }

@@ -297,15 +297,6 @@ extension Array where Element == String {
     
 }
 
-extension Range where Bound == String.Index {
-    
-    public var nsRange:NSRange {
-        get { return NSRange(location: self.lowerBound.encodedOffset,
-                           length: self.upperBound.encodedOffset -
-                            self.lowerBound.encodedOffset) }
-    }
-}
-
 extension Substring {
     
     var string: String {

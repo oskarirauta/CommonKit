@@ -14,7 +14,7 @@ public extension UIImageView {
     /// Creates a new image view with the given BarCode
     ///
     /// - parameter barCode:      The BarCode to display in the image view
-    public convenience init(barCode: BarCode) {
+    convenience init(barCode: BarCode) {
         self.init(image: barCode.image)
     }
     
