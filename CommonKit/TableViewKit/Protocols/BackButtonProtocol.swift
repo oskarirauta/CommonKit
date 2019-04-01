@@ -19,9 +19,9 @@ public protocol BackButtonProtocol: BackButtonProtocolBase {
     func defaultBackBtn() -> UIBarButtonItem
 }
 
-extension BackButtonProtocol where Self: UIViewController {
+public extension BackButtonProtocol where Self: UIViewController {
     
-    public var backBtn: UIBarButtonItem {
+    var backBtn: UIBarButtonItem {
         get { return self._backBtn ?? self.defaultBackBtn() }
         set {
             self._backBtn = newValue
@@ -29,7 +29,7 @@ extension BackButtonProtocol where Self: UIViewController {
         }
     }
     
-    public func defaultBackBtn() -> UIBarButtonItem {
+    func defaultBackBtn() -> UIBarButtonItem {
         return UIBarButtonItem(image: UIImage(named: "BackBtn", in: Bundle(for: UITableViewControllerExtended.self), compatibleWith: nil)?.stretchableImage(withLeftCapWidth: 38, topCapHeight: 64).withRenderingMode(.alwaysTemplate), style: .plain, target: self, action: #selector(self.backAction)).properties {
             $0.isEnabled = true
         }
