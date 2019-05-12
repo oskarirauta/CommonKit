@@ -11,6 +11,15 @@ import UIKit
 
 extension UITextField {
     
+    private struct TF_AssociatedKeys {
+        static var warningActive: Bool = false
+    }
+
+    internal var warningActive: Bool {
+        get { return objc_getAssociatedObject(self, &TF_AssociatedKeys.warningActive) as? Bool ?? false }
+        set { objc_setAssociatedObject(self, &TF_AssociatedKeys.warningActive, newValue as Bool, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC) }
+    }
+
     public var cursorPosition: Int? {
         get {
             guard let selectedRange: UITextRange = self.selectedTextRange else { return nil }
@@ -30,12 +39,23 @@ extension UITextField {
         return self.offset(from: self.beginningOfDocument, to: position)
     }
     
-    public func warnSyntaxError() {
+    public func warnSyntaxError(completion: (()->())? = nil) {
+        
+        guard !self.warningActive else {
+            completion?()
+            return
+        }
+        
+        self.warningActive = true
         let origColor: CGColor? = self.layer.backgroundColor
         self.layer.backgroundColor = UIColor.red.lighter(by: 0.7).cgColor
         
         UIView.animate(withDuration: TimeInterval(0.68), animations: {
             self.layer.backgroundColor = origColor
+        }, completion: {
+            _ in
+            completion?()
+            self.warningActive = false
         })
     }
 }
