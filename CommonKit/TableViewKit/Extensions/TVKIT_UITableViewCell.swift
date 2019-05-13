@@ -74,7 +74,7 @@ extension UITableViewCell {
         get { return objc_getAssociatedObject(self, &TV_AssociatedKeys.browsingDisabled) as? Bool ?? false }
         set { objc_setAssociatedObject(self, &TV_AssociatedKeys.browsingDisabled, newValue as Bool, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC) }
     }
-    
+
     internal var warningActive: Bool {
         get { return objc_getAssociatedObject(self, &TV_AssociatedKeys.warningActive) as? Bool ?? false }
         set { objc_setAssociatedObject(self, &TV_AssociatedKeys.warningActive, newValue as Bool, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC) }

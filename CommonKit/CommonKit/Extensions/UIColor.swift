@@ -98,6 +98,40 @@ public extension UIColor {
         }
     }
     
+    /// SwifterSwift: Hexadecimal value string (read-only).
+    var hexString: String {
+        get {
+            let components: [Int] = {
+                let comps = cgColor.components!
+                let components = comps.count == 4 ? comps : [comps[0], comps[0], comps[0], comps[1]]
+                return components.map { Int($0 * 255.0) }
+            }()
+            return String(format: "#%02X%02X%02X", components[0], components[1], components[2])
+        }
+    }
+    
+    /// SwifterSwift: Short hexadecimal value string (read-only, if applicable).
+    var shortHexString: String? {
+        get {
+            let string = hexString.replacingOccurrences(of: "#", with: "")
+            let chrs = Array(string)
+            guard chrs[0] == chrs[1], chrs[2] == chrs[3], chrs[4] == chrs[5] else { return nil }
+            return "#\(chrs[0])\(chrs[2])\(chrs[4])"
+        }
+    }
+    
+    /// SwifterSwift: Short hexadecimal value string, or full hexadecimal string if not possible (read-only).
+    var shortHexOrHexString: String {
+        get {
+            return self.shortHexString ?? self.hexString
+        }
+    }
+    
+    /// SwifterSwift: Alpha of Color (read-only).
+    var alpha: CGFloat {
+        return cgColor.alpha
+    }
+    
     convenience init?(red: Int, green: Int, blue: Int, transparency: CGFloat = 1) {
         guard red >= 0 && red <= 255 else { return nil }
         guard green >= 0 && green <= 255 else { return nil }
