@@ -11,7 +11,7 @@ import UIKit
 
 extension UITableViewCell {
 
-    public func warnSyntaxError(completion: (()->())? = nil) {
+    open func warnSyntaxError(completion: (()->())? = nil) {
         
         guard !self.warningActive else {
             completion?()

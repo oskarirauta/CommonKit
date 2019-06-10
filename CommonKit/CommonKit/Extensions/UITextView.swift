@@ -20,7 +20,7 @@ extension UITextView {
         set { objc_setAssociatedObject(self, &TV_AssociatedKeys.warningActive, newValue as Bool, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC) }
     }
 
-    public func warnSyntaxError(completion: (()->())? = nil) {
+    open func warnSyntaxError(completion: (()->())? = nil) {
         
         guard !self.warningActive else {
             completion?()

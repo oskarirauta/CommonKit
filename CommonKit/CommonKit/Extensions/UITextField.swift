@@ -39,7 +39,7 @@ extension UITextField {
         return self.offset(from: self.beginningOfDocument, to: position)
     }
     
-    public func warnSyntaxError(completion: (()->())? = nil) {
+    open func warnSyntaxError(completion: (()->())? = nil) {
         
         guard !self.warningActive else {
             completion?()
