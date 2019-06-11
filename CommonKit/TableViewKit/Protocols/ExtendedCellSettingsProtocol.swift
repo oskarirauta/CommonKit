@@ -42,7 +42,10 @@ extension UITableViewCell: ExtendedCellSettingsProtocol {
         self.backgroundColor = UIColor.cellBackgroundColor
     }
     
-    open func setupViews() { }
+    open func setupViews() {
+        self.backgroundView = UIView()
+    }
+    
     open func secondarySetupViews() { }
     open func setupConstraints() { }
     @objc open func secondaryConstraints() { }

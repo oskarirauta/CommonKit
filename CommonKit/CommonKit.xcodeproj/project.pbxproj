@@ -175,6 +175,7 @@
 		6E7F0B3520CDCFB200E18883 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7F0B3420CDCFB200E18883 /* AlertView.swift */; };
 		6E7F0B3820CDDBA200E18883 /* UIPhotoPicker.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E7F0B3720CDDBA200E18883 /* UIPhotoPicker.xcassets */; };
 		6E7FBD60222DBB6F00A94A66 /* MobileProvision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7FBD5F222DBB6F00A94A66 /* MobileProvision.swift */; };
+		6E8BBD2B22AFAD75002FAAD3 /* WarnSyntaxErrorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8BBD2A22AFAD75002FAAD3 /* WarnSyntaxErrorProtocol.swift */; };
 		6E8BE84320D8F1FF00F600D2 /* PopOverExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8BE84220D8F1FF00F600D2 /* PopOverExtension.swift */; };
 		6E8CA17E21B7EFA700481E40 /* UITextInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8CA17D21B7EFA700481E40 /* UITextInput.swift */; };
 		6E8CA1CC21B92BA200481E40 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8CA1CB21B92BA200481E40 /* LocationService.swift */; };
@@ -195,7 +196,6 @@
 		6E8F140B20D1BA4200151AA0 /* BarCode_ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8F140A20D1BA4200151AA0 /* BarCode_ImageView.swift */; };
 		6E921A1A20B758B7000B1EC9 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E921A1920B758B7000B1EC9 /* UITextField.swift */; };
 		6E921A1C20B758E5000B1EC9 /* UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E921A1B20B758E5000B1EC9 /* UITextView.swift */; };
-		6E921A1E20B758FC000B1EC9 /* UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E921A1D20B758FB000B1EC9 /* UITableViewCell.swift */; };
 		6E95460A21335D66001C7204 /* Date_Decimal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E95460921335D66001C7204 /* Date_Decimal.swift */; };
 		6E9EC66A20F5C7430023515C /* TaskClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9EC66920F5C7430023515C /* TaskClass.swift */; };
 		6E9EC66E20F60BD40023515C /* CustomTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9EC66D20F60BD40023515C /* CustomTask.swift */; };
@@ -383,6 +383,7 @@
 		6E7F0B3420CDCFB200E18883 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		6E7F0B3720CDDBA200E18883 /* UIPhotoPicker.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = UIPhotoPicker.xcassets; sourceTree = "<group>"; };
 		6E7FBD5F222DBB6F00A94A66 /* MobileProvision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileProvision.swift; sourceTree = "<group>"; };
+		6E8BBD2A22AFAD75002FAAD3 /* WarnSyntaxErrorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarnSyntaxErrorProtocol.swift; sourceTree = "<group>"; };
 		6E8BE84220D8F1FF00F600D2 /* PopOverExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopOverExtension.swift; sourceTree = "<group>"; };
 		6E8CA17D21B7EFA700481E40 /* UITextInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextInput.swift; sourceTree = "<group>"; };
 		6E8CA1CB21B92BA200481E40 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
@@ -403,7 +404,6 @@
 		6E8F140A20D1BA4200151AA0 /* BarCode_ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarCode_ImageView.swift; sourceTree = "<group>"; };
 		6E921A1920B758B7000B1EC9 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		6E921A1B20B758E5000B1EC9 /* UITextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextView.swift; sourceTree = "<group>"; };
-		6E921A1D20B758FB000B1EC9 /* UITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCell.swift; sourceTree = "<group>"; };
 		6E95460921335D66001C7204 /* Date_Decimal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date_Decimal.swift; sourceTree = "<group>"; };
 		6E9EC66920F5C7430023515C /* TaskClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskClass.swift; sourceTree = "<group>"; };
 		6E9EC66D20F60BD40023515C /* CustomTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTask.swift; sourceTree = "<group>"; };
@@ -912,7 +912,6 @@
 				6E3C4FFE20A0E1B0009C3ED7 /* UIResponder.swift */,
 				6E3C4FF220A0E1AE009C3ED7 /* UIScrollView.swift */,
 				6E8CA17D21B7EFA700481E40 /* UITextInput.swift */,
-				6E921A1D20B758FB000B1EC9 /* UITableViewCell.swift */,
 				6E921A1920B758B7000B1EC9 /* UITextField.swift */,
 				6E921A1B20B758E5000B1EC9 /* UITextView.swift */,
 				6E3C4FF720A0E1AF009C3ED7 /* UIView.swift */,
@@ -1050,6 +1049,7 @@
 				6E29DB3B20D30CE400BD4830 /* HeaderTitleProtocol.swift */,
 				6E75BB7B20CAC4DF00876950 /* CustomBadgeConvertible.swift */,
 				6E75BB7920CAC4AB00876950 /* MultiBadgeProtocol.swift */,
+				6E8BBD2A22AFAD75002FAAD3 /* WarnSyntaxErrorProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -1526,7 +1526,6 @@
 				6E3C501120A0E1B0009C3ED7 /* UIResponder.swift in Sources */,
 				6E00BDE320C8826900C68DBD /* CurrencyPad.swift in Sources */,
 				6ED7A94920C7AC7600CAC025 /* AppLocale.swift in Sources */,
-				6E921A1E20B758FC000B1EC9 /* UITableViewCell.swift in Sources */,
 				6ED7A94D20C7ACAB00CAC025 /* val2str.swift in Sources */,
 				6E3C501320A0E1B0009C3ED7 /* NSLayoutConstraint.swift in Sources */,
 				6E75BB6620CAB9B400876950 /* CellHandler.swift in Sources */,
@@ -1536,6 +1535,7 @@
 				6E3C4FEF20A0E1A0009C3ED7 /* HTMLEntities.swift in Sources */,
 				6E3C500E20A0E1B0009C3ED7 /* NSMutableArray.swift in Sources */,
 				6E08E73A21708ABD00CF7E14 /* DefaultActionSheetControllerBaseClass.swift in Sources */,
+				6E8BBD2B22AFAD75002FAAD3 /* WarnSyntaxErrorProtocol.swift in Sources */,
 				6E00BDF720C8828A00C68DBD /* Money.swift in Sources */,
 				6E29DB3420D2E3F400BD4830 /* UIHeaderFooterViewExtended.swift in Sources */,
 				6E00BD8320C8264900C68DBD /* Double.swift in Sources */,

@@ -12,8 +12,9 @@ import UIKit
 open class UITableViewCellExtended: UITableViewCell, CellConstraintProtocol, UICellDelegateSelectable {
     
     open var cellConstraints: CellConstraints = [:]
-    open var handler: CellHandler = nil
-    
+    open var handler: CellHandler = nil    
+    open var warningActive: Bool = false
+
     open override func prepareForReuse() {
         super.prepareForReuse()
         self.cellConstraints = [:]
@@ -88,5 +89,5 @@ open class UITableViewCellExtended: UITableViewCell, CellConstraintProtocol, UIC
     open func returnValues() -> CellReturn {
         return CellReturn(cell: self)
     }
-    
+     
 }
