@@ -38,7 +38,7 @@ open class UITitleCell: UITableViewCellExtended, CellTitleProtocol {
     
     open var italic: Bool {
         get { return self.titleFont.fontDescriptor.symbolicTraits.contains(.traitItalic) }
-        set { self.titleLabel.font = self.italic ? UIFont.italicSystemFont(ofSize: self.titleLabel.font.pointSize) : UIFont.boldSystemFont(ofSize: self.titleLabel.font.pointSize) }
+        set { self.titleLabel.font = self.titleFont.fontDescriptor.symbolicTraits.contains(.traitItalic) ? UIFont.italicSystemFont(ofSize: self.titleLabel.font.pointSize) : UIFont.boldSystemFont(ofSize: self.titleLabel.font.pointSize) }
     }
     
     open var titleFont: UIFont! {

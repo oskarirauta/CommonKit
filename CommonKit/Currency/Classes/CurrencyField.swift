@@ -26,7 +26,7 @@ open class CurrencyField: UITextField, CurrencyFieldDelegate, UITextFieldDelegat
             }
             
             guard
-                var value: Money = self.value,
+                let value: Money = self.value,
                 self.maximum != 0,
                 value.rawValue != 0,
                 abs(value.rawValue) > Decimal(integerLiteral: self.maximum)
