@@ -58,10 +58,20 @@ open class CameraController: NSObject {
     open var captureInProgress: Bool {
         get { return self._captureInProgress }
     }
+
+    #if targetEnvironment(macCatalyst)
+
+    open var availableFlashModes: [AVCaptureDevice.FlashMode] {
+        get { return [.off] }
+    }
+
+    #else
     
     open var availableFlashModes: [AVCaptureDevice.FlashMode] {
         get { return self.photoOutput?.supportedFlashModes ?? [.off] }
     }
+    
+    #endif
     
     open var multipleCameras: Bool {
         get { return self.rearCamera != nil && self.frontCamera != nil && self.rearCamera != self.frontCamera ? true : false }
@@ -147,7 +157,12 @@ extension CameraController {
             if captureSession.canAddOutput(self.photoOutput!) { captureSession.addOutput(self.photoOutput!) }
             captureSession.startRunning()
             
+            #if targetEnvironment(macCatalyst)
+            self.flashMode = .off
+            #else
             self.flashMode = self.photoOutput!.supportedFlashModes.contains(.auto) ? .auto : .off
+            #endif
+            
         }
         
         DispatchQueue(label: "prepare").async {
@@ -181,7 +196,13 @@ extension CameraController {
         }
         
         if ( self.previewLayer?.connection?.isVideoOrientationSupported ?? false ) {
+            #if targetEnvironment(macCatalyst)
+            let _window = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
+            let _isLandscape = _window?.windowScene?.interfaceOrientation.isLandscape ?? false
+            self.previewLayer?.connection?.videoOrientation =  _isLandscape ? .landscapeLeft : .portrait
+            #else
             self.previewLayer?.connection?.videoOrientation = UIApplication.shared.statusBarOrientation.videoOrientation ?? .portrait
+            #endif
         }
         
     }

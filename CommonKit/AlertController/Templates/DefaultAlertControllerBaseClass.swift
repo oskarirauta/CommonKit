@@ -148,8 +148,15 @@ open class DefaultAlertControllerBaseClass: UIViewController, AlertControllerVie
         self.containerView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor).isActive = true
         self.containerView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor).isActive = true
         self.containerView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor).isActive = true
+
+        #if targetEnvironment(macCatalyst)
+        let _window = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
+        let _height = _window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
+        self.containerViewBottomConstraint = self.containerView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -(_height - 20.0))
+        #else
         self.containerViewBottomConstraint = self.containerView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -(UIApplication.shared.statusBarFrame.size.height - 20.0))
         self.containerViewBottomConstraint?.isActive = true
+        #endif
         
         // ContentView
         
