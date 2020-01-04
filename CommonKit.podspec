@@ -26,7 +26,7 @@ since extensions for UILabel could not provide this functionality.
 		]
 
   s.swift_version = '5.0'
-  s.ios.deployment_target = '12.1'
+  s.ios.deployment_target = '13.1'
   s.source_files = [
 			'CommonKit/Reachability/Extensions/*.swift',
 			'CommonKit/CKUserResponse/*.swift',
