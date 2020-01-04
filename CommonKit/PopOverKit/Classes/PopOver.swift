@@ -96,8 +96,10 @@ open class PopOver: UIViewController, PopOverProtocol {
         guard !self.view.subviews.contains(self.contentView) else { return }
         self.view.addSubview(self.contentView)
         self.updateContentSize()
-        self.centerXConstraint = self.contentView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
-        self.centerYConstraint = self.contentView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor)
+        let yConstant: CGFloat = self.arrowDirection == .up ? 6.0 : ( self.arrowDirection == .down ? -6.0 : 0.0)
+        let xConstant: CGFloat = self.arrowDirection == .left ? 6.0 : ( self.arrowDirection == .right ? -6.0 : 0.0)
+        self.centerXConstraint = self.contentView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor, constant: xConstant)
+        self.centerYConstraint = self.contentView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: yConstant)
         self.centerXConstraint?.isActive = true
         self.centerYConstraint?.isActive = true
     }

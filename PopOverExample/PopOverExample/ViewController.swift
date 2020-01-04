@@ -16,8 +16,8 @@ class ViewController: UIViewController {
         $0.setTitle("PopOver", for: UIControl.State())
         $0.tag = 0
         $0.titleLabel?.font = UIFont.boldSystemFont(ofSize: 12.0)
-        $0.setTitleColor(UIColor.buttonForegroundColor, for: UIControl.State())
-        $0.setTitleColor(UIColor.white, for: UIControl.State.highlighted)
+        $0.setTitleColor(UIColor.link, for: UIControl.State())
+        $0.setTitleColor(UIColor.lightText, for: UIControl.State.highlighted)
         $0.addTarget(self, action: #selector(self.doPopOver(_:)), for: .touchUpInside)
     }
     
@@ -26,8 +26,8 @@ class ViewController: UIViewController {
         $0.setTitle("PopOver Autosize", for: UIControl.State())
         $0.titleLabel?.font = UIFont.boldSystemFont(ofSize: 12.0)
         $0.tag = 1
-        $0.setTitleColor(UIColor.buttonForegroundColor, for: UIControl.State())
-        $0.setTitleColor(UIColor.white, for: UIControl.State.highlighted)
+        $0.setTitleColor(UIColor.link, for: UIControl.State())
+        $0.setTitleColor(UIColor.lightText, for: UIControl.State.highlighted)
         $0.addTarget(self, action: #selector(self.doPopOver(_:)), for: .touchUpInside)
     }
     
@@ -36,8 +36,8 @@ class ViewController: UIViewController {
         $0.setTitle("PopOver Autosize2", for: UIControl.State())
         $0.titleLabel?.font = UIFont.boldSystemFont(ofSize: 12.0)
         $0.tag = 2
-        $0.setTitleColor(UIColor.buttonForegroundColor, for: UIControl.State())
-        $0.setTitleColor(UIColor.white, for: UIControl.State.highlighted)
+        $0.setTitleColor(UIColor.link, for: UIControl.State())
+        $0.setTitleColor(UIColor.lightText, for: UIControl.State.highlighted)
         $0.addTarget(self, action: #selector(self.doPopOver(_:)), for: .touchUpInside)
     }
     
@@ -46,8 +46,8 @@ class ViewController: UIViewController {
         $0.setTitle("PopOver Autosize3", for: UIControl.State())
         $0.titleLabel?.font = UIFont.boldSystemFont(ofSize: 12.0)
         $0.tag = 3
-        $0.setTitleColor(UIColor.buttonForegroundColor, for: UIControl.State())
-        $0.setTitleColor(UIColor.white, for: UIControl.State.highlighted)
+        $0.setTitleColor(UIColor.link, for: UIControl.State())
+        $0.setTitleColor(UIColor.lightText, for: UIControl.State.highlighted)
         $0.addTarget(self, action: #selector(self.doPopOver(_:)), for: .touchUpInside)
     }
     
@@ -99,6 +99,5 @@ class ViewController: UIViewController {
         }
         
     }
-    
     
 }

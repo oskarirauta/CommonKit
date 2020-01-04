@@ -196,13 +196,24 @@ extension CameraController {
         }
         
         if ( self.previewLayer?.connection?.isVideoOrientationSupported ?? false ) {
-            #if targetEnvironment(macCatalyst)
-            let _window = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
-            let _isLandscape = _window?.windowScene?.interfaceOrientation.isLandscape ?? false
-            self.previewLayer?.connection?.videoOrientation =  _isLandscape ? .landscapeLeft : .portrait
-            #else
-            self.previewLayer?.connection?.videoOrientation = UIApplication.shared.statusBarOrientation.videoOrientation ?? .portrait
-            #endif
+
+            
+            let interfaceOrientation: AVCaptureVideoOrientation = {
+                var _interfaceOrientation: AVCaptureVideoOrientation = .portrait
+                    if let _orientation = UIApplication.shared.windows.first?.windowScene?.interfaceOrientation {
+                        switch _orientation {
+                        case .unknown: _interfaceOrientation = .portrait
+                        case .portrait: _interfaceOrientation = .portrait
+                        case .portraitUpsideDown: _interfaceOrientation = .portraitUpsideDown
+                        case .landscapeLeft: _interfaceOrientation = .landscapeLeft
+                        case .landscapeRight: _interfaceOrientation = .landscapeRight
+                        default: _interfaceOrientation = .portrait
+                        }
+                    }
+                return _interfaceOrientation
+                }()
+                
+                self.previewLayer?.connection?.videoOrientation = interfaceOrientation
         }
         
     }
@@ -249,11 +260,27 @@ extension CameraController {
         if ( self._contentView != nil ) {
             self.previewLayer?.frame = self._contentView!.bounds
         }
-        
+                
         if ( self.previewLayer?.connection?.isVideoOrientationSupported ?? false ) {
-            self.previewLayer?.connection?.videoOrientation = UIApplication.shared.statusBarOrientation.videoOrientation ?? .portrait
+
+            let interfaceOrientation: AVCaptureVideoOrientation = {
+                var _interfaceOrientation: AVCaptureVideoOrientation = .portrait
+                    if let _orientation = UIApplication.shared.windows.first?.windowScene?.interfaceOrientation {
+                        switch _orientation {
+                        case .unknown: _interfaceOrientation = .portrait
+                        case .portrait: _interfaceOrientation = .portrait
+                        case .portraitUpsideDown: _interfaceOrientation = .portraitUpsideDown
+                        case .landscapeLeft: _interfaceOrientation = .landscapeLeft
+                        case .landscapeRight: _interfaceOrientation = .landscapeRight
+                        default: _interfaceOrientation = .portrait
+                        }
+                    }
+                return _interfaceOrientation
+                }()
+                
+                self.previewLayer?.connection?.videoOrientation = interfaceOrientation
         }
-        
+
         if ( !(self.captureSession?.isRunning ?? true )) {
             self.captureSession?.startRunning()
             self.resetCamera()
@@ -276,8 +303,26 @@ extension CameraController {
         
         self.previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
         self.previewLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
+            
         if ( self.previewLayer?.connection?.isVideoOrientationSupported ?? false ) {
-            self.previewLayer?.connection?.videoOrientation = UIApplication.shared.statusBarOrientation.videoOrientation ?? .portrait
+
+            let interfaceOrientation: AVCaptureVideoOrientation = {
+                var _interfaceOrientation: AVCaptureVideoOrientation = .portrait
+                    if let _orientation = UIApplication.shared.windows.first?.windowScene?.interfaceOrientation {
+                        switch _orientation {
+                        case .unknown: _interfaceOrientation = .portrait
+                        case .portrait: _interfaceOrientation = .portrait
+                        case .portraitUpsideDown: _interfaceOrientation = .portraitUpsideDown
+                        case .landscapeLeft: _interfaceOrientation = .landscapeLeft
+                        case .landscapeRight: _interfaceOrientation = .landscapeRight
+                        default: _interfaceOrientation = .portrait
+                        }
+                    }
+                return _interfaceOrientation
+                }()
+                
+                self.previewLayer?.connection?.videoOrientation = interfaceOrientation
+
         }
         
         view.layer.insertSublayer(self.previewLayer!, at: 0)

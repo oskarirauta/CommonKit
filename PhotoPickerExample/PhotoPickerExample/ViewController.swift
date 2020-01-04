@@ -12,14 +12,8 @@ import Photos
 
 class ViewController: UIViewController {
     
-    lazy var photoPicker: PhotoPicker = {
-        [unowned self] in
-        var _photoPicker: PhotoPicker = PhotoPicker()
-        _photoPicker.photo_handler = self.photosHandler
-        _photoPicker.camera_handler = self.cameraHandler
-        return _photoPicker
-    }()
-    
+    var photoPicker: PhotoPicker? = nil
+        
     lazy var imageView: UIImageView = UIImageView.create {
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
@@ -30,8 +24,8 @@ class ViewController: UIViewController {
         $0.tag = 0
         $0.isHidden = true
         $0.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14.5)
-        $0.setTitleColor(UIColor.buttonForegroundColor, for: UIControl.State())
-        $0.setTitleColor(UIColor.white, for: UIControl.State.highlighted)
+        $0.setTitleColor(UIColor.link, for: UIControl.State())
+        $0.setTitleColor(UIColor.lightText, for: UIControl.State.highlighted)
         $0.addTarget(self, action: #selector(self.pickPhoto(_:)), for: .touchUpInside)
     }
 
@@ -100,13 +94,18 @@ class ViewController: UIViewController {
     }
     
     @objc func pickPhoto(_ sender: Any) {
-        self.present(self.photoPicker, animated: true, completion: nil)
+        let _photoPicker: PhotoPicker = PhotoPicker()
+        _photoPicker.photo_handler = self.photosHandler
+        _photoPicker.camera_handler = self.cameraHandler
+        self.photoPicker = _photoPicker
+
+        self.present(self.photoPicker!, animated: true, completion: nil)
     }
 
     @objc func photosHandler(_ photos: [PHAsset]) {
         print("Chose " + photos.count.description + " photos.")
         if let asset = photos.last {
-            self.photoPicker.photoManager.requestImage(for: asset, targetSize: CGSize(width: 80.0, height: 80.0), contentMode: .aspectFit, options: self.requestOptions, resultHandler: {(result, info)->Void in
+            self.photoPicker?.photoManager.requestImage(for: asset, targetSize: CGSize(width: 80.0, height: 80.0), contentMode: .aspectFit, options: self.requestOptions, resultHandler: {(result, info)->Void in
                 self.imageView.image = result!
             })
         }

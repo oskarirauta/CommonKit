@@ -25,8 +25,8 @@ open class UIHeaderFooterViewExtended: UITableViewHeaderFooterView, HeaderConstr
         $0.text = ""
         $0.setContentHuggingPriority(.defaultLow, for: .horizontal)
     }
-    
-    open var titleColor: UIColor! = UIColor.darkGray {
+
+    open var titleColor: UIColor! = UIColor.secondaryLabel {
         didSet {
             self.titleLabel.titleColor = self.titleColor
             self.titleLabel.iconColor = self.iconColor
@@ -47,7 +47,7 @@ open class UIHeaderFooterViewExtended: UITableViewHeaderFooterView, HeaderConstr
         }
     }
     
-    open var iconColor: UIColor? = UIColor.darkGray {
+    open var iconColor: UIColor? = UIColor.label {
         didSet {
             self.titleLabel.textColor = self.titleColor
             self.titleLabel.iconColor = self.iconColor

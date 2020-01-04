@@ -44,7 +44,7 @@ public extension Locale {
             var array: [LocaleEntry] = self.availableIdentifiers.filter({ !$0.isEmpty && !Locale.autoupdatingCurrent.localizedString(forIdentifier: $0).isEmpty && !Locale(identifier: $0).currencyCode.isEmpty }).map {
                 return (countryCode: $0, countryName: Locale.autoupdatingCurrent.localizedString(forIdentifier: $0)!, currencyCode: Locale(identifier: $0).currencyCode!)
             }.sorted(by: { $0.countryName.localizedCaseInsensitiveCompare($1.countryName) == ComparisonResult.orderedAscending })
-            array.insert((countryCode: "", countryName: NSLocalizedString("SYSTEM_DEFAULT", comment: "System default"), currencyCode: Locale.autoupdatingCurrent.currencyCode!), at: 0)
+            array.insert((countryCode: "", countryName: NSLocalizedString("SYSTEM_DEFAULT", comment: "System default"), currencyCode: Locale.autoupdatingCurrent.currencyCode ??  Locale.autoupdatingCurrent.currencySymbol!), at: 0)
             return array
         }
     }

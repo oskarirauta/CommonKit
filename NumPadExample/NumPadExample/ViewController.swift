@@ -55,15 +55,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.setTitle("Dismiss", for: UIControl.State())
         $0.isEnabled = false
-        $0.setTitleColor(UIColor.blue, for: .normal)
-        $0.setTitleColor(UIColor.lightGray, for: .disabled)
-        $0.setTitleColor(UIColor.darkGray, for: .highlighted)
+        $0.setTitleColor(UIColor.link, for: .normal)
+        $0.setTitleColor(UIColor.opaqueSeparator, for: .disabled)
+        $0.setTitleColor(UIColor.lightText, for: .highlighted)
         $0.addTarget(self, action: #selector(self.btnAction), for: .touchUpInside)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.white
+        self.view.backgroundColor = UIColor.systemBackground
         
         [self.tf1, self.tf2, self.tf3, self.tf4].forEach {
             

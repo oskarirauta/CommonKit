@@ -170,14 +170,14 @@ open class PhotoPickerView: AlertView, UICollectionViewDelegate, UICollectionVie
         requestOptions.resizeMode = .fast
         requestOptions.deliveryMode = .fastFormat
         requestOptions.isNetworkAccessAllowed = false
-        
-        self.photoManager.requestImageData(for: self.assetManager.currentAlbum!.assets.object(at: indexPath.row), options: requestOptions, resultHandler: {
+
+        self.photoManager.requestImageDataAndOrientation(for: self.assetManager.currentAlbum!.assets.object(at: indexPath.row), options: requestOptions, resultHandler: {
             (data, str, orientation, info) -> Void in
             if ( data != nil ) {
                 self.photoPreviewView.image = UIImage(data: data!)
             }
         })
-        
+                
         let options: UIView.AnimationOptions = [
             UIView.AnimationOptions.showHideTransitionViews,
             UIView.AnimationOptions.transitionFlipFromLeft

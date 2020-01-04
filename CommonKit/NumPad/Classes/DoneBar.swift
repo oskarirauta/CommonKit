@@ -18,7 +18,7 @@ public final class DoneBar: UIToolbar {
     }
     
     public init() {
-        super.init(frame: .zero)
+        super.init(frame: CGRect(origin: CGPoint.zero, size: CGSize(width: UIScreen.main.bounds.width, height: 35)))
         self.translatesAutoresizingMaskIntoConstraints = false
         self.textInput = nil
         self.items = [

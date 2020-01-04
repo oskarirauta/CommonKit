@@ -145,19 +145,15 @@ open class DefaultAlertControllerBaseClass: UIViewController, AlertControllerVie
         
         // ContainerView
         
-        self.containerView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor).isActive = true
-        self.containerView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor).isActive = true
-        self.containerView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor).isActive = true
+        self.containerView.topAnchor.constraint(equalTo: self.overlayView.safeAreaLayoutGuide.topAnchor, constant: 42.0).isActive = true
+        self.containerView.leadingAnchor.constraint(equalTo: self.overlayView.safeAreaLayoutGuide.leadingAnchor).isActive = true
+        self.containerView.trailingAnchor.constraint(equalTo: self.overlayView.safeAreaLayoutGuide.trailingAnchor).isActive = true
 
-        #if targetEnvironment(macCatalyst)
         let _window = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
         let _height = _window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
-        self.containerViewBottomConstraint = self.containerView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -(_height - 20.0))
-        #else
-        self.containerViewBottomConstraint = self.containerView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -(UIApplication.shared.statusBarFrame.size.height - 20.0))
+        self.containerViewBottomConstraint = self.containerView.bottomAnchor.constraint(equalTo: self.overlayView.safeAreaLayoutGuide.bottomAnchor, constant: -(_height - 20.0))
         self.containerViewBottomConstraint?.isActive = true
-        #endif
-        
+
         // ContentView
         
         self.contentView.centerXAnchor.constraint(equalTo: self.containerView.centerXAnchor).isActive = true
@@ -166,14 +162,14 @@ open class DefaultAlertControllerBaseClass: UIViewController, AlertControllerVie
             
             if ( self.fullscreen ) {
                 
-                self.contentView.topAnchor.constraint(equalTo: self.containerView.topAnchor, constant: 8.0).isActive = true
+                self.contentView.topAnchor.constraint(equalTo: self.containerView.topAnchor, constant: 0.0).isActive = true
                 self.contentView.leadingAnchor.constraint(equalTo: self.containerView.leadingAnchor, constant: 8.0).isActive = true
                 self.contentView.trailingAnchor.constraint(equalTo: self.containerView.trailingAnchor, constant: -8.0).isActive = true
                 self.contentView.bottomAnchor.constraint(equalTo: self.containerView.bottomAnchor, constant: -28.0).isActive = true
                 
             } else {
                 
-                self.contentView.centerYAnchor.constraint(equalTo: self.containerView.centerYAnchor).isActive = true
+                self.contentView.centerYAnchor.constraint(equalTo: self.containerView.centerYAnchor, constant: -35.0).isActive = true
                 self.contentView.widthAnchor.constraint(equalToConstant: self.alertViewWidth ?? DefaultAlertProperties.alertViewWidth).isActive = true
                 self.contentViewHeightConstraint = self.contentView.heightAnchor.constraint(equalToConstant: self.contentViewDefaultHeight ?? DefaultAlertProperties.contentViewDefaultHeight)
                 self.contentViewHeightConstraint?.isActive = true
@@ -186,7 +182,7 @@ open class DefaultAlertControllerBaseClass: UIViewController, AlertControllerVie
                 
                 self.contentView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 8.0).isActive = true
                 self.contentView.widthAnchor.constraint(equalTo: self.containerView.widthAnchor, constant: 0.0).isActive = true
-                self.contentView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: self.actionSheetBounceHeight ?? DefaultAlertProperties.actionSheetBounceHeight).isActive = true
+                self.contentView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant:  self.actionSheetBounceHeight ?? DefaultAlertProperties.actionSheetBounceHeight).isActive = true
                 
             } else {
                 

@@ -63,7 +63,7 @@ public struct DefaultAlertProperties {
     public static var buttonMargin: CGFloat { get { return 8.0 }}
     
     public static var fullScreen: Bool { get { return false }}
-    public static var actionSheetBounceHeight: CGFloat { get { return 20.0 }}
+    public static var actionSheetBounceHeight: CGFloat { get { return 0.0 }}
     
     public static var alertViewWidth: CGFloat { get { return 270.0 }}
     public static var alertViewPadding: CGFloat { get { return 12.0 }}

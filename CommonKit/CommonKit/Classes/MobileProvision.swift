@@ -90,11 +90,16 @@ public extension MobileProvision {
         
         // Skip binary part at the start of the mobile provisionning profile
         let scanner = Scanner(string: plistDataString as String)
-        guard scanner.scanUpTo("<plist", into: nil) != false else { return nil }
+        
+        guard let _: String = scanner.scanUpToString("<plist") else { return nil }
         
         // ... and extract plist until end of plist payload (skip the end binary part.
         var extractedPlist: NSString?
-        guard scanner.scanUpTo("</plist>", into: &extractedPlist) != false else { return nil }
+
+        guard let _str: String = scanner.scanUpToString("</plist>") else { return nil }
+        extractedPlist = NSString(string: _str)
+
+        guard extractedPlist != nil else { return nil }
         
         guard let plist = extractedPlist?.appending("</plist>").data(using: .isoLatin1) else { return nil }
         let decoder = PropertyListDecoder()

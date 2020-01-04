@@ -23,15 +23,15 @@ public struct NumPadStyle {
     
     public static var `default`: NumPadStyle = NumPadStyle(
         overlayColor: UIColor.keyboardBackgroundColor,
-        backgroundColor: UIColor.white,
-        backgroundColorHighlighted: UIColor.lightGray,
-        shadowColor: UIColor.darkGray,
-        foregroundColor: UIColor.black,
-        foregroundColorHighlighted: UIColor.gray,
+        backgroundColor: UIColor.secondarySystemFill,
+        backgroundColorHighlighted: UIColor.quaternarySystemFill,
+        shadowColor: UIColor.secondaryLabel,
+        foregroundColor: UIColor.label,
+        foregroundColorHighlighted: UIColor.tertiaryLabel,
         font: UIFont.systemFont(ofSize: 25.0, weight: .semibold),
         phoneFont: UIFont.systemFont(ofSize: 20.0, weight: .regular),
         phoneCharFont: UIFont.systemFont(ofSize: 8.5, weight: .semibold),
-        backspaceColor: UIColor.darkGray
+        backspaceColor: UIColor.secondaryLabel
     )
 
 }

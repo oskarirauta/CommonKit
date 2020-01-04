@@ -46,6 +46,7 @@ extension NumPad {
             self.backgroundColor = self.isHighlighted ? self.style.backgroundColorHighlighted : self.style.backgroundColor
             self.setTitleColor(self.style.foregroundColor, for: .normal)
             self.setTitleColor(self.style.foregroundColorHighlighted, for: .highlighted)
+            self.setTitleColor(self.style.foregroundColorHighlighted, for: .focused)
             self.titleLabel?.font = self.style.font
             self.titleLabel?.textAlignment = .center
             self.titleLabel?.lineBreakMode = .byClipping
@@ -112,6 +113,7 @@ extension NumPad {
             self.backgroundColor = UIColor.clear
             self.setTitleColor(style.foregroundColor, for: .normal)
             self.setTitleColor(style.foregroundColorHighlighted, for: .highlighted)
+            self.setTitleColor(style.foregroundColorHighlighted, for: .focused)
             self.titleLabel?.font = style.font
             self.titleLabel?.textAlignment = .center
             switch type {

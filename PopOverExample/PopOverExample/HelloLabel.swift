@@ -14,7 +14,7 @@ open class HelloLabel: UILabel {
     public override init(frame: CGRect) {
         super.init(frame: frame)
         self.font = UIFont.boldSystemFont(ofSize: 13.5)
-        self.textColor = UIColor.black
+        self.textColor = UIColor.darkText
         self.text = "Hello World!"
         self.translatesAutoresizingMaskIntoConstraints = false
     }

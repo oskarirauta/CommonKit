@@ -133,7 +133,7 @@ open class PhotoPicker: DefaultAlertControllerBaseClass, PHPhotoLibraryChangeObs
             self.photoPickerView.photoView.isHidden = true
         }
         
-        let hasCamera : Bool = UIImagePickerController.isSourceTypeAvailable(.camera)
+        let hasCamera: Bool = UIImagePickerController.isSourceTypeAvailable(.camera)
         let _ = self.photoPickerView.photoView.buttonArea
         
         if (( AVCaptureDevice.authorizationStatus(for: .video) == .authorized ) && ( hasCamera )) {

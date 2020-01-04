@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     lazy var window: UIWindow? = UIWindow(frame: UIScreen.main.bounds).properties {
         $0.rootViewController = ViewController()
-        $0.rootViewController?.view.backgroundColor = UIColor.white
+        $0.rootViewController?.view.backgroundColor = UIColor.systemFill
         $0.makeKeyAndVisible()
     }
 

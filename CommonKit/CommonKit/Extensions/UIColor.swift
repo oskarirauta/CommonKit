@@ -60,15 +60,15 @@ public extension UIColor {
     }
     
     class var cellBackgroundColor: UIColor {
-        return UIColor.white
+        return .secondarySystemGroupedBackground
     }
     
     class var defaultTitleColor: UIColor {
-        return UIColor(red: 28.00/255.00, green: 38.00/255.00, blue: 43.00/255.00, alpha: 0.90)
+            return .label
     }
     
     class var tipColor: UIColor {
-        return UIColor.darkGray
+        return UIColor.darkText
     }
     
     class var toolbarColor: UIColor {
@@ -76,7 +76,7 @@ public extension UIColor {
     }
     
     class var keyboardBackgroundColor: UIColor {
-        get { return UIColor(red: 210.0/255.0, green: 213.0/255.0, blue: 219.0/255.0, alpha: 1.0) }
+        get { return .quaternarySystemFill }
     }
     
     class var tableViewSeparatorColor: UIColor {

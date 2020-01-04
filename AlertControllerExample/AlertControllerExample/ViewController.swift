@@ -70,7 +70,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate
         let buttonTitle = "OK"
         
         let alertController = AlertController(title: title, message: message, preferredStyle: .alert)
-        
+
         // Create the action.
         let cancelAction = AlertAction(title: buttonTitle, style: .default) { action in
             NSLog("The simple alert's dismissal action occured.")
