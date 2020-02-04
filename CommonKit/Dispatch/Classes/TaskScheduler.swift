@@ -23,7 +23,7 @@ open class TaskScheduler: AbstractTaskSchedulerProtocol, TaskSchedulerProtocol {
     public private(set) var thread: DispatchQueue
     internal var _processing: Bool = false
     
-    public required init(thread: DispatchQueue = DispatchQueue.global(qos: .background)) {
+    public required init(thread: DispatchQueue = DispatchQueue.global(qos: .utility)) {
         self.nextPid = -1
         self.task = nil
         self.tasks = []
@@ -106,9 +106,8 @@ open class TaskScheduler: AbstractTaskSchedulerProtocol, TaskSchedulerProtocol {
         }
         self.tasks.removeIndexes(at: self.tasks.enumerated().filter { $0.element.pid == pid }.map { $0.offset })
         self.task = nil
-        if ( self._processing ) && ( self.tasks.isEmpty ) {
-            self._processing = false
-        }
+        
+        self._processing = self._processing && !self.tasks.isEmpty ? false : self._processing
         self.executeTasks()
     }
     

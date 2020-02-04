@@ -12,11 +12,13 @@ import UIKit
 public extension UIColor {
     
     class var headerFooterColor: UIColor {
-        return UIColor(red: 154.00/255.00, green: 154.00/255.00, blue: 154.00/255.00, alpha: 1.0)
+        return UIColor.darkText
+        //return UIColor(red: 154.00/255.00, green: 154.00/255.00, blue: 154.00/255.00, alpha: 1.0)
     }
     
     class var badgeForegroundColor: UIColor {
-        return UIColor.white
+        //return UIColor.white
+        return UIColor.lightText
     }
     
     class var blueBadgeBackgroundColor: UIColor {
@@ -56,15 +58,19 @@ public extension UIColor {
     }
     
     class var timeTextColor: UIColor {
-        return UIColor.darkGray.withAlphaComponent(0.85)
+        return UIColor.darkText.withAlphaComponent(0.85)
     }
     
     class var cellBackgroundColor: UIColor {
-        return .secondarySystemGroupedBackground
+        return UIColor.secondarySystemGroupedBackground
     }
     
     class var defaultTitleColor: UIColor {
-            return .label
+            return UIColor.label
+    }
+    
+    class var disabledColor: UIColor {
+        return UIColor.lightText
     }
     
     class var tipColor: UIColor {
@@ -72,15 +78,16 @@ public extension UIColor {
     }
     
     class var toolbarColor: UIColor {
-        get { return UIColor(red: 249.0/255.0, green: 249.0/255.0, blue: 249.0/255.0, alpha: 1.0) }
+            return UIColor(red: 249.0/255.0, green: 249.0/255.0, blue: 249.0/255.0, alpha: 1.0)
     }
     
     class var keyboardBackgroundColor: UIColor {
-        get { return .quaternarySystemFill }
+            return .quaternarySystemFill
     }
     
     class var tableViewSeparatorColor: UIColor {
-        get { return UIColor(red: 224.0/255.0, green: 224.0/255.0, blue: 224.0/255.0, alpha: 1.0) }
+            return UIColor.separator
+            //return UIColor(red: 224.0/255.0, green: 224.0/255.0, blue: 224.0/255.0, alpha: 1.0) }
     }
     
     var image: UIImage? {
@@ -249,3 +256,4 @@ public extension UIColor {
     }
     
 }
+

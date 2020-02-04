@@ -198,9 +198,8 @@ Yes - it's not perfect. It's just something to get you started - some icon names
 Included since 1.3.2. TableViewKit contains some improvements to UITableViewController, UITableViewCell and UITableView's headers. Also brings few new classes: UITableViewControllerExtended and UITableViewCellExtended which have extended supported functionality. Also UITitleLabel is nice addition, it's a base for custom cells which have icon and title.
 
 ### PhotoPicker
-PhotoPicker and PhotoPreview are classes which allow you to present a photo picker with possibility of selecting multiple assets at once, PhotoPrevies is a photo displayer class. These both utilize provided AlertController. Camera support (if device has a camera, simulator doesn't) is also supported in PhotoPicker. Recording or picking a video is not supported by this system, only stills. Camera interface includes common controls.
-
-![PhotoPicker](https://raw.githubusercontent.com/oskarirauta/CommonKit/master/Screenshots/PhotoPicker.png)
+PhotoPicker has been removed from CommonKit. Instead it includes now in CommonKitPhotos repository.
+CommonKitPhotos is located at: https://github.com/oskarirauta/CommonKit
 
 ### ConditionalInit protocol
 ConditionalInit protocol is very handy when you need a lazy class (yes, class, because this one requires something that has init), but cannot use lazy because you want to in control and need to reset it once in a while. There are other ways to do this as well, like initializer function which is executed lazily, but here's another approach.
@@ -259,7 +258,8 @@ source 'https://github.com/CocoaPods/Specs.git'
 # inhibit_all_warnings!
 use_frameworks!
 
-platform :ios, '11.0'
+platform :ios, '13.2'
+swift_version = '5.0'
 
 target 'YOURPROJECT' do
         pod 'CommonKit', git: 'https://github.com/oskarirauta/CommonKit.git'

@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'CommonKit'
-  s.version          = '1.9.2'
+  s.version          = '1.9.6'
   s.license          = { :type => 'Free', :text => 'Free' }
   s.summary          = 'A Swift framework with some common extensions and functions'
  
@@ -21,12 +21,11 @@ since extensions for UILabel could not provide this functionality.
 			'https://raw.githubusercontent.com/oskarirauta/CommonKit/master/Screenshots/Phone.png',
 			'https://raw.githubusercontent.com/oskarirauta/CommonKit/master/Screenshots/Landscape.png',
 			'https://raw.githubusercontent.com/oskarirauta/CommonKit/master/Screenshots/Currency.png',
-			'https://raw.githubusercontent.com/oskarirauta/CommonKit/master/Screenshots/FontKit.png',
-			'https://raw.githubusercontent.com/oskarirauta/CommonKit/master/Screenshots/PhotoPicker.png'
+			'https://raw.githubusercontent.com/oskarirauta/CommonKit/master/Screenshots/FontKit.png'
 		]
 
   s.swift_version = '5.0'
-  s.ios.deployment_target = '13.1'
+  s.ios.deployment_target = '13.2'
   s.source_files = [
 			'CommonKit/Reachability/Extensions/*.swift',
 			'CommonKit/CKUserResponse/*.swift',
@@ -39,11 +38,6 @@ since extensions for UILabel could not provide this functionality.
 			'CommonKit/TableViewKit/Types/*.swift',
 			'CommonKit/TableViewKit/Extensions/*.swift',
 			'CommonKit/TableViewKit/Classes/*.swift',
-			'CommonKit/PhotoPreview/Classes/*.swift',
-			'CommonKit/PhotoPicker/Classes/*.swift',
-			'CommonKit/PhotoPicker/Cells/*.swift',
-			'CommonKit/PhotoPicker/Views/*.swift',
-			'CommonKit/PhotoPicker/Datasource/*.swift',
 			'CommonKit/AlertController/Types/*.swift',
 			'CommonKit/AlertController/Protocols/*.swift',
 			'CommonKit/AlertController/Templates/*.swift',
@@ -90,8 +84,7 @@ since extensions for UILabel could not provide this functionality.
 		'CommonKit/FontKit/Resources/*.ttf',
 		'CommonKit/NumPad/Resources/NumPad.xcassets',
 		'CommonKit/Currency/Resources/CurrencyKit.xcassets',
-		'CommonKit/TableViewKit/Resources/TVKIT.xcassets',
-		'CommonKit/PhotoPicker/Resources/UIPhotoPicker.xcassets'
+		'CommonKit/TableViewKit/Resources/TVKIT.xcassets'
 		]
  
 end

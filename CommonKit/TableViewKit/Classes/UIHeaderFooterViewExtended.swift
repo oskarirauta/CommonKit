@@ -26,7 +26,7 @@ open class UIHeaderFooterViewExtended: UITableViewHeaderFooterView, HeaderConstr
         $0.setContentHuggingPriority(.defaultLow, for: .horizontal)
     }
 
-    open var titleColor: UIColor! = UIColor.secondaryLabel {
+    open var titleColor: UIColor! = UIColor.label {
         didSet {
             self.titleLabel.titleColor = self.titleColor
             self.titleLabel.iconColor = self.iconColor

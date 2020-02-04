@@ -29,7 +29,7 @@ open class UITitleCell: UITableViewCellExtended, CellTitleProtocol {
         }
     }
     
-    open var disabledColor: UIColor! = UIColor.gray {
+    open var disabledColor: UIColor! = UIColor.disabledColor {
         didSet {
             self.titleLabel.titleColor = self.enabled ? self.titleColor : self.disabledColor
             self.titleLabel.iconColor = self.iconColor != nil ? ( self.enabled ? self.iconColor! : self.disabledColor ) : nil
@@ -68,7 +68,7 @@ open class UITitleCell: UITableViewCellExtended, CellTitleProtocol {
         self.selectable = false
         self.enabled = true
         self.titleColor = UIColor.defaultTitleColor
-        self.disabledColor = UIColor.gray
+        self.disabledColor = UIColor.disabledColor
         self.iconColor = nil
         self.titleLabel.iconWidthSource = .manual(19.5)
         self.titleFont = UIFont.boldSystemFont(ofSize: 13.5)
@@ -122,7 +122,7 @@ open class UITitleCell: UITableViewCellExtended, CellTitleProtocol {
         }
         
         self.backgroundColor = UIColor.lightGray.withAlphaComponent(0.4)
-        self.titleLabel.textColor = UIColor.white
+        self.titleLabel.textColor = UIColor.lightText
         
         UIView.animate(withDuration: 0.45, animations: {
             self.backgroundColor = UIColor.cellBackgroundColor

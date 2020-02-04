@@ -14,7 +14,7 @@ open class DefaultAlertControllerBaseClass: UIViewController, AlertControllerVie
             
     open var fullscreen: Bool { get { return DefaultAlertProperties.fullScreen }}
     
-    open internal(set) var _preferredStyle: AlertControllerStyle = .alert
+    open var _preferredStyle: AlertControllerStyle = .alert
     open var preferredStyle: AlertControllerStyle { get { return self._preferredStyle }}
     
     // Settings

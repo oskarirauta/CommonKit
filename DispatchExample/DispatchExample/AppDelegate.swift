@@ -20,7 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return _window
     }()
     
-    var taskScheduler: TaskScheduler = TaskScheduler()
+    //var taskScheduler: TaskScheduler = TaskScheduler()
+    var taskScheduler: MultiTaskScheduler = MultiTaskScheduler()
+    
     var myTask: MyTask {
         return MyTask(taskScheduler: self.taskScheduler)
     }

@@ -100,6 +100,5 @@ open class Task: AbstractTaskProtocol, TaskProtocol, NSCopying {
         modifyFunc(&retVal)
         return retVal
     }
-
     
 }

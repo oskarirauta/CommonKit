@@ -38,9 +38,6 @@
       location = "group:AlertControllerExample/AlertControllerExample.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:PhotoPickerExample/PhotoPickerExample.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:CommonKit/CommonKit.xcodeproj">
    </FileRef>
 </Workspace>
