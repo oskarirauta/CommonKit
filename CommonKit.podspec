@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'CommonKit'
-  s.version          = '1.9.6'
+  s.version          = '1.9.7'
   s.license          = { :type => 'Free', :text => 'Free' }
   s.summary          = 'A Swift framework with some common extensions and functions'
  
@@ -29,7 +29,6 @@ since extensions for UILabel could not provide this functionality.
   s.source_files = [
 			'CommonKit/Reachability/Extensions/*.swift',
 			'CommonKit/CKUserResponse/*.swift',
-			'CommonKit/LocationService/*.swift',
 			'CommonKit/BarCode/Types/*.swift',
 			'CommonKit/BarCode/Extensions/*.swift',
 			'CommonKit/QRCode/Types/*.swift',

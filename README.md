@@ -199,7 +199,11 @@ Included since 1.3.2. TableViewKit contains some improvements to UITableViewCont
 
 ### PhotoPicker
 PhotoPicker has been removed from CommonKit. Instead it includes now in CommonKitPhotos repository.
-CommonKitPhotos is located at: https://github.com/oskarirauta/CommonKit
+CommonKitPhotos is located at https://github.com/oskarirauta/CommonKit
+
+### Location support
+Location and placemark support has been removed from CommonKit. Instead it is now included in CommonKitLocation repository, which can be used also as a separate framework without CommonKit.
+CommonKitLocation is located at https://github.com/oskarirauta/CommonKitLocation
 
 ### ConditionalInit protocol
 ConditionalInit protocol is very handy when you need a lazy class (yes, class, because this one requires something that has init), but cannot use lazy because you want to in control and need to reset it once in a while. There are other ways to do this as well, like initializer function which is executed lazily, but here's another approach.

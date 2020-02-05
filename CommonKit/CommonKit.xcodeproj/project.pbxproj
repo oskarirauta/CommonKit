@@ -163,9 +163,6 @@
 		6E8BBD2B22AFAD75002FAAD3 /* WarnSyntaxErrorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8BBD2A22AFAD75002FAAD3 /* WarnSyntaxErrorProtocol.swift */; };
 		6E8BE84320D8F1FF00F600D2 /* PopOverExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8BE84220D8F1FF00F600D2 /* PopOverExtension.swift */; };
 		6E8CA17E21B7EFA700481E40 /* UITextInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8CA17D21B7EFA700481E40 /* UITextInput.swift */; };
-		6E8CA1CC21B92BA200481E40 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8CA1CB21B92BA200481E40 /* LocationService.swift */; };
-		6E8CA1CE21B92BE500481E40 /* LocationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8CA1CD21B92BE500481E40 /* LocationDelegate.swift */; };
-		6E8CA1D021B92CED00481E40 /* CLPlacemark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8CA1CF21B92CED00481E40 /* CLPlacemark.swift */; };
 		6E8CA2E521BC743D00481E40 /* CKUserResponse+permissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8CA2E021BC743C00481E40 /* CKUserResponse+permissions.swift */; };
 		6E8CA2E621BC743D00481E40 /* CKUserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8CA2E121BC743C00481E40 /* CKUserResponse.swift */; };
 		6E8CA2E721BC743D00481E40 /* CKUserResponse+values.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8CA2E221BC743D00481E40 /* CKUserResponse+values.swift */; };
@@ -356,9 +353,6 @@
 		6E8BBD2A22AFAD75002FAAD3 /* WarnSyntaxErrorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarnSyntaxErrorProtocol.swift; sourceTree = "<group>"; };
 		6E8BE84220D8F1FF00F600D2 /* PopOverExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopOverExtension.swift; sourceTree = "<group>"; };
 		6E8CA17D21B7EFA700481E40 /* UITextInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextInput.swift; sourceTree = "<group>"; };
-		6E8CA1CB21B92BA200481E40 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
-		6E8CA1CD21B92BE500481E40 /* LocationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDelegate.swift; sourceTree = "<group>"; };
-		6E8CA1CF21B92CED00481E40 /* CLPlacemark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLPlacemark.swift; sourceTree = "<group>"; };
 		6E8CA2E021BC743C00481E40 /* CKUserResponse+permissions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CKUserResponse+permissions.swift"; sourceTree = "<group>"; };
 		6E8CA2E121BC743C00481E40 /* CKUserResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CKUserResponse.swift; sourceTree = "<group>"; };
 		6E8CA2E221BC743D00481E40 /* CKUserResponse+values.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CKUserResponse+values.swift"; sourceTree = "<group>"; };
@@ -785,7 +779,6 @@
 			children = (
 				6EFA2E8E21CCED3A00AC09B2 /* Reachability */,
 				6E8CA2DF21BC741700481E40 /* CKUserResponse */,
-				6E8CA1CA21B92B8100481E40 /* LocationService */,
 				6E8F140520D1B9CC00151AA0 /* BarCode */,
 				6E8F13FE20D1B90000151AA0 /* QRCode */,
 				6E75BB5120CAB21200876950 /* TableViewKit */,
@@ -855,7 +848,6 @@
 				6E759E6D2194678000C5C15D /* CGRect.swift */,
 				6E8F13FA20D1B82800151AA0 /* CIColor.swift */,
 				6E8F13FC20D1B89800151AA0 /* CIImage.swift */,
-				6E8CA1CF21B92CED00481E40 /* CLPlacemark.swift */,
 				6E49983720B2BA11008D7ACD /* Character.swift */,
 				6E8CA35521BD35EE00481E40 /* CKUserIdentity.swift */,
 				6E3C4FFF20A0E1B0009C3ED7 /* Creatable.swift */,
@@ -1071,15 +1063,6 @@
 				6E8BE84220D8F1FF00F600D2 /* PopOverExtension.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		6E8CA1CA21B92B8100481E40 /* LocationService */ = {
-			isa = PBXGroup;
-			children = (
-				6E8CA1CB21B92BA200481E40 /* LocationService.swift */,
-				6E8CA1CD21B92BE500481E40 /* LocationDelegate.swift */,
-			);
-			path = LocationService;
 			sourceTree = "<group>";
 		};
 		6E8CA2DF21BC741700481E40 /* CKUserResponse */ = {
@@ -1300,7 +1283,6 @@
 				6E75BB1A20CA92A900876950 /* TextFieldHandlerProtocol.swift in Sources */,
 				6ED7A94B20C7AC8700CAC025 /* Locale.swift in Sources */,
 				6E00BDD420C8741D00C68DBD /* UIFont.swift in Sources */,
-				6E8CA1CE21B92BE500481E40 /* LocationDelegate.swift in Sources */,
 				6E74545420C7F72100A35FC9 /* NumPadExtension.swift in Sources */,
 				6E00BE3320C88E1400C68DBD /* Font.swift in Sources */,
 				6E9EC66E20F60BD40023515C /* CustomTask.swift in Sources */,
@@ -1335,7 +1317,6 @@
 				6E75BB1520CA69E200876950 /* AlertController.swift in Sources */,
 				6E75BB6D20CABC2B00876950 /* TableViewSettingsProtocol.swift in Sources */,
 				6E3C500620A0E1B0009C3ED7 /* UIBarButtonItem.swift in Sources */,
-				6E8CA1D021B92CED00481E40 /* CLPlacemark.swift in Sources */,
 				6E00BDFD20C8829E00C68DBD /* VATProtocol.swift in Sources */,
 				6E00BE8A20C89CA700C68DBD /* FoundationIcons.swift in Sources */,
 				6E00BDE220C8826900C68DBD /* CurrencyField.swift in Sources */,
@@ -1408,7 +1389,6 @@
 				6E8CA2E821BC743D00481E40 /* CKUserResponse+identity.swift in Sources */,
 				6E00BDE520C8826900C68DBD /* CurrencyPadExtension.swift in Sources */,
 				6ECC5D8B21423F1F00908CC8 /* MutatorCompatible.swift in Sources */,
-				6E8CA1CC21B92BA200481E40 /* LocationService.swift in Sources */,
 				6E75BB4D20CAB08900876950 /* EditingSectionProtocol.swift in Sources */,
 				6E00BE3A20C88E2F00C68DBD /* MaterialIcons+regular.swift in Sources */,
 				6E3C500F20A0E1B0009C3ED7 /* String.swift in Sources */,
@@ -1583,7 +1563,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.9.6;
+				MARKETING_VERSION = 1.9.7;
 				PRODUCT_BUNDLE_IDENTIFIER = com.oskarirauta.CommonKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -1613,7 +1593,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.9.6;
+				MARKETING_VERSION = 1.9.7;
 				PRODUCT_BUNDLE_IDENTIFIER = com.oskarirauta.CommonKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
