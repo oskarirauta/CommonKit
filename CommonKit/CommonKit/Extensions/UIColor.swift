@@ -18,7 +18,16 @@ public extension UIColor {
     
     class var badgeForegroundColor: UIColor {
         //return UIColor.white
-        return UIColor.lightText
+        
+        if #available(iOS 13.0, *) {
+            return UIColor { (traits) -> UIColor in
+                // Return one of two colors depending on light or dark mode
+                return traits.userInterfaceStyle == .dark ? UIColor.white.darker(by: 0.04).withAlphaComponent(0.89) : .lightText
+            }
+        } else {
+            // Same old color used for iOS 12 and earlier
+            return .lightText
+        }
     }
     
     class var blueBadgeBackgroundColor: UIColor {
