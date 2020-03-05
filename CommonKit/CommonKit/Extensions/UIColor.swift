@@ -82,7 +82,7 @@ public extension UIColor {
         if #available(iOS 13.0, *) {
             return UIColor { (traits) -> UIColor in
                 // Return one of two colors depending on light or dark mode
-                return traits.userInterfaceStyle == .dark ? .lightText : UIColor.lightGray.darker(by: 0.11)
+                return traits.userInterfaceStyle == .dark ? .lightText : UIColor.darkGray.lighter(by: 0.1).withAlphaComponent(0.85)
             }
         } else {
             // Same old color used for iOS 12 and earlier
