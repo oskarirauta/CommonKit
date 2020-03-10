@@ -10,22 +10,59 @@ import Foundation
 
 extension UIDevice {
     
+    public enum DeviceFamilyEnum {
+        
+        case iphone
+        case ipod
+        case ipad
+        case watch
+        case tvos
+        case macCatalyst
+        case osx
+        case carplay
+        case unknown
+        
+        var description: String {
+            get {
+                switch self {
+                case .iphone: return "iPhone"
+                case .ipod: return "iPod"
+                case .ipad: return "iPad"
+                case .watch: return "Apple Watch"
+                case .tvos: return "Apple TV"
+                case .macCatalyst: return "Mac Catalyst"
+                case .osx: return "Mac OS X"
+                case .carplay: return "Apple Carplay"
+                case .unknown: return "Unknown"
+                }
+            }
+        }
+        
+    }
+    
     public enum DebugModeEnum {
+        
         case notDetermined
         case production
         case development
+        
+        var description: String {
+            get {
+                switch self {
+                case .notDetermined: return "Not determined"
+                case .production: return "Product environment"
+                case .development: return "Development environment"
+                }
+            }
+        }
     }
     
-    public static var machine: String? {
+    public static var machine: String {
         get {
             var systemInfo = utsname()
             uname(&systemInfo)
-            let modelCode = withUnsafePointer(to: &systemInfo.machine) {
-                $0.withMemoryRebound(to: CChar.self, capacity: 1) {
-                    ptr in String.init(validatingUTF8: ptr)
-                }
-            }
-            return modelCode == nil ? nil : String(validatingUTF8: modelCode!)
+            
+            return String(validatingUTF8: NSString(bytes: &systemInfo.machine, length: Int(_SYS_NAMELEN), encoding: String.Encoding.ascii.rawValue)!.utf8String!)!
         }
     }
 
@@ -53,7 +90,29 @@ extension UIDevice {
         }
     }
 
-    public var machine: String? {
+    public static var deviceFamily: DeviceFamilyEnum {
+        get {
+            #if targetEnvironment(macCatalyst)
+            return .macCatalyst
+            #elseif os(OSX)
+            return .osx
+            #elseif os(watchOS)
+            return .watch
+            #elseif os(tvOS)
+            return .tvos
+            #else
+            switch UIDevice.current.userInterfaceIdiom {
+            case .carPlay: return .carplay
+            case .pad: return .ipad
+            case .phone: return UIDevice.current.model.uppercased().contains("IPOD") ? .ipod : .iphone
+            case .tv: return .tvos
+            default: return .unknown
+            }
+            #endif
+        }
+    }
+    
+    public var machine: String {
         get { return UIDevice.machine }
     }
 
@@ -63,6 +122,10 @@ extension UIDevice {
 
     public var inDebugMode: UIDevice.DebugModeEnum {
         get { return UIDevice.inDebugMode }
+    }
+    
+    public var deviceFamily: DeviceFamilyEnum {
+        get { return UIDevice.deviceFamily }
     }
     
 }
