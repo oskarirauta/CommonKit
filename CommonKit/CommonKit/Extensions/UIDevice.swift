@@ -22,7 +22,7 @@ extension UIDevice {
         case carplay
         case unknown
         
-        var description: String {
+        public var description: String {
             get {
                 switch self {
                 case .iphone: return "iPhone"
@@ -46,7 +46,7 @@ extension UIDevice {
         case production
         case development
         
-        var description: String {
+        public var description: String {
             get {
                 switch self {
                 case .notDetermined: return "Not determined"
@@ -90,7 +90,7 @@ extension UIDevice {
         }
     }
 
-    public static var deviceFamily: DeviceFamilyEnum {
+    public static var deviceFamily: UIDevice.DeviceFamilyEnum {
         get {
             #if targetEnvironment(macCatalyst)
             return .macCatalyst
@@ -124,7 +124,7 @@ extension UIDevice {
         get { return UIDevice.inDebugMode }
     }
     
-    public var deviceFamily: DeviceFamilyEnum {
+    public var deviceFamily: UIDevice.DeviceFamilyEnum {
         get { return UIDevice.deviceFamily }
     }
     
