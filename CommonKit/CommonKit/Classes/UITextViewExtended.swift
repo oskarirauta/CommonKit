@@ -37,7 +37,7 @@ open class UITextViewExtended: UITextView, TextFieldProtocol, TextViewProtocol {
     open lazy var placeholderLabel: UILabel = UILabel.create {
         $0.backgroundColor = UIColor.clear
         $0.font = self.placeHolderFont
-        $0.textColor = UIColor.lightGray
+        $0.textColor = UIColor.placeholderColor
         $0.isHidden = self.hasText ? true : ( !( $0.text?.isEmpty ?? true ) ? true : ( self.hasText ))
         $0.translatesAutoresizingMaskIntoConstraints = false
     }

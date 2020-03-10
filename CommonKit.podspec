@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'CommonKit'
-  s.version          = '1.9.15'
+  s.version          = '1.9.16'
   s.license          = { :type => 'Free', :text => 'Free' }
   s.summary          = 'A Swift framework with some common extensions and functions'
  

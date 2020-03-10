@@ -89,7 +89,19 @@ public extension UIColor {
             return .lightText
         }
     }
-    
+
+    class var placeholderColor: UIColor {
+        if #available(iOS 13.0, *) {
+            return UIColor { (traits) -> UIColor in
+                // Return one of two colors depending on light or dark mode
+                return traits.userInterfaceStyle == .dark ? .darkGray : .lightGray
+            }
+        } else {
+            // Same old color used for iOS 12 and earlier
+            return .lightGray
+        }
+    }
+
     class var tipColor: UIColor {
         return UIColor.darkText
     }
