@@ -31,11 +31,15 @@ extension UIDevice {
                 case .watch: return "Apple Watch"
                 case .tvos: return "Apple TV"
                 case .macCatalyst: return "Mac Catalyst"
-                case .osx: return "Mac OS X"
-                case .carplay: return "Apple Carplay"
+                case .osx: return "Mac"
+                case .carplay: return "Carplay"
                 case .unknown: return "Unknown"
                 }
             }
+        }
+        
+        public var isIphoneCompatible: Bool {
+            get { return self == .iphone || self == .ipod ? true : false }
         }
         
     }
