@@ -8,14 +8,28 @@
 
 import Foundation
 
-extension UIFont {
+public extension UIFont {
     
-    public var bold: UIFont {
+    var bold: UIFont {
         get { return UIFont(descriptor: self.fontDescriptor.withSymbolicTraits(.traitBold)!, size: 0) }
     }
     
-    public var italic: UIFont {
+    var italic: UIFont {
         get { return UIFont(descriptor: self.fontDescriptor.withSymbolicTraits(.traitItalic)!, size: 0) }
+    }
+    
+    /// SwifterSwift: Font as monospaced font
+    ///
+    ///     UIFont.preferredFont(forTextStyle: .body).monospaced
+    ///
+    var monospaced: UIFont {
+        get {
+            let settings = [[UIFontDescriptor.FeatureKey.featureIdentifier: kNumberSpacingType, UIFontDescriptor.FeatureKey.typeIdentifier: kMonospacedNumbersSelector]]
+
+            let attributes = [UIFontDescriptor.AttributeName.featureSettings: settings]
+            let newDescriptor = fontDescriptor.addingAttributes(attributes)
+            return UIFont(descriptor: newDescriptor, size: 0)
+        }
     }
     
 }

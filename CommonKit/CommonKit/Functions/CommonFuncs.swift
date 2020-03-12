@@ -20,7 +20,7 @@ public var newUUID: String {
 public func doNothing() {}
 
 public var appName: String {
-    get { return UIApplication.shared.delegate!.appName }
+    get { return UIApplication.shared.appName }
 }
 
 public var appVersion: String {

@@ -126,23 +126,7 @@ open class UILabelExtended: UIView {
             self.setNeedsContentUpdate()
         }
     }
-    
-    open var shadowColor: UIColor? {
-        get { return self.label.shadowColor }
-        set {
-            self.label.shadowColor = newValue
-            self.setNeedsContentUpdate()
-        }
-    }
-    
-    open var shadowOffset: CGSize {
-        get { return self.label.shadowOffset }
-        set {
-            self.label.shadowOffset = newValue
-            self.setNeedsContentUpdate()
-        }
-    }
-    
+        
     open var preferredMaxLayoutWidth: CGFloat {
         get { return self.label.preferredMaxLayoutWidth }
         set {

@@ -12,113 +12,144 @@ import UIKit
 public extension UIColor {
     
     class var headerFooterColor: UIColor {
-        return UIColor.darkText
-        //return UIColor(red: 154.00/255.00, green: 154.00/255.00, blue: 154.00/255.00, alpha: 1.0)
+        get {
+            return colorScheme(default: .darkText)
+        }
     }
     
     class var badgeForegroundColor: UIColor {
-        //return UIColor.white
-        
-        if #available(iOS 13.0, *) {
-            return UIColor { (traits) -> UIColor in
-                // Return one of two colors depending on light or dark mode
-                return traits.userInterfaceStyle == .dark ? UIColor.white.darker(by: 0.04).withAlphaComponent(0.9) : UIColor.white.withAlphaComponent(0.9)
-            }
-        } else {
-            // Same old color used for iOS 12 and earlier
-            return .lightText
+        get {
+            return colorScheme( default: .lightText,
+                                dark: UIColor.white.darker(by: 0.02).withAlphaComponent(0.9),
+                                light: UIColor.white.withAlphaComponent(0.9))
         }
     }
     
     class var blueBadgeBackgroundColor: UIColor {
-        return UIColor(red: 114.00/255.00, green: 117.00/255.00, blue: 188.00/255.00, alpha: 1.0)
+        get {
+            return colorScheme(default: UIColor(red: 114.00/255.00, green: 117.00/255.00, blue: 188.00/255.00, alpha: 1.0))
+        }
     }
     
     class var badgeBackgroundColor: UIColor {
-        return UIColor(red: 124.00/255.00, green: 127.00/255.00, blue: 168.00/255.00, alpha: 1.0)
+        get {
+            return colorScheme(default: UIColor(red: 124.00/255.00, green: 127.00/255.00, blue: 168.00/255.00, alpha: 1.0))
+        }
     }
     
     class var badge2BackgroundColor: UIColor {
-        return UIColor(red: 142.0/255, green: 156.0/255, blue: 183.0/255, alpha: 1.0)
+        get {
+            return colorScheme(default: UIColor(red: 142.0/255, green: 156.0/255, blue: 183.0/255, alpha: 1.0))
+        }
     }
     
     class var badgeCompleteColor: UIColor {
-        return UIColor(red: 142.00/255.00, green: 156.00/255.00, blue: 183.00/255.00, alpha: 1.0)
+        get {
+            return colorScheme( default: UIColor(red: 142.00/255.00, green: 156.00/255.00, blue: 183.00/255.00, alpha: 1.0),
+                                dark: UIColor(red: 142.00/255.00, green: 156.00/255.00, blue: 183.00/255.00, alpha: 1.0).darker(by: 0.3),
+                                light: UIColor(red: 142.00/255.00, green: 156.00/255.00, blue: 183.00/255.00, alpha: 1.0))
+        }
     }
     
     class var badgeIncompleteColor: UIColor {
-        return UIColor(red: 238.00/255.00, green: 126.00/255.00, blue: 143.00/255.00, alpha: 1.0)
+        get {
+            return colorScheme( default: UIColor(red: 238.00/255.00, green: 126.00/255.00, blue: 143.00/255.00, alpha: 1.0),
+                dark: UIColor(red: 238.00/255.00, green: 126.00/255.00, blue: 143.00/255.00, alpha: 1.0).darker(by: 0.15),
+                light: UIColor(red: 238.00/255.00, green: 126.00/255.00, blue: 143.00/255.00, alpha: 1.0))
+        }
     }
     
     class var buttonForegroundColor: UIColor {
-        return UIColor(red: 0.00/255.00, green: 122.0/255.00, blue: 255.00/255.00, alpha: 1.0)
+        get {
+            return colorScheme(default: UIColor(red: 0.00/255.00, green: 122.0/255.00, blue: 255.00/255.00, alpha: 1.0))
+        }
     }
     
     class var button2ForegroundColor: UIColor {
-        return UIColor(red: 0.00/255.00, green: 122.0/255.00, blue: 216.00/255.00, alpha: 1.0)
+        get {
+            return colorScheme(default: UIColor(red: 0.00/255.00, green: 122.0/255.00, blue: 216.00/255.00, alpha: 1.0))
+        }
     }
     
     class var button3ForegroundColor: UIColor {
-        return UIColor(red: 85.00/255.00, green: 145.0/255.00, blue: 240.00/255.00, alpha: 1.0)
+        get {
+            return colorScheme(default: UIColor(red: 85.00/255.00, green: 145.0/255.00, blue: 240.00/255.00, alpha: 1.0))
+        }
     }
     
     class var defaultShadowColor: UIColor {
-        return UIColor(red: 128.00/255.00, green: 128.00/255.00, blue: 128.00/255.00, alpha: 1.0)
+        get {
+            return colorScheme(default: UIColor(red: 128.00/255.00, green: 128.00/255.00, blue: 128.00/255.00, alpha: 1.0))
+        }
     }
     
     class var timeTextColor: UIColor {
-        return UIColor.darkText.withAlphaComponent(0.85)
+        get {
+            return colorScheme(default: UIColor.darkText.withAlphaComponent(0.85))
+        }
     }
     
     class var cellBackgroundColor: UIColor {
-        return UIColor.secondarySystemGroupedBackground
+        get {
+            return colorScheme(default: UIColor.secondarySystemGroupedBackground)
+        }
     }
     
     class var defaultTitleColor: UIColor {
-            return UIColor.label
+        get {
+            return colorScheme(default: .label)
+        }
     }
     
     class var disabledColor: UIColor {
-        if #available(iOS 13.0, *) {
-            return UIColor { (traits) -> UIColor in
-                // Return one of two colors depending on light or dark mode
-                return traits.userInterfaceStyle == .dark ? .lightText : UIColor.darkGray.lighter(by: 0.1).withAlphaComponent(0.85)
-            }
-        } else {
-            // Same old color used for iOS 12 and earlier
-            return .lightText
+        get {
+            return colorScheme(default: .lightText, dark: .lightText, light: UIColor.darkGray.lighter(by: 0.1).withAlphaComponent(0.85))
         }
     }
 
     class var placeholderColor: UIColor {
-        if #available(iOS 13.0, *) {
-            return UIColor { (traits) -> UIColor in
-                // Return one of two colors depending on light or dark mode
-                return traits.userInterfaceStyle == .dark ? .darkGray : .lightGray
-            }
-        } else {
-            // Same old color used for iOS 12 and earlier
-            return .lightGray
+        get {
+            return colorScheme(default: .lightText, dark: .darkGray, light: .lightGray)
         }
     }
 
     class var tipColor: UIColor {
-        return UIColor.darkText
+        get {
+            return colorScheme(default: .darkText)
+        }
     }
     
     class var toolbarColor: UIColor {
-            return UIColor(red: 249.0/255.0, green: 249.0/255.0, blue: 249.0/255.0, alpha: 1.0)
+        get {
+            return colorScheme(default: UIColor(red: 249.0/255.0, green: 249.0/255.0, blue: 249.0/255.0, alpha: 1.0))
+        }
     }
     
     class var keyboardBackgroundColor: UIColor {
-            return .quaternarySystemFill
+        get {
+            return colorScheme(default: .quaternarySystemFill)
+        }
     }
     
     class var tableViewSeparatorColor: UIColor {
-            return UIColor.separator
-            //return UIColor(red: 224.0/255.0, green: 224.0/255.0, blue: 224.0/255.0, alpha: 1.0) }
+        get {
+            return colorScheme(default: .separator)
+        }
     }
     
+    class func colorScheme(default: UIColor, dark: UIColor? = nil, light: UIColor? = nil) -> UIColor {
+        if #available(iOS 13.0, *) {
+            return UIColor { (traits) -> UIColor in
+                switch traits.userInterfaceStyle {
+                case .dark: return dark ?? `default`
+                case .light: return light ?? `default`
+                case .unspecified: return `default`
+                @unknown default: return `default`
+                }
+            }
+        } else { return `default` }
+    }
+
     var image: UIImage? {
         get {
             UIGraphicsBeginImageContext(CGSize(width: 1.0, height: 1.0))
@@ -165,7 +196,23 @@ public extension UIColor {
     
     /// SwifterSwift: Alpha of Color (read-only).
     var alpha: CGFloat {
-        return cgColor.alpha
+        get {
+            return cgColor.alpha
+        }
+    }
+    
+    var rgbComponents: (red: Int, green: Int, blue: Int) {
+        get {
+            var components: [CGFloat] {
+                let comps = cgColor.components!
+                if comps.count == 4 { return comps }
+                return [comps[0], comps[0], comps[0], comps[1]]
+            }
+            let red = components[0]
+            let green = components[1]
+            let blue = components[2]
+            return (red: Int(red * 255.0), green: Int(green * 255.0), blue: Int(blue * 255.0))
+        }
     }
     
     convenience init?(red: Int, green: Int, blue: Int, transparency: CGFloat = 1) {
@@ -195,7 +242,20 @@ public extension UIColor {
         let blue = hex & 0xff
         self.init(red: red, green: green, blue: blue, transparency: trans)
     }
-    
+
+    convenience init(default: UIColor, light: UIColor? = nil, dark: UIColor? = nil) {
+        #if os(watchOS)
+        return `default`
+        #else
+        if #available(iOS 13.0, *) {
+            self.init(dynamicProvider: { $0.userInterfaceStyle == .dark ? ( dark ?? `default` ) : ( $0.userInterfaceStyle == .light ? ( light ?? `default` ) : `default` ) })
+        } else {
+            let rgb = `default`.rgbComponents
+            self.init(red: CGFloat(rgb.red), green: CGFloat(rgb.green), blue: CGFloat(rgb.blue), alpha: `default`.alpha)
+        }
+        #endif
+    }
+
     convenience init?(hexString: String, transparency: CGFloat = 1) {
         var string = ""
         if hexString.lowercased().hasPrefix("0x") {
@@ -265,7 +325,7 @@ public extension UIColor {
                        alpha: alpha)
     }
 
-    func adjustBrightness(by percentage: CGFloat = 30.0) -> UIColor {
+    func adjustBrightness(by percentage: CGFloat) -> UIColor {
         var h: CGFloat = 0, s: CGFloat = 0, b: CGFloat = 0, a: CGFloat = 0
         if self.getHue(&h, saturation: &s, brightness: &b, alpha: &a) {
             if b < 1.0 {
@@ -282,6 +342,14 @@ public extension UIColor {
             }
         }
         return self
+    }
+    
+    /// SwifterSwift: Random color.
+    static var random: UIColor {
+        let red = Int.random(in: 0...255)
+        let green = Int.random(in: 0...255)
+        let blue = Int.random(in: 0...255)
+        return UIColor(red: red, green: green, blue: blue)!
     }
     
 }

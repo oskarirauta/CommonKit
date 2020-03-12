@@ -11,9 +11,6 @@ import UIKit
 
 public extension UIApplicationDelegate {
     
-    var appName: String {
-        get { return Bundle.main.object(forInfoDictionaryKey: kCFBundleNameKey as String) as! String }}
-    
     var appVersion: String {
         get { return Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String }}
     

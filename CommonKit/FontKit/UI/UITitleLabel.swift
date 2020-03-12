@@ -150,17 +150,7 @@ open class UITitleLabel: UIView, IconSettingsProtocol, TitleLabelProtocol {
         get { return self.textLabel.numberOfLines }
         set { self.textLabel.numberOfLines = newValue }
     }
-    
-    open var shadowColor: UIColor? {
-        get { return self.textLabel.shadowColor }
-        set { self.textLabel.shadowColor = newValue }
-    }
-    
-    open var shadowOffset: CGSize {
-        get { return self.textLabel.shadowOffset }
-        set { self.textLabel.shadowOffset = newValue }
-    }
-    
+        
     open var iconSize: CGFloat? = nil {
         didSet { self.refreshIcon() }
     }

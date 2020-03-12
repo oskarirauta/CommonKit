@@ -9,9 +9,23 @@
 import Foundation
 import UIKit
 
-extension UIImage {
+public extension UIImage {
     
-    public func rotated(byDegrees degrees: CGFloat) -> UIImage? {
+    /// SwifterSwift: UIImage with .alwaysOriginal rendering mode.
+    var original: UIImage {
+        get {
+            return withRenderingMode(.alwaysOriginal)
+        }
+    }
+
+    /// SwifterSwift: UIImage with .alwaysTemplate rendering mode.
+    var template: UIImage {
+        get {
+            return withRenderingMode(.alwaysTemplate)
+        }
+    }
+    
+    func rotated(byDegrees degrees: CGFloat) -> UIImage? {
         let degreesToRadians: (CGFloat) -> CGFloat = {
             return $0 / 180.0 * CGFloat(Double.pi)
         }
@@ -33,7 +47,7 @@ extension UIImage {
         return rotatedImage
     }
     
-    public func RBResizeImage(_ targetSize: CGSize) -> UIImage? {
+    func RBResizeImage(_ targetSize: CGSize) -> UIImage? {
         
         let image : UIImage = self
         let size = image.size
@@ -54,7 +68,7 @@ extension UIImage {
         return newImage
     }
     
-    public func fixOrientation() -> UIImage {
+    func fixOrientation() -> UIImage {
         
         // No-op if the orientation is already correct
         if ( self.imageOrientation == UIImage.Orientation.up ) {
@@ -119,10 +133,10 @@ extension UIImage {
 }
 
 // MARK: - Image Scaling.
-extension UIImage {
+public extension UIImage {
     
     /// Represents a scaling mode
-    public enum ScalingMode {
+    enum ScalingMode {
         case aspectFill
         case aspectFit
         
@@ -153,7 +167,7 @@ extension UIImage {
     ///     - scalingMode: the desired scaling mode
     ///
     /// - returns: a new scaled image.
-    public func scaled(to newSize: CGSize, scalingMode: UIImage.ScalingMode = .aspectFill) -> UIImage {
+    func scaled(to newSize: CGSize, scalingMode: UIImage.ScalingMode = .aspectFill) -> UIImage {
         
         let aspectRatio = scalingMode.aspectRatio(between: newSize, and: size)
         
@@ -176,7 +190,7 @@ extension UIImage {
         return scaledImage!
     }
 
-    public func cropped(to: CGRect) -> UIImage? {
+    func cropped(to: CGRect) -> UIImage? {
         guard let cgImage = self.cgImage?.cropping(to: to) else {
             return nil
         }
@@ -186,9 +200,9 @@ extension UIImage {
     
 }
 
-extension UIImage {
+public extension UIImage {
 
-    public func image(alpha: CGFloat) -> UIImage? {
+    func image(alpha: CGFloat) -> UIImage? {
         UIGraphicsBeginImageContextWithOptions(size, false, scale)
         draw(at: .zero, blendMode: .normal, alpha: alpha)
         let newImage = UIGraphicsGetImageFromCurrentImageContext()
