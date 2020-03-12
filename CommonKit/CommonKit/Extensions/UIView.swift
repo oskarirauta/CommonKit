@@ -99,7 +99,7 @@ public extension UIView {
     }
 
     /// SwifterSwift: Height of view.
-    var height: CGFloat {
+    var frameHeight: CGFloat {
         get {
             return frame.size.height
         }
@@ -107,6 +107,7 @@ public extension UIView {
             frame.size.height = newValue
         }
     }
+    
 
     /// SwifterSwift: Check if view is in RTL format.
     var isRightToLeft: Bool {
@@ -175,8 +176,8 @@ public extension UIView {
             return frame.size
         }
         set {
-            width = newValue.width
-            height = newValue.height
+            self.frameWidth = newValue.width
+            self.frameHeight = newValue.height
         }
     }
 
@@ -192,8 +193,9 @@ public extension UIView {
         return nil
     }
 
+    
     /// SwifterSwift: Width of view.
-    var width: CGFloat {
+    var frameWidth: CGFloat {
         get {
             return frame.size.width
         }
