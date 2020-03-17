@@ -11,16 +11,16 @@ import UIKit
 
 extension CurrencyPad {
     
-    public class CurrencyFunctionButton: UIButton {
+    open class CurrencyFunctionButton: UIButton {
         
-        public var handler: ((Int) -> Void)? = nil
-        private(set) var style: NumPadStyle = .default
+        open var handler: ((Int) -> Void)? = nil
+        open private(set) var style: NumPadStyle = .default
         
-        override public var isEnabled: Bool {
+        override open var isEnabled: Bool {
             didSet { self.setTitleColor(self.isEnabled ? self.style.foregroundColor : self.style.foregroundColorHighlighted, for: .normal) }
         }
         
-        required public init?(coder aDecoder: NSCoder) {
+        public required init?(coder aDecoder: NSCoder) {
             super.init(coder: aDecoder)
         }
         
@@ -43,5 +43,4 @@ extension CurrencyPad {
         }
     }
 
-    
 }

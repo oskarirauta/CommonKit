@@ -18,12 +18,10 @@ extension UIResponder {
     }
 
     public static var firstResponder: UIResponder? {
-        get {
-            firstResponderRef = nil
-            // The trick here is, that the selector will be invoked on the first responder
-            UIApplication.shared.sendAction(#selector(setFirstResponderRef), to: nil, from: nil, for: nil)
-            return firstResponderRef
-        }
+        firstResponderRef = nil
+        // The trick here is, that the selector will be invoked on the first responder
+        UIApplication.shared.sendAction(#selector(setFirstResponderRef), to: nil, from: nil, for: nil)
+        return firstResponderRef
     }
 
 }

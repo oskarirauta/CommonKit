@@ -13,16 +13,12 @@ public extension UIImage {
     
     /// SwifterSwift: UIImage with .alwaysOriginal rendering mode.
     var original: UIImage {
-        get {
             return withRenderingMode(.alwaysOriginal)
-        }
     }
 
     /// SwifterSwift: UIImage with .alwaysTemplate rendering mode.
     var template: UIImage {
-        get {
             return withRenderingMode(.alwaysTemplate)
-        }
     }
     
     func rotated(byDegrees degrees: CGFloat) -> UIImage? {

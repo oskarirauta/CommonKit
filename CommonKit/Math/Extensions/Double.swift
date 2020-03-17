@@ -10,23 +10,19 @@ import Foundation
 
 public extension Double {
         
-    var wholePart: Int {
-        get { return Int(self) }
-    }
+    var wholePart: Int { return Int(self) }
     
-    var fractionPart: Double { get { return self - Double(Int(self)) }}
+    var fractionPart: Double { return self - Double(Int(self)) }
 
     var fractionPart2: Int? {
-        get {
-            let ret: Int = Int(String(abs(self).truncatingRemainder(dividingBy: 1)).substring(from: 2)) ?? 0
-            return ret == 0 ? nil : ( self < 0 ? -ret : ret )
-        }
+        let ret: Int = Int(String(abs(self).truncatingRemainder(dividingBy: 1)).substring(from: 2)) ?? 0
+        return ret == 0 ? nil : ( self < 0 ? -ret : ret )
     }
 
-    var fractionInt: Int { get {
+    var fractionInt: Int {
         guard self != 0 else { return 0 }
         return self == 0 ? 0 : ( self < 0 ? -Int(String(abs(self.fractionPart)).substring(from: 2))! : Int(String(abs(self.fractionPart)).substring(from: 2))!)
-        }}
+    }
     
     static func random(lower: Double = 0, _ upper: Double = 100) -> Double {
         return (Double(arc4random()) / 0xFFFFFFFF) * (upper - lower) + lower

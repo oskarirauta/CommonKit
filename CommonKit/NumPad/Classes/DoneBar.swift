@@ -10,8 +10,8 @@ import Foundation
 
 public final class DoneBar: UIToolbar {
 
-    private(set) var inputViewType: NumPad.InputViewType? = nil
-    private(set) weak var textInput: UITextInput? = nil
+    public private(set) var inputViewType: NumPad.InputViewType? = nil
+    public private(set) weak var textInput: UITextInput? = nil
 
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -44,7 +44,7 @@ public final class DoneBar: UIToolbar {
     }
 
     
-    @objc func doneAction(_ sender: Any) {
+    @objc public func doneAction(_ sender: Any) {
         
         guard
             let textInput: UITextInput = self.textInput,

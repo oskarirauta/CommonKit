@@ -28,95 +28,95 @@ open class CellReturn: NSObject {
         
     }
     
-    public var state: cellState {
+    open var state: cellState {
         get { return self.dict["state"] as? cellState ?? .none }
         set { self.dict["state"] = newValue }
     }
     
-    public var cell: UITableViewCell? {
+    open var cell: UITableViewCell? {
         get { return self.dict["cell"] as? UITableViewCell }
         set { self.dict["cell"] = newValue }
     }
     
-    public var index: IndexPath? {
+    open var index: IndexPath? {
         get { return self.dict["index"] as? IndexPath }
         set { self.dict["index"] = newValue }
     }
     
-    public var int: Int? {
+    open var int: Int? {
         get { return self.dict["int"] as? Int }
         set { self.dict["int"] = newValue }
     }
     
-    public var decimal: Decimal? {
+    open var decimal: Decimal? {
         get { return self.dict["decimal"] as? Decimal }
         set { self.dict["decimal"] = newValue }
     }
     
-    public var double: Double? {
+    open var double: Double? {
         get { return self.dict["double"] as? Double }
         set { self.dict["double"] = newValue }
     }
     
-    public var string: String? {
+    open var string: String? {
         get { return self.dict["string"] as? String }
         set { self.dict["string"] = newValue }
     }
     
-    public var date: Date? {
+    open var date: Date? {
         get { return self.dict["date"] as? Date }
         set { self.dict["date"] = newValue }
     }
     
-    public var bool: Bool? {
+    open var bool: Bool? {
         get { return self.dict["bool"] as? Bool }
         set { self.dict["bool"] = newValue }
     }
     
-    public var stringArray: [String]? {
+    open var stringArray: [String]? {
         get { return self.dict["strarray"] as? [String] }
         set { self.dict["strarray"] = newValue }
     }
     
-    public var intArray: [Int]? {
+    open var intArray: [Int]? {
         get { return self.dict["intarray"] as? [Int] }
         set { self.dict["intarray"] = newValue }
     }
     
-    public var text: String? {
+    open var text: String? {
         get { return self.string }
         set { self.string = newValue }
     }
     
-    public var choice: Int? {
+    open var choice: Int? {
         get { return self.index?.row }
         set { self.index = newValue == nil ? nil : IndexPath(row: newValue!, section: 0) }
     }
     
-    public var float: Float? {
+    open var float: Float? {
         get { return self.double == nil ? nil : Float(self.double!) }
         set { self.double = newValue == nil ? nil : Double(newValue!)}
     }
     
-    public var menu: [String]? {
+    open var menu: [String]? {
         get { return self.stringArray }
         set { self.stringArray = newValue }
     }
     
-    public var tag: Int? {
+    open var tag: Int? {
         get { return self.cell?.tag }
     }
     
-    public var uuid: String? {
+    open var uuid: String? {
         get {
-            guard let cellDelegate: UUIDProtocol = self.cell as UUIDProtocol? else { return nil }
+            guard let cellDelegate: UUIDExtension = self.cell as UUIDExtension? else { return nil }
             return cellDelegate.uuid
         }
     }
     
-    public var indexPath: IndexPath? {
+    open var indexPath: IndexPath? {
         get {
-            guard let cellDelegate: ParentTableViewProtocol = self.cell as ParentTableViewProtocol? else { return nil }
+            guard let cellDelegate: ParentTableView = self.cell as ParentTableView? else { return nil }
             return cellDelegate.tableView != nil ? cellDelegate.tableView?.indexPath(for: self.cell!) : nil
         }
     }
@@ -156,7 +156,7 @@ open class CellReturn: NSObject {
         }
     }
     
-    public func reset() {
+    open func reset() {
         self.index = nil
         self.int = nil
         self.double = nil
@@ -191,7 +191,7 @@ open class CellReturn: NSObject {
         values.forEach { self.setVal(val: $0) }
     }
     
-    public override init() {
+    override public init() {
         super.init()
     }
     
@@ -199,7 +199,7 @@ open class CellReturn: NSObject {
         get { return CellReturn() }
     }
     
-    open override var description: String {
+    override open var description: String {
         get {
             var desc: String = "State: " + self.state.description + ""
             desc += "\nUITableViewCell is" + ( self.cell == nil ? " not" : "" ) + " attached."

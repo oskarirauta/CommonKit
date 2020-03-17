@@ -20,7 +20,7 @@ open class TaskScheduler: AbstractTaskSchedulerProtocol, TaskSchedulerProtocol {
     open var pid: Int? { get { return self.task?.pid }}
     open var processing: Bool { get { return self._processing }}
     
-    public private(set) var thread: DispatchQueue
+    open private(set) var thread: DispatchQueue
     internal var _processing: Bool = false
     
     public required init(thread: DispatchQueue = DispatchQueue.global(qos: .utility)) {
@@ -99,9 +99,9 @@ open class TaskScheduler: AbstractTaskSchedulerProtocol, TaskSchedulerProtocol {
         tasks.remove(at: index)
     }
     
-    public func finishTask(_ task: Task) {
+    open func finishTask(_ task: Task) {
 
-        if ( !task.isCancelled ) {
+        if !task.isCancelled {
             task.completed?(task)
         }
         self.tasks.removeIndexes(at: self.tasks.enumerated().filter { $0.element.pid == pid }.map { $0.offset })

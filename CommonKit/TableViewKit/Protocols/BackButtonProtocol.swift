@@ -1,5 +1,5 @@
 //
-//  BackButtonProtocol.swift
+//  BackButton.swift
 //  CommonKit
 //
 //  Created by Oskari Rauta on 08/06/2018.
@@ -9,29 +9,29 @@
 import Foundation
 import UIKit
 
-@objc public protocol BackButtonProtocolBase {
-    @objc func backAction()
-}
-
-public protocol BackButtonProtocol: BackButtonProtocolBase {
-    var _backBtn: UIBarButtonItem? { get set }
-    var backBtn: UIBarButtonItem { get set }
-    func defaultBackBtn() -> UIBarButtonItem
-}
-
-public extension BackButtonProtocol where Self: UIViewController {
+public protocol BackButtonProperties {
     
-    var backBtn: UIBarButtonItem {
-        get { return self._backBtn ?? self.defaultBackBtn() }
+    var _backButton: UIBackButton? { get set }
+    var backButton: UIBackButton { get set }
+}
+
+public protocol BackButtonMethods {
+    
+    func backAction()
+}
+
+public protocol BackButton: BackButtonProperties, BackButtonMethods { }
+
+public extension BackButton where Self: UIViewController {
+    
+    var backButton: UIBackButton {
+        get { return self._backButton ?? UIBackButton.default.properties { $0.backAction = self.backAction }
+        }
         set {
-            self._backBtn = newValue
+            self._backButton = newValue
             self.navigationItem.leftBarButtonItem = newValue
         }
     }
-    
-    func defaultBackBtn() -> UIBarButtonItem {
-        return UIBarButtonItem(image: UIImage(named: "BackBtn", in: Bundle(for: UITableViewControllerExtended.self), compatibleWith: nil)?.stretchableImage(withLeftCapWidth: 38, topCapHeight: 64).withRenderingMode(.alwaysTemplate), style: .plain, target: self, action: #selector(self.backAction)).properties {
-            $0.isEnabled = true
-        }
-    }
+
 }
+

@@ -115,7 +115,7 @@ extension NumPad {
     
     internal func updateState() {
         
-        if ((!( self.textInput?.hasText ?? false )) && ( self.button[11].isEnabled )) {
+        if !( self.textInput?.hasText ?? false ), self.button[11].isEnabled {
             (self.button[11] as! NumPadBackspaceButton).timer?.invalidate()
             (self.button[11] as! NumPadBackspaceButton).timer = nil
         }
@@ -126,9 +126,9 @@ extension NumPad {
             self.button[11].isEnabled = self.textInput?.hasText ?? false
         }
         
-        if ( self.type == .decimal ) {
+        if self.type == .decimal {
             self.button[10].isEnabled = (self.value?.contains(self.decimalChar) ?? false) ? false : true
-        } else if ( self.type == .phone ) { // + must always be first on international phone number
+        } else if self.type == .phone { // + must always be first on international phone number
             self.button[10].isEnabled = !self.button[11].isEnabled
         }
     }
@@ -174,9 +174,7 @@ extension NumPad {
         
     internal func buttonHandler(_ tag: Int) {
         
-        if ( self.enableInputClicksWhenVisible ) {
-            UIDevice.current.playInputClick()
-        }
+        if self.enableInputClicksWhenVisible { UIDevice.current.playInputClick() }
         
         let buttonsValues: [String] = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
         let functionChar: String = self.type == .decimal ? (( self.value?.isEmpty ?? true ) ? ( "0" + self.decimalChar ) : self.decimalChar ) : "+"

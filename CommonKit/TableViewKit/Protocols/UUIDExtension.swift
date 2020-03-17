@@ -1,5 +1,5 @@
 //
-//  EditingSectionProtocol.swift
+//  UUIDExtension.swift
 //  CommonKit
 //
 //  Created by Oskari Rauta on 08/06/2018.
@@ -8,6 +8,8 @@
 
 import Foundation
 
-protocol EditingSectionProtocol: class {
-    var editingSection: Int? { get set }
+public protocol UUIDExtension {
+    var uuid: String? { get set }
 }
+
+extension UITableViewCell: UUIDExtension {}

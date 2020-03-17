@@ -13,7 +13,7 @@ public enum MinuteIntervalMode: Int {
     case quarter = 15
     case half = 30
     
-    func simpleDescription() -> String {
+    public var simpleDescription: String {
         switch self {
         case .none: return "No interval"
         case .quarter: return "15 minutes interval"
@@ -21,7 +21,7 @@ public enum MinuteIntervalMode: Int {
         }
     }
     
-    func values() -> Array<MinuteIntervalMode> {
+    public var values: [MinuteIntervalMode] {
         return [.none, .quarter, .half]
     }
 }

@@ -12,6 +12,7 @@ import UIKit
 public typealias BadgeCompatible = Optional<Any & CustomBadgeConvertible>
 
 public struct BadgeItem: CustomBadgeConvertible {
+    
     var text: String
     var backgroundColor: UIColor?
     var foregroundColor: UIColor?

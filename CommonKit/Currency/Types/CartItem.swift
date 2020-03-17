@@ -69,7 +69,7 @@ public struct CartItem: CartCompatible, Codable {
         return mutatedItem
     }
 
-    static public func + (lhs: CartItem, rhs: CartItem) -> [CartItem] {
+    public static func + (lhs: CartItem, rhs: CartItem) -> [CartItem] {
         return [lhs, rhs]
     }
     

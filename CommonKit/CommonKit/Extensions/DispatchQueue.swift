@@ -11,7 +11,7 @@ import Foundation
 extension DispatchQueue {
     
     public static var background: DispatchQueue {
-        get { return DispatchQueue.global(qos: .background) }
+        return DispatchQueue.global(qos: .background)
     }
     
     open func async(execute: @escaping () -> Void, completion: @escaping () -> Void, completionDelay: Double = 0.0) {

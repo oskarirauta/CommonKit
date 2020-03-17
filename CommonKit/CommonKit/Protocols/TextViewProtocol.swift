@@ -13,6 +13,7 @@ public protocol TextViewProtocol {
 }
 
 extension TextFieldProtocol where Self: UITextView {
+    
     public var value: String? {
         get { return self.hasText ? self.text : nil }
         set { self.text = newValue }

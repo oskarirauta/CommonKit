@@ -15,15 +15,15 @@ public extension Double {
     }
     
     var hour: Int {
-        get { return Int(self) }
+        return Int(self)
     }
     
     var minute: Int {
-        get { return Int((self - Double(Int(self))) * 100) }
+        return Int((self - Double(Int(self))) * 100)
     }
     
     var clock_minute: Int {
-        get { return self.minute == 0 ? 0 : ( self.minute == 25 ? 15 : ( self.minute == 50 ? 30 : 45 )) }
+        return self.minute == 0 ? 0 : ( self.minute == 25 ? 15 : ( self.minute == 50 ? 30 : 45 ))
     }
 
 }

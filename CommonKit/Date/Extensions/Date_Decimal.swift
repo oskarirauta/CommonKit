@@ -15,15 +15,15 @@ public extension Decimal {
     }
     
     var hour: Int {
-        get { return Int(self.intValue) }
+        return Int(self.intValue)
     }
     
     var minute: Int {
-        get { return Int(((self - Decimal(Int(self.intValue))) * 100).intValue) }
+        return Int(((self - Decimal(Int(self.intValue))) * 100).intValue)
     }
     
     var clock_minute: Int {
-        get { return self.minute == 0 ? 0 : ( self.minute == 25 ? 15 : ( self.minute == 50 ? 30 : 45 )) }
+        return self.minute == 0 ? 0 : ( self.minute == 25 ? 15 : ( self.minute == 50 ? 30 : 45 ))
     }
     
 }

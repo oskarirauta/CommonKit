@@ -12,15 +12,15 @@ public typealias LocaleEntry = (countryCode: String, countryName: String, curren
 
 extension Array where Element == LocaleEntry {
     
-    public var codes: Array<String> {
-        get { return self.map { $0.countryCode }}
+    public var codes: [String] {
+        return self.map { $0.countryCode }
     }
 
-    public var names: Array<String> {
-        get { return self.map { $0.countryName }}
+    public var names: [String] {
+        return self.map { $0.countryName }
     }
     
-    public var currencies: Array<String> {
-        get { return self.map { $0.currencyCode }}
+    public var currencies: [String] {
+        return self.map { $0.currencyCode }
     }
 }

@@ -30,9 +30,11 @@ import CommonKit
 public enum fa_fonts: String, FontEnum {
     public static var fonts: [IconType.Type ] { return [] }
     
-    case fas = "0,fas,FontAwesome,solid,Font Awesome 5 Free,FontAwesome5FreeSolid,Font Awesome 5 Free-Solid-900,otf"
-    case far = "1,far,FontAwesome,regular,Font Awesome 5 Free,FontAwesome5FreeRegular,Font Awesome 5 Free-Regular-400,otf"
-    case fab = "2,fab,FontAwesome,brands,Font Awesome 5 Brands,FontAwesome5BrandsRegular,Font Awesome 5 Brands-Regular-400,otf"
+    case fas = "0,fas,FontAwesome,solid,Font Awesome 5 Free,FontAwesome5Free-Solid,Font Awesome 5 Free-Solid-900,otf"
+    case far = "1,far,FontAwesome,regular,Font Awesome 5 Free,FontAwesome5Free-Regular,Font Awesome 5 Free-Regular-400,otf"
+    case fab = "2,fab,FontAwesome,brands,Font Awesome 5 Brands,FontAwesome5Brands-Regular,Font Awesome 5 Brands-Regular-400,otf"
+    
+//Font Awesome 5 Free Solid
 }
 
 public enum mat_fonts: String, FontEnum {
@@ -210,7 +212,7 @@ class FontGenerator {
         }
 
         var vars: [String: (String,unichar)] = [:]
-        let font: UIFont = UIFont.loadFont(font.fontName, size: 16.0, resource: font.fontResource, ext: font.fontFormat)!
+        let font: UIFont = UIFont.loadFont(font.fontName, size: 16.0, resource: font.fontResource, ext: font.fontFormat, bundle: Bundle.main)!
         
         for entry in from {
             guard isSupported(font, unichar: entry.value.1) else { continue }
@@ -320,15 +322,15 @@ class FontGenerator {
     class func loadFonts() {
         
         for font in fa_fonts.allCases as [FontType] {
-            let _ = UIFont.loadFont(font.fontName, size: 0, resource: font.fontResource, ext: font.fontFormat)
+            let _ = UIFont.loadFont(font.fontName, size: 0, resource: font.fontResource, ext: font.fontFormat, bundle: Bundle.main)
         }
         
         for font in mat_fonts.allCases as [FontType] {
-            let _ = UIFont.loadFont(font.fontName, size: 0, resource: font.fontResource, ext: font.fontFormat)
+            let _ = UIFont.loadFont(font.fontName, size: 0, resource: font.fontResource, ext: font.fontFormat, bundle: Bundle.main)
         }
         
         for font in fi_fonts.allCases as [FontType] {
-            let _ = UIFont.loadFont(font.fontName, size: 0, resource: font.fontResource, ext: font.fontFormat)
+            let _ = UIFont.loadFont(font.fontName, size: 0, resource: font.fontResource, ext: font.fontFormat, bundle: Bundle.main)
         }
         
     }

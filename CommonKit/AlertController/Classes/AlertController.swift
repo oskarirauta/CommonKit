@@ -243,7 +243,7 @@ open class AlertController: DefaultAlertControllerBaseClass, UITextFieldDelegate
             
             // TextFields
             for (_, obj) in (self.textFields!).enumerated() {
-                let textField = obj as! UITextFieldExtended
+                let textField = obj as! UITextField.Extended
                 textField.frame = CGRect(x: 0.0, y: textFieldContainerHeight, width: self.innerContentWidth ?? DefaultAlertProperties.innerContentWidth, height: textField.frame.height)
                 textFieldContainerHeight += textField.frame.height + 0.5
             }
@@ -433,7 +433,7 @@ open class AlertController: DefaultAlertControllerBaseClass, UITextFieldDelegate
     }
     
     // Adds a text field to an alert.
-    open func addTextFieldWithConfigurationHandler(_ configurationHandler: ((UITextFieldExtended?) -> ())?) {
+    open func addTextFieldWithConfigurationHandler(_ configurationHandler: ((UITextField.Extended?) -> ())?) {
         
         // Textfield is only allowed for .alert style
         
@@ -447,7 +447,7 @@ open class AlertController: DefaultAlertControllerBaseClass, UITextFieldDelegate
             textFields = []
         }
         
-        let textField: UITextFieldExtended = UITextFieldExtended()
+        let textField: UITextField.Extended = UITextField.Extended()
         textField.frame.size = CGSize(width: self.innerContentWidth ?? DefaultAlertProperties.innerContentWidth, height: self.textFieldHeight)
         textField.borderStyle = UITextField.BorderStyle.none
         textField.backgroundColor = self.textFieldBgColor

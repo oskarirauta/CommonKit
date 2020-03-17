@@ -13,16 +13,12 @@ public extension NSAttributedString {
 
     /// SwifterSwift: Bolded string.
     var bolded: NSAttributedString {
-        get {
-            return applying(attributes: [.font: UIFont.boldSystemFont(ofSize: UIFont.systemFontSize)])
-        }
+        return applying(attributes: [.font: UIFont.boldSystemFont(ofSize: UIFont.systemFontSize)])
     }
 
     /// SwifterSwift: Italicized string.
     var italicized: NSAttributedString {
-        get {
-            return applying(attributes: [.font: UIFont.italicSystemFont(ofSize: UIFont.systemFontSize)])
-        }
+        return applying(attributes: [.font: UIFont.italicSystemFont(ofSize: UIFont.systemFontSize)])
     }
     
     func numberOfLines(with width: CGFloat) -> Int {

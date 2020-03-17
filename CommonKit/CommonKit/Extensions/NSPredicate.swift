@@ -13,9 +13,7 @@ public extension NSPredicate {
 
     /// SwifterSwift: Returns a new predicate formed by NOT-ing the predicate.
     var not: NSCompoundPredicate {
-        get {
-            return NSCompoundPredicate(notPredicateWithSubpredicate: self)
-        }
+        return NSCompoundPredicate(notPredicateWithSubpredicate: self)
     }
 
 }

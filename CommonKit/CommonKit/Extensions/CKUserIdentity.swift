@@ -12,11 +12,11 @@ import CloudKit
 extension CKUserIdentity {
     
     public var firstName: String? {
-        get { return self.nameComponents?.givenName }
+        return self.nameComponents?.givenName
     }
     
     public var lastName: String? {
-        get { return self.nameComponents?.familyName }
+        return self.nameComponents?.familyName
     }
     
 }

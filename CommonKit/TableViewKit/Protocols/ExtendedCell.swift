@@ -1,5 +1,5 @@
 //
-//  ExtendedCellSettingsProtocol.swift
+//  ExtendedCell.swift
 //  CommonKit
 //
 //  Created by Oskari Rauta on 08/06/2018.
@@ -7,26 +7,31 @@
 //
 
 import Foundation
+import UIKit
 
-@objc protocol ExtendedCellSettingsProtocolBase {
+@objc public protocol ExtendedCellProperties {
+    
     var uuid: String? { get set }
     var selectable: Bool { get set }
     var enabled: Bool { get set }
-    
+}
+
+@objc public protocol ExtendedCellMethods {
+        
     func cellProperties()
     func setupViews()
     func secondarySetupViews()
     func setupConstraints()
 }
 
-protocol ExtendedCellSettingsProtocol: ExtendedCellSettingsProtocolBase {
+public protocol ExtendedCell: ExtendedCellProperties, ExtendedCellMethods {
     
     var isEnabled: Bool { get set }
 }
 
-extension UITableViewCell: ExtendedCellSettingsProtocol {
+extension UITableViewCell: ExtendedCell {
     
-    public var isEnabled: Bool {
+    open var isEnabled: Bool {
         get { return self.enabled }
         set { self.enabled = newValue }
     }

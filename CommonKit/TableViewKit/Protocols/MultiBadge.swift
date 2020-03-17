@@ -1,5 +1,5 @@
 //
-//  MultiBadgeProtocol.swift
+//  MultiBadge.swift
 //  CommonKit
 //
 //  Created by Oskari Rauta on 08/06/2018.
@@ -17,16 +17,15 @@ public protocol MultiBadgeProperties {
     var hideOnZero: Bool { get set }
     var badgeCornerRadius: CGFloat? { get set }
     var badgeFont: UIFont { get set }
-}
-
-public protocol MultiBadgeBase {
-    var badgeElements: [UILabelExtended]? { get set }
+    var badgeElements: [UILabel.Extended]? { get set }
 }
 
 public protocol MultiBadgeMethods {
     func refreshBadges()
 }
 
-public protocol MultiBadgeContainer: MultiBadgeProperties, MultiBadgeMethods {
+public protocol MultiBadge: MultiBadgeProperties, MultiBadgeMethods { }
+
+public protocol MultiBadgeContainer: MultiBadge {
     var badgeView: UIMultiBadge { get set }
 }

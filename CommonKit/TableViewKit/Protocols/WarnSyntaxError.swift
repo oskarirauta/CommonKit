@@ -1,5 +1,5 @@
 //
-//  WarnSyntaxErrorProtocol.swift
+//  WarnSyntaxError.swift
 //  CommonKit
 //
 //  Created by Oskari Rauta on 11.06.19.
@@ -8,24 +8,29 @@
 
 import Foundation
 
-@objc protocol WarnSyntaxErrorProtocolBase {
+@objc protocol WarnSyntaxErrorObjc {
     
-    var warningActive: Bool { get set }
-
-    func warnSyntaxError(completion: (()->())?)
-    
+    @objc func warnSyntaxError(completion: (()->())?)
 }
 
-protocol WarnSyntaxErrorProtocol: WarnSyntaxErrorProtocolBase { }
+protocol WarnSyntaxErrorProperties {
+    
+    var warningActive: Bool { get set }
+}
 
-extension UITableViewCellExtended: WarnSyntaxErrorProtocol {
+protocol WarnSyntaxErrorMethods { }
+
+protocol WarnSyntaxError: WarnSyntaxErrorObjc, WarnSyntaxErrorProperties, WarnSyntaxErrorMethods { }
+
+extension UITableViewCell: WarnSyntaxError {
         
-    open func warnSyntaxError(completion: (()->())? = nil) {
-        
-        if self.warningActive {
+    @objc open func warnSyntaxError(completion: (()->())? = nil) {
+
+        guard !self.warningActive else {
             UIView.setAnimationsEnabled(false)
             self.backgroundView?.layer.removeAllAnimations()
             UIView.setAnimationsEnabled(true)
+            return
         }
         
         self.warningActive = true
@@ -38,7 +43,6 @@ extension UITableViewCellExtended: WarnSyntaxErrorProtocol {
             completion?()
             self.warningActive = false
         })
-        
     }
     
 }

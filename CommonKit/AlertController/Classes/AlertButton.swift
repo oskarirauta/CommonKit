@@ -11,26 +11,24 @@ import UIKit
 
 @objc open class AlertButton: UIButton {
     
-    open lazy var shadowView: UIView = {
+    open lazy var shadowView: UIView = UIView.create {
         [unowned self] in
-        var _shadowView: UIView = UIView()
-        _shadowView.alpha = 0.9
-        _shadowView.backgroundColor = UIColor.clear
-        _shadowView.translatesAutoresizingMaskIntoConstraints = false
-        _shadowView.layer.shadowOpacity = self.layer.shadowOpacity
-        _shadowView.layer.shadowOffset = self.layer.shadowOffset
-        _shadowView.layer.shadowRadius = self.layer.shadowRadius
-        _shadowView.layer.shadowColor = self.layer.shadowColor
-        _shadowView.layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: self.layer.cornerRadius).cgPath
-        _shadowView.layer.masksToBounds = false
-        return _shadowView
-        }()
+        $0.alpha = 0.9
+        $0.backgroundColor = .clear
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.layer.shadowOpacity = self.layer.shadowOpacity
+        $0.layer.shadowOffset = self.layer.shadowOffset
+        $0.layer.shadowRadius = self.layer.shadowRadius
+        $0.layer.shadowColor = self.layer.shadowColor
+        $0.layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: self.layer.cornerRadius).cgPath
+        $0.layer.masksToBounds = false
+    }
     
-    open override var isHidden: Bool {
+    override open var isHidden: Bool {
         didSet { self.shadowView.isHidden = self.isHidden }
     }
     
-    public override init(frame: CGRect) {
+    override public init(frame: CGRect) {
         super.init(frame: frame)
     }
     
@@ -63,10 +61,9 @@ import UIKit
     }
     
     open override func layoutSubviews() {
-        
         super.layoutSubviews()
         
-        if (( self.layer.shadowColor != nil ) && ( !self.superview!.subviews.contains(self.shadowView))) {
+        if ( self.layer.shadowColor != nil && !self.superview!.subviews.contains(self.shadowView)) {
             
             self.superview!.insertSubview(self.shadowView, belowSubview: self)
             
@@ -77,8 +74,8 @@ import UIKit
         }
     }
     
-    open override func removeFromSuperview() {
-        if ( self.superview!.subviews.contains(self.shadowView)) {
+    override open func removeFromSuperview() {
+        if self.superview!.subviews.contains(self.shadowView) {
             self.shadowView.removeFromSuperview()
         }
         super.removeFromSuperview()

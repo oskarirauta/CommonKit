@@ -18,9 +18,9 @@
 		6E00BE8420C8955400C68DBD /* foundation-icons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E00BE8320C8954500C68DBD /* foundation-icons.ttf */; };
 		6E00BE8620C895B900C68DBD /* foundation-icons.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6E00BE8520C895B900C68DBD /* foundation-icons.txt */; };
 		6E3FB91820C8A41B0030E838 /* CommonKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E3FB91720C8A41B0030E838 /* CommonKit.framework */; };
-		6E7188C62177C31A00CB81AA /* Font Awesome 5 Brands-Regular-400.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6E7188C52177C2D700CB81AA /* Font Awesome 5 Brands-Regular-400.otf */; };
-		6E7188C72177C31A00CB81AA /* Font Awesome 5 Free-Regular-400.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6E7188C42177C2D700CB81AA /* Font Awesome 5 Free-Regular-400.otf */; };
-		6E7188C82177C31A00CB81AA /* Font Awesome 5 Free-Solid-900.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6E7188C32177C2D700CB81AA /* Font Awesome 5 Free-Solid-900.otf */; };
+		6EAB94712420439F00B41344 /* Font Awesome 5 Brands-Regular-400.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6E7188C52177C2D700CB81AA /* Font Awesome 5 Brands-Regular-400.otf */; };
+		6EAB9472242043A200B41344 /* Font Awesome 5 Free-Regular-400.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6E7188C42177C2D700CB81AA /* Font Awesome 5 Free-Regular-400.otf */; };
+		6EAB9473242043A600B41344 /* Font Awesome 5 Free-Solid-900.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6E7188C32177C2D700CB81AA /* Font Awesome 5 Free-Solid-900.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -179,9 +179,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E7188C62177C31A00CB81AA /* Font Awesome 5 Brands-Regular-400.otf in Resources */,
-				6E7188C72177C31A00CB81AA /* Font Awesome 5 Free-Regular-400.otf in Resources */,
-				6E7188C82177C31A00CB81AA /* Font Awesome 5 Free-Solid-900.otf in Resources */,
+				6EAB94712420439F00B41344 /* Font Awesome 5 Brands-Regular-400.otf in Resources */,
+				6EAB9472242043A200B41344 /* Font Awesome 5 Free-Regular-400.otf in Resources */,
+				6EAB9473242043A600B41344 /* Font Awesome 5 Free-Solid-900.otf in Resources */,
 				6E00BE8420C8955400C68DBD /* foundation-icons.ttf in Resources */,
 				6E00BE7F20C8910300C68DBD /* MaterialIcons-Regular.ttf in Resources */,
 				6E00BE8620C895B900C68DBD /* foundation-icons.txt in Resources */,
@@ -339,7 +339,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = FontGenerator/FontGenerator.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = LBFBZP3Z4J;
 				INFOPLIST_FILE = FontGenerator/Info.plist;
@@ -348,7 +348,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.5;
+				MARKETING_VERSION = 1.6;
 				PRODUCT_BUNDLE_IDENTIFIER = com.oskarirauta.FontGenerator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
@@ -363,7 +363,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = FontGenerator/FontGenerator.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = LBFBZP3Z4J;
 				INFOPLIST_FILE = FontGenerator/Info.plist;
@@ -372,7 +372,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.5;
+				MARKETING_VERSION = 1.6;
 				PRODUCT_BUNDLE_IDENTIFIER = com.oskarirauta.FontGenerator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;

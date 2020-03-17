@@ -18,6 +18,7 @@ public protocol TextFieldProtocol {
 }
 
 extension TextFieldProtocol where Self: UITextField {
+    
     public var value: String? {
         get { return self.text }
         set { self.text = newValue }

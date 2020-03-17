@@ -34,23 +34,23 @@ extension Array: MoneyCompatible, PriceProtocol where Element == CartItem {
         return self.map { $0.mutated(by: from) }
     }
     
-    static public func + (lhs: [CartItem], rhs: [CartItem]) -> [CartItem] {
+    public static func + (lhs: [CartItem], rhs: [CartItem]) -> [CartItem] {
         var _cart: [CartItem] = lhs
         _cart.append(from: rhs)
         return _cart
     }
     
-    static public func += (lhs: inout [CartItem], rhs: [CartItem]) {
+    public static func += (lhs: inout [CartItem], rhs: [CartItem]) {
         lhs.append(from: rhs)
     }
 
-    static public func + (lhs: [CartItem], rhs: CartItem) -> [CartItem] {
+    public static func + (lhs: [CartItem], rhs: CartItem) -> [CartItem] {
         var _cart: [CartItem] = lhs
         _cart.append(rhs)
         return _cart
     }
     
-    static public func += (lhs: inout [CartItem], rhs: CartItem) {
+    public static func += (lhs: inout [CartItem], rhs: CartItem) {
         lhs.append(rhs)
     }    
     

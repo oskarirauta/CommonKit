@@ -21,23 +21,23 @@ public extension CharacterSet {
 
 public extension String {
     
-    var length: Int { get { return self.count }}
+    var length: Int { return self.count }
     
-    var string: String { get { return self }}
+    var string: String { return self }
 
-    var lastPathComponent: String { get { return (self as NSString).lastPathComponent }}
+    var lastPathComponent: String { return (self as NSString).lastPathComponent }
     
     var pathExtension: String {
-        get { return (self as NSString).pathExtension }}
+        return (self as NSString).pathExtension }
 
     var stringByDeletingLastPathComponent: String {
-        get { return (self as NSString).deletingLastPathComponent }}
+        return (self as NSString).deletingLastPathComponent }
     
     var stringByDeletingPathExtension: String {
-        get { return (self as NSString).deletingPathExtension }}
+        return (self as NSString).deletingPathExtension }
     
     var pathComponents: [String] {
-        get { return (self as NSString).pathComponents }}
+        return (self as NSString).pathComponents }
     
     func stringByAppendingPathComponent(path: String) -> String {
         return (self as NSString).appendingPathComponent(path)
@@ -47,15 +47,12 @@ public extension String {
         return (self as NSString).appendingPathExtension(ext)
     }
     
-    var emptyNil: String? {
-        get { return self.isEmpty ? nil : self }}
+    var emptyNil: String? { return self.isEmpty ? nil : self }
 
     var isValidEmail: Bool {
-        get {
-            // here, `try!` will always succeed because the pattern is valid
-            let regex = try! NSRegularExpression(pattern: "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$", options: .caseInsensitive)
-            return regex.firstMatch(in: self, options: [], range: NSRange(location: 0, length: count)) != nil
-        }
+        // here, `try!` will always succeed because the pattern is valid
+        let regex = try! NSRegularExpression(pattern: "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$", options: .caseInsensitive)
+        return regex.firstMatch(in: self, options: [], range: NSRange(location: 0, length: count)) != nil
     }
     
     func replacingOccurrences(of: [String : String] ) -> String {
@@ -68,84 +65,77 @@ public extension String {
     }
     
     var htmlFormat: String {
-        get {
-            
-            let whiteSpaceEntities: [String: String] = [
-                "&nbsp;": " ",
-                "<br/>": " ",
-                "<br>": " ",
-                "<BR/>": " ",
-                "<BR>": " "
-            ]
-            
-            guard
-                !self.replacingOccurrences(of: whiteSpaceEntities).lines.joined().trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else { return "" }
-            
-            var ret: String = self
-            
-            for (replacement, key) in HTMLEntities.primaryEntities {
-                ret = ret.replacingOccurrences(of: String(key), with: replacement)
-            }
-            
-            for (replacement, key) in HTMLEntities.xmlEntities {
-                ret = ret.replacingOccurrences(of: String(key), with: replacement)
-            }
-            
-            for (replacement, key) in HTMLEntities.characterEntities {
-                ret = ret.replacingOccurrences(of: String(key), with: replacement)
-            }
-            return ret
+        let whiteSpaceEntities: [String: String] = [
+            "&nbsp;": " ",
+            "<br/>": " ",
+            "<br>": " ",
+            "<BR/>": " ",
+            "<BR>": " "
+        ]
+        
+        guard
+            !self.replacingOccurrences(of: whiteSpaceEntities).lines.joined().trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else { return "" }
+        
+        var ret: String = self
+        
+        for (replacement, key) in HTMLEntities.primaryEntities {
+            ret = ret.replacingOccurrences(of: String(key), with: replacement)
         }
+        
+        for (replacement, key) in HTMLEntities.xmlEntities {
+            ret = ret.replacingOccurrences(of: String(key), with: replacement)
+        }
+        
+        for (replacement, key) in HTMLEntities.characterEntities {
+            ret = ret.replacingOccurrences(of: String(key), with: replacement)
+        }
+        return ret
     }
     
     var base64Decoded: String? {
-        get {
-            guard let decodedData = Data(base64Encoded: self) else { return nil }
-            return String(data: decodedData, encoding: .utf8)
-        }
+        guard let decodedData = Data(base64Encoded: self) else { return nil }
+        return String(data: decodedData, encoding: .utf8)
     }
     
     var base64Encoded: String? {
-        get { return self.data(using: .utf8)?.base64EncodedString() ?? nil }
+        return self.data(using: .utf8)?.base64EncodedString() ?? nil
     }
     
     var isEmail: Bool {
-        get { return self.range(of: "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}",
-                         options: .regularExpression, range: nil, locale: nil) != nil }
+        return self.range(of: "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}",
+                         options: .regularExpression, range: nil, locale: nil) != nil
     }
     
     var url: URL? {
-        get { return URL(string: self) }
+        return URL(string: self)
     }
     
     var trimmed: String {
-        get { return self.trimmingCharacters(in: .whitespacesAndNewlines) }
+        return self.trimmingCharacters(in: .whitespacesAndNewlines)
     }
     
     var urlDecoded: String {
-        get { return self.removingPercentEncoding ?? self }
+        return self.removingPercentEncoding ?? self
     }
     
     var urlEncoded: String {
-        get { return self.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)! }
+        return self.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
     }
     
     var withoutSpacesAndNewLines: String {
-        get { return self.replacingOccurrences(of: " ", with: "").replacingOccurrences(of: "\n", with: "") }
+        return self.replacingOccurrences(of: " ", with: "").replacingOccurrences(of: "\n", with: "")
     }
     
     var isWhitespace: Bool {
-        get { return self.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty }
+        return self.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
     }
     
     var isSpelledCorrectly: Bool {
-        get {
-            let checker = UITextChecker()
-            let range = NSRange(location: 0, length: utf16.count)
+        let checker = UITextChecker()
+        let range = NSRange(location: 0, length: utf16.count)
 
-            let misspelledRange = checker.rangeOfMisspelledWord(in: self, range: range, startingAt: 0, wrap: false, language: Locale.preferredLanguages.first ?? "en")
-            return misspelledRange.location == NSNotFound
-        }
+        let misspelledRange = checker.rangeOfMisspelledWord(in: self, range: range, startingAt: 0, wrap: false, language: Locale.preferredLanguages.first ?? "en")
+        return misspelledRange.location == NSNotFound
     }
     
     init?(base64: String) {
@@ -155,13 +145,11 @@ public extension String {
     }
     
     func substring(from: Int) -> String {
-        let start = index(startIndex, offsetBy: from)
-        return String(self[start ..< endIndex])
+        return String(self[index(startIndex, offsetBy: from) ..< endIndex])
     }
     
     func substring(to: Int) -> String {
-        let end = index(endIndex, offsetBy: -to)
-        return String(self[startIndex ..< end])
+        return String(self[startIndex ..< index(endIndex, offsetBy: -to)])
     }
     
     func substring(from: Int, maxLength: Int) -> String {
@@ -213,17 +201,13 @@ public extension String {
     
     func fillLeading(until length: Int, with: String) -> String {
         var ret: String = self
-        while ( ret.length < length ) {
-            ret = with + ret
-        }
+        while ret.length < length { ret = with + ret }
         return ret
     }
     
     func fillTrailing(until length: Int, with: String) -> String {
         var ret: String = self
-        while ( ret.length < length ) {
-            ret += with
-        }
+        while ret.length < length { ret += with }
         return ret
     }
     
@@ -232,20 +216,14 @@ public extension String {
     }
     
     var urlrequest: URLRequest? {
-        get {
-            guard let url: URL = self.url else { return nil }
-            return URLRequest(url: url)
-        }
+        guard let url: URL = self.url else { return nil }
+        return URLRequest(url: url)
     }
     
     var lines: [String] {
-        get {
-            var ret: [String] = [String]()
-            self.enumerateLines { (line, _) -> () in
-                ret.append(line)
-            }
-            return ret
-        }
+        var ret: [String] = [String]()
+        self.enumerateLines { (line, _) -> () in ret.append(line) }
+        return ret
     }
     
     func minLines(num: Int) -> String {
@@ -260,7 +238,7 @@ public extension String {
     }
     
     var reversed: String {
-        get { return String(self.reversed()) }
+        return String(self.reversed())
     }
     
     func separate(every: Int, with separator: String) -> String {
@@ -284,32 +262,24 @@ public protocol StringArrayProtocol {
 extension Array: StringArrayProtocol where Element == String {
     
     public var combined: String {
-        get {
-            var ret: String = ""
-            for (index, el) in self.enumerated() {
-                ret += el + ( index < ( self.count - 1 ) ? "\n" : "" )
-            }
-            return ret
+        var ret: String = ""
+        for (index, el) in self.enumerated() {
+            ret += el + ( index < ( self.count - 1 ) ? "\n" : "" )
         }
+        return ret
     }
     
 }
 
 public extension Array where Element == String {
 
-    var lowercased: [String] {
-        get { return self.map { $0.lowercased() } }
-    }
+    var lowercased: [String] { return self.map { $0.lowercased() }}
     
-    var uppercased: [String] {
-        get { return self.map { $0.uppercased() } }
-    }
+    var uppercased: [String] { return self.map { $0.uppercased() }}
     
 }
 
 public extension Substring {
     
-    var string: String {
-        get { return String(self) }
-    }    
+    var string: String { return String(self) }
 }

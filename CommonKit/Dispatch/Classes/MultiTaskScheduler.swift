@@ -18,7 +18,7 @@ open class MultiTaskScheduler: AbstractTaskSchedulerProtocol, TaskSchedulerProto
     open var pid: Int? { get { return self.task?.pid }}
     open var processing: Bool { get { return self._processing }}
     
-    public private(set) var thread: DispatchQueue
+    open private(set) var thread: DispatchQueue
     internal var _processing: Bool = false
 
     public required init(thread: DispatchQueue = DispatchQueue.global(qos: .utility)) {
@@ -94,7 +94,7 @@ open class MultiTaskScheduler: AbstractTaskSchedulerProtocol, TaskSchedulerProto
         tasks.remove(at: index)
     }
     
-    public func finishTask(_ task: Task) {
+    open func finishTask(_ task: Task) {
         
         if ( !task.isCancelled ) {
             task.completed?(task)

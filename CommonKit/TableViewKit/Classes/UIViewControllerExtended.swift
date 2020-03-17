@@ -9,31 +9,30 @@
 import Foundation
 import UIKit
 
-open class UIViewControllerExtended: UIViewController, BackButtonProtocol {
-
-    open var _backBtn: UIBarButtonItem? = nil
-    
-    internal var _viewIsBeingDisplayed: Bool = false
-    open var viewIsBeingDisplayed: Bool { get { return self._viewIsBeingDisplayed }}
-
-    open func backAction() {
-        self.navigationController?.popViewController(animated: true)
-    }
-
-    open override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+extension UIViewController {
         
-        self.navigationItem.leftBarButtonItem = self.navigationController?.viewControllers.count == 1 ? nil : self.backBtn
+    open class Extended: UIViewController, ViewControllerConfig, BackButton  {
+        
+        open var _backButton: UIBackButton? = nil
+        
+        public required init() {
+            super.init(nibName: nil, bundle: nil)
+            (self as ViewControllerConfig?)?._viewControllerConfig?(self)
+            (self as ViewControllerConfig?)?.viewControllerConfig?(self)
+        }
+        
+        public required init?(coder: NSCoder) {
+            fatalError("init(coder:) has not been implemented")
+        }
+        
+        open func backAction() {
+            self.navigationController?.popViewController(animated: true)
+        }
+        
+        override open func viewWillAppear(_ animated: Bool) {
+            super.viewWillAppear(animated)
+            self.navigationItem.leftBarButtonItem = ( self.navigationController?.viewControllers.count ?? 0 ) < 2 ? nil : self.backButton
+        }
+        
     }
-    
-    override open func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        self._viewIsBeingDisplayed = true
-    }
-    
-    override open func viewWillDisappear(_ animated: Bool) {
-        self._viewIsBeingDisplayed = false
-        super.viewWillDisappear(animated)
-    }
-    
 }

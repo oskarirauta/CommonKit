@@ -11,7 +11,7 @@ import CommonKit
 
 class ViewController: UIViewController {
 
-    lazy var roundLabel: UIRoundLabel = UIRoundLabel.create {
+    lazy var roundLabel: UILabel.RoundLabel = UILabel.RoundLabel.create {
         $0.text = "Badge"
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.backgroundColor = UIColor.badgeBackgroundColor
@@ -22,7 +22,7 @@ class ViewController: UIViewController {
         $0.paddingAdjustment = UIEdgeInsets(top: 0, left: 0.5, bottom: 0.5, right: 0)
     }
     
-    lazy var blockLabel: UIBlockLabel = UIBlockLabel.create {
+    lazy var blockLabel: UILabel.BlockLabel = UILabel.BlockLabel.create {
         $0.text = "Block"
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.backgroundColor = UIColor.badgeBackgroundColor

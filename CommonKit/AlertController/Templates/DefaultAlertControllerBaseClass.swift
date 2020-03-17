@@ -72,7 +72,7 @@ open class DefaultAlertControllerBaseClass: UIViewController, AlertControllerVie
         }
     }
     
-    public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+    override public init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         self.setupNotifications()
         self.providesPresentationContextTransitionStyle = true

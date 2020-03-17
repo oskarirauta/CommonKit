@@ -10,12 +10,10 @@ import StoreKit
 
 public extension SKProduct {
 
-    private static let priceFormatter: NumberFormatter = {
-        let priceFormatter = NumberFormatter()
-        priceFormatter.numberStyle = .currency
-        return priceFormatter
-    }()
-
+    private static let priceFormatter: NumberFormatter = NumberFormatter.create {
+        $0.numberStyle = .currency
+    }
+    
     /// SwifterSwift: Localized price of SKProduct
     var localizedPrice: String? {
         let formatter = SKProduct.priceFormatter

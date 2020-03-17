@@ -9,11 +9,11 @@
 import Foundation
 import UIKit
 
-open class UIMultiBadge: UIView, MultiBadgeProperties, MultiBadgeMethods, MultiBadgeBase {
+open class UIMultiBadge: UIView, MultiBadge {
     
     open var badges: [BadgeCompatible]? {
         get {
-            if (( self._badges?.count ?? -1 ) == 0 ) { self._badges = nil }
+            if ( self._badges?.count ?? -1 ) == 0 { self._badges = nil }
             return self._badges
         }
         set {
@@ -24,9 +24,9 @@ open class UIMultiBadge: UIView, MultiBadgeProperties, MultiBadgeMethods, MultiB
         }
     }
     
-    open var badgeElements: [UILabelExtended]? {
+    open var badgeElements: [UILabel.Extended]? {
         get {
-            if (( self._badgeElements?.count ?? -1 ) == 0 ) { self._badgeElements = nil }
+            if ( self._badgeElements?.count ?? -1 ) == 0 { self._badgeElements = nil }
             return self._badgeElements
         }
         set {
@@ -35,7 +35,7 @@ open class UIMultiBadge: UIView, MultiBadgeProperties, MultiBadgeMethods, MultiB
         }
     }
     
-    open var badgeSpacing: CGFloat = 1.0 {
+    open var badgeSpacing: CGFloat = UIDevice.deviceFamily.iphoneCompatible ? 1.0 : 2.0 {
         didSet { self.refreshBadges() }
     }
     
@@ -55,12 +55,12 @@ open class UIMultiBadge: UIView, MultiBadgeProperties, MultiBadgeMethods, MultiB
         didSet { self.refreshBadges() }
     }
     
-    open var badgeFont: UIFont = UIFont.boldSystemFont(ofSize: 14.0) {
+    open var badgeFont: UIFont = UIFont.boldSystemFont(ofSize: UIDevice.deviceFamily.iphoneCompatible ? 14.0 : 28.0 ) {
         didSet { self.refreshBadges() }
     }
         
     private var _badges: [BadgeCompatible]? = nil
-    private var _badgeElements: [UILabelExtended]? = nil
+    private var _badgeElements: [UILabel.Extended]? = nil
     private var _badgeConstraints: [NSLayoutConstraint] = []
     private var viewConstraints: [NSLayoutConstraint]? = nil
 }
@@ -73,7 +73,7 @@ extension UIMultiBadge {
         self._badgeElements = nil
     }
     
-    internal func updateNewBadgesSet(newBadges: Array<UILabelExtended>?) {
+    internal func updateNewBadgesSet(newBadges: [UILabel.Extended]?) {
         
         guard ( newBadges?.count ?? 0 ) > 0 else { return }
         
@@ -125,20 +125,20 @@ extension UIMultiBadge {
         defer { self.createConstraints() }
         guard filteredBadges.count != 0 else { return }
         
-        var newElements: [UILabelExtended]? = []
+        var newElements: [UILabel.Extended]? = []
         
         filteredBadges.enumerated().forEach {
             index, badge in
             
-            newElements?.append(UILabelExtended.create {
+            newElements?.append(UILabel.Extended.create {
                 
-                let leftPadding: CGFloat = self.badgeRounding && self.groupBadge && index == 0 ? 5.0 : ( self.badgeRounding && !self.groupBadge ? 5.0 : 2.0 )
+                let leftPadding: CGFloat = self.badgeRounding && self.groupBadge && index == 0 ? ( UIDevice.deviceFamily.iphoneCompatible ? 5.0 : 10.0 ) : ( self.badgeRounding && !self.groupBadge ? ( UIDevice.deviceFamily.iphoneCompatible ? 5.0 : 10.0 ) : ( UIDevice.deviceFamily.iphoneCompatible ? 2.0 : 4.0 ))
                 
-                let rightPadding: CGFloat = self.badgeRounding && self.groupBadge && index == filteredBadges.lastIndex ? 5.0 : ( self.badgeRounding && !self.groupBadge ? 5.0 : 2.0 )
+                let rightPadding: CGFloat = self.badgeRounding && self.groupBadge && index == filteredBadges.lastIndex ? ( UIDevice.deviceFamily.iphoneCompatible ? 5.0 : 10.0 ) : ( self.badgeRounding && !self.groupBadge ? ( UIDevice.deviceFamily.iphoneCompatible ? 5.0 : 10.0 ) : ( UIDevice.deviceFamily.iphoneCompatible ? 2.0 : 4.0 ))
                 
-                let extraPadding: CGFloat = self.badgeFont.pointSize < 12 ? ( badge.text.count == 1 ? 3.0 : 1.0 ) : ( badge.text.count == 1 ? 5.0 : 3.0 )
+                let extraPadding: CGFloat = self.badgeFont.pointSize < 12 ? ( badge.text.count == 1 ? ( UIDevice.deviceFamily.iphoneCompatible ? 3.0 : 6.0 ) : ( UIDevice.deviceFamily.iphoneCompatible ? 1.0 : 2.0 )) : ( badge.text.count == 1 ? ( UIDevice.deviceFamily.iphoneCompatible ? 5.0 : 10.0 ) : ( UIDevice.deviceFamily.iphoneCompatible ? 3.0 : 6.0 ))
                 
-                $0.padding = UIEdgeInsets(top: 0.5, left: leftPadding + extraPadding, bottom: 0.5, right: rightPadding + extraPadding)
+                $0.padding = UIEdgeInsets(top: ( UIDevice.deviceFamily.iphoneCompatible ? 0.5 : 1.0 ), left: leftPadding + extraPadding, bottom: ( UIDevice.deviceFamily.iphoneCompatible ? 0.5 : 1.0 ), right: rightPadding + extraPadding)
                 $0.text = badge.text
                 $0.font = self.badgeFont
                 $0.textColor = badge.foregroundColor ?? UIColor.badgeForegroundColor

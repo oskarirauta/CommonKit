@@ -53,41 +53,30 @@ public extension UIApplication {
             #endif
         }
     }
-
-    var appName: String {
-    get { return Bundle.main.object(forInfoDictionaryKey: kCFBundleNameKey as String) as! String }}
     
     /// SwifterSwift: Application name (if applicable).
     var displayName: String? {
-        get {
-            return Bundle.main.object(forInfoDictionaryKey: "CFBundleDisplayName") as? String
-        }
+        return Bundle.main.object(forInfoDictionaryKey: "CFBundleDisplayName") as? String
     }
 
     /// SwifterSwift: App current build number (if applicable).
     var buildNumber: String? {
-        get {
-            return Bundle.main.object(forInfoDictionaryKey: kCFBundleVersionKey as String) as? String
-        }
+        return Bundle.main.object(forInfoDictionaryKey: kCFBundleVersionKey as String) as? String
     }
 
     /// SwifterSwift: App's current version number (if applicable).
     var version: String? {
-        get {
-            return Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String
-        }
+        return Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String
     }
 
     var buildDate: Date? {
-        get {
-            guard
-                let infoPath: String = Bundle.main.path(forResource: "Info.plist", ofType: nil),
-                FileManager.default.fileExists(atPath: infoPath),
-                let infoAttr: [FileAttributeKey: Any] = try? FileManager.default.attributesOfItem(atPath: infoPath),
-                let infoDate: Date = infoAttr[.creationDate] as? Date
-                else { return nil }
-            return infoDate
-        }
+        guard
+            let infoPath: String = Bundle.main.path(forResource: "Info.plist", ofType: nil),
+            FileManager.default.fileExists(atPath: infoPath),
+            let infoAttr: [FileAttributeKey: Any] = try? FileManager.default.attributesOfItem(atPath: infoPath),
+            let infoDate: Date = infoAttr[.creationDate] as? Date
+            else { return nil }
+        return infoDate
     }
     
 }

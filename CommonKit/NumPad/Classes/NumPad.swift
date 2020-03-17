@@ -10,10 +10,10 @@ import Foundation
 
 public final class NumPad: UIInputView, UIInputViewAudioFeedback {
 
-    private(set) var type: KeyboardType = .number
-    private(set) var style: NumPadStyle = .default
-    private(set) var inputViewType: InputViewType? = nil
-    private(set) weak var textInput: UITextInput? = nil
+    public private(set) var type: KeyboardType = .number
+    public private(set) var style: NumPadStyle = .default
+    public private(set) var inputViewType: InputViewType? = nil
+    public private(set) weak var textInput: UITextInput? = nil
 
     public var delegate: NumPadDelegate? = nil
     
@@ -24,42 +24,37 @@ public final class NumPad: UIInputView, UIInputViewAudioFeedback {
     }
     
     public static var decimalChar: String {
-        get { return Locale.appLocale.decimalSeparator ?? "." }
+        return Locale.appLocale.decimalSeparator ?? "."
     }
     
     public var decimalChar: String {
-        get { return NumPad.decimalChar }
+        return NumPad.decimalChar
     }
     
     internal var value: String? {
-        get {
-            guard
-                let textInput: UITextInput = self.textInput,
-                let range: UITextRange = textInput.textRange(from: textInput.beginningOfDocument, to: textInput.endOfDocument)
-                else { return nil }
+        guard
+            let textInput: UITextInput = self.textInput,
+            let range: UITextRange = textInput.textRange(from: textInput.beginningOfDocument, to: textInput.endOfDocument)
+            else { return nil }
 
-            return textInput.text(in: range)
-        }
+        return textInput.text(in: range)
     }
     
-    lazy internal var overlayView: UIView = {
-        var _overlayView: UIView = UIView()
-        _overlayView.translatesAutoresizingMaskIntoConstraints = false
-        _overlayView.backgroundColor = self.style.overlayColor
-        return _overlayView
-    }()
+    internal lazy var overlayView: UIView = UIView.create {
+        [unowned self] in
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.backgroundColor = self.style.overlayColor
+    }
     
-    lazy internal var innerView: UIView = {
-        var _innerView: UIView = UIView()
-        _innerView.translatesAutoresizingMaskIntoConstraints = false
-        _innerView.backgroundColor = UIColor.clear
-        return _innerView
-    }()
+    internal lazy var innerView: UIView = UIView.create {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.backgroundColor = .clear
+    }
     
     internal var button: [UIButton] = []
     
-    public override var intrinsicContentSize: CGSize {
-        get { return CGSize(width: UIView.noIntrinsicMetric, height: UIView.noIntrinsicMetric) }
+    override public var intrinsicContentSize: CGSize {
+        return CGSize(width: UIView.noIntrinsicMetric, height: UIView.noIntrinsicMetric)
     }
 
     public init() {
@@ -120,7 +115,7 @@ public final class NumPad: UIInputView, UIInputViewAudioFeedback {
         self.inputViewType = notification.name == UITextField.textDidBeginEditingNotification ? .textField : .textView
     }
     
-    public override func willMove(toSuperview newSuperview: UIView?) {
+    override public func willMove(toSuperview newSuperview: UIView?) {
         
         super.willMove(toSuperview: newSuperview)
         
@@ -129,17 +124,17 @@ public final class NumPad: UIInputView, UIInputViewAudioFeedback {
             return
         }
             
-        if (( self.value == self.decimalChar ) || ( self.value == "+" )) {
+        if self.value == self.decimalChar || self.value == "+" {
             if let range: UITextRange = textInput.textRange(from: textInput.beginningOfDocument, to: textInput.endOfDocument) {
                 textInput.replace(range, withText: "")
             }
-        } else if (( self.type == .decimal ) && ( self.value?.first == self.decimalChar.first ) && ( self.decimalChar.first != nil )) {
+        } else if self.type == .decimal && self.value?.first == self.decimalChar.first && self.decimalChar.first != nil {
             if
                 let position: UITextPosition = textInput.position(from: textInput.beginningOfDocument, offset: 1),
                 let range: UITextRange = textInput.textRange(from: textInput.beginningOfDocument, to: position) {
                 textInput.replace(range, withText: "0" + self.decimalChar)
             }
-        } else if (( self.type == .phone ) && (( self.value?.contains("+") ?? false))) {
+        } else if self.type == .phone && ( self.value?.contains("+") ?? false) {
             let beginsWithPlus: Bool = self.value?.first == "+" ? true : false
             let newText: String = ( beginsWithPlus ? "+" : "" ) + ( self.value ?? "" ).replacingOccurrences(of: "+", with: "")
             if let range: UITextRange = textInput.textRange(from: textInput.beginningOfDocument, to: textInput.endOfDocument) {
@@ -150,7 +145,7 @@ public final class NumPad: UIInputView, UIInputViewAudioFeedback {
         self.updateState()
     }
 
-    public override func layoutSubviews() {
+    override public func layoutSubviews() {
         super.layoutSubviews()
         
         guard self.type == .phone else { return }

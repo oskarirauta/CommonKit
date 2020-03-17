@@ -37,7 +37,8 @@ public final class MyTask: TaskClass {
         
         let i: Int? = task.result as? Int
         
-        print("(class) Task #" + String(task.pid ?? -1) + " completed " + (task.isCancelled ? "with failure. " : "with success. ") + "Result is " + ( i == nil ? "nil" : i!.description ))
+        print("(class) Task #" + ( task.pid?.description ?? "nil" ) + " completed: " + ( task.isCancelled.description ))
+        print("Result is: " + ( i?.description ?? "nil" ))
     }
     
 }

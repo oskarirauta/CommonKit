@@ -8,14 +8,12 @@
 
 import Foundation
 
-extension Data {
+public extension Data {
     
     /// SwifterSwift: Return data as an array of bytes.
     var bytes: [UInt8] {
-        get {
-            // http://stackoverflow.com/questions/38097710/swift-3-changes-for-getbytes-method
-            return [UInt8](self)
-        }
+        // http://stackoverflow.com/questions/38097710/swift-3-changes-for-getbytes-method
+        return [UInt8](self)
     }
     
     // MARK: - Methods

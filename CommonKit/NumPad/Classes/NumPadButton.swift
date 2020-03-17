@@ -10,20 +10,20 @@ import Foundation
 
 extension NumPad {
     
-    public class NumPadButton: UIButton {
+    open class NumPadButton: UIButton {
         
-        public var handler: ((Int) -> Void)? = nil
-        public var timer: Timer? = nil
-        private(set) var style: NumPadStyle = .default
-        private(set) var type: NumPad.KeyboardType = .number
-        private(set) var count: Int = 0
+        open var handler: ((Int) -> Void)? = nil
+        open var timer: Timer? = nil
+        open private(set) var style: NumPadStyle = .default
+        open private(set) var type: NumPad.KeyboardType = .number
+        open private(set) var count: Int = 0
         
-        override public var isHighlighted: Bool {
+        override open var isHighlighted: Bool {
             didSet { UIView.animate(withDuration: 0.08, animations: {
                 self.backgroundColor = self.isHighlighted ? self.style.backgroundColorHighlighted : self.style.backgroundColor }) }
         }
         
-        required public init?(coder aDecoder: NSCoder) {
+        public required init?(coder aDecoder: NSCoder) {
             super.init(coder: aDecoder)
         }
         
@@ -89,17 +89,17 @@ extension NumPad {
         }
     }
     
-    public class NumPadFunctionButton: UIButton {
+    open class NumPadFunctionButton: UIButton {
         
-        public var handler: ((Int) -> Void)? = nil
-        private(set) var style: NumPadStyle = .default
-        private(set) var type: NumPad.KeyboardType = .number
+        open var handler: ((Int) -> Void)? = nil
+        open private(set) var style: NumPadStyle = .default
+        open private(set) var type: NumPad.KeyboardType = .number
         
-        override public var isEnabled: Bool {
+        override open var isEnabled: Bool {
             didSet { self.setTitleColor(self.isEnabled ? self.style.foregroundColor : self.style.foregroundColorHighlighted, for: .normal) }
         }
         
-        required public init?(coder aDecoder: NSCoder) {
+        public required init?(coder aDecoder: NSCoder) {
             super.init(coder: aDecoder)
         }
         
@@ -131,14 +131,14 @@ extension NumPad {
         }
     }
     
-    public class NumPadBackspaceButton: UIButton {
+    open class NumPadBackspaceButton: UIButton {
         
-        public var handler: ((Int) -> Void)? = nil
-        public var timer: Timer? = nil
-        private(set) var style: NumPadStyle = .default
-        private(set) var count: Int = 0
+        open var handler: ((Int) -> Void)? = nil
+        open var timer: Timer? = nil
+        open private(set) var style: NumPadStyle = .default
+        open private(set) var count: Int = 0
         
-        required public init?(coder aDecoder: NSCoder) {
+        public required init?(coder aDecoder: NSCoder) {
             super.init(coder: aDecoder)
         }
         
@@ -178,4 +178,3 @@ extension NumPad {
     }
     
 }
-

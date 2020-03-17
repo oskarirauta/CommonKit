@@ -12,129 +12,89 @@ import UIKit
 public extension UIColor {
     
     class var headerFooterColor: UIColor {
-        get {
-            return colorScheme(default: .darkText)
-        }
+        return colorScheme(default: .darkText)
     }
     
     class var badgeForegroundColor: UIColor {
-        get {
-            return colorScheme( default: .lightText,
+        return colorScheme( default: .lightText,
                                 dark: UIColor.white.darker(by: 0.02).withAlphaComponent(0.9),
                                 light: UIColor.white.withAlphaComponent(0.9))
-        }
     }
     
     class var blueBadgeBackgroundColor: UIColor {
-        get {
-            return colorScheme(default: UIColor(red: 114.00/255.00, green: 117.00/255.00, blue: 188.00/255.00, alpha: 1.0))
-        }
+        return colorScheme(default: UIColor(red: 114.00/255.00, green: 117.00/255.00, blue: 188.00/255.00, alpha: 1.0))
     }
     
     class var badgeBackgroundColor: UIColor {
-        get {
-            return colorScheme(default: UIColor(red: 124.00/255.00, green: 127.00/255.00, blue: 168.00/255.00, alpha: 1.0))
-        }
+        return colorScheme(default: UIColor(red: 124.00/255.00, green: 127.00/255.00, blue: 168.00/255.00, alpha: 1.0))
     }
     
     class var badge2BackgroundColor: UIColor {
-        get {
-            return colorScheme(default: UIColor(red: 142.0/255, green: 156.0/255, blue: 183.0/255, alpha: 1.0))
-        }
+        return colorScheme(default: UIColor(red: 142.0/255, green: 156.0/255, blue: 183.0/255, alpha: 1.0))
     }
     
     class var badgeCompleteColor: UIColor {
-        get {
-            return colorScheme( default: UIColor(red: 142.00/255.00, green: 156.00/255.00, blue: 183.00/255.00, alpha: 1.0),
-                                dark: UIColor(red: 142.00/255.00, green: 156.00/255.00, blue: 183.00/255.00, alpha: 1.0).darker(by: 0.3),
-                                light: UIColor(red: 142.00/255.00, green: 156.00/255.00, blue: 183.00/255.00, alpha: 1.0))
-        }
+        return colorScheme( default: UIColor(red: 142.00/255.00, green: 156.00/255.00, blue: 183.00/255.00, alpha: 1.0),
+                            dark: UIColor(red: 142.00/255.00, green: 156.00/255.00, blue: 183.00/255.00, alpha: 1.0).darker(by: 0.3),
+                            light: UIColor(red: 142.00/255.00, green: 156.00/255.00, blue: 183.00/255.00, alpha: 1.0))
     }
     
     class var badgeIncompleteColor: UIColor {
-        get {
-            return colorScheme( default: UIColor(red: 238.00/255.00, green: 126.00/255.00, blue: 143.00/255.00, alpha: 1.0),
-                dark: UIColor(red: 238.00/255.00, green: 126.00/255.00, blue: 143.00/255.00, alpha: 1.0).darker(by: 0.15),
-                light: UIColor(red: 238.00/255.00, green: 126.00/255.00, blue: 143.00/255.00, alpha: 1.0))
-        }
+        return colorScheme( default: UIColor(red: 238.00/255.00, green: 126.00/255.00, blue: 143.00/255.00, alpha: 1.0),
+            dark: UIColor(red: 238.00/255.00, green: 126.00/255.00, blue: 143.00/255.00, alpha: 1.0).darker(by: 0.15),
+            light: UIColor(red: 238.00/255.00, green: 126.00/255.00, blue: 143.00/255.00, alpha: 1.0))
     }
     
     class var buttonForegroundColor: UIColor {
-        get {
-            return colorScheme(default: UIColor(red: 0.00/255.00, green: 122.0/255.00, blue: 255.00/255.00, alpha: 1.0))
-        }
+        return colorScheme(default: UIColor(red: 0.00/255.00, green: 122.0/255.00, blue: 255.00/255.00, alpha: 1.0))
     }
     
     class var button2ForegroundColor: UIColor {
-        get {
-            return colorScheme(default: UIColor(red: 0.00/255.00, green: 122.0/255.00, blue: 216.00/255.00, alpha: 1.0))
-        }
+        return colorScheme(default: UIColor(red: 0.00/255.00, green: 122.0/255.00, blue: 216.00/255.00, alpha: 1.0))
     }
     
     class var button3ForegroundColor: UIColor {
-        get {
-            return colorScheme(default: UIColor(red: 85.00/255.00, green: 145.0/255.00, blue: 240.00/255.00, alpha: 1.0))
-        }
+        return colorScheme(default: UIColor(red: 85.00/255.00, green: 145.0/255.00, blue: 240.00/255.00, alpha: 1.0))
     }
     
     class var defaultShadowColor: UIColor {
-        get {
-            return colorScheme(default: UIColor(red: 128.00/255.00, green: 128.00/255.00, blue: 128.00/255.00, alpha: 1.0))
-        }
+        return colorScheme(default: UIColor(red: 128.00/255.00, green: 128.00/255.00, blue: 128.00/255.00, alpha: 1.0))
     }
     
     class var timeTextColor: UIColor {
-        get {
-            return colorScheme(default: UIColor.darkText.withAlphaComponent(0.85))
-        }
+        return colorScheme(default: UIColor.darkText.withAlphaComponent(0.85))
     }
     
     class var cellBackgroundColor: UIColor {
-        get {
-            return colorScheme(default: UIColor.secondarySystemGroupedBackground)
-        }
+        return colorScheme(default: UIColor.secondarySystemGroupedBackground)
     }
     
     class var defaultTitleColor: UIColor {
-        get {
-            return colorScheme(default: .label)
-        }
+        return colorScheme(default: .label)
     }
     
     class var disabledColor: UIColor {
-        get {
-            return colorScheme(default: .lightText, dark: .lightText, light: UIColor.darkGray.lighter(by: 0.1).withAlphaComponent(0.85))
-        }
+        return colorScheme(default: .lightText, dark: .lightText, light: UIColor.darkGray.lighter(by: 0.1).withAlphaComponent(0.85))
     }
 
     class var placeholderColor: UIColor {
-        get {
-            return colorScheme(default: .lightText, dark: .darkGray, light: .lightGray)
-        }
+        return colorScheme(default: .lightText, dark: .darkGray, light: .lightGray)
     }
 
     class var tipColor: UIColor {
-        get {
-            return colorScheme(default: .darkText)
-        }
+        return colorScheme(default: .darkText)
     }
     
     class var toolbarColor: UIColor {
-        get {
-            return colorScheme(default: UIColor(red: 249.0/255.0, green: 249.0/255.0, blue: 249.0/255.0, alpha: 1.0))
-        }
+        return colorScheme(default: UIColor(red: 249.0/255.0, green: 249.0/255.0, blue: 249.0/255.0, alpha: 1.0))
     }
     
     class var keyboardBackgroundColor: UIColor {
-        get {
-            return colorScheme(default: .quaternarySystemFill)
-        }
+        return colorScheme(default: .quaternarySystemFill)
     }
     
     class var tableViewSeparatorColor: UIColor {
-        get {
-            return colorScheme(default: .separator)
-        }
+        return colorScheme(default: .separator)
     }
     
     class func colorScheme(default: UIColor, dark: UIColor? = nil, light: UIColor? = nil) -> UIColor {
@@ -151,79 +111,63 @@ public extension UIColor {
     }
 
     var image: UIImage? {
-        get {
-            UIGraphicsBeginImageContext(CGSize(width: 1.0, height: 1.0))
-            guard let contextRef: CGContext = UIGraphicsGetCurrentContext() else { return nil }
-            contextRef.setFillColor(self.cgColor)
-            contextRef.fill(CGRect(x: 0, y: 0, width: 1, height: 1))
-            guard let img: UIImage = UIGraphicsGetImageFromCurrentImageContext() else {
-                UIGraphicsEndImageContext()
-                return nil
-            }
+        UIGraphicsBeginImageContext(CGSize(width: 1.0, height: 1.0))
+        guard let contextRef: CGContext = UIGraphicsGetCurrentContext() else { return nil }
+        contextRef.setFillColor(self.cgColor)
+        contextRef.fill(CGRect(x: 0, y: 0, width: 1, height: 1))
+        guard let img: UIImage = UIGraphicsGetImageFromCurrentImageContext() else {
             UIGraphicsEndImageContext()
-            return img
+            return nil
         }
+        UIGraphicsEndImageContext()
+        return img
     }
     
     /// SwifterSwift: Hexadecimal value string (read-only).
     var hexString: String {
-        get {
-            let components: [Int] = {
-                let comps = cgColor.components!
-                let components = comps.count == 4 ? comps : [comps[0], comps[0], comps[0], comps[1]]
-                return components.map { Int($0 * 255.0) }
-            }()
-            return String(format: "#%02X%02X%02X", components[0], components[1], components[2])
-        }
+        let components: [Int] = {
+            let comps = cgColor.components!
+            let components = comps.count == 4 ? comps : [comps[0], comps[0], comps[0], comps[1]]
+            return components.map { Int($0 * 255.0) }
+        }()
+        return String(format: "#%02X%02X%02X", components[0], components[1], components[2])
     }
     
     /// SwifterSwift: Short hexadecimal value string (read-only, if applicable).
     var shortHexString: String? {
-        get {
-            let string = hexString.replacingOccurrences(of: "#", with: "")
-            let chrs = Array(string)
-            guard chrs[0] == chrs[1], chrs[2] == chrs[3], chrs[4] == chrs[5] else { return nil }
-            return "#\(chrs[0])\(chrs[2])\(chrs[4])"
-        }
+        let string = hexString.replacingOccurrences(of: "#", with: "")
+        let chrs = Array(string)
+        guard chrs[0] == chrs[1], chrs[2] == chrs[3], chrs[4] == chrs[5] else { return nil }
+        return "#\(chrs[0])\(chrs[2])\(chrs[4])"
     }
     
     /// SwifterSwift: Short hexadecimal value string, or full hexadecimal string if not possible (read-only).
     var shortHexOrHexString: String {
-        get {
-            return self.shortHexString ?? self.hexString
-        }
+        return self.shortHexString ?? self.hexString
     }
     
     /// SwifterSwift: Alpha of Color (read-only).
     var alpha: CGFloat {
-        get {
-            return cgColor.alpha
-        }
+        return cgColor.alpha
     }
     
     var rgbComponents: (red: Int, green: Int, blue: Int) {
-        get {
-            var components: [CGFloat] {
-                let comps = cgColor.components!
-                if comps.count == 4 { return comps }
-                return [comps[0], comps[0], comps[0], comps[1]]
-            }
-            let red = components[0]
-            let green = components[1]
-            let blue = components[2]
-            return (red: Int(red * 255.0), green: Int(green * 255.0), blue: Int(blue * 255.0))
+        var components: [CGFloat] {
+            let comps = cgColor.components!
+            if comps.count == 4 { return comps }
+            return [comps[0], comps[0], comps[0], comps[1]]
         }
+        let red = components[0]
+        let green = components[1]
+        let blue = components[2]
+        return (red: Int(red * 255.0), green: Int(green * 255.0), blue: Int(blue * 255.0))
     }
     
     convenience init?(red: Int, green: Int, blue: Int, transparency: CGFloat = 1) {
         guard red >= 0 && red <= 255 else { return nil }
         guard green >= 0 && green <= 255 else { return nil }
         guard blue >= 0 && blue <= 255 else { return nil }
-        
-        var trans = transparency
-        if trans < 0 { trans = 0 }
-        if trans > 1 { trans = 1 }
-        
+        let trans = transparency < 0 ? 0 : ( transparency > 1 ? 1 : transparency)
         self.init(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: trans)
     }
     
@@ -233,10 +177,7 @@ public extension UIColor {
     ///   - hex: hex Int (example: 0xDECEB5).
     ///   - transparency: optional transparency value (default is 1).
     convenience init?(hex: Int, transparency: CGFloat = 1) {
-        var trans = transparency
-        if trans < 0 { trans = 0 }
-        if trans > 1 { trans = 1 }
-        
+        let trans = transparency < 0 ? 0 : ( transparency > 1 ? 1 : transparency)
         let red = (hex >> 16) & 0xff
         let green = (hex >> 8) & 0xff
         let blue = hex & 0xff

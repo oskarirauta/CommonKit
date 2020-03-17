@@ -9,6 +9,7 @@
 import Foundation
 
 public protocol SharedAppDelegate {
+    
     associatedtype selfType = Self
     static var shared: selfType { get }
 }
@@ -16,9 +17,8 @@ public protocol SharedAppDelegate {
 public extension SharedAppDelegate where Self: UIResponder, Self: UIApplicationDelegate {
     
     static var shared: selfType {
-        get {
-            return Thread.isMainThread ? ( UIApplication.shared.delegate as! selfType ) : { DispatchQueue.main.sync { return UIApplication.shared.delegate as! selfType }
+        return Thread.isMainThread ? ( UIApplication.shared.delegate as! selfType ) : { DispatchQueue.main.sync { return UIApplication.shared.delegate as! selfType }
                 }()
-        }
     }
+    
 }

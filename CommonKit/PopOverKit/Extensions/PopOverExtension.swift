@@ -73,7 +73,7 @@ extension PopOver {
         self.contentView.layoutIfNeeded()
         self.updateContentSize()
         guard self.overlayColor != nil else { return }
-        popoverPresentationController.containerView?.backgroundColor = UIColor.clear
+        popoverPresentationController.containerView?.backgroundColor = .clear
         UIView.animate(withDuration: 0.22, animations: {
             popoverPresentationController.containerView?.backgroundColor = self.overlayColor
         })

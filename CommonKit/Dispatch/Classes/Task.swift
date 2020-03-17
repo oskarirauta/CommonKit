@@ -10,7 +10,7 @@ import Foundation
 
 open class Task: AbstractTaskProtocol, TaskProtocol, NSCopying {
 
-    public private(set) var block: TaskBlock
+    open private(set) var block: TaskBlock
     open private(set) var workItem: DispatchWorkItem!
     
     open var pid: Int?
@@ -18,7 +18,7 @@ open class Task: AbstractTaskProtocol, TaskProtocol, NSCopying {
     open private(set) var taskScheduler: TaskSchedulerClass?
     open private(set) var isRunning: Bool
 
-    public private(set) var completed: TaskBlock? = nil
+    open private(set) var completed: TaskBlock? = nil
     open var isCancelled: Bool { get { return self._isCancelled }}
 
     open var result: Any? = nil
@@ -67,12 +67,12 @@ open class Task: AbstractTaskProtocol, TaskProtocol, NSCopying {
         self.workItem.perform()
     }
 
-    public func copy(with zone: NSZone? = nil) -> Any {
+    open func copy(with zone: NSZone? = nil) -> Any {
         let copy: Task = Task(self.pid, taskScheduler: self.taskScheduler!, block: self.block, completed: self.completed, taskType: self.taskType)
         return copy
     }
 
-    public func taskCopy() -> Task {
+    open func taskCopy() -> Task {
         return self.copy() as! Task
     }
     
@@ -95,7 +95,7 @@ open class Task: AbstractTaskProtocol, TaskProtocol, NSCopying {
         })
     }
     
-    public func properties(_ modifyFunc: (inout Task) -> Void) -> Task {
+    open func properties(_ modifyFunc: (inout Task) -> Void) -> Task {
         var retVal: Task = self
         modifyFunc(&retVal)
         return retVal

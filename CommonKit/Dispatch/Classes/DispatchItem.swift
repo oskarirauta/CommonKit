@@ -11,7 +11,7 @@ import Foundation
 open class DispatchItem {
     
     internal var block: (DispatchItem) -> Void
-    private(set) var workItem: DispatchWorkItem!
+    open private(set) var workItem: DispatchWorkItem!
     
     public init(block: @escaping (DispatchItem) -> Void) {
         self.block = block

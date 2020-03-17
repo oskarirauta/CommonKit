@@ -87,27 +87,27 @@ public struct Money: ExpressibleByFloatLiteral, ExpressibleByIntegerLiteral, Sig
         self._rawValue = value.asMoney._rawValue.rounded(to: 2)
     }
     
-    static public func * (lhs: Money, rhs: Money) -> Money {
+    public static func * (lhs: Money, rhs: Money) -> Money {
         return Money(rawValue: lhs.rawValue * rhs.rawValue)
     }
     
-    static public func *= (lhs: inout Money, rhs: Money) {
+    public static func *= (lhs: inout Money, rhs: Money) {
         lhs.rawValue = lhs.rawValue * rhs.rawValue
     }
     
-    static public func + (lhs: Money, rhs: Money) -> Money {
+    public static func + (lhs: Money, rhs: Money) -> Money {
         return Money(rawValue: lhs.rawValue + rhs.rawValue)
     }
     
-    static public func += (lhs: inout Money, rhs: Money) {
+    public static func += (lhs: inout Money, rhs: Money) {
         lhs.rawValue = lhs.rawValue + rhs.rawValue
     }
     
-    static public func - (lhs: Money, rhs: Money) -> Money {
+    public static func - (lhs: Money, rhs: Money) -> Money {
         return Money(rawValue: lhs.rawValue - rhs.rawValue)
     }
     
-    static public func -= (lhs: inout Money, rhs: Money) {
+    public static func -= (lhs: inout Money, rhs: Money) {
         lhs.rawValue = lhs.rawValue - rhs.rawValue
     }
 

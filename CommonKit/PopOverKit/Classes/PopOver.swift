@@ -77,7 +77,7 @@ open class PopOver: UIViewController, PopOverProtocol {
         super.viewWillDisappear(animated)
         guard self.overlayColor != nil else { return }
         UIView.animate(withDuration: 0.20, animations: {
-            self.popoverPresentationController?.containerView?.backgroundColor = UIColor.clear
+            self.popoverPresentationController?.containerView?.backgroundColor = .clear
         })
     }
     

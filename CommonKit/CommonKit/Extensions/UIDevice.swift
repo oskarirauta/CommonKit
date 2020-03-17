@@ -8,9 +8,9 @@
 
 import Foundation
 
-extension UIDevice {
+public extension UIDevice {
     
-    public enum DeviceFamilyEnum {
+    enum DeviceFamilyEnum {
         
         case iphone
         case ipod
@@ -38,13 +38,21 @@ extension UIDevice {
             }
         }
         
-        public var isIphoneCompatible: Bool {
-            get { return self == .iphone || self == .ipod ? true : false }
+        public var iphoneCompatible: Bool {
+            get { return self == .iphone || self == .ipod }
+        }
+        
+        public var ipadCompatible: Bool {
+            get { return self == .ipad }
+        }
+        
+        public var osxCompatible: Bool {
+            get { return self == .macCatalyst || self == .osx }
         }
         
     }
     
-    public enum DebugModeEnum {
+    enum DebugModeEnum {
         
         case notDetermined
         case production
@@ -61,75 +69,51 @@ extension UIDevice {
         }
     }
     
-    public static var machine: String {
-        get {
-            var systemInfo = utsname()
-            uname(&systemInfo)
-            
-            return String(validatingUTF8: NSString(bytes: &systemInfo.machine, length: Int(_SYS_NAMELEN), encoding: String.Encoding.ascii.rawValue)!.utf8String!)!
+    static var machine: String {
+        var systemInfo = utsname()
+        uname(&systemInfo)
+        
+        return String(validatingUTF8: NSString(bytes: &systemInfo.machine, length: Int(_SYS_NAMELEN), encoding: String.Encoding.ascii.rawValue)!.utf8String!)!
+    }
+
+    static var inSimulator: Bool {
+        #if targetEnvironment(simulator)
+        return true
+        #else
+        return false
+        #endif
+    }
+
+    static var debugMode: UIDevice.DebugModeEnum {
+        guard
+            !self.inSimulator,
+            let filePath: String = Bundle.main.path(forResource: "embedded", ofType: "mobileprovision"),
+            FileManager.default.fileExists(atPath: filePath),
+            let url: URL = URL(fileURLWithPath: filePath) as URL?,
+            let data: Data = try? Data(contentsOf: url),
+            let content: String = String(data: data, encoding: .ascii)
+            else { return .notDetermined }
+        return content.contains("<key>aps-environment</key>\n\t\t<string>development</string>") ? .development : .production
+    }
+
+    static var deviceFamily: UIDevice.DeviceFamilyEnum {
+        #if targetEnvironment(macCatalyst)
+        return .macCatalyst
+        #elseif os(OSX)
+        return .osx
+        #elseif os(watchOS)
+        return .watch
+        #elseif os(tvOS)
+        return .tvos
+        #else
+        switch UIDevice.current.userInterfaceIdiom {
+        case .carPlay: return .carplay
+        case .pad: return .ipad
+        case .phone: return UIDevice.current.model.uppercased().contains("IPOD") ? .ipod : .iphone
+        case .tv: return .tvos
+        default: return .unknown
         }
+        #endif
     }
-
-    public static var isSimulator: Bool {
-        get {
-            #if targetEnvironment(simulator)
-            return true
-            #else
-            return false
-            #endif
-        }
-    }
-
-    public static var inDebugMode: UIDevice.DebugModeEnum {
-        get {
-            guard
-                !UIDevice.isSimulator,
-                let filePath: String = Bundle.main.path(forResource: "embedded", ofType: "mobileprovision"),
-                FileManager.default.fileExists(atPath: filePath),
-                let url: URL = URL(fileURLWithPath: filePath) as URL?,
-                let data: Data = try? Data(contentsOf: url),
-                let content: String = String(data: data, encoding: .ascii)
-                else { return .notDetermined }
-            return content.contains("<key>aps-environment</key>\n\t\t<string>development</string>") ? .development : .production
-        }
-    }
-
-    public static var deviceFamily: UIDevice.DeviceFamilyEnum {
-        get {
-            #if targetEnvironment(macCatalyst)
-            return .macCatalyst
-            #elseif os(OSX)
-            return .osx
-            #elseif os(watchOS)
-            return .watch
-            #elseif os(tvOS)
-            return .tvos
-            #else
-            switch UIDevice.current.userInterfaceIdiom {
-            case .carPlay: return .carplay
-            case .pad: return .ipad
-            case .phone: return UIDevice.current.model.uppercased().contains("IPOD") ? .ipod : .iphone
-            case .tv: return .tvos
-            default: return .unknown
-            }
-            #endif
-        }
-    }
-    
-    public var machine: String {
-        get { return UIDevice.machine }
-    }
-
-    public var isSimulator: Bool {
-        get { return UIDevice.isSimulator }
-    }
-
-    public var inDebugMode: UIDevice.DebugModeEnum {
-        get { return UIDevice.inDebugMode }
-    }
-    
-    public var deviceFamily: UIDevice.DeviceFamilyEnum {
-        get { return UIDevice.deviceFamily }
-    }
-    
+        
 }

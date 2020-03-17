@@ -11,9 +11,10 @@ import Foundation
 extension Array {
     
     public var lastIndex: Int {
-        get { return self.count - 1 }}
+        return self.count - 1
+    }
 
-    public mutating func append(from: Array<Element>) {
+    public mutating func append(from: [Element]) {
         from.forEach { self.append($0) }
     }
 
@@ -54,7 +55,6 @@ extension Array: MutatingCreatable { }
 
 extension Optional: IsEmptyProtocol where Wrapped: Collection {
     
-    public var isEmpty: Bool {
-        get { return self?.isEmpty ?? true }}
+    public var isEmpty: Bool { return self?.isEmpty ?? true }
     
 }

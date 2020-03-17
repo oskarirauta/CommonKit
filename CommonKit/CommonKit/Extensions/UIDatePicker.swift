@@ -12,12 +12,8 @@ public extension UIDatePicker {
 
     /// SwifterSwift: Text color of UIDatePicker.
     var textColor: UIColor? {
-        set {
-            setValue(newValue, forKeyPath: "textColor")
-        }
-        get {
-            return value(forKeyPath: "textColor") as? UIColor
-        }
+        set { setValue(newValue, forKeyPath: "textColor") }
+        get { return value(forKeyPath: "textColor") as? UIColor }
     }
 
 }

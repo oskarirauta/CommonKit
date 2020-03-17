@@ -25,24 +25,21 @@ public final class CurrencyPad: UIInputView, UIInputViewAudioFeedback {
             self.button[10].isHidden = !self.allowSignChange
         }
     }
+
+    internal lazy var overlayView: UIView = UIView.create {
+        [unowned self] in
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.backgroundColor = self.style.overlayColor
+    }
     
-    lazy internal var overlayView: UIView = {
-        var _overlayView: UIView = UIView()
-        _overlayView.translatesAutoresizingMaskIntoConstraints = false
-        _overlayView.backgroundColor = self.style.overlayColor
-        return _overlayView
-    }()
-    
-    lazy internal var innerView: UIView = {
-        var _innerView: UIView = UIView()
-        _innerView.translatesAutoresizingMaskIntoConstraints = false
-        _innerView.backgroundColor = UIColor.clear
-        return _innerView
-    }()
+    internal lazy var innerView: UIView = UIView.create {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.backgroundColor = .clear
+    }
     
     internal var button: [UIButton] = []
     
-    public override var intrinsicContentSize: CGSize {
+    override public var intrinsicContentSize: CGSize {
         get { return CGSize(width: UIView.noIntrinsicMetric, height: UIView.noIntrinsicMetric) }
     }
     
@@ -63,7 +60,7 @@ public final class CurrencyPad: UIInputView, UIInputViewAudioFeedback {
         self.setup(style: .default)
     }
     
-    private override init(frame: CGRect, inputViewStyle: UIInputView.Style) {
+    override private init(frame: CGRect, inputViewStyle: UIInputView.Style) {
         super.init(frame: frame, inputViewStyle: inputViewStyle)
         self.translatesAutoresizingMaskIntoConstraints = false
         self.setupViews()

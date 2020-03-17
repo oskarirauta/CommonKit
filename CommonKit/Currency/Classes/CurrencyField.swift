@@ -36,7 +36,7 @@ open class CurrencyField: UITextField, CurrencyFieldDelegate, UITextFieldDelegat
         }
     }
     
-    public var allowSignChange: Bool {
+    open var allowSignChange: Bool {
         get { return self.currencyPad.allowSignChange }
         set { self.currencyPad.allowSignChange = newValue }
     }
@@ -55,28 +55,28 @@ open class CurrencyField: UITextField, CurrencyFieldDelegate, UITextFieldDelegat
         
     }
     
-    required public init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.inputView = self.currencyPad
         self.inputAccessoryView = DoneBar()
         self.delegate = self
     }
     
-    open override func caretRect(for position: UITextPosition) -> CGRect {
+    override open func caretRect(for position: UITextPosition) -> CGRect {
         return .zero
     }
  
-    public func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+    open func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         if ( self.value == nil ) { self.value = 0 }
         return true
     }
     
-    public func textFieldShouldClear(_ textField: UITextField) -> Bool {
+    open func textFieldShouldClear(_ textField: UITextField) -> Bool {
         self.value = nil
         return false
     }
     
-    public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+    open func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         return false
     }
 

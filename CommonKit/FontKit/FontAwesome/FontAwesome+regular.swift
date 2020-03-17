@@ -12,7 +12,7 @@ extension FontAwesome { // regular
     public enum regular: String, IconEnum {
         
         public static var fontType: Font { return .far }
-        
+
         case addressBook = "address-book \u{f2b9}"
         case addressCard = "address-card \u{f2bb}"
         case angry = "angry \u{f556}"

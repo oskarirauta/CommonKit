@@ -12,7 +12,7 @@ open class DefaultActionSheetControllerBaseClass: DefaultAlertControllerBaseClas
     
     open override var fullscreen: Bool { get { return false } }
     
-    public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+    override public init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         self.modalPresentationStyle = .overFullScreen
     }
@@ -22,7 +22,7 @@ open class DefaultActionSheetControllerBaseClass: DefaultAlertControllerBaseClas
     }
     
     // Initializer
-    public override init(title: String?, preferredStyle: AlertControllerStyle) {
+    override public init(title: String?, preferredStyle: AlertControllerStyle) {
         super.init(nibName: nil, bundle: nil)
         self.providesPresentationContextTransitionStyle = true
         self.definesPresentationContext = true
@@ -34,7 +34,7 @@ open class DefaultActionSheetControllerBaseClass: DefaultAlertControllerBaseClas
         self.setupConstraints()
     }
     
-    public override init() {
+    override public init() {
         super.init(nibName: nil, bundle: nil)
         self.providesPresentationContextTransitionStyle = true
         self.definesPresentationContext = true
@@ -46,7 +46,7 @@ open class DefaultActionSheetControllerBaseClass: DefaultAlertControllerBaseClas
         self.setupConstraints()
     }
     
-    public override init(stockInit: Bool, preferredStyle: AlertControllerStyle = .alert) {
+    override public init(stockInit: Bool, preferredStyle: AlertControllerStyle = .alert) {
         super.init(nibName: nil, bundle: nil)
         self.providesPresentationContextTransitionStyle = true
         self.definesPresentationContext = true

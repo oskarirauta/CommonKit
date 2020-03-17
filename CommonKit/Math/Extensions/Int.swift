@@ -11,35 +11,35 @@ import Foundation
 public extension Int {
     
     var zeroNil: Int? {
-        get { return self == 0 ? nil : self }
+        return self == 0 ? nil : self
     }
 
     var lastDigit: Int {
-        get { return self == 0 ? 0 : self % 10 }
+        return self == 0 ? 0 : self % 10
     }
     
     var lastTwoDigits: Int {
-        get { return self == 0 ? 0 : self % 100 }
+        return self == 0 ? 0 : self % 100
     }
     
     var string: String {
-        get { return String(self) }
+        return String(self)
     }
     
     var isOdd: Bool {
-        get { return self % 2 == 0 ? true : false }
+        return self % 2 == 0 ? true : false
     }
     
     var isEven: Bool {
-        get { return self % 2 == 0 ? false : true }
+        return self % 2 == 0 ? false : true
     }
     
     var dividedByTen: Int {
-        get { return Int(Double(self) * 0.1) }
+        return Int(Double(self) * 0.1)
     }
     
     var numberOfDigits: Int {
-        get { return abs(self) < 10 ? 1 : 1 + self.dividedByTen.numberOfDigits }
+        return abs(self) < 10 ? 1 : 1 + self.dividedByTen.numberOfDigits
     }
     
     func toStr() -> String {

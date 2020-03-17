@@ -11,27 +11,27 @@ import Foundation
 extension Character {
     
     public var string: String {
-        get { return String(self) }
+        return String(self)
     }
  
     public var isNumber: Bool {
-        get { return Int(self.string) != nil }
+        return Int(self.string) != nil
     }
 
     public var isLetter: Bool {
-        get { return self.string.rangeOfCharacter(from: .letters, options: .numeric, range: nil) != nil }
+        return self.string.rangeOfCharacter(from: .letters, options: .numeric, range: nil) != nil
     }
     
     public var isLowercased: Bool {
-        get { return self.string == self.string.lowercased() }
+        return self.string == self.string.lowercased()
     }
 
     public var isUppercased: Bool {
-        get { return self.string == self.string.uppercased() }
+        return self.string == self.string.uppercased()
     }
 
     public var isWhitespace: Bool {
-        get { return self.string.rangeOfCharacter(from: .whitespaces, options: .numeric, range: nil) != nil }
+        return self.string.rangeOfCharacter(from: .whitespaces, options: .numeric, range: nil) != nil
     }
 
 }

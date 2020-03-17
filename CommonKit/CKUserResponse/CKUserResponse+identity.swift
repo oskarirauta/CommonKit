@@ -79,5 +79,4 @@ public extension CKUserResponse {
         }
     }
 
-    
 }

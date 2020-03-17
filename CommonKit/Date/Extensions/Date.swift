@@ -11,26 +11,20 @@ import Foundation
 public extension Date {
     
     var dayInYear: Int {
-        get {
-            return Calendar.current.ordinality(of: .day, in: .year, for: self)!
-        }
+        return Calendar.current.ordinality(of: .day, in: .year, for: self)!
     }
 
     var numberOfDaysInYear: Int {
-        get {
-            return Calendar.current.range(of: .day, in: .year, for: self)!.upperBound - 1
-        }
+        return Calendar.current.range(of: .day, in: .year, for: self)!.upperBound - 1
     }
 
     var numberOfDaysLeftInYear: Int {
-        get {
-            return numberOfDaysInYear - dayInYear
-        }
+        return numberOfDaysInYear - dayInYear
     }
 
     
     static var `nil`: Date {
-        get { return Date(timeIntervalSinceReferenceDate: 0) }
+        return Date(timeIntervalSinceReferenceDate: 0)
     }
     
     init(year: Int, month: Int, day: Int) {
@@ -49,47 +43,47 @@ public extension Date {
     }
     
     var second: Int {
-        get { return Int(UTCDateFormatter(posixDateFormat: "ss").string(from: self)) ?? -1 }
+        return Int(UTCDateFormatter(posixDateFormat: "ss").string(from: self)) ?? -1
     }
     
     var minute: Int {
-        get { return Int(UTCDateFormatter(posixDateFormat: "mm").string(from: self)) ?? -1 }
+        return Int(UTCDateFormatter(posixDateFormat: "mm").string(from: self)) ?? -1
     }
     
     var hour: Int {
-        get { return Int(UTCDateFormatter(posixDateFormat: "HH").string(from: self)) ?? -1 }
+        return Int(UTCDateFormatter(posixDateFormat: "HH").string(from: self)) ?? -1
     }
     
     var day: Int {
-        get { return Int(UTCDateFormatter(posixDateFormat: "dd").string(from: self)) ?? -1 }
+        return Int(UTCDateFormatter(posixDateFormat: "dd").string(from: self)) ?? -1
     }
     
     var month: Int {
-        get { return Int(UTCDateFormatter(posixDateFormat: "MM").string(from: self)) ?? -1 }
+        return Int(UTCDateFormatter(posixDateFormat: "MM").string(from: self)) ?? -1
     }
     
     var year: Int {
-        get { return Int(UTCDateFormatter(posixDateFormat: "yyyy").string(from: self)) ?? -1 }
+        return Int(UTCDateFormatter(posixDateFormat: "yyyy").string(from: self)) ?? -1
     }
     
     var weekday: Int {
-        get { return Int(UTCDateFormatter(posixDateFormat: "ee").string(from: self)) ?? -1 }
+        return Int(UTCDateFormatter(posixDateFormat: "ee").string(from: self)) ?? -1
     }
     
     var weekOfMonth: Int {
-        get { return Int(UTCDateFormatter(posixDateFormat: "W").string(from: self)) ?? -1 }
+        return Int(UTCDateFormatter(posixDateFormat: "W").string(from: self)) ?? -1
     }
     
     var weekOfYear: Int {
-        get { return Int(UTCDateFormatter(posixDateFormat: "w").string(from: self)) ?? -1 }
+        return Int(UTCDateFormatter(posixDateFormat: "w").string(from: self)) ?? -1
     }
     
     var dayName: String {
-        get { return UTCDateFormatter(localizedDateFormat: "cccc").string(from: self) }
+        return UTCDateFormatter(localizedDateFormat: "cccc").string(from: self)
     }
     
     var shortDayName: String {
-        get { return UTCDateFormatter(localizedDateFormat: "EEE").string(from: self) }
+        return UTCDateFormatter(localizedDateFormat: "EEE").string(from: self)
     }
     
     var isWeekend: Bool {
@@ -105,51 +99,49 @@ public extension Date {
     }
     
     var monthName: String {
-        get { return UTCDateFormatter(localizedDateFormat: "LLLL").string(from: self) }
+        return UTCDateFormatter(localizedDateFormat: "LLLL").string(from: self)
     }
     
     var shortMonthName: String {
-        get { return UTCDateFormatter(localizedDateFormat: "LLL").string(from: self) }
+        return UTCDateFormatter(localizedDateFormat: "LLL").string(from: self)
     }
     
     var timeString: String {
-        get { return UTCDateFormatter(mode: .time).string(from: self) }
+        return UTCDateFormatter(mode: .time).string(from: self)
     }
     
     var timeStringWithSeconds: String {
-        get { return UTCDateFormatter(localizedDateFormat: "HHmmss").string(from: self) }
+        return UTCDateFormatter(localizedDateFormat: "HHmmss").string(from: self)
     }
     
     var dateString: String {
-        get { return UTCDateFormatter(mode: .date).string(from: self) }
+        return UTCDateFormatter(mode: .date).string(from: self)
     }
     
     var dateTimeString: String {
-        get { return UTCDateFormatter(mode: .dateAndTime).string(from: self) }
+        return UTCDateFormatter(mode: .dateAndTime).string(from: self)
     }
     
     var dateStringWithoutDate: String {
-        get { return UTCDateFormatter(localizedDateFormat: "y LLLL").string(from: self) }
+        return UTCDateFormatter(localizedDateFormat: "y LLLL").string(from: self)
     }
     
     var dateStringWithoutYear: String {
-        get {
-            var retStr: String = UTCDateFormatter(localizedDateFormat: "Md").string(from: self)
-            let set = CharacterSet(charactersIn: "0123456789")
-            
-            while (( retStr.count > 0 ) && ( !set.contains(retStr.unicodeScalars.first ?? "0"))) {
-                retStr = retStr.substring(from: 1)
-            }
-            
-            while (( retStr.count > 0 ) && ( !set.contains(retStr.unicodeScalars.last ?? "0" ))) {
-                retStr = retStr.substring(to: 1)
-            }
-            return retStr
+        var retStr: String = UTCDateFormatter(localizedDateFormat: "Md").string(from: self)
+        let set = CharacterSet(charactersIn: "0123456789")
+        
+        while (( retStr.count > 0 ) && ( !set.contains(retStr.unicodeScalars.first ?? "0"))) {
+            retStr = retStr.substring(from: 1)
         }
+        
+        while (( retStr.count > 0 ) && ( !set.contains(retStr.unicodeScalars.last ?? "0" ))) {
+            retStr = retStr.substring(to: 1)
+        }
+        return retStr
     }
     
     var uuid_string: String {
-        get { return "DateObj_" + String(self.year) + "_" + String(self.month) + "_" + String(self.day) }
+        return "DateObj_" + String(self.year) + "_" + String(self.month) + "_" + String(self.day)
     }
     
     var zero: Date {
@@ -160,21 +152,17 @@ public extension Date {
     }
     
     var zeroHour: Date {
-        get {
-            let retDate: Date = Date(timeInterval: 0, since: UTCDateFormatter(posixDateFormat: "yyyy-MM-dd").date(from: String(self.year) + "-" + String(self.month) + "-" + String(self.day))!)
-            return retDate.timeIntervalSinceReferenceDate < 0 ? Date.nil : retDate
-        }
+        let retDate: Date = Date(timeInterval: 0, since: UTCDateFormatter(posixDateFormat: "yyyy-MM-dd").date(from: String(self.year) + "-" + String(self.month) + "-" + String(self.day))!)
+        return retDate.timeIntervalSinceReferenceDate < 0 ? Date.nil : retDate
     }
     
     var zeroDate: Date {
-        get { return self.isZero ? self : Date(hour: self.hour, minute: self.minute).addingTimeInterval(86400 * 2) }
+        return self.isZero ? self : Date(hour: self.hour, minute: self.minute).addingTimeInterval(86400 * 2)
     }
     
     var zeroMonth: Date {
-        get {
-            let retDate: Date = Date(timeInterval: 0, since: UTCDateFormatter(posixDateFormat: "yyyy-MM-dd").date(from: String(self.year) + "-" + String(self.month) + "-1")!)
-            return retDate.timeIntervalSinceReferenceDate < 0 ? Date.nil : retDate.zeroHour
-        }
+        let retDate: Date = Date(timeInterval: 0, since: UTCDateFormatter(posixDateFormat: "yyyy-MM-dd").date(from: String(self.year) + "-" + String(self.month) + "-1")!)
+        return retDate.timeIntervalSinceReferenceDate < 0 ? Date.nil : retDate.zeroHour
     }
     
     func dateBeforeDays(_ days: Int) -> Date {
@@ -182,53 +170,52 @@ public extension Date {
     }
     
     var yesterday: Date {
-        get { return self.addingTimeInterval(-86400) }
+        return self.addingTimeInterval(-86400)
     }
     
     var tomorrow: Date {
-        get { return self.addingTimeInterval(86400) }
+        return self.addingTimeInterval(86400)
     }
     
     var farFuture: Date {
-        get { return self.addingTimeInterval(86400 * 500) }
+        return self.addingTimeInterval(86400 * 500)
     }
     
     var monthsLast: Date {
-        get { return self.month < 12 ? Date(timeInterval: 0, since: UTCDateFormatter(posixDateFormat: "yyyy-MM-dd").date(from: String(self.year) + "-" + String(Int(self.month + 1)) + "-1")!.yesterday).zeroHour : Date(timeInterval: 0, since: UTCDateFormatter(posixDateFormat: "yyyy-MM-dd").date(from: String(Int(self.year + 1)) + "-1-1")!.yesterday).zeroHour }
+        return self.month < 12 ? Date(timeInterval: 0, since: UTCDateFormatter(posixDateFormat: "yyyy-MM-dd").date(from: String(self.year) + "-" + String(Int(self.month + 1)) + "-1")!.yesterday).zeroHour : Date(timeInterval: 0, since: UTCDateFormatter(posixDateFormat: "yyyy-MM-dd").date(from: String(Int(self.year + 1)) + "-1-1")!.yesterday).zeroHour
     }
     
     var yearsLast: Date {
-        get { return Date(timeInterval: 0, since:  UTCDateFormatter(posixDateFormat: "yyyy-MM-dd").date(from: String(Int(self.year + 1)) + "-1-1")!.yesterday.zeroHour) }
+        return Date(timeInterval: 0, since:  UTCDateFormatter(posixDateFormat: "yyyy-MM-dd").date(from: String(Int(self.year + 1)) + "-1-1")!.yesterday.zeroHour)
     }
     
     var isNil: Bool {
-        get { return self.timeIntervalSinceReferenceDate == 0 ? true : false }
+        return self.timeIntervalSinceReferenceDate == 0 ? true : false
     }
     
     var isEmpty: Bool {
-        get { return self.isNil }
+        return self.isNil
     }
     
     var isZero: Bool {
-        get { return self.isNil }
+        return self.isNil
     }
     
     func withMinuteInterval(_ interval: Int) -> Date {
-        if (( interval != 15 ) && ( interval != 30 )) { return self }
+        if interval != 15, interval != 30 { return self }
         let minutes = self.minute
-        let minutesRounded = ( minutes / interval ) * interval
-        return Date(timeInterval: TimeInterval(60.0 * Double( minutesRounded - minutes )), since: self)
+        return Date(timeInterval: TimeInterval(60.0 * Double( (( minutes / interval ) * interval) - minutes )), since: self)
     }
     
     func datesBetween(_ date: Date) -> [Date] {
-        
-        if ( self == date ) { return [ self.zeroHour ] }
+
+        guard self != date else { return [self.zeroHour] }
         
         var current: Date = (self < date ? self : date).zeroHour
         let endDate: Date = ( self < date ? date : self ).zeroHour
         var retArray: [Date] = [ current ]
         
-        while (( current != endDate ) && ( retArray.count < 32 )) {
+        while ( current != endDate ) && ( retArray.count < 32 ) {
             var tmpDate: Date = current.addingTimeInterval(86400)
             while ( tmpDate.zeroHour == current ) { tmpDate = tmpDate.addingTimeInterval(100) }
             current = tmpDate.zeroHour
@@ -262,10 +249,8 @@ public extension Date {
     }
     
     func convertToUtc(from: TimeZone) -> Date {
-        
-        if ( self.isZero ) {
-            return self
-        }
+
+        guard !self.isZero else { return self }
         
         let tf: DateFormatter = DateFormatter(posixDateFormat: "yyyy-MM-dd-HH-mm")
         tf.timeZone = from

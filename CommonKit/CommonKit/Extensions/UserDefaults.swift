@@ -16,12 +16,8 @@ public extension UserDefaults {
     ///
     /// - Parameter key: key in the current user's defaults database.
     subscript(key: String) -> Any? {
-        get {
-            return object(forKey: key)
-        }
-        set {
-            set(newValue, forKey: key)
-        }
+        get { return object(forKey: key) }
+        set { set(newValue, forKey: key) }
     }
 
     /// SwifterSwift: Float from UserDefaults.

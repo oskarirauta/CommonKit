@@ -1,5 +1,5 @@
 //
-//  HeaderTitleProtocol.swift
+//  HeaderTitle.swift
 //  CommonKit
 //
 //  Created by Oskari Rauta on 14/06/2018.
@@ -9,66 +9,75 @@
 import Foundation
 import UIKit
 
-@objc public protocol HeaderTitleProtocolBase { }
+@objc public protocol HeaderTitleConfig { }
 
 public protocol HeaderTitleProperties {
+    
     var icon: IconCompatible { get set }
+    var font: UIFont! { get set }
     var titleFont: UIFont! { get set }
+    var hasIcon: Bool { get }
+    var iconFontType: FontType? { get }
+    var iconMargin: CGFloat { get set }
+    var iconSize: CGFloat? { get set }
+    var iconBaseLineOffset: CGFloat? { get set }
 }
 
-public protocol HeaderTitleProtocol: HeaderTitleProtocolBase, HeaderTitleProperties, IconSettingsProtocol, TitleLabelProtocol {
+public protocol HeaderTitleMethods { }
+
+public protocol HeaderTitle: HeaderTitleConfig, HeaderTitleProperties, HeaderTitleMethods, IconSettingsProtocol, TitleLabelProtocol {
     var titleLabel: UITitleLabel { get }
 }
 
-extension HeaderTitleProtocol where Self: UIHeaderFooterViewExtended {
+public extension HeaderTitle where Self: UITableViewHeaderFooterView {
     
-    public var icon: IconCompatible {
+    var icon: IconCompatible {
         get { return self.titleLabel.icon }
         set { self.titleLabel.icon = newValue }
     }
     
-    public var title: String? {
+    var title: String? {
         get { return self.titleLabel.text }
         set { self.titleLabel.text = newValue.isEmpty ? " " : newValue?.uppercased() }
     }
     
-    public var font: UIFont! {
+    var font: UIFont! {
         get { return self.titleLabel.font }
         set { self.titleLabel.font = newValue }
     }
     
-    public var titleFont: UIFont! {
+    var titleFont: UIFont! {
         get { return self.titleLabel.font }
         set { self.titleLabel.font = newValue }
     }
     
-    public var hasIcon: Bool {
+    var hasIcon: Bool {
         get { return self.titleLabel.hasIcon }
     }
     
-    public var iconFontType: FontType? {
+    var iconFontType: FontType? {
         get { return self.titleLabel.iconFontType }
     }
     
-    public var iconMargin: CGFloat {
+    var iconMargin: CGFloat {
         get { return self.titleLabel.iconMargin }
         set { self.titleLabel.iconMargin = newValue}
     }
     
-    public var iconSize: CGFloat? {
+    var iconSize: CGFloat? {
         get { return self.titleLabel.iconSize }
         set { self.titleLabel.iconSize = newValue }
     }
     
-    public var iconBaseLineOffset: CGFloat? {
+    var iconBaseLineOffset: CGFloat? {
         get { return self.titleLabel.iconBaseLineOffset }
         set { self.titleLabel.iconBaseLineOffset = newValue }
     }
-    
-    /* TODO: fix this?
-    public var textBaselineOffset: Float? {
+/*
+    var textBaselineOffset: Float? {
         get { return self.textBaselineOffset }
         set { self.textBaselineOffset = newValue }
     }
-    */
+*/
+    
 }

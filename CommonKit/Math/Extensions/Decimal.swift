@@ -15,19 +15,19 @@ extension Decimal {
         self = Decimal(string: s, locale: Locale.current)!
     }
     
-    public var intValue: Int { get { return NSDecimalNumber(decimal: self).intValue }}
+    public var intValue: Int { return NSDecimalNumber(decimal: self).intValue }
     
-    public var floatValue: Float { get { return NSDecimalNumber(decimal: self).floatValue }}
+    public var floatValue: Float { return NSDecimalNumber(decimal: self).floatValue }
     
-    public var doubleValue: Double { get { return NSDecimalNumber(decimal: self).doubleValue }}
+    public var doubleValue: Double { return NSDecimalNumber(decimal: self).doubleValue }
 
-    public var nsdecimalnumberValue: NSDecimalNumber { get { return NSDecimalNumber(decimal: self) }}
+    public var nsdecimalnumberValue: NSDecimalNumber { return NSDecimalNumber(decimal: self) }
     
     public var significantFractionalDecimalDigits: Int { return max(-exponent, 0) }
 
-    public var wholePart: Decimal { get { return Decimal(self.intValue) }}
-    public var fractionPart: Decimal { get { return self - Decimal(self.intValue) }}
-    public var fractionPart2: Decimal { get { return self.distance(to: Decimal(self.intValue)) }}
+    public var wholePart: Decimal { return Decimal(self.intValue) }
+    public var fractionPart: Decimal { return self - Decimal(self.intValue) }
+    public var fractionPart2: Decimal { return self.distance(to: Decimal(self.intValue)) }
 
     public func rounded(to scale: Int = 0, mode: NSDecimalNumber.RoundingMode = .plain) -> Decimal {
         // Source: https://stackoverflow.com/questions/28651848/nsdecimalround-in-swift

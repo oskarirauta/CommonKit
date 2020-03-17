@@ -1,5 +1,5 @@
 //
-//  CellTitleProtocol.swift
+//  CellTitle.swift
 //  CommonKit
 //
 //  Created by Oskari Rauta on 08/06/2018.
@@ -9,65 +9,74 @@
 import Foundation
 import UIKit
 
-@objc public protocol CellTitleProtocolBase { }
+@objc public protocol CellTitleConfig { }
 
 public protocol CellTitleProperties {
+    
     var icon: IconCompatible { get set }
     var titleFont: UIFont! { get set }
-}
-
-public protocol CellTitleProtocol: CellTitleProtocolBase, CellTitleProperties, IconSettingsProtocol, TitleLabelProtocol {
     var titleLabel: UITitleLabel { get }
+    
+    var hasIcon: Bool { get }
+    var iconFontType: FontType? { get }
+    var iconMargin: CGFloat { get set }
+    var iconSize: CGFloat? { get set }
+    var iconBaseLineOffset: CGFloat? { get set }
 }
 
-extension CellTitleProtocol where Self: UITableViewCellExtended {
+public protocol CellTitleMethods { }
+
+public protocol CellTitle: CellTitleConfig, CellTitleProperties, CellTitleMethods, IconSettingsProtocol, TitleLabelProtocol { }
+
+public extension CellTitle where Self: UITableViewCell {
     
-    public var icon: IconCompatible {
+    var icon: IconCompatible {
         get { return self.titleLabel.icon }
         set { self.titleLabel.icon = newValue }
     }
     
-    public var title: String? {
+    var title: String? {
         get { return self.titleLabel.text }
         set { self.titleLabel.text = newValue.isEmpty ? " " : newValue }
     }
     
-    public var font: UIFont! {
+    var font: UIFont! {
         get { return self.titleLabel.font }
         set { self.titleLabel.font = newValue }
     }
     
-    public var titleFont: UIFont! {
+    var titleFont: UIFont! {
         get { return self.titleLabel.font }
         set { self.titleLabel.font = newValue }
     }
     
-    public var hasIcon: Bool {
+    var hasIcon: Bool {
         get { return self.titleLabel.hasIcon }
     }
     
-    public var iconFontType: FontType? {
+    var iconFontType: FontType? {
         get { return self.titleLabel.iconFontType }
     }
     
-    public var iconMargin: CGFloat {
+    var iconMargin: CGFloat {
         get { return self.titleLabel.iconMargin }
         set { self.titleLabel.iconMargin = newValue}
     }
     
-    public var iconSize: CGFloat? {
+    var iconSize: CGFloat? {
         get { return self.titleLabel.iconSize }
         set { self.titleLabel.iconSize = newValue }
     }
     
-    public var iconBaseLineOffset: CGFloat? {
+    var iconBaseLineOffset: CGFloat? {
         get { return self.titleLabel.iconBaseLineOffset }
         set { self.titleLabel.iconBaseLineOffset = newValue }
     }
 /*
-    public var textBaselineOffset: Float? {
+    var textBaselineOffset: Float? {
         get { return self.textBaselineOffset }
         set { self.textBaselineOffset = newValue }
     }
 */
+    
 }
