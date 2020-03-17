@@ -190,6 +190,7 @@
 		6E9EC66A20F5C7430023515C /* TaskClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9EC66920F5C7430023515C /* TaskClass.swift */; };
 		6E9EC66E20F60BD40023515C /* CustomTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9EC66D20F60BD40023515C /* CustomTask.swift */; };
 		6EA99EB221D70A6A00DF63C5 /* NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA99EB121D70A6A00DF63C5 /* NSObject.swift */; };
+		6EAB947E2421249700B41344 /* DeviceFamily.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EAB947D2421249700B41344 /* DeviceFamily.swift */; };
 		6EC2140C212EB15C00501A1E /* ConditionalInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC2140B212EB15C00501A1E /* ConditionalInit.swift */; };
 		6ECC5D8B21423F1F00908CC8 /* MutatorCompatible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ECC5D8A21423F1F00908CC8 /* MutatorCompatible.swift */; };
 		6ECC5D8D2145B82E00908CC8 /* CartMutatorSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ECC5D8C2145B82E00908CC8 /* CartMutatorSummary.swift */; };
@@ -389,6 +390,7 @@
 		6E9EC66920F5C7430023515C /* TaskClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskClass.swift; sourceTree = "<group>"; };
 		6E9EC66D20F60BD40023515C /* CustomTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTask.swift; sourceTree = "<group>"; };
 		6EA99EB121D70A6A00DF63C5 /* NSObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObject.swift; sourceTree = "<group>"; };
+		6EAB947D2421249700B41344 /* DeviceFamily.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceFamily.swift; sourceTree = "<group>"; };
 		6EC2140B212EB15C00501A1E /* ConditionalInit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConditionalInit.swift; sourceTree = "<group>"; };
 		6ECC5D8A21423F1F00908CC8 /* MutatorCompatible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MutatorCompatible.swift; sourceTree = "<group>"; };
 		6ECC5D8C2145B82E00908CC8 /* CartMutatorSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartMutatorSummary.swift; sourceTree = "<group>"; };
@@ -1045,6 +1047,7 @@
 				6E75BB7B20CAC4DF00876950 /* CustomBadgeConvertible.swift */,
 				6E75BB7920CAC4AB00876950 /* MultiBadge.swift */,
 				6E8BBD2A22AFAD75002FAAD3 /* WarnSyntaxError.swift */,
+				6EAB947D2421249700B41344 /* DeviceFamily.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -1425,6 +1428,7 @@
 				6E3C501120A0E1B0009C3ED7 /* UIResponder.swift in Sources */,
 				6E00BDE320C8826900C68DBD /* CurrencyPad.swift in Sources */,
 				6ED7A94920C7AC7600CAC025 /* AppLocale.swift in Sources */,
+				6EAB947E2421249700B41344 /* DeviceFamily.swift in Sources */,
 				6ED7A94D20C7ACAB00CAC025 /* val2str.swift in Sources */,
 				6E3C501320A0E1B0009C3ED7 /* NSLayoutConstraint.swift in Sources */,
 				6E75BB6620CAB9B400876950 /* CellHandler.swift in Sources */,

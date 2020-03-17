@@ -15,7 +15,7 @@ public extension UIFont {
 
         guard let font: UIFont = UIFont(name: name, size: size) else {
             // let bundle = bundle ?? Bundle.main
-            let bundle = Bundle(for: UITitleLabel.self)
+            let bundle = Bundle(for: UILabel.TitleLabel.self)
             // let identifier = bundle.bundleIdentifier
             // print(bundle.bundlePath)
             

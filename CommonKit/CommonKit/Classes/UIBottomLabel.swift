@@ -15,6 +15,7 @@ extension UILabel {
         
         override public init(frame: CGRect) {
             super.init(frame: frame)
+            self.font = .systemFont(ofSize: ( iphoneCompatible ? 13.5 : 19.0 ))
         }
         
         public required init?(coder aDecoder: NSCoder) {

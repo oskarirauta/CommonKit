@@ -11,13 +11,13 @@ import CommonKit
 
 class ViewController: UIViewController {
     
-    var label: [UITitleLabel] = []
+    var label: [UILabel.TitleLabel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         for i in 0...4 {
-            let _label: UITitleLabel = UITitleLabel.´default´.properties {
+            let _label: UILabel.TitleLabel = UILabel.TitleLabel.´default´.properties {
                 $0.translatesAutoresizingMaskIntoConstraints = false
                 $0.iconMargin = i == 3 ? 5.0 : 1.0
             }

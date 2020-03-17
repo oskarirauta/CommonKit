@@ -13,7 +13,7 @@ extension UITableViewHeaderFooterView {
     
     open class Extended: UITableViewHeaderFooterView, HeaderConstraints, HeaderTitle {
                 
-        open lazy var titleLabel: UITitleLabel = UITitleLabel.´default´.properties {
+        open lazy var titleLabel: UILabel.TitleLabel = UILabel.TitleLabel.´default´.properties {
             $0.translatesAutoresizingMaskIntoConstraints = false
             $0.baselineAdjustment = .alignBaselines
             $0.lineBreakMode = .byTruncatingTail
@@ -119,16 +119,16 @@ extension UITableViewHeaderFooterView {
         override open func setupConstraints() {
             super.setupConstraints()
             
-            self.titleLabel.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 8.0).isActive = true
+            self.titleLabel.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: ( iphoneCompatible ? 8.0 : 16.0 )).isActive = true
 
-            self.titleLabel.topAnchor.constraint(greaterThanOrEqualTo: self.contentView.topAnchor, constant: 8.0).isActive = true
+            self.titleLabel.topAnchor.constraint(greaterThanOrEqualTo: self.contentView.topAnchor, constant: ( iphoneCompatible ? 8.0 : 16.0 )).isActive = true
 
-            self.titleLabel.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -5.0).isActive = true
+            self.titleLabel.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: ( iphoneCompatible ? -5.0 : -10.0 )).isActive = true
         }
         
         open override func secondaryConstraints() {
             
-            self.headerConstraints["titleLabel-trailing"] = self.titleLabel.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -4.0).withPriority(999)
+            self.headerConstraints["titleLabel-trailing"] = self.titleLabel.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: ( iphoneCompatible ? -4.0 : -8.0 )).withPriority(999)
             
             if let fixedTitleHeight: CGFloat = self.fixedTitleHeight {
                 self.headerConstraints["titleLabel-height"] = self.titleLabel.heightAnchor.constraint(equalToConstant: fixedTitleHeight)

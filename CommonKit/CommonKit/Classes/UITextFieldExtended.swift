@@ -19,14 +19,25 @@ extension UITextField {
             open var maxLength: Int = 0
             open var trimText: Bool = true
             open var customClosestPosition: ((CGPoint, UITextPosition?)->(UITextPosition?))? = nil
-            open var customSelectionRects: ((UITextRange, [UITextSelectionRect])->([UITextSelectionRect]))? = nil
+            open var customSelectionRects: ((UITextRange, [UITextSelectionRect]) -> ([UITextSelectionRect]))? = nil
             
+            open override var placeholder: String? {
+                get { return self.attributedPlaceholder?.string }
+                set {
+                    self.attributedPlaceholder = newValue == nil ? nil : NSAttributedString(string: newValue ?? "", attributes: [
+                        NSAttributedString.Key.foregroundColor: UIColor.placeholderColor,
+                        NSAttributedString.Key.font: UIFont.systemFont(ofSize: ( iphoneCompatible ? 13.5 : 20.0 ))
+                    ])
+                }
+            }
+        
             public required init?(coder aDecoder: NSCoder) {
                 super.init(coder: aDecoder)
             }
             
             override public init(frame: CGRect) {
                 super.init(frame: frame)
+                self.font = .systemFont(ofSize: ( iphoneCompatible ?  13.5 : 19.0 ))
                 self.addTarget(self, action: #selector(self.maxLengthHandler), for: .editingChanged)
                 self.addTarget(self, action: #selector(self.trimHandler), for: .editingDidEnd)
                 self.addTarget(self, action: #selector(self.trimHandler), for: .editingDidEndOnExit)
@@ -34,6 +45,7 @@ extension UITextField {
             
             public init(frame: CGRect, withoutHandlers: Bool) {
                 super.init(frame: frame)
+                self.font = .systemFont(ofSize: ( iphoneCompatible ?  13.5 : 19.0 ))
                 if ( !withoutHandlers ) {
                     self.addTarget(self, action: #selector(self.maxLengthHandler), for: .editingChanged)
                     self.addTarget(self, action: #selector(self.trimHandler), for: .editingDidEnd)

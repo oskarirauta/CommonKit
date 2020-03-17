@@ -34,10 +34,10 @@ extension UITextView {
             }
         }
         
-        open var placeHolderFont: UIFont = UIFont.systemFont(ofSize: 14.0)
+        open var placeHolderFont: UIFont = UIFont.systemFont(ofSize: ( iphoneCompatible ? 13.5 : 19.0 ))
         
         open lazy var placeholderLabel: UILabel = UILabel.create {
-            $0.backgroundColor = UIColor.clear
+            $0.backgroundColor = .clear
             $0.font = self.placeHolderFont
             $0.textColor = UIColor.placeholderColor
             $0.isHidden = self.hasText ? true : ( !( $0.text?.isEmpty ?? true ) ? true : ( self.hasText ))
@@ -61,11 +61,12 @@ extension UITextView {
             super.delegate = self
             self.addSubview(self.placeholderLabel)
             
-            self.placeholderLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 1.0).isActive = true
-            self.placeholderLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 5.0).isActive = true
+            self.placeholderLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: ( iphoneCompatible ? 0.0 : 3.5 )).isActive = true
+            self.placeholderLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: ( iphoneCompatible ? 5.0 : 4.5 )).isActive = true
             self.placeholderLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -5.0).isActive = true
             self.placeholderLabel.heightAnchor.constraint(equalToConstant: 32.0).isActive = true
             self.setNeedsUpdateConstraints()
+            self.font = .systemFont(ofSize: ( iphoneCompatible ? 13.5 : 19.0 ))
         }
         
         /// From here..

@@ -25,8 +25,8 @@ public protocol HeaderTitleProperties {
 
 public protocol HeaderTitleMethods { }
 
-public protocol HeaderTitle: HeaderTitleConfig, HeaderTitleProperties, HeaderTitleMethods, IconSettingsProtocol, TitleLabelProtocol {
-    var titleLabel: UITitleLabel { get }
+public protocol HeaderTitle: HeaderTitleConfig, HeaderTitleProperties, HeaderTitleMethods, IconProperties, TitleLabelProperties {
+    var titleLabel: UILabel.TitleLabel { get }
 }
 
 public extension HeaderTitle where Self: UITableViewHeaderFooterView {

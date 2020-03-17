@@ -17,6 +17,15 @@ extension UILabel {
             didSet { self.invalidateIntrinsicContentSize() }
         }
 
+        public override init(frame: CGRect) {
+            super.init(frame: frame)
+            self.font = .systemFont(ofSize: ( iphoneCompatible ? 13.5 : 19.0 ))
+        }
+
+        public required init?(coder: NSCoder) {
+            super.init(coder: coder)
+        }
+        
         override open func textRect(forBounds bounds: CGRect, limitedToNumberOfLines numberOfLines: Int) -> CGRect {
             guard self.padding != nil else { return super.textRect(forBounds: bounds, limitedToNumberOfLines: numberOfLines) }
             let insetRect = bounds.inset(by: self.padding ?? .zero)

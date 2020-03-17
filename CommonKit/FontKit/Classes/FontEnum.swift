@@ -54,7 +54,7 @@ extension FontEnum {
     }
 
     public func font(ofSize: CGFloat) -> UIFont? {
-        return UIFont.loadFont(self.fontName, size: ofSize, resource: self.fontResource, ext: self.fontFormat, bundle: Bundle(for: UITitleLabel.self))
+        return UIFont.loadFont(self.fontName, size: ofSize, resource: self.fontResource, ext: self.fontFormat, bundle: Bundle(for: UILabel.TitleLabel.self))
     }
 
     public func size(for fontSize: CGFloat) -> CGSize {

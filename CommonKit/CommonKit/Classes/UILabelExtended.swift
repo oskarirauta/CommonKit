@@ -14,7 +14,8 @@ extension UILabel {
     open class Extended: UIView {
         
            open lazy var label: UILabel = UILabel.create {
-               $0.translatesAutoresizingMaskIntoConstraints = false
+                $0.translatesAutoresizingMaskIntoConstraints = false
+                $0.font = .systemFont(ofSize: ( iphoneCompatible ? 13.5 : 19.0 ))
            }
            
            open var text: String? {

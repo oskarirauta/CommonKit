@@ -15,7 +15,7 @@ public protocol CellTitleProperties {
     
     var icon: IconCompatible { get set }
     var titleFont: UIFont! { get set }
-    var titleLabel: UITitleLabel { get }
+    var titleLabel: UILabel.TitleLabel { get }
     
     var hasIcon: Bool { get }
     var iconFontType: FontType? { get }
@@ -26,7 +26,7 @@ public protocol CellTitleProperties {
 
 public protocol CellTitleMethods { }
 
-public protocol CellTitle: CellTitleConfig, CellTitleProperties, CellTitleMethods, IconSettingsProtocol, TitleLabelProtocol { }
+public protocol CellTitle: CellTitleConfig, CellTitleProperties, CellTitleMethods, IconProperties, TitleLabelProperties { }
 
 public extension CellTitle where Self: UITableViewCell {
     
